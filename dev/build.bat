@@ -89,10 +89,10 @@ cd ..\dev
 
 REM echo Delete
 cd Banks
-rem del *.asm > nul
-rem del *.lst > nul
-REM del *.rel > nul
-rem del *.sym > nul
+del *.asm > nul
+del *.lst > nul
+del *.rel > nul
+del *.sym > nul
 cd ..
 
 del *.asm > nul
