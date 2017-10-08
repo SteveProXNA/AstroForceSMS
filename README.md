@@ -1,8 +1,14 @@
 # Astro Force SMS
-Astro Force for the Sega Master System using Visual Studio 2008
+Refactor of Astro Force for Sega Master System using devkitSMS
+<br />
+Original source code can be found here:
+<br />
+https://github.com/kusfo/astroforce
 
 
-Reference
+Refactor uses Visual Studio 2008 as Integrated Development Environment
+<br />
+More detailed information on code refactor and setup can be found here:
 <br />
 http://steveproxna.blogspot.ie/2017/09/devkitsms-programming-setup.html
 
