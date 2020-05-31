@@ -11,7 +11,7 @@
 #include "Banks\bank12.h"
 #include "Banks\bank13.h"
 #include "Banks\bank14.h"
-#include "Banks\bank15.h"
+//#include "Banks\bank15.h"
 
 // For debug only
 #define PLAYERINMUNE
@@ -37,10 +37,14 @@ typedef struct enemy
 	unsigned char enemywidth;
 	unsigned char enemyheight;
 }enemy;
-typedef void (*MyInitEnemyFunction)( enemy *);
-typedef unsigned char (*MyUpdateEnemyFunction)( enemy *);
-typedef void (*MyKillEnemyFunction)(void);
-typedef unsigned char (*MyCheckCollisionFunction)( unsigned char, unsigned char);
+typedef void( *MyInitEnemyFunction )( enemy * );
+typedef unsigned char( *MyUpdateEnemyFunction )( enemy * );
+// IMPORTANT 
+// don't put the following here otherwise
+// warning C4113: 'void (__cdecl *)()' differs in parameter lists from
+// typedef void( *MyKillEnemyFunction )(void);
+typedef void( *MyKillEnemyFunction )( );
+typedef unsigned char( *MyCheckCollisionFunction )( unsigned char, unsigned char );
 
 // Sound bank
 #define SOUNDBANK 2

@@ -67,7 +67,7 @@ extern const unsigned char stage5scriptb[];
 extern const unsigned char stage5scriptc[];
 
 #define spawners_bank  FIXEDBANKSLOT
-extern const const unsigned char *spawners[];
+extern const unsigned char *spawners[];
 
 #define stage5_statics_bank  FIXEDBANKSLOT
 extern const unsigned int stage5_statics[];
@@ -243,3 +243,8 @@ extern const signed char stage8bossbshootspeedy[];
 extern const unsigned char enemieswidth[];
 extern const unsigned char enemiesheight[];
 extern const unsigned char enemiesenergy[];
+
+
+extern const unsigned char	intro1_psg[];
+#define				intro1_psg_size 2369
+#define				intro1_psg_bank 15

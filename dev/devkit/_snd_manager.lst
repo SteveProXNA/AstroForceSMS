@@ -1,0 +1,264 @@
+                              1 ;--------------------------------------------------------
+                              2 ; File Created by SDCC : free open source ANSI-C Compiler
+                              3 ; Version 3.6.9 #9960 (MINGW64)
+                              4 ;--------------------------------------------------------
+                              5 	.module _snd_manager
+                              6 	.optsdcc -mz80
+                              7 	
+                              8 ;--------------------------------------------------------
+                              9 ; Public variables in this module
+                             10 ;--------------------------------------------------------
+                             11 	.globl _PSGSFXFrame
+                             12 	.globl _PSGFrame
+                             13 	.globl _PSGRestoreVolumes
+                             14 	.globl _PSGSilenceChannels
+                             15 	.globl _PSGSFXGetStatus
+                             16 	.globl _PSGSFXStop
+                             17 	.globl _PSGSFXCancelLoop
+                             18 	.globl _PSGSFXPlayLoop
+                             19 	.globl _PSGSFXPlay
+                             20 	.globl _PSGSetMusicVolumeAttenuation
+                             21 	.globl _PSGGetStatus
+                             22 	.globl _PSGResume
+                             23 	.globl _PSGStop
+                             24 	.globl _PSGPlayNoRepeat
+                             25 	.globl _PSGCancelLoop
+                             26 	.globl _PSGPlay
+                             27 	.globl _devkit_PSGPlay
+                             28 	.globl _devkit_PSGCancelLoop
+                             29 	.globl _devkit_PSGPlayNoRepeat
+                             30 	.globl _devkit_PSGStop
+                             31 	.globl _devkit_PSGResume
+                             32 	.globl _devkit_PSGGetStatus
+                             33 	.globl _devkit_PSGSetMusicVolumeAttenuation
+                             34 	.globl _devkit_PSGSFXPlay
+                             35 	.globl _devkit_PSGSFXPlayLoop
+                             36 	.globl _devkit_PSGSFXCancelLoop
+                             37 	.globl _devkit_PSGSFXStop
+                             38 	.globl _devkit_PSGSFXGetStatus
+                             39 	.globl _devkit_PSGSilenceChannels
+                             40 	.globl _devkit_PSGRestoreVolumes
+                             41 	.globl _devkit_PSGFrame
+                             42 	.globl _devkit_PSGSFXFrame
+                             43 	.globl _devkit_SFX_CHANNEL2
+                             44 	.globl _devkit_SFX_CHANNEL3
+                             45 	.globl _devkit_SFX_CHANNELS2AND3
+                             46 ;--------------------------------------------------------
+                             47 ; special function registers
+                             48 ;--------------------------------------------------------
+                             49 ;--------------------------------------------------------
+                             50 ; ram data
+                             51 ;--------------------------------------------------------
+                             52 	.area _DATA
+                             53 ;--------------------------------------------------------
+                             54 ; ram data
+                             55 ;--------------------------------------------------------
+                             56 	.area _INITIALIZED
+                             57 ;--------------------------------------------------------
+                             58 ; absolute external ram data
+                             59 ;--------------------------------------------------------
+                             60 	.area _DABS (ABS)
+                             61 ;--------------------------------------------------------
+                             62 ; global & static initialisations
+                             63 ;--------------------------------------------------------
+                             64 	.area _HOME
+                             65 	.area _GSINIT
+                             66 	.area _GSFINAL
+                             67 	.area _GSINIT
+                             68 ;--------------------------------------------------------
+                             69 ; Home
+                             70 ;--------------------------------------------------------
+                             71 	.area _HOME
+                             72 	.area _HOME
+                             73 ;--------------------------------------------------------
+                             74 ; code
+                             75 ;--------------------------------------------------------
+                             76 	.area _CODE
+                             77 ;_snd_manager.c:9: void devkit_PSGPlay( void *song )
+                             78 ;	---------------------------------
+                             79 ; Function devkit_PSGPlay
+                             80 ; ---------------------------------
+   0000                      81 _devkit_PSGPlay::
+                             82 ;_snd_manager.c:11: PSGPlay( song );
+   0000 C1            [10]   83 	pop	bc
+   0001 E1            [10]   84 	pop	hl
+   0002 E5            [11]   85 	push	hl
+   0003 C5            [11]   86 	push	bc
+   0004 E5            [11]   87 	push	hl
+   0005 CDr00r00      [17]   88 	call	_PSGPlay
+   0008 F1            [10]   89 	pop	af
+   0009 C9            [10]   90 	ret
+                             91 ;_snd_manager.c:13: void devkit_PSGCancelLoop( void )
+                             92 ;	---------------------------------
+                             93 ; Function devkit_PSGCancelLoop
+                             94 ; ---------------------------------
+   000A                      95 _devkit_PSGCancelLoop::
+                             96 ;_snd_manager.c:15: PSGCancelLoop();
+   000A C3r00r00      [10]   97 	jp  _PSGCancelLoop
+                             98 ;_snd_manager.c:17: void devkit_PSGPlayNoRepeat( void *song )
+                             99 ;	---------------------------------
+                            100 ; Function devkit_PSGPlayNoRepeat
+                            101 ; ---------------------------------
+   000D                     102 _devkit_PSGPlayNoRepeat::
+                            103 ;_snd_manager.c:19: PSGPlayNoRepeat( song );
+   000D C1            [10]  104 	pop	bc
+   000E E1            [10]  105 	pop	hl
+   000F E5            [11]  106 	push	hl
+   0010 C5            [11]  107 	push	bc
+   0011 E5            [11]  108 	push	hl
+   0012 CDr00r00      [17]  109 	call	_PSGPlayNoRepeat
+   0015 F1            [10]  110 	pop	af
+   0016 C9            [10]  111 	ret
+                            112 ;_snd_manager.c:21: void devkit_PSGStop( void )
+                            113 ;	---------------------------------
+                            114 ; Function devkit_PSGStop
+                            115 ; ---------------------------------
+   0017                     116 _devkit_PSGStop::
+                            117 ;_snd_manager.c:23: PSGStop();
+   0017 C3r00r00      [10]  118 	jp  _PSGStop
+                            119 ;_snd_manager.c:25: void devkit_PSGResume( void )
+                            120 ;	---------------------------------
+                            121 ; Function devkit_PSGResume
+                            122 ; ---------------------------------
+   001A                     123 _devkit_PSGResume::
+                            124 ;_snd_manager.c:27: PSGResume();
+   001A C3r00r00      [10]  125 	jp  _PSGResume
+                            126 ;_snd_manager.c:29: unsigned char devkit_PSGGetStatus( void )
+                            127 ;	---------------------------------
+                            128 ; Function devkit_PSGGetStatus
+                            129 ; ---------------------------------
+   001D                     130 _devkit_PSGGetStatus::
+                            131 ;_snd_manager.c:31: return PSGGetStatus();
+   001D C3r00r00      [10]  132 	jp  _PSGGetStatus
+                            133 ;_snd_manager.c:33: void devkit_PSGSetMusicVolumeAttenuation( unsigned char attenuation )
+                            134 ;	---------------------------------
+                            135 ; Function devkit_PSGSetMusicVolumeAttenuation
+                            136 ; ---------------------------------
+   0020                     137 _devkit_PSGSetMusicVolumeAttenuation::
+                            138 ;_snd_manager.c:35: PSGSetMusicVolumeAttenuation( attenuation );
+   0020 21 02 00      [10]  139 	ld	hl, #2+0
+   0023 39            [11]  140 	add	hl, sp
+   0024 7E            [ 7]  141 	ld	a, (hl)
+   0025 F5            [11]  142 	push	af
+   0026 33            [ 6]  143 	inc	sp
+   0027 CDr00r00      [17]  144 	call	_PSGSetMusicVolumeAttenuation
+   002A 33            [ 6]  145 	inc	sp
+   002B C9            [10]  146 	ret
+                            147 ;_snd_manager.c:38: void devkit_PSGSFXPlay( void *sfx, unsigned char channels )
+                            148 ;	---------------------------------
+                            149 ; Function devkit_PSGSFXPlay
+                            150 ; ---------------------------------
+   002C                     151 _devkit_PSGSFXPlay::
+                            152 ;_snd_manager.c:40: PSGSFXPlay( sfx, channels );
+   002C 21 04 00      [10]  153 	ld	hl, #4+0
+   002F 39            [11]  154 	add	hl, sp
+   0030 7E            [ 7]  155 	ld	a, (hl)
+   0031 F5            [11]  156 	push	af
+   0032 33            [ 6]  157 	inc	sp
+   0033 21 03 00      [10]  158 	ld	hl, #3
+   0036 39            [11]  159 	add	hl, sp
+   0037 4E            [ 7]  160 	ld	c, (hl)
+   0038 23            [ 6]  161 	inc	hl
+   0039 46            [ 7]  162 	ld	b, (hl)
+   003A C5            [11]  163 	push	bc
+   003B CDr00r00      [17]  164 	call	_PSGSFXPlay
+   003E F1            [10]  165 	pop	af
+   003F 33            [ 6]  166 	inc	sp
+   0040 C9            [10]  167 	ret
+                            168 ;_snd_manager.c:42: void devkit_PSGSFXPlayLoop( void *sfx, unsigned char channels )
+                            169 ;	---------------------------------
+                            170 ; Function devkit_PSGSFXPlayLoop
+                            171 ; ---------------------------------
+   0041                     172 _devkit_PSGSFXPlayLoop::
+                            173 ;_snd_manager.c:44: PSGSFXPlayLoop( sfx, channels );
+   0041 21 04 00      [10]  174 	ld	hl, #4+0
+   0044 39            [11]  175 	add	hl, sp
+   0045 7E            [ 7]  176 	ld	a, (hl)
+   0046 F5            [11]  177 	push	af
+   0047 33            [ 6]  178 	inc	sp
+   0048 21 03 00      [10]  179 	ld	hl, #3
+   004B 39            [11]  180 	add	hl, sp
+   004C 4E            [ 7]  181 	ld	c, (hl)
+   004D 23            [ 6]  182 	inc	hl
+   004E 46            [ 7]  183 	ld	b, (hl)
+   004F C5            [11]  184 	push	bc
+   0050 CDr00r00      [17]  185 	call	_PSGSFXPlayLoop
+   0053 F1            [10]  186 	pop	af
+   0054 33            [ 6]  187 	inc	sp
+   0055 C9            [10]  188 	ret
+                            189 ;_snd_manager.c:46: void devkit_PSGSFXCancelLoop( void )
+                            190 ;	---------------------------------
+                            191 ; Function devkit_PSGSFXCancelLoop
+                            192 ; ---------------------------------
+   0056                     193 _devkit_PSGSFXCancelLoop::
+                            194 ;_snd_manager.c:48: PSGSFXCancelLoop();
+   0056 C3r00r00      [10]  195 	jp  _PSGSFXCancelLoop
+                            196 ;_snd_manager.c:50: void devkit_PSGSFXStop( void )
+                            197 ;	---------------------------------
+                            198 ; Function devkit_PSGSFXStop
+                            199 ; ---------------------------------
+   0059                     200 _devkit_PSGSFXStop::
+                            201 ;_snd_manager.c:52: PSGSFXStop();
+   0059 C3r00r00      [10]  202 	jp  _PSGSFXStop
+                            203 ;_snd_manager.c:54: unsigned char devkit_PSGSFXGetStatus( void )
+                            204 ;	---------------------------------
+                            205 ; Function devkit_PSGSFXGetStatus
+                            206 ; ---------------------------------
+   005C                     207 _devkit_PSGSFXGetStatus::
+                            208 ;_snd_manager.c:56: return PSGSFXGetStatus();
+   005C C3r00r00      [10]  209 	jp  _PSGSFXGetStatus
+                            210 ;_snd_manager.c:59: void devkit_PSGSilenceChannels( void )
+                            211 ;	---------------------------------
+                            212 ; Function devkit_PSGSilenceChannels
+                            213 ; ---------------------------------
+   005F                     214 _devkit_PSGSilenceChannels::
+                            215 ;_snd_manager.c:61: PSGSilenceChannels();
+   005F C3r00r00      [10]  216 	jp  _PSGSilenceChannels
+                            217 ;_snd_manager.c:63: void devkit_PSGRestoreVolumes( void )
+                            218 ;	---------------------------------
+                            219 ; Function devkit_PSGRestoreVolumes
+                            220 ; ---------------------------------
+   0062                     221 _devkit_PSGRestoreVolumes::
+                            222 ;_snd_manager.c:65: PSGRestoreVolumes();
+   0062 C3r00r00      [10]  223 	jp  _PSGRestoreVolumes
+                            224 ;_snd_manager.c:68: void devkit_PSGFrame( void )
+                            225 ;	---------------------------------
+                            226 ; Function devkit_PSGFrame
+                            227 ; ---------------------------------
+   0065                     228 _devkit_PSGFrame::
+                            229 ;_snd_manager.c:70: PSGFrame();
+   0065 C3r00r00      [10]  230 	jp  _PSGFrame
+                            231 ;_snd_manager.c:72: void devkit_PSGSFXFrame( void )
+                            232 ;	---------------------------------
+                            233 ; Function devkit_PSGSFXFrame
+                            234 ; ---------------------------------
+   0068                     235 _devkit_PSGSFXFrame::
+                            236 ;_snd_manager.c:74: PSGSFXFrame();
+   0068 C3r00r00      [10]  237 	jp  _PSGSFXFrame
+                            238 ;_snd_manager.c:78: unsigned char devkit_SFX_CHANNEL2()
+                            239 ;	---------------------------------
+                            240 ; Function devkit_SFX_CHANNEL2
+                            241 ; ---------------------------------
+   006B                     242 _devkit_SFX_CHANNEL2::
+                            243 ;_snd_manager.c:80: return SFX_CHANNEL2;
+   006B 2E 01         [ 7]  244 	ld	l, #0x01
+   006D C9            [10]  245 	ret
+                            246 ;_snd_manager.c:82: unsigned char devkit_SFX_CHANNEL3()
+                            247 ;	---------------------------------
+                            248 ; Function devkit_SFX_CHANNEL3
+                            249 ; ---------------------------------
+   006E                     250 _devkit_SFX_CHANNEL3::
+                            251 ;_snd_manager.c:84: return SFX_CHANNEL3;
+   006E 2E 02         [ 7]  252 	ld	l, #0x02
+   0070 C9            [10]  253 	ret
+                            254 ;_snd_manager.c:86: unsigned char devkit_SFX_CHANNELS2AND3()
+                            255 ;	---------------------------------
+                            256 ; Function devkit_SFX_CHANNELS2AND3
+                            257 ; ---------------------------------
+   0071                     258 _devkit_SFX_CHANNELS2AND3::
+                            259 ;_snd_manager.c:88: return SFX_CHANNELS2AND3;
+   0071 2E 03         [ 7]  260 	ld	l, #0x03
+   0073 C9            [10]  261 	ret
+                            262 	.area _CODE
+                            263 	.area _INITIALIZER
+                            264 	.area _CABS (ABS)

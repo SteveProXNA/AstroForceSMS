@@ -1,0 +1,455 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Header Files\devkit">
+      <UniqueIdentifier>{51a71eee-4984-4bf6-bce1-5ca96767b315}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\devkit">
+      <UniqueIdentifier>{4e80b205-f605-4774-8dd3-de0555a711ab}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Intros">
+      <UniqueIdentifier>{9d3b3203-044c-4ebf-8c91-ad2f0ab3b10b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\General">
+      <UniqueIdentifier>{da24e3c9-579b-4617-96f4-86215953d47d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\banks">
+      <UniqueIdentifier>{cd35fa49-36af-4506-89a2-1f6607628158}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\banks">
+      <UniqueIdentifier>{f77f968a-b2de-4ea3-96b5-0203a57775a3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Players">
+      <UniqueIdentifier>{4e8b57b3-c217-437d-818f-8d63410ec183}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Enemies">
+      <UniqueIdentifier>{49d91109-52fa-4af7-9a30-6fd05d5cf834}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Stages">
+      <UniqueIdentifier>{d216f103-5c86-45dd-83ee-d76ac4c02ea2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Fortresses">
+      <UniqueIdentifier>{4d150e87-556c-4df3-85fe-968f6b62e087}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Monsters">
+      <UniqueIdentifier>{9a783f66-9653-4508-8a40-5f0f1081c222}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Spaces">
+      <UniqueIdentifier>{bb570aeb-dc20-4894-852e-05c90b7bf03a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Vulcans">
+      <UniqueIdentifier>{4579dad3-35d0-4d7d-826a-2a2c27eea163}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Wars">
+      <UniqueIdentifier>{6d1a199a-94e8-485f-aef5-47cd05d2b59d}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="devkit\_snd_manager.c">
+      <Filter>Source Files\devkit</Filter>
+    </ClCompile>
+    <ClCompile Include="devkit\_sms_manager.c">
+      <Filter>Source Files\devkit</Filter>
+    </ClCompile>
+    <ClCompile Include="banks\fixedbank.c">
+      <Filter>Source Files\banks</Filter>
+    </ClCompile>
+    <ClCompile Include="banks\bank2.c">
+      <Filter>Source Files\banks</Filter>
+    </ClCompile>
+    <ClCompile Include="banks\bank3.c">
+      <Filter>Source Files\banks</Filter>
+    </ClCompile>
+    <ClCompile Include="banks\bank4.c">
+      <Filter>Source Files\banks</Filter>
+    </ClCompile>
+    <ClCompile Include="banks\bank5.c">
+      <Filter>Source Files\banks</Filter>
+    </ClCompile>
+    <ClCompile Include="banks\bank6.c">
+      <Filter>Source Files\banks</Filter>
+    </ClCompile>
+    <ClCompile Include="banks\bank7.c">
+      <Filter>Source Files\banks</Filter>
+    </ClCompile>
+    <ClCompile Include="banks\bank8.c">
+      <Filter>Source Files\banks</Filter>
+    </ClCompile>
+    <ClCompile Include="banks\bank9.c">
+      <Filter>Source Files\banks</Filter>
+    </ClCompile>
+    <ClCompile Include="banks\bank10.c">
+      <Filter>Source Files\banks</Filter>
+    </ClCompile>
+    <ClCompile Include="banks\bank11.c">
+      <Filter>Source Files\banks</Filter>
+    </ClCompile>
+    <ClCompile Include="banks\bank12.c">
+      <Filter>Source Files\banks</Filter>
+    </ClCompile>
+    <ClCompile Include="banks\bank13.c">
+      <Filter>Source Files\banks</Filter>
+    </ClCompile>
+    <ClCompile Include="banks\bank14.c">
+      <Filter>Source Files\banks</Filter>
+    </ClCompile>
+    <ClCompile Include="banks\bank15.c">
+      <Filter>Source Files\banks</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="build.bat">
+      <Filter>Resource Files</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="main.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="game.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="devkit\_sms_manager.h">
+      <Filter>Header Files\devkit</Filter>
+    </ClInclude>
+    <ClInclude Include="devkit\_snd_manager.h">
+      <Filter>Header Files\devkit</Filter>
+    </ClInclude>
+    <ClInclude Include="banks\bank2.h">
+      <Filter>Header Files\banks</Filter>
+    </ClInclude>
+    <ClInclude Include="banks\bank3.h">
+      <Filter>Header Files\banks</Filter>
+    </ClInclude>
+    <ClInclude Include="banks\bank4.h">
+      <Filter>Header Files\banks</Filter>
+    </ClInclude>
+    <ClInclude Include="banks\bank5.h">
+      <Filter>Header Files\banks</Filter>
+    </ClInclude>
+    <ClInclude Include="banks\bank6.h">
+      <Filter>Header Files\banks</Filter>
+    </ClInclude>
+    <ClInclude Include="banks\bank7.h">
+      <Filter>Header Files\banks</Filter>
+    </ClInclude>
+    <ClInclude Include="banks\bank8.h">
+      <Filter>Header Files\banks</Filter>
+    </ClInclude>
+    <ClInclude Include="banks\bank9.h">
+      <Filter>Header Files\banks</Filter>
+    </ClInclude>
+    <ClInclude Include="banks\bank10.h">
+      <Filter>Header Files\banks</Filter>
+    </ClInclude>
+    <ClInclude Include="banks\bank11.h">
+      <Filter>Header Files\banks</Filter>
+    </ClInclude>
+    <ClInclude Include="banks\bank12.h">
+      <Filter>Header Files\banks</Filter>
+    </ClInclude>
+    <ClInclude Include="banks\bank13.h">
+      <Filter>Header Files\banks</Filter>
+    </ClInclude>
+    <ClInclude Include="banks\bank14.h">
+      <Filter>Header Files\banks</Filter>
+    </ClInclude>
+    <ClInclude Include="banks\bank15.h">
+      <Filter>Header Files\banks</Filter>
+    </ClInclude>
+    <ClInclude Include="banks\fixedbank.h">
+      <Filter>Header Files\banks</Filter>
+    </ClInclude>
+    <ClInclude Include="defines.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="vars.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="funcs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="General\mikgamesstage.h">
+      <Filter>Header Files\General</Filter>
+    </ClInclude>
+    <ClInclude Include="Players\playstage.h">
+      <Filter>Header Files\Players</Filter>
+    </ClInclude>
+    <ClInclude Include="Intros\introstage.h">
+      <Filter>Header Files\Intros</Filter>
+    </ClInclude>
+    <ClInclude Include="General\scripter.h">
+      <Filter>Header Files\General</Filter>
+    </ClInclude>
+    <ClInclude Include="Enemies\enemy.h">
+      <Filter>Header Files\Enemies</Filter>
+    </ClInclude>
+    <ClInclude Include="General\explosion.h">
+      <Filter>Header Files\General</Filter>
+    </ClInclude>
+    <ClInclude Include="General\timeredlabel.h">
+      <Filter>Header Files\General</Filter>
+    </ClInclude>
+    <ClInclude Include="Intros\intro1stage.h">
+      <Filter>Header Files\Intros</Filter>
+    </ClInclude>
+    <ClInclude Include="Intros\intro2stage.h">
+      <Filter>Header Files\Intros</Filter>
+    </ClInclude>
+    <ClInclude Include="Intros\intro3stage.h">
+      <Filter>Header Files\Intros</Filter>
+    </ClInclude>
+    <ClInclude Include="Intros\intro4stage.h">
+      <Filter>Header Files\Intros</Filter>
+    </ClInclude>
+    <ClInclude Include="General\finishstage.h">
+      <Filter>Header Files\General</Filter>
+    </ClInclude>
+    <ClInclude Include="General\scroller.h">
+      <Filter>Header Files\General</Filter>
+    </ClInclude>
+    <ClInclude Include="General\barrom.h">
+      <Filter>Header Files\General</Filter>
+    </ClInclude>
+    <ClInclude Include="General\warning.h">
+      <Filter>Header Files\General</Filter>
+    </ClInclude>
+    <ClInclude Include="Intros\introovni.h">
+      <Filter>Header Files\Intros</Filter>
+    </ClInclude>
+    <ClInclude Include="Intros\intro3object.h">
+      <Filter>Header Files\Intros</Filter>
+    </ClInclude>
+    <ClInclude Include="Intros\introsideplayer.h">
+      <Filter>Header Files\Intros</Filter>
+    </ClInclude>
+    <ClInclude Include="General\logostage.h">
+      <Filter>Header Files\General</Filter>
+    </ClInclude>
+    <ClInclude Include="General\map.h">
+      <Filter>Header Files\General</Filter>
+    </ClInclude>
+    <ClInclude Include="General\jukeboxstage.h">
+      <Filter>Header Files\General</Filter>
+    </ClInclude>
+    <ClInclude Include="General\gameoverstage.h">
+      <Filter>Header Files\General</Filter>
+    </ClInclude>
+    <ClInclude Include="Enemies\enemyshoot.h">
+      <Filter>Header Files\Enemies</Filter>
+    </ClInclude>
+    <ClInclude Include="Stages\stage5.h">
+      <Filter>Header Files\Stages</Filter>
+    </ClInclude>
+    <ClInclude Include="General\selectorstage.h">
+      <Filter>Header Files\General</Filter>
+    </ClInclude>
+    <ClInclude Include="Players\player.h">
+      <Filter>Header Files\Players</Filter>
+    </ClInclude>
+    <ClInclude Include="Players\playershoot.h">
+      <Filter>Header Files\Players</Filter>
+    </ClInclude>
+    <ClInclude Include="General\powerup.h">
+      <Filter>Header Files\General</Filter>
+    </ClInclude>
+    <ClInclude Include="Stages\stage3star.h">
+      <Filter>Header Files\Stages</Filter>
+    </ClInclude>
+    <ClInclude Include="General\bombship.h">
+      <Filter>Header Files\General</Filter>
+    </ClInclude>
+    <ClInclude Include="General\rectship.h">
+      <Filter>Header Files\General</Filter>
+    </ClInclude>
+    <ClInclude Include="General\rsgthing.h">
+      <Filter>Header Files\General</Filter>
+    </ClInclude>
+    <ClInclude Include="General\skullbone.h">
+      <Filter>Header Files\General</Filter>
+    </ClInclude>
+    <ClInclude Include="General\waveship.h">
+      <Filter>Header Files\General</Filter>
+    </ClInclude>
+    <ClInclude Include="General\turnship.h">
+      <Filter>Header Files\General</Filter>
+    </ClInclude>
+    <ClInclude Include="General\spreadship.h">
+      <Filter>Header Files\General</Filter>
+    </ClInclude>
+    <ClInclude Include="Fortresses\fortresscannon.h">
+      <Filter>Header Files\Fortresses</Filter>
+    </ClInclude>
+    <ClInclude Include="Fortresses\fortressdoor.h">
+      <Filter>Header Files\Fortresses</Filter>
+    </ClInclude>
+    <ClInclude Include="Fortresses\fortressphantom.h">
+      <Filter>Header Files\Fortresses</Filter>
+    </ClInclude>
+    <ClInclude Include="Fortresses\fortresssearcher.h">
+      <Filter>Header Files\Fortresses</Filter>
+    </ClInclude>
+    <ClInclude Include="Fortresses\fortresswave.h">
+      <Filter>Header Files\Fortresses</Filter>
+    </ClInclude>
+    <ClInclude Include="Monsters\monsterblob.h">
+      <Filter>Header Files\Monsters</Filter>
+    </ClInclude>
+    <ClInclude Include="Monsters\monsterhead.h">
+      <Filter>Header Files\Monsters</Filter>
+    </ClInclude>
+    <ClInclude Include="Monsters\monstermissil.h">
+      <Filter>Header Files\Monsters</Filter>
+    </ClInclude>
+    <ClInclude Include="Spaces\spaceasteroid.h">
+      <Filter>Header Files\Spaces</Filter>
+    </ClInclude>
+    <ClInclude Include="Spaces\spaceshooter.h">
+      <Filter>Header Files\Spaces</Filter>
+    </ClInclude>
+    <ClInclude Include="Spaces\spacestation.h">
+      <Filter>Header Files\Spaces</Filter>
+    </ClInclude>
+    <ClInclude Include="Vulcans\vulcanbird.h">
+      <Filter>Header Files\Vulcans</Filter>
+    </ClInclude>
+    <ClInclude Include="Vulcans\vulcanlaser.h">
+      <Filter>Header Files\Vulcans</Filter>
+    </ClInclude>
+    <ClInclude Include="Vulcans\vulcanlava.h">
+      <Filter>Header Files\Vulcans</Filter>
+    </ClInclude>
+    <ClInclude Include="Vulcans\vulcanstation.h">
+      <Filter>Header Files\Vulcans</Filter>
+    </ClInclude>
+    <ClInclude Include="Vulcans\vulcantank.h">
+      <Filter>Header Files\Vulcans</Filter>
+    </ClInclude>
+    <ClInclude Include="Vulcans\vulcanvulcan.h">
+      <Filter>Header Files\Vulcans</Filter>
+    </ClInclude>
+    <ClInclude Include="Wars\ww2plane.h">
+      <Filter>Header Files\Wars</Filter>
+    </ClInclude>
+    <ClInclude Include="Wars\ww2planeb.h">
+      <Filter>Header Files\Wars</Filter>
+    </ClInclude>
+    <ClInclude Include="Wars\ww2ship.h">
+      <Filter>Header Files\Wars</Filter>
+    </ClInclude>
+    <ClInclude Include="Wars\ww2zeppelin.h">
+      <Filter>Header Files\Wars</Filter>
+    </ClInclude>
+    <ClInclude Include="Intros\introstar.h">
+      <Filter>Header Files\Intros</Filter>
+    </ClInclude>
+    <ClInclude Include="Stages\stage1.h">
+      <Filter>Header Files\Stages</Filter>
+    </ClInclude>
+    <ClInclude Include="Stages\stage1endboss.h">
+      <Filter>Header Files\Stages</Filter>
+    </ClInclude>
+    <ClInclude Include="Stages\stage6endboss.h">
+      <Filter>Header Files\Stages</Filter>
+    </ClInclude>
+    <ClInclude Include="Stages\stage4middleboss.h">
+      <Filter>Header Files\Stages</Filter>
+    </ClInclude>
+    <ClInclude Include="Stages\stage1middleboss.h">
+      <Filter>Header Files\Stages</Filter>
+    </ClInclude>
+    <ClInclude Include="Stages\stage1middlebossb.h">
+      <Filter>Header Files\Stages</Filter>
+    </ClInclude>
+    <ClInclude Include="Stages\stage1middlebossc.h">
+      <Filter>Header Files\Stages</Filter>
+    </ClInclude>
+    <ClInclude Include="Stages\stage2.h">
+      <Filter>Header Files\Stages</Filter>
+    </ClInclude>
+    <ClInclude Include="Stages\stage2endboss.h">
+      <Filter>Header Files\Stages</Filter>
+    </ClInclude>
+    <ClInclude Include="Stages\stage4endboss.h">
+      <Filter>Header Files\Stages</Filter>
+    </ClInclude>
+    <ClInclude Include="Stages\stage2object.h">
+      <Filter>Header Files\Stages</Filter>
+    </ClInclude>
+    <ClInclude Include="Stages\stage3.h">
+      <Filter>Header Files\Stages</Filter>
+    </ClInclude>
+    <ClInclude Include="Stages\stage3endboss.h">
+      <Filter>Header Files\Stages</Filter>
+    </ClInclude>
+    <ClInclude Include="Stages\stage7middleboss.h">
+      <Filter>Header Files\Stages</Filter>
+    </ClInclude>
+    <ClInclude Include="Stages\stage3laser.h">
+      <Filter>Header Files\Stages</Filter>
+    </ClInclude>
+    <ClInclude Include="Stages\stage4.h">
+      <Filter>Header Files\Stages</Filter>
+    </ClInclude>
+    <ClInclude Include="Stages\stage4endbossb.h">
+      <Filter>Header Files\Stages</Filter>
+    </ClInclude>
+    <ClInclude Include="Stages\stage4object.h">
+      <Filter>Header Files\Stages</Filter>
+    </ClInclude>
+    <ClInclude Include="Stages\stage5endboss.h">
+      <Filter>Header Files\Stages</Filter>
+    </ClInclude>
+    <ClInclude Include="Stages\stage5missile.h">
+      <Filter>Header Files\Stages</Filter>
+    </ClInclude>
+    <ClInclude Include="Stages\stage6.h">
+      <Filter>Header Files\Stages</Filter>
+    </ClInclude>
+    <ClInclude Include="Stages\stage6endbossb.h">
+      <Filter>Header Files\Stages</Filter>
+    </ClInclude>
+    <ClInclude Include="Stages\stage6object.h">
+      <Filter>Header Files\Stages</Filter>
+    </ClInclude>
+    <ClInclude Include="Stages\stage7.h">
+      <Filter>Header Files\Stages</Filter>
+    </ClInclude>
+    <ClInclude Include="Stages\stage7endboss.h">
+      <Filter>Header Files\Stages</Filter>
+    </ClInclude>
+    <ClInclude Include="Stages\stage7object.h">
+      <Filter>Header Files\Stages</Filter>
+    </ClInclude>
+    <ClInclude Include="Stages\stage8.h">
+      <Filter>Header Files\Stages</Filter>
+    </ClInclude>
+    <ClInclude Include="Stages\stage8bossa.h">
+      <Filter>Header Files\Stages</Filter>
+    </ClInclude>
+    <ClInclude Include="Stages\stage8bossb.h">
+      <Filter>Header Files\Stages</Filter>
+    </ClInclude>
+    <ClInclude Include="Stages\stage8bossc.h">
+      <Filter>Header Files\Stages</Filter>
+    </ClInclude>
+    <ClInclude Include="Stages\stage8lateral.h">
+      <Filter>Header Files\Stages</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

@@ -1,11 +1,9 @@
-unsigned char UpdateStage2Object(enemy *en)
+unsigned char UpdateStage2Object( enemy *en )
 {
-	if(en->enemyframe>80)
+	if( en->enemyframe > 80 )
 	{
-		disablescroll=0;
+		disablescroll = 0;
 		return 0;
 	}
 	else return 1;
 }
-
-

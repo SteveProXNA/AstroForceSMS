@@ -1,114 +1,114 @@
-void DrawPlayerShoot(playershoot *ps)
+void DrawPlayerShoot( playershoot *ps )
 {
-	if(ps->playershoottype==PLAYERSHOOT_NORMAL)
+	if( ps->playershoottype == PLAYERSHOOT_NORMAL )
 	{
-		if(playershootlevel==1)
+		if( playershootlevel == 1 )
 		{
-			SMS_addSprite(ps->playershootx,ps->playershooty,PLAYERSHOOTBASE+1);
-			SMS_addSprite(ps->playershootx,ps->playershooty+8,PLAYERSHOOTBASE+2);
-			SMS_addSprite(ps->playershootx+8,ps->playershooty,PLAYERSHOOTBASE+1);
-			SMS_addSprite(ps->playershootx+8,ps->playershooty+8,PLAYERSHOOTBASE+2);
+			devkit_SMS_addSprite( ps->playershootx, ps->playershooty, PLAYERSHOOTBASE + 1 );
+			devkit_SMS_addSprite( ps->playershootx, ps->playershooty + 8, PLAYERSHOOTBASE + 2 );
+			devkit_SMS_addSprite( ps->playershootx + 8, ps->playershooty, PLAYERSHOOTBASE + 1 );
+			devkit_SMS_addSprite( ps->playershootx + 8, ps->playershooty + 8, PLAYERSHOOTBASE + 2 );
 		}
 		else
 		{
-			SMS_addSprite(ps->playershootx+4,ps->playershooty,PLAYERSHOOTBASE+1);
-			SMS_addSprite(ps->playershootx+4,ps->playershooty+8,PLAYERSHOOTBASE+2);
+			devkit_SMS_addSprite( ps->playershootx + 4, ps->playershooty, PLAYERSHOOTBASE + 1 );
+			devkit_SMS_addSprite( ps->playershootx + 4, ps->playershooty + 8, PLAYERSHOOTBASE + 2 );
 		}
 	}
 	else
 	{
-		if(playershootlevel==1)
+		if( playershootlevel == 1 )
 		{
-			SMS_addSprite(ps->playershootx-2,ps->playershooty,PLAYERSHOOTBASE+ps->playershoottype);
-			SMS_addSprite(ps->playershootx+10,ps->playershooty,PLAYERSHOOTBASE+ps->playershoottype);
+			devkit_SMS_addSprite( ps->playershootx - 2, ps->playershooty, PLAYERSHOOTBASE + ps->playershoottype );
+			devkit_SMS_addSprite( ps->playershootx + 10, ps->playershooty, PLAYERSHOOTBASE + ps->playershoottype );
 		}
-		else SMS_addSprite(ps->playershootx+4,ps->playershooty,PLAYERSHOOTBASE+ps->playershoottype);
+		else devkit_SMS_addSprite( ps->playershootx + 4, ps->playershooty, PLAYERSHOOTBASE + ps->playershoottype );
 	}
 }
-		
+
 // Load playershootsprites
 void InitPlayershootSprites()
 {
-	LoadSprite(playershoot_psgcompr, PLAYERSHOOTBASE,playershoot_psgcompr_bank);
+	LoadSprite( playershoot_psgcompr, PLAYERSHOOTBASE, playershoot_psgcompr_bank );
 }
 
 // Remove playershoot
-void RemovePlayershoot(signed char a)
+void RemovePlayershoot( signed char a )
 {
-	playershoot *psa,*psb;
-	
+	playershoot *psa, *psb;
+
 	// Remove list of sprites
-	if(a<numplayershoots-1)
+	if( a < numplayershoots - 1 )
 	{
-		psa=&playershoots[a];
-		psb=&playershoots[numplayershoots-1];
-		
-		psa->playershootx=psb->playershootx;
-		psa->playershooty=psb->playershooty;
-		psa->playershoottype=psb->playershoottype;
-		psa->playershootvelx=psb->playershootvelx;
-		psa->playershootvely=psb->playershootvely;
+		psa = &playershoots[ a ];
+		psb = &playershoots[ numplayershoots - 1 ];
+
+		psa->playershootx = psb->playershootx;
+		psa->playershooty = psb->playershooty;
+		psa->playershoottype = psb->playershoottype;
+		psa->playershootvelx = psb->playershootvelx;
+		psa->playershootvely = psb->playershootvely;
 	}
 	// Bajamos el numero de player shoots
 	numplayershoots--;
 }
 
 // Update player shoot
-void UpdatePlayershoot(unsigned int a)
+void UpdatePlayershoot( unsigned int a )
 {
 	enemy *en;
 	signed char b;
-	
+
 	// Get player shoot
-	playershoot *ps=&playershoots[a];
+	playershoot *ps = &playershoots[ a ];
 
 	// outside
-	if((ps->playershooty<SPEEDPLAYERSHOOT_NORMAL)||(ps->playershootx<SPEEDPLAYERSHOOT_SIDE)||(ps->playershootx>248-SPEEDPLAYERSHOOT_SIDE))
-		RemovePlayershoot(a);	
-	else 
+	if( ( ps->playershooty < SPEEDPLAYERSHOOT_NORMAL ) || ( ps->playershootx < SPEEDPLAYERSHOOT_SIDE ) || ( ps->playershootx > 248 - SPEEDPLAYERSHOOT_SIDE ) )
+		RemovePlayershoot( a );
+	else
 	{
 		// Move
-		ps->playershootx+=ps->playershootvelx;
-		ps->playershooty-=ps->playershootvely;
+		ps->playershootx += ps->playershootvelx;
+		ps->playershooty -= ps->playershootvely;
 
 		// Collision
-		if(stageframe2mod==0)
-		if(CheckMapCollision(ps->playershootx+8,ps->playershooty+4))
-		{
-			InitExplosion(ps->playershootx+4,ps->playershooty+4,0);
-			RemovePlayershoot(a);
-		}
-		
-		// Collision with enemies
-		else
-		{
-			if(numenemies>0)
+		if( stageframe2mod == 0 )
+			if( CheckMapCollision( ps->playershootx + 8, ps->playershooty + 4 ) )
 			{
-				for(b=numenemies-1;b>=0;b--)
+				InitExplosion( ps->playershootx + 4, ps->playershooty + 4, 0 );
+				RemovePlayershoot( a );
+			}
+
+		// Collision with enemies
+			else
+			{
+				if( numenemies > 0 )
 				{
-					en=&enemies[b];
-					if(checkEnemyPlayerShoot(en,ps)==1)
+					for( b = numenemies - 1; b >= 0; b-- )
 					{
-						if(en->enemyenergy<=1+playershootlevel)
-							KillEnemy(b);
-						else
+						en = &enemies[ b ];
+						if( checkEnemyPlayerShoot( en, ps ) == 1 )
 						{
-							en->enemyenergy-=(1+playershootlevel);
-							InitExplosion(ps->playershootx+4,ps->playershooty+4,0);
+							if( en->enemyenergy <= 1 + playershootlevel )
+								KillEnemy( b );
+							else
+							{
+								en->enemyenergy -= ( 1 + playershootlevel );
+								InitExplosion( ps->playershootx + 4, ps->playershooty + 4, 0 );
+							}
+
+							// Remove in all cases
+							RemovePlayershoot( a );
+
+							// No more collisions nor draws
+							return;
 						}
-					
-						// Remove in all cases
-						RemovePlayershoot(a);
-						
-						// No more collisions nor draws
-						return;
-					}	
+					}
 				}
 			}
-		}
-		
+
 		// Draw 
-		DrawPlayerShoot(ps);
+		DrawPlayerShoot( ps );
 	}
 }
 
@@ -118,35 +118,35 @@ void UpdatePlayershoots()
 	signed char a;
 
 	// Do movement
-	if(numplayershoots>0)
-		for(a=numplayershoots-1;a>=0;a--)
-			UpdatePlayershoot(a);
+	if( numplayershoots > 0 )
+		for( a = numplayershoots - 1; a >= 0; a-- )
+			UpdatePlayershoot( a );
 }
 
 // Create a player shoot
-void InitPlayershoot(unsigned char x, unsigned char y,unsigned char t)
+void InitPlayershoot( unsigned char x, unsigned char y, unsigned char t )
 {
 	playershoot *ps;
-	
+
 	// Get next item
-	ps=&playershoots[numplayershoots++];
-	
+	ps = &playershoots[ numplayershoots++ ];
+
 	// Config
-	ps->playershootx=x;
-	ps->playershooty=y;
-	ps->playershoottype=t;
+	ps->playershootx = x;
+	ps->playershooty = y;
+	ps->playershoottype = t;
 
 	// Get speed
-	changeBank(FIXEDBANKSLOT);
-	ps->playershootvelx=playershootspeedsx[t];
-	ps->playershootvely=playershootspeedsy[t];
+	changeBank( FIXEDBANKSLOT );
+	ps->playershootvelx = playershootspeedsx[ t ];
+	ps->playershootvely = playershootspeedsy[ t ];
 }
 
 void InitPlayershoots()
 {
 	// Playershoot sprites
 	InitPlayershootSprites();
-	
+
 	// Reset counter
-	numplayershoots=0;
+	numplayershoots = 0;
 }

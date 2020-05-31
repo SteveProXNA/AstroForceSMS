@@ -1,0 +1,60 @@
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Zilog Z80 / Hitachi HD64180), page 1.
+Hexadecimal [16-Bits]
+
+Symbol Table
+
+    .__.$$$.                                                    =  2710 L
+    .__.ABS.                                                    =  0000 G
+    .__.CPU.                                                    =  0000 L
+    .__.H$L.                                                    =  0000 L
+    _PSGCancelLoop                                                 **** GX
+    _PSGFrame                                                      **** GX
+    _PSGGetStatus                                                  **** GX
+    _PSGPlay                                                       **** GX
+    _PSGPlayNoRepeat                                               **** GX
+    _PSGRestoreVolumes                                             **** GX
+    _PSGResume                                                     **** GX
+    _PSGSFXCancelLoop                                              **** GX
+    _PSGSFXFrame                                                   **** GX
+    _PSGSFXGetStatus                                               **** GX
+    _PSGSFXPlay                                                    **** GX
+    _PSGSFXPlayLoop                                                **** GX
+    _PSGSFXStop                                                    **** GX
+    _PSGSetMusicVolumeAttenuation                                  **** GX
+    _PSGSilenceChannels                                            **** GX
+    _PSGStop                                                       **** GX
+  0 _devkit_PSGCancelLoop                                          000A GR
+  0 _devkit_PSGFrame                                               0065 GR
+  0 _devkit_PSGGetStatus                                           001D GR
+  0 _devkit_PSGPlay                                                0000 GR
+  0 _devkit_PSGPlayNoRepeat                                        000D GR
+  0 _devkit_PSGRestoreVolumes                                      0062 GR
+  0 _devkit_PSGResume                                              001A GR
+  0 _devkit_PSGSFXCancelLoop                                       0056 GR
+  0 _devkit_PSGSFXFrame                                            0068 GR
+  0 _devkit_PSGSFXGetStatus                                        005C GR
+  0 _devkit_PSGSFXPlay                                             002C GR
+  0 _devkit_PSGSFXPlayLoop                                         0041 GR
+  0 _devkit_PSGSFXStop                                             0059 GR
+  0 _devkit_PSGSetMusicVolumeAttenuation                           0020 GR
+  0 _devkit_PSGSilenceChannels                                     005F GR
+  0 _devkit_PSGStop                                                0017 GR
+  0 _devkit_SFX_CHANNEL2                                           006B GR
+  0 _devkit_SFX_CHANNEL3                                           006E GR
+  0 _devkit_SFX_CHANNELS2AND3                                      0071 GR
+
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Zilog Z80 / Hitachi HD64180), page 2.
+Hexadecimal [16-Bits]
+
+Area Table
+
+   0 _CODE                                      size   74   flags    0
+   1 _DATA                                      size    0   flags    0
+   2 _INITIALIZED                               size    0   flags    0
+   3 _DABS                                      size    0   flags    8
+   4 _HOME                                      size    0   flags    0
+   5 _GSINIT                                    size    0   flags    0
+   6 _GSFINAL                                   size    0   flags    0
+   7 _INITIALIZER                               size    0   flags    0
+   8 _CABS                                      size    0   flags    8
+

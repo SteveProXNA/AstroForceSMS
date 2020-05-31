@@ -1,14 +1,14 @@
-void UpdateStage1MiddleBoss1(enemy *en)
+void UpdateStage1MiddleBoss1( enemy *en )
 {
 	// Sinus movement
-	DoSkullSinusMovement(en,2,0);
-	
+	DoSkullSinusMovement( en, 2, 0 );
+
 	// Do shooting
-	DoStage1BossDirectionShoots(en);
+	DoStage1BossDirectionShoots( en );
 
 	// Ball
-	if(en->enemyframe%20==16)
-		InitEnemy(en->enemyposx+12,en->enemyposy+24,STAGE1MIDDLEBOSSB);
+	if( en->enemyframe % 20 == 16 )
+		InitEnemy( en->enemyposx + 12, en->enemyposy + 24, STAGE1MIDDLEBOSSB );
 }
 
 void FinishStage1MiddleBoss()
@@ -17,16 +17,16 @@ void FinishStage1MiddleBoss()
 	updatescrollact();
 }
 
-unsigned char UpdateStage1MiddleBoss(enemy *en)
+unsigned char UpdateStage1MiddleBoss( enemy *en )
 {
 	// Draw
-	DrawSpriteArray(STAGE1MIDDLEBOSSBASE,en->enemyposx,en->enemyposy,40,32);
-	
+	DrawSpriteArray( STAGE1MIDDLEBOSSBASE, en->enemyposx, en->enemyposy, 40, 32 );
+
 	// Movement
-	if(en->enemyparama==0)
-		DoCommonBossAppearingFunction(en);
+	if( en->enemyparama == 0 )
+		DoCommonBossAppearingFunction( en );
 	else
-		UpdateStage1MiddleBoss1(en);
+		UpdateStage1MiddleBoss1( en );
 
 	// Return
 	return 1;

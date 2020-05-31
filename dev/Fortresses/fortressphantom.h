@@ -1,22 +1,22 @@
-void InitFortressPhantom(enemy *en)
+void InitFortressPhantom( enemy *en )
 {
-	GetEnemyDirection(en);
+	GetEnemyDirection( en );
 }
 
-unsigned char UpdateFortressPhantom(enemy *en)
+unsigned char UpdateFortressPhantom( enemy *en )
 {
-	if(en->enemyframe>=16)
+	if( en->enemyframe >= 16 )
 	{
-		if(TestSkullOut(en))
+		if( TestSkullOut( en ) )
 			return 0;
 		else
 		{
-			en->enemyposx+=en->enemyparama;
-			en->enemyposy+=en->enemyparamb;
-			DrawQuadSprite(en->enemyposx,en->enemyposy,FORTRESSPHANTOMBASE+12);
+			en->enemyposx += en->enemyparama;
+			en->enemyposy += en->enemyparamb;
+			DrawQuadSprite( en->enemyposx, en->enemyposy, FORTRESSPHANTOMBASE + 12 );
 		}
 	}
-	else DrawQuadSprite(en->enemyposx,en->enemyposy,FORTRESSPHANTOMBASE+((en->enemyframe>>2)<<2));
+	else DrawQuadSprite( en->enemyposx, en->enemyposy, FORTRESSPHANTOMBASE + ( ( en->enemyframe >> 2 ) << 2 ) );
 	return 1;
 }
 

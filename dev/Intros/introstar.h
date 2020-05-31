@@ -1,12 +1,12 @@
-void InitIntroStar(enemy *en)
+void InitIntroStar( enemy *en )
 {
-	en->enemyparama=(myRand()%3)+3;
+	en->enemyparama = ( myRand() % 3 ) + 3;
 }
 
-unsigned char UpdateIntroStar(enemy *en)
+unsigned char UpdateIntroStar( enemy *en )
 {
-	SMS_addSprite(en->enemyposx,en->enemyposy,INTROSTARBASE);
-	en->enemyposx-=en->enemyparama;
+	devkit_SMS_addSprite( en->enemyposx, en->enemyposy, INTROSTARBASE );
+	en->enemyposx -= en->enemyparama;
 	return 1;
 }
 

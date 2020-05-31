@@ -1,62 +1,66 @@
 #include "..\defines.h"
-#include "bank15.c"
+
+#ifdef _CONSOLE
+#pragma warning(disable: 4047)
+#else
+#endif
 
 // Player shoots speeds
-const signed char playershootspeedsx[]={-SPEEDPLAYERSHOOT_SIDE,0,0,SPEEDPLAYERSHOOT_SIDE};
-const signed char playershootspeedsy[]={SPEEDPLAYERSHOOT_SIDE_VERTICAL,SPEEDPLAYERSHOOT_NORMAL,0,SPEEDPLAYERSHOOT_SIDE_VERTICAL};
+const signed char playershootspeedsx[] = { -SPEEDPLAYERSHOOT_SIDE,0,0,SPEEDPLAYERSHOOT_SIDE };
+const signed char playershootspeedsy[] = { SPEEDPLAYERSHOOT_SIDE_VERTICAL,SPEEDPLAYERSHOOT_NORMAL,0,SPEEDPLAYERSHOOT_SIDE_VERTICAL };
 
 // Final stage effects
-const unsigned char stage6_fade_pink[]={0x22,0x12,0x11,0x01,0x00,0x01,0x11,0x12};
-const unsigned char stage6_fade_blue[]={0x20,0x10,0x00,0x00,0x00,0x00,0x10,0x20};
+const unsigned char stage6_fade_pink[] = { 0x22,0x12,0x11,0x01,0x00,0x01,0x11,0x12 };
+const unsigned char stage6_fade_blue[] = { 0x20,0x10,0x00,0x00,0x00,0x00,0x10,0x20 };
 
 // Skull shooting patterns
-const signed char skullshootvelx[]={-3,-2,-1,0,1,2,3};
-const signed char skullshootvely[]={1,2,3,4,3,2,1};
-const signed char skullbshootvelx[]={4,3,2,1,0,-1,-2,-3,-4,-3,-2,-1,0,1,2,3};
-const signed char skullbshootvely[]={0,1,2,3,4,3,2,1,0,-1,-2,-3,-4,-3,-2,-1};
+const signed char skullshootvelx[] = { -3,-2,-1,0,1,2,3 };
+const signed char skullshootvely[] = { 1,2,3,4,3,2,1 };
+const signed char skullbshootvelx[] = { 4,3,2,1,0,-1,-2,-3,-4,-3,-2,-1,0,1,2,3 };
+const signed char skullbshootvely[] = { 0,1,2,3,4,3,2,1,0,-1,-2,-3,-4,-3,-2,-1 };
 
 // Paleta por defecto
-const unsigned char palette_bin[]={0x00,0x3F,0x00,0x10,0x3A,0x38,0x3E,0x0C,0x08,0x04,0x1F,0x2F,0x1B,0x07,0x02,0x16};
+const unsigned char palette_bin[] = { 0x00,0x3F,0x00,0x10,0x3A,0x38,0x3E,0x0C,0x08,0x04,0x1F,0x2F,0x1B,0x07,0x02,0x16 };
 
 // Stage 4
-const unsigned char stage4_stormpalette[]={0x02,0x02,0x02,0x02,0x3f,0x28,0x14,0x02,0x02,0x02,0x02,0x02,0x3f,0x28,0x14,0x02};
-const unsigned char stage4_seapalette[]={0x38,0x28,0x20,0x28};
+const unsigned char stage4_stormpalette[] = { 0x02,0x02,0x02,0x02,0x3f,0x28,0x14,0x02,0x02,0x02,0x02,0x02,0x3f,0x28,0x14,0x02 };
+const unsigned char stage4_seapalette[] = { 0x38,0x28,0x20,0x28 };
 
 // Stage 1
-const unsigned char stage1_flashpalette[]={0x21,0x20,0x10,0x00,0x00,0x10,0x20,0x21};
+const unsigned char stage1_flashpalette[] = { 0x21,0x20,0x10,0x00,0x00,0x10,0x20,0x21 };
 
 // Arac moving
-const unsigned char aracmovingx[]={2,6,7,3,2,6,1,5};
-const unsigned char aracmovingy[]={5,5,2,6,3,5,2,4};
-const unsigned int aracmovingt[]={45,20,40,30,45,60,30,20};
+const unsigned char aracmovingx[] = { 2,6,7,3,2,6,1,5 };
+const unsigned char aracmovingy[] = { 5,5,2,6,3,5,2,4 };
+const unsigned int aracmovingt[] = { 45,20,40,30,45,60,30,20 };
 
 // Cross A moving
-const unsigned char crossamovingx[]={4,6,2,5,6,4,2,3};
-const unsigned char crossamovingy[]={6,3,4,6,4,1,3,4};
-const unsigned int crossamovingt[]={60,80,70,30,50,20,40,70};
+const unsigned char crossamovingx[] = { 4,6,2,5,6,4,2,3 };
+const unsigned char crossamovingy[] = { 6,3,4,6,4,1,3,4 };
+const unsigned int crossamovingt[] = { 60,80,70,30,50,20,40,70 };
 
 // Cross B moving
-const unsigned char crossbmovingx[]={4,2,4,6,3,6,5,5};
-const unsigned char crossbmovingy[]={6,4,3,2,6,5,3,3};
-const unsigned int crossbmovingt[]={60,80,70,30,50,20,40,70};
+const unsigned char crossbmovingx[] = { 4,2,4,6,3,6,5,5 };
+const unsigned char crossbmovingy[] = { 6,4,3,2,6,5,3,3 };
+const unsigned int crossbmovingt[] = { 60,80,70,30,50,20,40,70 };
 
 // Fire end boss pattern
-const signed char stage2endbossshootpatternx[]={-5,-3,-1,1,3,5};
-const signed char stage2endbossshootpatterny[]={1,3,5,5,3,1};
+const signed char stage2endbossshootpatternx[] = { -5,-3,-1,1,3,5 };
+const signed char stage2endbossshootpatterny[] = { 1,3,5,5,3,1 };
 
 // Lasers for enemy of stage 3
-const unsigned char stage3enemylaserposx[]={20,40,40,40,20,0,0,0};
-const unsigned char stage3enemylaserposy[]={0,0,20,40,40,40,20,0};
-const unsigned char stage3laservelx[]={8,12,14,12,8,4,2,4};
-const unsigned char stage3laservely[]={2,4,8,12,14,12,8,4};
+const unsigned char stage3enemylaserposx[] = { 20,40,40,40,20,0,0,0 };
+const unsigned char stage3enemylaserposy[] = { 0,0,20,40,40,40,20,0 };
+const unsigned char stage3laservelx[] = { 8,12,14,12,8,4,2,4 };
+const unsigned char stage3laservely[] = { 2,4,8,12,14,12,8,4 };
 
 // Balls
-const unsigned char Stage1MiddleBossBPatternX[]={1,3,5,7,9,11,13,15};
-const unsigned char Stage1MiddleBossBPatternY[]={2,3,4,5,5,4,3,2};
+const unsigned char Stage1MiddleBossBPatternX[] = { 1,3,5,7,9,11,13,15 };
+const unsigned char Stage1MiddleBossBPatternY[] = { 2,3,4,5,5,4,3,2 };
 
 // 0 to 32, 32 amplitude
-const unsigned char sinustable[]=
-{128,131,134,137,141,144,147,150,
+const unsigned char sinustable[] =
+{ 128,131,134,137,141,144,147,150,
 153,156,159,162,165,168,171,174,
 177,180,183,186,188,191,194,196,
 199,202,204,207,209,212,214,216,
@@ -87,15 +91,15 @@ const unsigned char sinustable[]=
 37,40,42,44,47,49,52,54,
 57,60,62,65,68,70,73,76,
 79,82,85,88,91,94,97,100,
-103,106,109,112,115,119,122,125};	
+103,106,109,112,115,119,122,125 };
 
 //////////////////////////////////////////////////
 // JUKEBOX
 
-const char *jukebox_songs[]=
+const char *jukebox_songs[] =
 {
 	logo_psg,
-	intro1_psg,
+	intro3_psg,//intro1_psg,
 	intro3_psg,
 	intro2_psg,
 	select_psg,
@@ -117,12 +121,12 @@ const char *jukebox_songs[]=
 	gameover_psg
 };
 
-const unsigned char jukebox_repeat[]={0,1,0,0,1,1,1,1,1,1,1,1,0,1,1,1,0,1,1,0,0};
+const unsigned char jukebox_repeat[] = { 0,1,0,0,1,1,1,1,1,1,1,1,0,1,1,1,0,1,1,0,0 };
 
-const char jukebox_banks[]=
+const char jukebox_banks[] =
 {
 	logo_psg_bank,
-	intro1_psg_bank,
+	intro3_psg_bank,//intro1_psg_bank,
 	intro3_psg_bank,
 	intro2_psg_bank,
 	select_psg_bank,
@@ -144,7 +148,7 @@ const char jukebox_banks[]=
 	gameover_psg_bank
 };
 
-const unsigned char *jukebox_names[]=
+const unsigned char *jukebox_names[] =
 {
 	"TITLE SCREEN ",
 	"INTRO PART 1 ",
@@ -169,18 +173,18 @@ const unsigned char *jukebox_names[]=
 	"BAD ENDING   "
 };
 
-const unsigned char selectorstatebasetiles[]={4,32,36,64,68};
-const unsigned char *selectornamestage[]={" JUNGLE ","  CITY  "," VULCAN ","AIRBASE","  CAVE  ",};
-const unsigned char selectormarkx[]={0,5,0,5};
-const unsigned char selectormarky[]={14,14,9,9};
-const unsigned char selectormarkt[]={17,25,9,1};
+const unsigned char selectorstatebasetiles[] = { 4,32,36,64,68 };
+const unsigned char *selectornamestage[] = { " JUNGLE ","  CITY  "," VULCAN ","AIRBASE","  CAVE  ", };
+const unsigned char selectormarkx[] = { 0,5,0,5 };
+const unsigned char selectormarky[] = { 14,14,9,9 };
+const unsigned char selectormarkt[] = { 17,25,9,1 };
 
 //////////////////////////////////////////////////
 // INTRO 4 SCRIPT
 
-const unsigned char intro4script[]=
+const unsigned char intro4script[] =
 {
-	10,SCRIPT_SETEXPLOSION,100,45,1,	
+	10,SCRIPT_SETEXPLOSION,100,45,1,
 	11,SCRIPT_SETEXPLOSION,100,85,1,
 	12,SCRIPT_SETEXPLOSION,120,65,1,
 	13,SCRIPT_SETEXPLOSION,140,45,1,
@@ -239,13 +243,13 @@ const unsigned char intro4script[]=
 	45,SCRIPT_SETPALETTE,0,0x39,0,
 	45,SCRIPT_SETPALETTE,0,0x15,0,
 	45,SCRIPT_SETPALETTE,0,0x00,0,
-	46,SCRIPT_END,0,0,0};
+	46,SCRIPT_END,0,0,0 };
 
-	
+
 //////////////////////////////////////////////////
 // INTRO 1 SCRIPT
 
-const unsigned char intro1script[]=
+const unsigned char intro1script[] =
 {
 	12,SCRIPT_SETLABEL,0,14,250,
 	12,SCRIPT_SETLABEL,1,16,250,
@@ -296,12 +300,12 @@ const unsigned char intro1script[]=
 	122,SCRIPT_SETEXPLOSION,120,65,1,
 	123,SCRIPT_SETEXPLOSION,140,45,1,
 	124,SCRIPT_SETPALETTE,6,0X37,0,
-	125,SCRIPT_END,0,0,0};
+	125,SCRIPT_END,0,0,0 };
 
 //////////////////////////////////////////////////
 // INTRO 1 LABELS
 
-const unsigned char *intro1labels[]=
+const unsigned char *intro1labels[] =
 {
 	"PLANET EARTH",
 	"THE YEAR IS 2084 AC",
@@ -314,44 +318,44 @@ const unsigned char *intro1labels[]=
 //////////////////////////////////////////////////
 // INTRO 2 SCRIPT
 
-const unsigned char intro2script[]=
+const unsigned char intro2script[] =
 {
 	1,SCRIPT_INITENEMY,INTROSIDEPLAYER,0,0,
-	78+16,SCRIPT_SETPALETTE,3,0x34,0,
-	78+16,SCRIPT_SETPALETTE,9,0x3e,0,
-	78+16,SCRIPT_SETPALETTE,2,0x39,0,
-	78+16,SCRIPT_SETPALETTE,7,0x15,0,
-	78+16,SCRIPT_SETPALETTE,8,0x15,0,
-	78+16,SCRIPT_SETPALETTE,12,0x15,0,
-	78+16,SCRIPT_SETPALETTE,15,0x15,0,
-	78+16,SCRIPT_SETPALETTE,0,0x15,0,
-	79+16,SCRIPT_SETPALETTE,3,0x39,0,
-	79+16,SCRIPT_SETPALETTE,9,0x3f,0,
-	79+16,SCRIPT_SETPALETTE,2,0x3e,0,
-	79+16,SCRIPT_SETPALETTE,7,0x3e,0,
-	79+16,SCRIPT_SETPALETTE,8,0x3e,0,
-	79+16,SCRIPT_SETPALETTE,12,0x3e,0,
-	79+16,SCRIPT_SETPALETTE,15,0x3e,0,
-	79+16,SCRIPT_SETPALETTE,0,0x3e,0,
-	80+16,SCRIPT_SETPALETTE,3,0x3f,0,
-	80+16,SCRIPT_SETPALETTE,9,0x3f,0,
-	80+16,SCRIPT_SETPALETTE,2,0x3f,0,
-	80+16,SCRIPT_SETPALETTE,7,0x3f,0,
-	80+16,SCRIPT_SETPALETTE,8,0x3f,0,
-	80+16,SCRIPT_SETPALETTE,12,0x3f,0,
-	80+16,SCRIPT_SETPALETTE,15,0x3f,0,
-	80+16,SCRIPT_SETPALETTE,0,0x3f,0,
-	81+16,SCRIPT_FILLBACKGROUND,0,0,0,
-	82+16,SCRIPT_KILLENEMIES,0,0,0,
-	83+16,SCRIPT_SETPALETTE,0,0x39,0,
-	84+16,SCRIPT_SETPALETTE,0,0x15,0,
-	85+16,SCRIPT_SETPALETTE,0,0x00,0,
-	86+16,SCRIPT_END,0,0,0};
+	78 + 16,SCRIPT_SETPALETTE,3,0x34,0,
+	78 + 16,SCRIPT_SETPALETTE,9,0x3e,0,
+	78 + 16,SCRIPT_SETPALETTE,2,0x39,0,
+	78 + 16,SCRIPT_SETPALETTE,7,0x15,0,
+	78 + 16,SCRIPT_SETPALETTE,8,0x15,0,
+	78 + 16,SCRIPT_SETPALETTE,12,0x15,0,
+	78 + 16,SCRIPT_SETPALETTE,15,0x15,0,
+	78 + 16,SCRIPT_SETPALETTE,0,0x15,0,
+	79 + 16,SCRIPT_SETPALETTE,3,0x39,0,
+	79 + 16,SCRIPT_SETPALETTE,9,0x3f,0,
+	79 + 16,SCRIPT_SETPALETTE,2,0x3e,0,
+	79 + 16,SCRIPT_SETPALETTE,7,0x3e,0,
+	79 + 16,SCRIPT_SETPALETTE,8,0x3e,0,
+	79 + 16,SCRIPT_SETPALETTE,12,0x3e,0,
+	79 + 16,SCRIPT_SETPALETTE,15,0x3e,0,
+	79 + 16,SCRIPT_SETPALETTE,0,0x3e,0,
+	80 + 16,SCRIPT_SETPALETTE,3,0x3f,0,
+	80 + 16,SCRIPT_SETPALETTE,9,0x3f,0,
+	80 + 16,SCRIPT_SETPALETTE,2,0x3f,0,
+	80 + 16,SCRIPT_SETPALETTE,7,0x3f,0,
+	80 + 16,SCRIPT_SETPALETTE,8,0x3f,0,
+	80 + 16,SCRIPT_SETPALETTE,12,0x3f,0,
+	80 + 16,SCRIPT_SETPALETTE,15,0x3f,0,
+	80 + 16,SCRIPT_SETPALETTE,0,0x3f,0,
+	81 + 16,SCRIPT_FILLBACKGROUND,0,0,0,
+	82 + 16,SCRIPT_KILLENEMIES,0,0,0,
+	83 + 16,SCRIPT_SETPALETTE,0,0x39,0,
+	84 + 16,SCRIPT_SETPALETTE,0,0x15,0,
+	85 + 16,SCRIPT_SETPALETTE,0,0x00,0,
+	86 + 16,SCRIPT_END,0,0,0 };
 
 ////////////////////////////////////////////////////
 // Intro 3 labels
 
-const unsigned char *intro3labels[]=
+const unsigned char *intro3labels[] =
 {
 	"ENEMIES ARE INVADING",
 	"AND DESTROYING OUR PLANET",
@@ -369,29 +373,29 @@ const unsigned char *intro3labels[]=
 ////////////////////////////////////////////////////
 // Intro 3 script
 
-const unsigned char intro3script[]=
+const unsigned char intro3script[] =
 {
 	1,SCRIPT_INITENEMY,WARNING,1,0,
 	27,SCRIPT_INITENEMY,INTRO3OBJECT,0,0,
 	35,SCRIPT_SETLABEL,0,13,250,
 	35,SCRIPT_SETLABEL,1,15,250,
 	35,SCRIPT_SETLABEL,2,17,250,
-	35+38,SCRIPT_SETLABEL,3,13,250,
-	35+38,SCRIPT_SETLABEL,4,15,250,
-	35+38,SCRIPT_SETLABEL,5,17,250,
-	35+38+41,SCRIPT_SETLABEL,6,13,250,
-	35+38+41,SCRIPT_SETLABEL,7,15,250,
-	35+38+41,SCRIPT_SETLABEL,8,17,250,
-	35+38+41+38,SCRIPT_SETLABEL,9,14,250,
-	35+38+41+38,SCRIPT_SETLABEL,10,16,250,
-	35+38+41+38+1,SCRIPT_END,0,0,0
+	35 + 38,SCRIPT_SETLABEL,3,13,250,
+	35 + 38,SCRIPT_SETLABEL,4,15,250,
+	35 + 38,SCRIPT_SETLABEL,5,17,250,
+	35 + 38 + 41,SCRIPT_SETLABEL,6,13,250,
+	35 + 38 + 41,SCRIPT_SETLABEL,7,15,250,
+	35 + 38 + 41,SCRIPT_SETLABEL,8,17,250,
+	35 + 38 + 41 + 38,SCRIPT_SETLABEL,9,14,250,
+	35 + 38 + 41 + 38,SCRIPT_SETLABEL,10,16,250,
+	35 + 38 + 41 + 38 + 1,SCRIPT_END,0,0,0
 };
-	
+
 //////////////////////////////////////////////////
 // ENDING LABELS
 
 // Finish stage
-const unsigned char *finishlabels[]=
+const unsigned char *finishlabels[] =
 {
 	"WELL DONE",
 	"FINALLY THE ENEMY",
@@ -418,7 +422,7 @@ const unsigned char *finishlabels[]=
 //////////////////////////////////////////////////
 // ENDING SCRIPT
 
-const unsigned char finishscript[]=
+const unsigned char finishscript[] =
 {
 	1,SCRIPT_INITENEMY,INTROSIDEPLAYER,1,32,
 	1,SCRIPT_INITENEMY,INTROSTAR,100,40,
@@ -477,9 +481,9 @@ const unsigned char finishscript[]=
 //////////////////////////////////////////////////
 // STAGES INIT INFO
 
-unsigned char stagedatamarks[]={6,4,3,1,7,2,0,5};
+unsigned char stagedatamarks[] = { 6,4,3,1,7,2,0,5 };
 
-unsigned char *stageinitdata[]=
+const unsigned char *stageinitdata[] =
 {
 	stage1palette_bin,stage1palette_bin_bank,
 	stage1tilemap_l,stage1tilemap_l_size,stage1tilemap_m,
@@ -488,7 +492,7 @@ unsigned char *stageinitdata[]=
 	stage2palette_bin,stage2palette_bin_bank,
 	stage2tilemap_l,stage2tilemap_l_size,stage2tilemap_m,
 	stage2_psg,stage2_psg_bank,1,
-	
+
 	stage3palette_bin,stage3palette_bin_bank,
 	stage3tilemap_l,stage3tilemap_l_size,stage3tilemap_m,
 	stage5_psg,stage5_psg_bank,1,
@@ -496,7 +500,7 @@ unsigned char *stageinitdata[]=
 	stage4palette_bin,stage4palette_bin_bank,
 	stage4tilemap_l,stage4tilemap_l_size,stage4tilemap_m,
 	stage4_psg,stage4_psg_bank,1,
-	
+
 	stage5palette_bin,stage5palette_bin_bank,
 	stage5tilemap_l,stage5tilemap_l_size,stage5tilemap_m,
 	stage3_psg,stage3_psg_bank,1,
@@ -504,20 +508,20 @@ unsigned char *stageinitdata[]=
 	stage6palette_bin,stage6palette_bin_bank,
 	stage6tilemap_l,stage6tilemap_l_size,stage6tilemap_m,
 	stage6_psg,stage6_psg_bank,1,
-	
+
 	stage7palette_bin,stage7palette_bin_bank,
 	stage7tilemap_l,stage7tilemap_l_size,stage7tilemap_m,
 	stage1_psg,stage1_psg_bank,1,
 
 	stage8palette_bin,stage8palette_bin_bank,
 	stage8tilemap_l,stage8tilemap_l_size,stage8tilemap_m,
-	stage8_psg,stage8_psg_bank,1	
+	stage8_psg,stage8_psg_bank,1
 };
 
 ////////////////////////////////////////////////////
 // WW2PLANES MOVEMENT
 
-const signed char ww2planemovementy[]=
+const signed char ww2planemovementy[] =
 {
 	-WW2PLANE_SPEED,
 	0,
@@ -529,7 +533,7 @@ const signed char ww2planemovementy[]=
 	-WW2PLANE_SPEED_HALF
 };
 
-const signed char ww2planemovementx[]=
+const signed char ww2planemovementx[] =
 {
 	0,
 	-WW2PLANE_SPEED,
@@ -541,7 +545,7 @@ const signed char ww2planemovementx[]=
 	WW2PLANE_SPEED_HALF
 };
 
-const unsigned char ww2plane_pattern_a[]=
+const unsigned char ww2plane_pattern_a[] =
 {
 	240,20,
 	45,WW2PLANE_DIR_LEFT,
@@ -552,7 +556,7 @@ const unsigned char ww2plane_pattern_a[]=
 	116,WW2PLANE_END
 };
 
-const unsigned char ww2plane_pattern_b[]=
+const unsigned char ww2plane_pattern_b[] =
 {
 	0,40,
 	45,WW2PLANE_DIR_RIGHT,
@@ -563,7 +567,7 @@ const unsigned char ww2plane_pattern_b[]=
 	116,WW2PLANE_END
 };
 
-const unsigned char ww2plane_pattern_c[]=
+const unsigned char ww2plane_pattern_c[] =
 {
 	200,192,
 	40,WW2PLANE_DIR_UP,
@@ -576,7 +580,7 @@ const unsigned char ww2plane_pattern_c[]=
 	121,WW2PLANE_END
 };
 
-const unsigned char ww2plane_pattern_d[]=
+const unsigned char ww2plane_pattern_d[] =
 {
 	40,192,
 	40,WW2PLANE_DIR_UP,
@@ -589,7 +593,7 @@ const unsigned char ww2plane_pattern_d[]=
 	121,WW2PLANE_END
 };
 
-const unsigned char ww2plane_pattern_e[]=
+const unsigned char ww2plane_pattern_e[] =
 {
 	96,0,
 	25,WW2PLANE_DIR_DOWN,
@@ -608,7 +612,7 @@ const unsigned char ww2plane_pattern_e[]=
 	136,WW2PLANE_END
 };
 
-const unsigned char ww2plane_pattern_f[]=
+const unsigned char ww2plane_pattern_f[] =
 {
 	144,0,
 	25,WW2PLANE_DIR_DOWN,
@@ -627,7 +631,7 @@ const unsigned char ww2plane_pattern_f[]=
 	136,WW2PLANE_END
 };
 
-const unsigned char *ww2plane_patterns[]=
+const unsigned char *ww2plane_patterns[] =
 {
 	ww2plane_pattern_a,
 	ww2plane_pattern_b,
@@ -641,7 +645,7 @@ const unsigned char *ww2plane_patterns[]=
 // STAGE 4 ENEMIES AND SPAWNERS
 
 #define SPAN_WAVESHIP80_SCRIPT 0
-const unsigned char span_waveship80_script[]=
+const unsigned char span_waveship80_script[] =
 {
 	1,SCRIPT_INITENEMY,WAVESHIP,80,0,
 	1,SCRIPT_LOOP,1,1,4,
@@ -649,7 +653,7 @@ const unsigned char span_waveship80_script[]=
 };
 
 #define SPAN_WAVESHIP160_SCRIPT 1
-const unsigned char span_waveship160_script[]=
+const unsigned char span_waveship160_script[] =
 {
 	1,SCRIPT_INITENEMY,WAVESHIP,220,0,
 	1,SCRIPT_LOOP,1,1,4,
@@ -657,7 +661,7 @@ const unsigned char span_waveship160_script[]=
 };
 
 #define SPAN_RANDOMRECTSHIP_SCRIPT 2
-const unsigned char span_randomrectship_script[]=
+const unsigned char span_randomrectship_script[] =
 {
 	1,SCRIPT_INITENEMY,RECTSHIP,160,0,
 	2,SCRIPT_INITENEMY,RECTSHIP,80,0,
@@ -669,7 +673,7 @@ const unsigned char span_randomrectship_script[]=
 };
 
 #define SPAN_RECTSHIPLATERAL_SCRIPT 3
-const unsigned char span_rectshiplateral_script[]=
+const unsigned char span_rectshiplateral_script[] =
 {
 	1,SCRIPT_INITENEMY,RECTSHIP,180,0,
 	5,SCRIPT_INITENEMY,RECTSHIP,80,0,
@@ -681,7 +685,7 @@ const unsigned char span_rectshiplateral_script[]=
 };
 
 #define SPAN_BOMBSHIPS_SCRIPT 4
-const unsigned char span_bombships_script[]=
+const unsigned char span_bombships_script[] =
 {
 	1,SCRIPT_INITENEMY,BOMBSHIPRIGHT,0,0,
 	3,SCRIPT_INITENEMY,BOMBSHIPLEFT,0,0,
@@ -690,7 +694,7 @@ const unsigned char span_bombships_script[]=
 };
 
 #define SPAN_RANDOMWAVESHIP_SCRIPT 5
-const unsigned char span_randomwaveship_script[]=
+const unsigned char span_randomwaveship_script[] =
 {
 	2,SCRIPT_INITENEMY,WAVESHIP,100,0,
 	5,SCRIPT_INITENEMY,WAVESHIP,200,0,
@@ -700,7 +704,7 @@ const unsigned char span_randomwaveship_script[]=
 };
 
 #define SPAN_TURNSHIPS_SCRIPT 6
-const unsigned char span_turnships_script[]=
+const unsigned char span_turnships_script[] =
 {
 	1,SCRIPT_INITENEMY,TURNSHIP,180,0,
 	2,SCRIPT_INITENEMY,TURNSHIP,180,0,
@@ -717,7 +721,7 @@ const unsigned char span_turnships_script[]=
 };
 
 #define SPAN_SPREADSHIPS_SCRIPT 7
-const unsigned char span_spreadships_script[]=
+const unsigned char span_spreadships_script[] =
 {
 	1,SCRIPT_INITENEMY,SPREADSHIP,0,0,
 	10,SCRIPT_LOOP,0,1,2,
@@ -729,7 +733,7 @@ const unsigned char span_spreadships_script[]=
 // STAGE 4 SCRIPTS
 
 #define STAGE4SCRIPTC 8
-const unsigned char stage4scriptc[]=
+const unsigned char stage4scriptc[] =
 {
 	1,SCRIPT_INITENEMY,WARNING,0,0,
 	16,SCRIPT_INITENEMY,STAGE4ENDBOSS,104,0,
@@ -738,7 +742,7 @@ const unsigned char stage4scriptc[]=
 };
 
 #define STAGE4SCRIPTB 9
-const unsigned char stage4scriptb[]=
+const unsigned char stage4scriptb[] =
 {
 	10,SCRIPT_INITSCRIPT,SPAN_TURNSHIPS_SCRIPT,0,0,
 	10,SCRIPT_INITSCRIPT,SPAN_SPREADSHIPS_SCRIPT,0,0,
@@ -746,7 +750,7 @@ const unsigned char stage4scriptb[]=
 	50,SCRIPT_INITSCRIPT,SPAN_WAVESHIP80_SCRIPT,0,0,
 	60,SCRIPT_INITSCRIPT,SPAN_BOMBSHIPS_SCRIPT,0,0,
 	70,SCRIPT_INITSCRIPT,SPAN_WAVESHIP160_SCRIPT,0,0,
-	
+
 	90,SCRIPT_INITSCRIPT,SPAN_RANDOMWAVESHIP_SCRIPT,0,0,
 	90,SCRIPT_INITSCRIPT,SPAN_SPREADSHIPS_SCRIPT,0,0,
 	90,SCRIPT_INITSCRIPT,SPAN_RECTSHIPLATERAL_SCRIPT,0,0,
@@ -754,7 +758,7 @@ const unsigned char stage4scriptb[]=
 	140,SCRIPT_INITSCRIPT,SPAN_TURNSHIPS_SCRIPT,0,0,
 	140,SCRIPT_INITSCRIPT,SPAN_RECTSHIPLATERAL_SCRIPT,0,0,
 	150,SCRIPT_INITSCRIPT,SPAN_SPREADSHIPS_SCRIPT,0,0,
-	
+
 	190,SCRIPT_INITSCRIPT,SPAN_RANDOMRECTSHIP_SCRIPT,0,0,
 	200,SCRIPT_INITSCRIPT,SPAN_SPREADSHIPS_SCRIPT,0,0,
 
@@ -763,7 +767,7 @@ const unsigned char stage4scriptb[]=
 };
 
 #define STAGE4SCRIPT 10
-const unsigned char stage4script[]=
+const unsigned char stage4script[] =
 {
 	12,SCRIPT_INITSCRIPT,SPAN_WAVESHIP80_SCRIPT,0,0,
 	20,SCRIPT_INITSCRIPT,SPAN_WAVESHIP160_SCRIPT,0,0,
@@ -782,7 +786,7 @@ const unsigned char stage4script[]=
 // STAGE 5 ENEMIES AND SPAWNERS
 
 #define SPAN_WW2PLANEA_SCRIPT 11
-const unsigned char span_ww2planea_script[]=
+const unsigned char span_ww2planea_script[] =
 {
 	1,SCRIPT_INITENEMY,WW2PLANE_TYPE_A,0,0,
 	2,SCRIPT_INITENEMY,WW2PLANE_TYPE_A,0,0,
@@ -796,7 +800,7 @@ const unsigned char span_ww2planea_script[]=
 };
 
 #define SPAN_WW2PLANEB_SCRIPT 12
-const unsigned char span_ww2planeb_script[]=
+const unsigned char span_ww2planeb_script[] =
 {
 	1,SCRIPT_INITENEMY,WW2PLANE_TYPE_C,0,0,
 	2,SCRIPT_INITENEMY,WW2PLANE_TYPE_C,0,0,
@@ -810,7 +814,7 @@ const unsigned char span_ww2planeb_script[]=
 };
 
 #define SPAN_WW2PLANEC_SCRIPT 13
-const unsigned char span_ww2planec_script[]=
+const unsigned char span_ww2planec_script[] =
 {
 	1,SCRIPT_INITENEMY,WW2PLANE_TYPE_E,0,0,
 	2,SCRIPT_INITENEMY,WW2PLANE_TYPE_F,0,0,
@@ -824,7 +828,7 @@ const unsigned char span_ww2planec_script[]=
 };
 
 #define SPAN_WW2ZEPPELINA_SCRIPT 14
-const unsigned char span_ww2zeppelina_script[]=
+const unsigned char span_ww2zeppelina_script[] =
 {
 	1,SCRIPT_INITENEMY,WW2ZEPPELIN,48,0,
 	9,SCRIPT_INITENEMY,WW2ZEPPELIN,160,0,
@@ -837,15 +841,15 @@ const unsigned char span_ww2zeppelina_script[]=
 // STAGE 5 SCRIPTS
 
 #define STAGE5SCRIPTC 15
-const unsigned char stage5scriptc[]=
+const unsigned char stage5scriptc[] =
 {
 	16,SCRIPT_INITENEMY,WARNING,0,0,
-	32,SCRIPT_INITENEMY,STAGE5ENDBOSS,168,224-56,
+	32,SCRIPT_INITENEMY,STAGE5ENDBOSS,168,224 - 56,
 	33,SCRIPT_END,0,0,0
 };
 
 #define STAGE5SCRIPTB 16
-const unsigned char stage5scriptb[]=
+const unsigned char stage5scriptb[] =
 {
 	15,SCRIPT_INITENEMY,WW2PLANEB,35,240,
 	17,SCRIPT_INITENEMY,WW2PLANEB,200,240,
@@ -859,17 +863,17 @@ const unsigned char stage5scriptb[]=
 
 	45,SCRIPT_INITENEMY,WW2ZEPPELIN,32,0,
 	45,SCRIPT_INITENEMY,WW2ZEPPELIN,200,0,
-	55,SCRIPT_INITSCRIPT,SPAN_WW2PLANEC_SCRIPT,0,0,	
-	
+	55,SCRIPT_INITSCRIPT,SPAN_WW2PLANEC_SCRIPT,0,0,
+
 	75,SCRIPT_INITENEMY,WW2PLANEB,90,240,
 	76,SCRIPT_INITENEMY,WW2PLANEB,220,240,
 	77,SCRIPT_INITENEMY,WW2PLANEB,160,240,
 	78,SCRIPT_INITENEMY,WW2PLANEB,50,240,
 
-	85,SCRIPT_INITSCRIPT,SPAN_WW2PLANEC_SCRIPT,0,0,	
-	
-	100,SCRIPT_INITSCRIPT,SPAN_WW2PLANEB_SCRIPT,0,0,	
-	
+	85,SCRIPT_INITSCRIPT,SPAN_WW2PLANEC_SCRIPT,0,0,
+
+	100,SCRIPT_INITSCRIPT,SPAN_WW2PLANEB_SCRIPT,0,0,
+
 	110,SCRIPT_INITENEMY,WW2PLANEB,80,240,
 	112,SCRIPT_INITENEMY,WW2PLANEB,120,240,
 	114,SCRIPT_INITENEMY,WW2PLANEB,160,240,
@@ -877,25 +881,25 @@ const unsigned char stage5scriptb[]=
 	122,SCRIPT_INITENEMY,WW2PLANEB,150,240,
 	124,SCRIPT_INITENEMY,WW2PLANEB,100,240,
 
-	135,SCRIPT_INITSCRIPT,SPAN_WW2PLANEB_SCRIPT,0,0,	
-	
+	135,SCRIPT_INITSCRIPT,SPAN_WW2PLANEB_SCRIPT,0,0,
+
 	150,SCRIPT_INITENEMY,WW2PLANEB,200,240,
 	152,SCRIPT_INITENEMY,WW2PLANEB,160,240,
 	154,SCRIPT_INITENEMY,WW2PLANEB,120,240,
 	156,SCRIPT_INITENEMY,WW2PLANEB,80,240,
 
-	160,SCRIPT_INITSCRIPT,SPAN_WW2PLANEC_SCRIPT,0,0,	
-	
+	160,SCRIPT_INITSCRIPT,SPAN_WW2PLANEC_SCRIPT,0,0,
+
 	182,SCRIPT_INITENEMY,WW2ZEPPELIN,32,0,
 	182,SCRIPT_INITENEMY,WW2ZEPPELIN,200,0,
-	192,SCRIPT_INITSCRIPT,SPAN_WW2PLANEC_SCRIPT,0,0,	
-	
+	192,SCRIPT_INITSCRIPT,SPAN_WW2PLANEC_SCRIPT,0,0,
+
 	200,SCRIPT_INITENEMY,WW2PLANEB,200,240,
 	202,SCRIPT_INITENEMY,WW2PLANEB,160,240,
 	204,SCRIPT_INITENEMY,WW2PLANEB,120,240,
 	206,SCRIPT_INITENEMY,WW2PLANEB,80,240,
-	
-	220,SCRIPT_INITSCRIPT,SPAN_WW2PLANEB_SCRIPT,0,0,	
+
+	220,SCRIPT_INITSCRIPT,SPAN_WW2PLANEB_SCRIPT,0,0,
 
 	230,SCRIPT_INITENEMY,WW2PLANEB,200,240,
 	232,SCRIPT_INITENEMY,WW2PLANEB,160,240,
@@ -904,13 +908,13 @@ const unsigned char stage5scriptb[]=
 	242,SCRIPT_INITENEMY,WW2PLANEB,140,240,
 	244,SCRIPT_INITENEMY,WW2PLANEB,200,240,
 
-	252,SCRIPT_INITSCRIPT,STAGE5SCRIPTC,0,0,	
+	252,SCRIPT_INITSCRIPT,STAGE5SCRIPTC,0,0,
 	253,SCRIPT_END,0,0,0
 };
-	
+
 
 #define STAGE5SCRIPT 17
-const unsigned char stage5script[]=
+const unsigned char stage5script[] =
 {
 	10,SCRIPT_INITSCRIPT,SPAN_WW2ZEPPELINA_SCRIPT,0,0,
 	15,SCRIPT_INITENEMY,WW2PLANEB,160,240,
@@ -919,31 +923,31 @@ const unsigned char stage5script[]=
 	23,SCRIPT_INITENEMY,WW2PLANEB,70,240,
 	25,SCRIPT_INITENEMY,WW2PLANEB,130,240,
 	27,SCRIPT_INITENEMY,WW2PLANEB,200,240,
-	
+
 	40,SCRIPT_INITSCRIPT,SPAN_WW2PLANEB_SCRIPT,0,0,
-	
+
 	45,SCRIPT_INITENEMY,WW2PLANEB,160,240,
 	47,SCRIPT_INITENEMY,WW2PLANEB,40,240,
 	49,SCRIPT_INITENEMY,WW2PLANEB,220,240,
 	53,SCRIPT_INITENEMY,WW2PLANEB,70,240,
 	55,SCRIPT_INITENEMY,WW2PLANEB,130,240,
-	
+
 	60,SCRIPT_INITSCRIPT,SPAN_WW2PLANEB_SCRIPT,0,0,
 
 	75,SCRIPT_INITENEMY,WW2PLANEB,160,240,
 	77,SCRIPT_INITENEMY,WW2PLANEB,40,240,
 	79,SCRIPT_INITENEMY,WW2PLANEB,220,240,
 	81,SCRIPT_INITENEMY,WW2PLANEB,160,240,
-	
-	85,SCRIPT_INITSCRIPT,SPAN_WW2PLANEA_SCRIPT,0,0,	
+
+	85,SCRIPT_INITSCRIPT,SPAN_WW2PLANEA_SCRIPT,0,0,
 
 	105,SCRIPT_INITENEMY,WW2ZEPPELIN,32,0,
 	105,SCRIPT_INITENEMY,WW2ZEPPELIN,200,0,
 	105,SCRIPT_INITENEMY,WW2PLANEB,200,240,
 	107,SCRIPT_INITENEMY,WW2PLANEB,150,240,
 	109,SCRIPT_INITENEMY,WW2PLANEB,100,240,
-	
-	110,SCRIPT_INITSCRIPT,SPAN_WW2PLANEC_SCRIPT,0,0,	
+
+	110,SCRIPT_INITSCRIPT,SPAN_WW2PLANEC_SCRIPT,0,0,
 
 	111,SCRIPT_INITENEMY,WW2PLANEB,50,240,
 	115,SCRIPT_INITENEMY,WW2PLANEB,150,240,
@@ -953,8 +957,8 @@ const unsigned char stage5script[]=
 	127,SCRIPT_INITENEMY,WW2PLANEB,50,240,
 	131,SCRIPT_INITENEMY,WW2PLANEB,100,240,
 	133,SCRIPT_INITENEMY,WW2PLANEB,130,240,
-	
-	140,SCRIPT_INITSCRIPT,SPAN_WW2PLANEC_SCRIPT,0,0,	
+
+	140,SCRIPT_INITSCRIPT,SPAN_WW2PLANEC_SCRIPT,0,0,
 
 	160,SCRIPT_INITENEMY,WW2PLANEB,200,240,
 	162,SCRIPT_INITENEMY,WW2PLANEB,50,240,
@@ -971,71 +975,71 @@ const unsigned char stage5script[]=
 	194,SCRIPT_INITENEMY,WW2PLANEB,200,240,
 	195,SCRIPT_INITENEMY,WW2PLANEB,50,240,
 	196,SCRIPT_INITENEMY,WW2PLANEB,150,240,
-	
+
 	201,SCRIPT_INITENEMY,WW2ZEPPELIN,32,0,
 	201,SCRIPT_INITENEMY,WW2ZEPPELIN,200,0,
 	206,SCRIPT_INITSCRIPT,SPAN_WW2PLANEB_SCRIPT,0,0,
-	
+
 	225,SCRIPT_INITSCRIPT,STAGE5SCRIPTB,0,0,
 	225,SCRIPT_END,0,0
 };
 
 // Statics for stage 5
-const unsigned int stage5_statics[]=
+const unsigned int stage5_statics[] =
 {
-	353-1,WW2TANKLEFT,0,16,
-	353-1,WW2TANKRIGHT,240,16,
-	344-1,WW2TANKLEFT,0,16,
-	335-1,WW2TANKLEFT,0,16,
-	326-1,WW2TANKLEFT,0,16,
-	317-1,WW2TANKLEFT,0,16,
-	317-1,WW2TANKRIGHT,240,16,
+	353 - 1,WW2TANKLEFT,0,16,
+	353 - 1,WW2TANKRIGHT,240,16,
+	344 - 1,WW2TANKLEFT,0,16,
+	335 - 1,WW2TANKLEFT,0,16,
+	326 - 1,WW2TANKLEFT,0,16,
+	317 - 1,WW2TANKLEFT,0,16,
+	317 - 1,WW2TANKRIGHT,240,16,
 
-	272-1,WW2TANKLEFT,0,16,
-	272-1,WW2TANKRIGHT,240,16,
-	263-1,WW2TANKLEFT,0,16,
-	254-1,WW2TANKLEFT,0,16,
-	245-1,WW2TANKLEFT,0,16,
-	245-1,WW2TANKRIGHT,240,16,
+	272 - 1,WW2TANKLEFT,0,16,
+	272 - 1,WW2TANKRIGHT,240,16,
+	263 - 1,WW2TANKLEFT,0,16,
+	254 - 1,WW2TANKLEFT,0,16,
+	245 - 1,WW2TANKLEFT,0,16,
+	245 - 1,WW2TANKRIGHT,240,16,
 
-	203-1,WW2SHIP,200,0,
-	200-1,WW2SHIP,70,0,
-	197-1,WW2SHIP,120,0,
-		
-	187-1,WW2TANKLEFT,0,16,
-	187-1,WW2TANKRIGHT,240,16,
-	178-1,WW2TANKLEFT,0,16,
-	169-1,WW2TANKLEFT,0,16,
-	160-1,WW2TANKLEFT,0,16,
-	151-1,WW2TANKLEFT,0,16,
-	151-1,WW2TANKRIGHT,240,16,
+	203 - 1,WW2SHIP,200,0,
+	200 - 1,WW2SHIP,70,0,
+	197 - 1,WW2SHIP,120,0,
 
-	148-1,WW2SHIP,200,0,
-	145-1,WW2SHIP,70,0,	
-	143-1,WW2SHIP,120,0,
-	
-	132-1,WW2TANKLEFT,0,16,
-	132-1,WW2TANKRIGHT,240,16,
-	123-1,WW2TANKLEFT,0,16,
-	114-1,WW2TANKLEFT,0,16,
-	105-1,WW2TANKLEFT,0,16,
-	105-1,WW2TANKRIGHT,240,16,
+	187 - 1,WW2TANKLEFT,0,16,
+	187 - 1,WW2TANKRIGHT,240,16,
+	178 - 1,WW2TANKLEFT,0,16,
+	169 - 1,WW2TANKLEFT,0,16,
+	160 - 1,WW2TANKLEFT,0,16,
+	151 - 1,WW2TANKLEFT,0,16,
+	151 - 1,WW2TANKRIGHT,240,16,
 
-	61-1,WW2TANKLEFT,0,16,
-	61-1,WW2TANKRIGHT,240,16,	
-	52-1,WW2TANKLEFT,0,16,
-	43-1,WW2TANKLEFT,0,16,
-	34-1,WW2TANKLEFT,0,16,
-	34-1,WW2TANKRIGHT,240,16,
+	148 - 1,WW2SHIP,200,0,
+	145 - 1,WW2SHIP,70,0,
+	143 - 1,WW2SHIP,120,0,
+
+	132 - 1,WW2TANKLEFT,0,16,
+	132 - 1,WW2TANKRIGHT,240,16,
+	123 - 1,WW2TANKLEFT,0,16,
+	114 - 1,WW2TANKLEFT,0,16,
+	105 - 1,WW2TANKLEFT,0,16,
+	105 - 1,WW2TANKRIGHT,240,16,
+
+	61 - 1,WW2TANKLEFT,0,16,
+	61 - 1,WW2TANKRIGHT,240,16,
+	52 - 1,WW2TANKLEFT,0,16,
+	43 - 1,WW2TANKLEFT,0,16,
+	34 - 1,WW2TANKLEFT,0,16,
+	34 - 1,WW2TANKRIGHT,240,16,
 	1000,0,0,0,0
 };
 
 // Statics for stage 1
-const unsigned int stage1_statics[]=
+const unsigned int stage1_statics[] =
 {
-	476,FORTRESSDOOR,15*8,0,
-	
-	
+	476,FORTRESSDOOR,15 * 8,0,
+
+
 	469,FORTRESSCANNONRIGHT,24,0,
 	469,FORTRESSCANNONLEFT,216,0,
 	462,FORTRESSCANNONRIGHT,48,0,
@@ -1043,278 +1047,278 @@ const unsigned int stage1_statics[]=
 
 	455,FORTRESSCANNONRIGHT,24,0,
 	455,FORTRESSCANNONLEFT,216,0,
-	
-	453,FORTRESSSEARCHER,21*8,0,
-	452,FORTRESSSEARCHER,21*8,0,
-	451,FORTRESSSEARCHER,21*8,0,
-	450,FORTRESSSEARCHER,21*8,0,
-	449,FORTRESSSEARCHER,21*8,0,
-	448,FORTRESSSEARCHER,21*8,0,
-	
-	
+
+	453,FORTRESSSEARCHER,21 * 8,0,
+	452,FORTRESSSEARCHER,21 * 8,0,
+	451,FORTRESSSEARCHER,21 * 8,0,
+	450,FORTRESSSEARCHER,21 * 8,0,
+	449,FORTRESSSEARCHER,21 * 8,0,
+	448,FORTRESSSEARCHER,21 * 8,0,
+
+
 	448,FORTRESSCANNONRIGHT,48,0,
 	448,FORTRESSCANNONLEFT,192,0,
 
 	441,FORTRESSCANNONRIGHT,24,0,
 	441,FORTRESSCANNONLEFT,216,0,
 
-	439,FORTRESSSEARCHER,9*8,0,
-	438,FORTRESSSEARCHER,9*8,0,
-	437,FORTRESSSEARCHER,9*8,0,
-	436,FORTRESSSEARCHER,9*8,0,
-	435,FORTRESSSEARCHER,9*8,0,
-	434,FORTRESSSEARCHER,9*8,0,
-	
+	439,FORTRESSSEARCHER,9 * 8,0,
+	438,FORTRESSSEARCHER,9 * 8,0,
+	437,FORTRESSSEARCHER,9 * 8,0,
+	436,FORTRESSSEARCHER,9 * 8,0,
+	435,FORTRESSSEARCHER,9 * 8,0,
+	434,FORTRESSSEARCHER,9 * 8,0,
+
 	434,FORTRESSCANNONRIGHT,48,0,
 	434,FORTRESSCANNONLEFT,192,0,
 
 	427,FORTRESSCANNONRIGHT,24,0,
 	427,FORTRESSCANNONLEFT,216,0,
 
-	421,FORTRESSSEARCHER,15*8,0,
-	420,FORTRESSSEARCHER,19*8,0,
-	420,FORTRESSSEARCHER,11*8,0,
-	419,FORTRESSSEARCHER,7*8,0,
-	419,FORTRESSSEARCHER,23*8,0,
-	418,FORTRESSSEARCHER,19*8,0,
-	418,FORTRESSSEARCHER,11*8,0,
-	417,FORTRESSSEARCHER,15*8,0,
-	
+	421,FORTRESSSEARCHER,15 * 8,0,
+	420,FORTRESSSEARCHER,19 * 8,0,
+	420,FORTRESSSEARCHER,11 * 8,0,
+	419,FORTRESSSEARCHER,7 * 8,0,
+	419,FORTRESSSEARCHER,23 * 8,0,
+	418,FORTRESSSEARCHER,19 * 8,0,
+	418,FORTRESSSEARCHER,11 * 8,0,
+	417,FORTRESSSEARCHER,15 * 8,0,
+
 	409,FORTRESSCANNONRIGHT,88,0,
-	409,FORTRESSCANNONLEFT,152,0,	
+	409,FORTRESSCANNONLEFT,152,0,
 	405,FORTRESSCANNONRIGHT,88,0,
 	405,FORTRESSCANNONLEFT,152,0,
 	401,FORTRESSCANNONRIGHT,88,0,
 	401,FORTRESSCANNONLEFT,152,0,
 
-	401,FORTRESSSEARCHER,15*8,0,
-	399,FORTRESSSEARCHER,15*8,0,	
-	397,FORTRESSSEARCHER,15*8,0,	
-	395,FORTRESSSEARCHER,15*8,0,	
-	393,FORTRESSSEARCHER,15*8,0,	
-	
-	391,FORTRESSDOOR,15*8,0,
+	401,FORTRESSSEARCHER,15 * 8,0,
+	399,FORTRESSSEARCHER,15 * 8,0,
+	397,FORTRESSSEARCHER,15 * 8,0,
+	395,FORTRESSSEARCHER,15 * 8,0,
+	393,FORTRESSSEARCHER,15 * 8,0,
 
-	377,FORTRESSSEARCHER,12*8,0,		
-	377,FORTRESSSEARCHER,18*8,0,		
-	375,FORTRESSSEARCHER,12*8,0,		
-	375,FORTRESSSEARCHER,18*8,0,		
-	373,FORTRESSSEARCHER,12*8,0,		
-	373,FORTRESSSEARCHER,18*8,0,		
-	371,FORTRESSSEARCHER,12*8,0,		
-	371,FORTRESSSEARCHER,18*8,0,		
-	369,FORTRESSSEARCHER,12*8,0,		
-	369,FORTRESSSEARCHER,18*8,0,		
+	391,FORTRESSDOOR,15 * 8,0,
 
-	362,FORTRESSCANNONLEFT,28*8,0,
+	377,FORTRESSSEARCHER,12 * 8,0,
+	377,FORTRESSSEARCHER,18 * 8,0,
+	375,FORTRESSSEARCHER,12 * 8,0,
+	375,FORTRESSSEARCHER,18 * 8,0,
+	373,FORTRESSSEARCHER,12 * 8,0,
+	373,FORTRESSSEARCHER,18 * 8,0,
+	371,FORTRESSSEARCHER,12 * 8,0,
+	371,FORTRESSSEARCHER,18 * 8,0,
+	369,FORTRESSSEARCHER,12 * 8,0,
+	369,FORTRESSSEARCHER,18 * 8,0,
+
+	362,FORTRESSCANNONLEFT,28 * 8,0,
 	358,FORTRESSCANNONRIGHT,16,0,
-	357,FORTRESSCANNONLEFT,28*8,0,
+	357,FORTRESSCANNONLEFT,28 * 8,0,
 
-	354,FORTRESSPHANTOM,15*8,16,
-	354,FORTRESSPHANTOM,12*8,36,
-	354,FORTRESSPHANTOM,18*8,36,
-	354,FORTRESSPHANTOM,9*8,56,
-	354,FORTRESSPHANTOM,21*8,56,
-	354,FORTRESSPHANTOM,6*8,76,
-	354,FORTRESSPHANTOM,24*8,76,
+	354,FORTRESSPHANTOM,15 * 8,16,
+	354,FORTRESSPHANTOM,12 * 8,36,
+	354,FORTRESSPHANTOM,18 * 8,36,
+	354,FORTRESSPHANTOM,9 * 8,56,
+	354,FORTRESSPHANTOM,21 * 8,56,
+	354,FORTRESSPHANTOM,6 * 8,76,
+	354,FORTRESSPHANTOM,24 * 8,76,
 
 	351,FORTRESSCANNONRIGHT,40,0,
-	349,FORTRESSCANNONLEFT,25*8,0,
+	349,FORTRESSCANNONLEFT,25 * 8,0,
 
 	345,FORTRESSCANNONRIGHT,40,0,
 
-	343,FORTRESSPHANTOM,15*8,16,
-	343,FORTRESSPHANTOM,12*8,36,
-	343,FORTRESSPHANTOM,18*8,36,
-	343,FORTRESSPHANTOM,9*8,56,
-	343,FORTRESSPHANTOM,21*8,56,
-	
-	339,FORTRESSCANNONLEFT,22*8,0,
+	343,FORTRESSPHANTOM,15 * 8,16,
+	343,FORTRESSPHANTOM,12 * 8,36,
+	343,FORTRESSPHANTOM,18 * 8,36,
+	343,FORTRESSPHANTOM,9 * 8,56,
+	343,FORTRESSPHANTOM,21 * 8,56,
+
+	339,FORTRESSCANNONLEFT,22 * 8,0,
 	335,FORTRESSCANNONRIGHT,64,0,
 
-	332,FORTRESSCANNONLEFT,22*8,0,
+	332,FORTRESSCANNONLEFT,22 * 8,0,
 	332,FORTRESSCANNONRIGHT,64,0,
 
-	331,FORTRESSPHANTOM,15*8,16,
-	331,FORTRESSPHANTOM,12*8,36,
-	331,FORTRESSPHANTOM,18*8,36,
-	
-	325,FORTRESSCANNONLEFT,19*8,0,
+	331,FORTRESSPHANTOM,15 * 8,16,
+	331,FORTRESSPHANTOM,12 * 8,36,
+	331,FORTRESSPHANTOM,18 * 8,36,
+
+	325,FORTRESSCANNONLEFT,19 * 8,0,
 	321,FORTRESSCANNONRIGHT,88,0,
 
-	321,FORTRESSPHANTOM,17*8,16,
-	321,FORTRESSPHANTOM,13*8,16,
-	
-	316,FORTRESSDOOR,15*8,0,
-	
+	321,FORTRESSPHANTOM,17 * 8,16,
+	321,FORTRESSPHANTOM,13 * 8,16,
+
+	316,FORTRESSDOOR,15 * 8,0,
+
 	294,STAGE1MIDDLEBOSS,108,0,
-	
-	285,FORTRESSDOOR,15*8,0,
-	
-	280,FORTRESSCANNONRIGHT,4*8,0,
-	280,FORTRESSCANNONLEFT,26*8,0,
-	276,FORTRESSCANNONRIGHT,6*8,0,
-	276,FORTRESSCANNONLEFT,24*8,0,
-	
-	266,FORTRESSCANNONRIGHT,6*8,0,
-	266,FORTRESSCANNONLEFT,24*8,0,
-	262,FORTRESSCANNONRIGHT,6*8,0,
 
-	261,FORTRESSPHANTOM,11*8,24,
-	261,FORTRESSPHANTOM,15*8,24,
-	261,FORTRESSPHANTOM,19*8,24,
-	
-	258,FORTRESSCANNONRIGHT,19*8,0,
-	257,FORTRESSCANNONLEFT,24*8,0,
-	253,FORTRESSCANNONLEFT,24*8,0,
-	253,FORTRESSCANNONRIGHT,12*8,0,
-	249,FORTRESSCANNONLEFT,18*8,0,
-	
-	244,FORTRESSCANNONRIGHT,6*8,0,
-	236,FORTRESSCANNONRIGHT,6*8,0,
-	236,FORTRESSCANNONLEFT,24*8,0,
+	285,FORTRESSDOOR,15 * 8,0,
 
-	233,FORTRESSPHANTOM,11*8,24,
-	233,FORTRESSPHANTOM,15*8,24,
-	233,FORTRESSPHANTOM,19*8,24,
+	280,FORTRESSCANNONRIGHT,4 * 8,0,
+	280,FORTRESSCANNONLEFT,26 * 8,0,
+	276,FORTRESSCANNONRIGHT,6 * 8,0,
+	276,FORTRESSCANNONLEFT,24 * 8,0,
 
-	230,FORTRESSCANNONRIGHT,19*8,0,
-	230,FORTRESSCANNONLEFT,24*8,0,
-	225,FORTRESSCANNONRIGHT,12*8,0,
-	222,FORTRESSCANNONLEFT,24*8,0,
-	215,FORTRESSCANNONRIGHT,6*8,0,
-	215,FORTRESSCANNONLEFT,13*8,0,
-	
+	266,FORTRESSCANNONRIGHT,6 * 8,0,
+	266,FORTRESSCANNONLEFT,24 * 8,0,
+	262,FORTRESSCANNONRIGHT,6 * 8,0,
+
+	261,FORTRESSPHANTOM,11 * 8,24,
+	261,FORTRESSPHANTOM,15 * 8,24,
+	261,FORTRESSPHANTOM,19 * 8,24,
+
+	258,FORTRESSCANNONRIGHT,19 * 8,0,
+	257,FORTRESSCANNONLEFT,24 * 8,0,
+	253,FORTRESSCANNONLEFT,24 * 8,0,
+	253,FORTRESSCANNONRIGHT,12 * 8,0,
+	249,FORTRESSCANNONLEFT,18 * 8,0,
+
+	244,FORTRESSCANNONRIGHT,6 * 8,0,
+	236,FORTRESSCANNONRIGHT,6 * 8,0,
+	236,FORTRESSCANNONLEFT,24 * 8,0,
+
+	233,FORTRESSPHANTOM,11 * 8,24,
+	233,FORTRESSPHANTOM,15 * 8,24,
+	233,FORTRESSPHANTOM,19 * 8,24,
+
+	230,FORTRESSCANNONRIGHT,19 * 8,0,
+	230,FORTRESSCANNONLEFT,24 * 8,0,
+	225,FORTRESSCANNONRIGHT,12 * 8,0,
+	222,FORTRESSCANNONLEFT,24 * 8,0,
+	215,FORTRESSCANNONRIGHT,6 * 8,0,
+	215,FORTRESSCANNONLEFT,13 * 8,0,
+
 	204,FORTRESSCANNONRIGHT,24,0,
 	204,FORTRESSCANNONLEFT,216,0,
-	
-	200,FORTRESSSEARCHER,7*8,0,		
-	197,FORTRESSSEARCHER,10*8,0,		
-	
+
+	200,FORTRESSSEARCHER,7 * 8,0,
+	197,FORTRESSSEARCHER,10 * 8,0,
+
 	197,FORTRESSCANNONRIGHT,48,0,
 	197,FORTRESSCANNONLEFT,192,0,
 
-	194,FORTRESSSEARCHER,13*8,0,		
-	
-	194,FORTRESSPHANTOM,15*8,16,
-	192,FORTRESSPHANTOM,23*8,56,
+	194,FORTRESSSEARCHER,13 * 8,0,
 
-	191,FORTRESSSEARCHER,16*8,0,		
-	
+	194,FORTRESSPHANTOM,15 * 8,16,
+	192,FORTRESSPHANTOM,23 * 8,56,
+
+	191,FORTRESSSEARCHER,16 * 8,0,
+
 	190,FORTRESSCANNONRIGHT,24,0,
 	190,FORTRESSCANNONLEFT,216,0,
-	
-	188,FORTRESSSEARCHER,19*8,0,
-	185,FORTRESSSEARCHER,22*8,0,		
-	
+
+	188,FORTRESSSEARCHER,19 * 8,0,
+	185,FORTRESSSEARCHER,22 * 8,0,
+
 	183,FORTRESSCANNONRIGHT,48,0,
 	183,FORTRESSCANNONLEFT,192,0,
 
-	182,FORTRESSSEARCHER,19*8,0,		
-	179,FORTRESSSEARCHER,16*8,0,		
-	176,FORTRESSSEARCHER,13*8,0,		
-	
+	182,FORTRESSSEARCHER,19 * 8,0,
+	179,FORTRESSSEARCHER,16 * 8,0,
+	176,FORTRESSSEARCHER,13 * 8,0,
+
 	176,FORTRESSCANNONRIGHT,24,0,
 	176,FORTRESSCANNONLEFT,216,0,
-	
-	174,FORTRESSPHANTOM,15*8,16,
 
-	173,FORTRESSSEARCHER,10*8,0,		
-	
-	173,FORTRESSPHANTOM,19*8,36,
-	
-	170,FORTRESSSEARCHER,7*8,0,		
-	
+	174,FORTRESSPHANTOM,15 * 8,16,
+
+	173,FORTRESSSEARCHER,10 * 8,0,
+
+	173,FORTRESSPHANTOM,19 * 8,36,
+
+	170,FORTRESSSEARCHER,7 * 8,0,
+
 	169,FORTRESSCANNONRIGHT,48,0,
 	169,FORTRESSCANNONLEFT,192,0,
 
-	167,FORTRESSSEARCHER,10*8,0,		
-	164,FORTRESSSEARCHER,13*8,0,		
-	
+	167,FORTRESSSEARCHER,10 * 8,0,
+	164,FORTRESSSEARCHER,13 * 8,0,
+
 	162,FORTRESSCANNONRIGHT,24,0,
 	162,FORTRESSCANNONLEFT,216,0,
-	
-	161,FORTRESSSEARCHER,16*8,0,		
-	158,FORTRESSSEARCHER,19*8,0,		
-	155,FORTRESSSEARCHER,22*8,0,		
-	
+
+	161,FORTRESSSEARCHER,16 * 8,0,
+	158,FORTRESSSEARCHER,19 * 8,0,
+	155,FORTRESSSEARCHER,22 * 8,0,
+
 	155,FORTRESSCANNONRIGHT,48,0,
 	155,FORTRESSCANNONLEFT,192,0,
-	
-	154,FORTRESSPHANTOM,15*8,16,
-	152,FORTRESSPHANTOM,23*8,56,
 
-	152,FORTRESSSEARCHER,19*8,0,		
-	149,FORTRESSSEARCHER,16*8,0,		
-	146,FORTRESSSEARCHER,13*8,0,		
-	
-	145,FORTRESSCANNONLEFT,28*8,0,
+	154,FORTRESSPHANTOM,15 * 8,16,
+	152,FORTRESSPHANTOM,23 * 8,56,
 
-	143,FORTRESSSEARCHER,10*8,0,		
+	152,FORTRESSSEARCHER,19 * 8,0,
+	149,FORTRESSSEARCHER,16 * 8,0,
+	146,FORTRESSSEARCHER,13 * 8,0,
+
+	145,FORTRESSCANNONLEFT,28 * 8,0,
+
+	143,FORTRESSSEARCHER,10 * 8,0,
 
 	141,FORTRESSCANNONRIGHT,16,0,
-	
-	
-	140,FORTRESSPHANTOM,15*8,24,
 
-	140,FORTRESSSEARCHER,7*8,0,		
-	
-	140,FORTRESSCANNONLEFT,28*8,0,
-	
-	137,FORTRESSSEARCHER,10*8,0,		
-	134,FORTRESSSEARCHER,13*8,0,		
-	
+
+	140,FORTRESSPHANTOM,15 * 8,24,
+
+	140,FORTRESSSEARCHER,7 * 8,0,
+
+	140,FORTRESSCANNONLEFT,28 * 8,0,
+
+	137,FORTRESSSEARCHER,10 * 8,0,
+	134,FORTRESSSEARCHER,13 * 8,0,
+
 	134,FORTRESSCANNONRIGHT,40,0,
-	132,FORTRESSCANNONLEFT,25*8,0,
-	
-	131,FORTRESSSEARCHER,16*8,0,		
-	128,FORTRESSSEARCHER,19*8,0,		
-	
-	128,FORTRESSPHANTOM,19*8,24,
+	132,FORTRESSCANNONLEFT,25 * 8,0,
+
+	131,FORTRESSSEARCHER,16 * 8,0,
+	128,FORTRESSSEARCHER,19 * 8,0,
+
+	128,FORTRESSPHANTOM,19 * 8,24,
 
 	128,FORTRESSCANNONRIGHT,40,0,
-	
-	125,FORTRESSSEARCHER,22*8,0,		
-	
-	123,FORTRESSCANNONLEFT,22*8,0,
-	
-	122,FORTRESSSEARCHER,19*8,0,		
-	
+
+	125,FORTRESSSEARCHER,22 * 8,0,
+
+	123,FORTRESSCANNONLEFT,22 * 8,0,
+
+	122,FORTRESSSEARCHER,19 * 8,0,
+
 	120,FORTRESSCANNONRIGHT,64,0,
-	
-	120,FORTRESSPHANTOM,15*8,24,
-	
-	119,FORTRESSSEARCHER,16*8,0,		
-	116,FORTRESSSEARCHER,16*8,0,		
-	
-	116,FORTRESSCANNONLEFT,22*8,0,
-	
+
+	120,FORTRESSPHANTOM,15 * 8,24,
+
+	119,FORTRESSSEARCHER,16 * 8,0,
+	116,FORTRESSSEARCHER,16 * 8,0,
+
+	116,FORTRESSCANNONLEFT,22 * 8,0,
+
 	116,FORTRESSCANNONRIGHT,64,0,
-	
-	113,FORTRESSSEARCHER,16*8,0,		
-	110,FORTRESSSEARCHER,16*8,0,		
 
-	110,FORTRESSPHANTOM,11*8,24,
-	
+	113,FORTRESSSEARCHER,16 * 8,0,
+	110,FORTRESSSEARCHER,16 * 8,0,
+
+	110,FORTRESSPHANTOM,11 * 8,24,
+
 	109,FORTRESSCANNONRIGHT,88,0,
-	
-	107,FORTRESSCANNONLEFT,19*8,0,
-	
-	107,FORTRESSSEARCHER,16*8,0,		
-	104,FORTRESSSEARCHER,16*8,0,		
-	
-	104,FORTRESSCANNONRIGHT,88,0,
-	
-	98,FORTRESSDOOR,15*8,0,
 
-	93,FORTRESSWAVE,8*8,0,
-	84,FORTRESSWAVE,19*8,0,
-	75,FORTRESSWAVE,20*8,0,
-	66,FORTRESSWAVE,13*8,0,
-	57,FORTRESSWAVE,18*8,0,
-	
-	34,FORTRESSDOOR,15*8,0,
-		
+	107,FORTRESSCANNONLEFT,19 * 8,0,
+
+	107,FORTRESSSEARCHER,16 * 8,0,
+	104,FORTRESSSEARCHER,16 * 8,0,
+
+	104,FORTRESSCANNONRIGHT,88,0,
+
+	98,FORTRESSDOOR,15 * 8,0,
+
+	93,FORTRESSWAVE,8 * 8,0,
+	84,FORTRESSWAVE,19 * 8,0,
+	75,FORTRESSWAVE,20 * 8,0,
+	66,FORTRESSWAVE,13 * 8,0,
+	57,FORTRESSWAVE,18 * 8,0,
+
+	34,FORTRESSDOOR,15 * 8,0,
+
 	15,WARNING,0,0,
 	1,STAGE1ENDBOSS,100,0,
 	1000,0,0,0,0
@@ -1322,241 +1326,241 @@ const unsigned int stage1_statics[]=
 
 
 // Statics for stage 2
-const unsigned int stage2_statics[]=
+const unsigned int stage2_statics[] =
 {
 
-	477,VULCANBIRD,3*8,16,
-	477,VULCANBIRD,8*8,16,
-	477,VULCANBIRD,13*8,16,
-	474,VULCANBIRD,17*8,16,
-	474,VULCANBIRD,22*8,16,
-	474,VULCANBIRD,27*8,16,
-	477-6,VULCANBIRD,3*8,16,
-	477-6,VULCANBIRD,8*8,16,
-	477-6,VULCANBIRD,13*8,16,
-	474-6,VULCANBIRD,17*8,16,
-	474-6,VULCANBIRD,22*8,16,
-	474-6,VULCANBIRD,27*8,16,
-	
-	
-	477-18,VULCANBIRD,3*8,16,
-	476-18,VULCANBIRD,7*8,16,
-	475-18,VULCANBIRD,11*8,16,
-	474-18,VULCANBIRD,15*8,16,
-	473-18,VULCANBIRD,19*8,16,
-	472-18,VULCANBIRD,23*8,16,
-	471-18,VULCANBIRD,27*8,16,
-	470-18,VULCANBIRD,23*8,16,
-	469-18,VULCANBIRD,19*8,16,
-	468-18,VULCANBIRD,15*8,16,
-	467-18,VULCANBIRD,11*8,16,
-	466-18,VULCANBIRD,7*8,16,
+	477,VULCANBIRD,3 * 8,16,
+	477,VULCANBIRD,8 * 8,16,
+	477,VULCANBIRD,13 * 8,16,
+	474,VULCANBIRD,17 * 8,16,
+	474,VULCANBIRD,22 * 8,16,
+	474,VULCANBIRD,27 * 8,16,
+	477 - 6,VULCANBIRD,3 * 8,16,
+	477 - 6,VULCANBIRD,8 * 8,16,
+	477 - 6,VULCANBIRD,13 * 8,16,
+	474 - 6,VULCANBIRD,17 * 8,16,
+	474 - 6,VULCANBIRD,22 * 8,16,
+	474 - 6,VULCANBIRD,27 * 8,16,
 
-	477-30,VULCANBIRD,3*8,16,
-	476-30,VULCANBIRD,7*8,16,
-	475-30,VULCANBIRD,11*8,16,
-	474-30,VULCANBIRD,15*8,16,
-	473-30,VULCANBIRD,19*8,16,
-	472-30,VULCANBIRD,23*8,16,
-	471-30,VULCANBIRD,27*8,16,
-	470-30,VULCANBIRD,23*8,16,
-	469-30,VULCANBIRD,19*8,16,
-	468-30,VULCANBIRD,15*8,16,
-	467-30,VULCANBIRD,11*8,16,
-	466-30,VULCANBIRD,7*8,16,
-	466-31,VULCANBIRD,3*8,16,
-	
-	
-	430,VULCANVULCAN,7*8,0,
-	430,VULCANVULCAN,24*8,0,
-	419-5,VULCANTANKLEFT,0,32,
-	419-5,VULCANTANKRIGHT,240,32,
+
+	477 - 18,VULCANBIRD,3 * 8,16,
+	476 - 18,VULCANBIRD,7 * 8,16,
+	475 - 18,VULCANBIRD,11 * 8,16,
+	474 - 18,VULCANBIRD,15 * 8,16,
+	473 - 18,VULCANBIRD,19 * 8,16,
+	472 - 18,VULCANBIRD,23 * 8,16,
+	471 - 18,VULCANBIRD,27 * 8,16,
+	470 - 18,VULCANBIRD,23 * 8,16,
+	469 - 18,VULCANBIRD,19 * 8,16,
+	468 - 18,VULCANBIRD,15 * 8,16,
+	467 - 18,VULCANBIRD,11 * 8,16,
+	466 - 18,VULCANBIRD,7 * 8,16,
+
+	477 - 30,VULCANBIRD,3 * 8,16,
+	476 - 30,VULCANBIRD,7 * 8,16,
+	475 - 30,VULCANBIRD,11 * 8,16,
+	474 - 30,VULCANBIRD,15 * 8,16,
+	473 - 30,VULCANBIRD,19 * 8,16,
+	472 - 30,VULCANBIRD,23 * 8,16,
+	471 - 30,VULCANBIRD,27 * 8,16,
+	470 - 30,VULCANBIRD,23 * 8,16,
+	469 - 30,VULCANBIRD,19 * 8,16,
+	468 - 30,VULCANBIRD,15 * 8,16,
+	467 - 30,VULCANBIRD,11 * 8,16,
+	466 - 30,VULCANBIRD,7 * 8,16,
+	466 - 31,VULCANBIRD,3 * 8,16,
+
+
+	430,VULCANVULCAN,7 * 8,0,
+	430,VULCANVULCAN,24 * 8,0,
+	419 - 5,VULCANTANKLEFT,0,32,
+	419 - 5,VULCANTANKRIGHT,240,32,
 	410,VULCANTANKSTOP,60,0,
-	
-	404,VULCANBIRD,14*8,16,
-	404,VULCANBIRD,20*8,16,
-	404,VULCANBIRD,26*8,16,
-	
+
+	404,VULCANBIRD,14 * 8,16,
+	404,VULCANBIRD,20 * 8,16,
+	404,VULCANBIRD,26 * 8,16,
+
 	401,VULCANTANKSTOP,60,0,
-	
-	399,VULCANBIRD,14*8,16,
-	399,VULCANBIRD,20*8,16,
-	399,VULCANBIRD,26*8,16,
-	392-5,VULCANTANKLEFT,0,32,
-	392-5,VULCANTANKRIGHT,240,32,
-	386,VULCANTANKSTOP,(23*8)+4,0,
-	384,VULCANBIRD,4*8,16,
-	384,VULCANBIRD,10*8,16,
-	384,VULCANBIRD,16*8,16,
 
-	378-5,VULCANTANKLEFT,0,32,
-	378-5,VULCANTANKRIGHT,240,32,
+	399,VULCANBIRD,14 * 8,16,
+	399,VULCANBIRD,20 * 8,16,
+	399,VULCANBIRD,26 * 8,16,
+	392 - 5,VULCANTANKLEFT,0,32,
+	392 - 5,VULCANTANKRIGHT,240,32,
+	386,VULCANTANKSTOP,( 23 * 8 ) + 4,0,
+	384,VULCANBIRD,4 * 8,16,
+	384,VULCANBIRD,10 * 8,16,
+	384,VULCANBIRD,16 * 8,16,
 
-	372,VULCANBIRD,13*8,16,
-	372,VULCANBIRD,19*8,16,
-	372,VULCANBIRD,25*8,16,
-	
+	378 - 5,VULCANTANKLEFT,0,32,
+	378 - 5,VULCANTANKRIGHT,240,32,
+
+	372,VULCANBIRD,13 * 8,16,
+	372,VULCANBIRD,19 * 8,16,
+	372,VULCANBIRD,25 * 8,16,
+
 	370,VULCANTANKSTOP,60,0,
-	361,VULCANVULCAN,21*8,0,
+	361,VULCANVULCAN,21 * 8,0,
 	350,VULCANTANKSTOP,60,0,
 
-	347,VULCANBIRD,13*8,16,
-	347,VULCANBIRD,19*8,16,
-	347,VULCANBIRD,25*8,16,
-	
-	344-5,VULCANTANKLEFT,0,32,
-	344-5,VULCANTANKRIGHT,240,32,
-	
-	336,VULCANBIRD,4*8,16,
-	336,VULCANBIRD,10*8,16,
-	336,VULCANBIRD,16*8,16,
-	
-	334,VULCANTANKSTOP,(23*8)+4,0,
-	330-5,VULCANTANKLEFT,0,32,
-	330-5,VULCANTANKRIGHT,240,32,
+	347,VULCANBIRD,13 * 8,16,
+	347,VULCANBIRD,19 * 8,16,
+	347,VULCANBIRD,25 * 8,16,
 
-	324,VULCANBIRD,13*8,16,
-	324,VULCANBIRD,19*8,16,
-	324,VULCANBIRD,25*8,16,
-	
+	344 - 5,VULCANTANKLEFT,0,32,
+	344 - 5,VULCANTANKRIGHT,240,32,
+
+	336,VULCANBIRD,4 * 8,16,
+	336,VULCANBIRD,10 * 8,16,
+	336,VULCANBIRD,16 * 8,16,
+
+	334,VULCANTANKSTOP,( 23 * 8 ) + 4,0,
+	330 - 5,VULCANTANKLEFT,0,32,
+	330 - 5,VULCANTANKRIGHT,240,32,
+
+	324,VULCANBIRD,13 * 8,16,
+	324,VULCANBIRD,19 * 8,16,
+	324,VULCANBIRD,25 * 8,16,
+
 	322,VULCANTANKSTOP,60,0,
-	315-5,VULCANTANKLEFT,0,32,
-	315-5,VULCANTANKRIGHT,240,32,
-	310,VULCANTANKSTOP,15*8,0,
-	300,VULCANVULCAN,25*8,0,
-	295,VULCANTANKSTOP,15*8,0,
-	286,VULCANVULCAN,6*8,0,
-	280,VULCANTANKSTOP,15*8,0,
-	274-5,VULCANTANKLEFT,0,32,
-	274-5,VULCANTANKRIGHT,240,32,
-	
-	262,VULCANBIRD,7*8,16,
-	262,VULCANBIRD,12*8,16,
-	262,VULCANBIRD,17*8,16,
-	262,VULCANBIRD,22*8,16,
-	
-	259,VULCANBIRD,6*8,16,
-	259,VULCANBIRD,24*8,16,
-	
-	255,VULCANBIRD,20*8,16,
-	255,VULCANBIRD,10*8,16,
-	
-	251,VULCANBIRD,14*8,16,
-	251,VULCANBIRD,24*8,16,
-	
-	247,VULCANBIRD,12*8,16,
-	247,VULCANBIRD,26*8,16,
-	
-	243,VULCANBIRD,3*8,16,
-	243,VULCANBIRD,15*8,16,
-	243,VULCANBIRD,24*8,16,
-	
-	239,VULCANBIRD,15*8,16,
-	
-	235,VULCANBIRD,10*8,16,
-	235,VULCANBIRD,21*8,16,
-	
-	231,VULCANBIRD,8*8,16,
-	231,VULCANBIRD,16*8,16,
-	231,VULCANBIRD,24*8,16,
-	
-	223,VULCANTANKSTOP,8*8,0,
-	223,VULCANTANKSTOP,23*8,0,
-	219,VULCANSTATION,(14*8)-4,224,
-		
-	203,VULCANTANKSTOP,15*8,0,
-	203,VULCANVULCAN,25*8,0,
-	195,VULCANTANKSTOP,15*8,0,
-	192,VULCANVULCAN,6*8,0,
-	187,VULCANTANKSTOP,15*8,0,
-	180,VULCANTANKSTOP,15*8,0,
-	
-	180,VULCANBIRD,3*8,16,
-	180,VULCANBIRD,27*8,16,
-	180,VULCANBIRD,7*8,16,
-	180,VULCANBIRD,23*8,16,
-	
-	173,VULCANBIRD,7*8,16,
-	173,VULCANBIRD,23*8,16,
-	173,VULCANBIRD,3*8,16,
-	173,VULCANBIRD,27*8,16,
-	
-	171,VULCANTANKSTOP,15*8,0,
-	168-5,VULCANTANKLEFT,0,32,
-	168-5,VULCANTANKRIGHT,240,32,
-	162,VULCANTANKSTOP,(23*8)+4,0,
-	160,VULCANBIRD,4*8,16,
-	160,VULCANBIRD,10*8,16,
-	160,VULCANBIRD,16*8,16,
-	154-5,VULCANTANKLEFT,0,32,
-	154-5,VULCANTANKRIGHT,240,32,
-	
-	148,VULCANBIRD,13*8,16,
-	148,VULCANBIRD,19*8,16,
-	148,VULCANBIRD,25*8,16,
+	315 - 5,VULCANTANKLEFT,0,32,
+	315 - 5,VULCANTANKRIGHT,240,32,
+	310,VULCANTANKSTOP,15 * 8,0,
+	300,VULCANVULCAN,25 * 8,0,
+	295,VULCANTANKSTOP,15 * 8,0,
+	286,VULCANVULCAN,6 * 8,0,
+	280,VULCANTANKSTOP,15 * 8,0,
+	274 - 5,VULCANTANKLEFT,0,32,
+	274 - 5,VULCANTANKRIGHT,240,32,
+
+	262,VULCANBIRD,7 * 8,16,
+	262,VULCANBIRD,12 * 8,16,
+	262,VULCANBIRD,17 * 8,16,
+	262,VULCANBIRD,22 * 8,16,
+
+	259,VULCANBIRD,6 * 8,16,
+	259,VULCANBIRD,24 * 8,16,
+
+	255,VULCANBIRD,20 * 8,16,
+	255,VULCANBIRD,10 * 8,16,
+
+	251,VULCANBIRD,14 * 8,16,
+	251,VULCANBIRD,24 * 8,16,
+
+	247,VULCANBIRD,12 * 8,16,
+	247,VULCANBIRD,26 * 8,16,
+
+	243,VULCANBIRD,3 * 8,16,
+	243,VULCANBIRD,15 * 8,16,
+	243,VULCANBIRD,24 * 8,16,
+
+	239,VULCANBIRD,15 * 8,16,
+
+	235,VULCANBIRD,10 * 8,16,
+	235,VULCANBIRD,21 * 8,16,
+
+	231,VULCANBIRD,8 * 8,16,
+	231,VULCANBIRD,16 * 8,16,
+	231,VULCANBIRD,24 * 8,16,
+
+	223,VULCANTANKSTOP,8 * 8,0,
+	223,VULCANTANKSTOP,23 * 8,0,
+	219,VULCANSTATION,( 14 * 8 ) - 4,224,
+
+	203,VULCANTANKSTOP,15 * 8,0,
+	203,VULCANVULCAN,25 * 8,0,
+	195,VULCANTANKSTOP,15 * 8,0,
+	192,VULCANVULCAN,6 * 8,0,
+	187,VULCANTANKSTOP,15 * 8,0,
+	180,VULCANTANKSTOP,15 * 8,0,
+
+	180,VULCANBIRD,3 * 8,16,
+	180,VULCANBIRD,27 * 8,16,
+	180,VULCANBIRD,7 * 8,16,
+	180,VULCANBIRD,23 * 8,16,
+
+	173,VULCANBIRD,7 * 8,16,
+	173,VULCANBIRD,23 * 8,16,
+	173,VULCANBIRD,3 * 8,16,
+	173,VULCANBIRD,27 * 8,16,
+
+	171,VULCANTANKSTOP,15 * 8,0,
+	168 - 5,VULCANTANKLEFT,0,32,
+	168 - 5,VULCANTANKRIGHT,240,32,
+	162,VULCANTANKSTOP,( 23 * 8 ) + 4,0,
+	160,VULCANBIRD,4 * 8,16,
+	160,VULCANBIRD,10 * 8,16,
+	160,VULCANBIRD,16 * 8,16,
+	154 - 5,VULCANTANKLEFT,0,32,
+	154 - 5,VULCANTANKRIGHT,240,32,
+
+	148,VULCANBIRD,13 * 8,16,
+	148,VULCANBIRD,19 * 8,16,
+	148,VULCANBIRD,25 * 8,16,
 
 	146,VULCANTANKSTOP,60,0,
-	137,VULCANVULCAN,22*8,0,
+	137,VULCANVULCAN,22 * 8,0,
 	136,VULCANTANKSTOP,60,0,
 	126,VULCANTANKSTOP,60,0,
-	124,VULCANBIRD,14*8,16,
-	124,VULCANBIRD,20*8,16,
-	124,VULCANBIRD,26*8,16,
-	116,VULCANBIRD,14*8,16,
-	116,VULCANBIRD,20*8,16,
-	116,VULCANBIRD,26*8,16,
-	111-5,VULCANTANKLEFT,0,32,
-	111-5,VULCANTANKRIGHT,240,32,
-	106,VULCANTANKSTOP,(23*8)+4,0,
-	104,VULCANBIRD,4*8,16,
-	104,VULCANBIRD,10*8,16,
-	104,VULCANBIRD,16*8,16,
-	98-5,VULCANTANKLEFT,0,32,
-	98-5,VULCANTANKRIGHT,240,32,
-	
-	86,VULCANBIRD,17*8,16,
-	86,VULCANBIRD,3*8,16,
-	82,VULCANBIRD,10*8,16,
-	82,VULCANBIRD,26*8,16,
-	78,VULCANBIRD,21*8,16,
-	78,VULCANBIRD,6*8,16,
-	75,VULCANLASER,19*8,16,
-	74,VULCANBIRD,11*8,16,
-	74,VULCANBIRD,20*8,16,
-	70,VULCANBIRD,25*8,16,
-	70,VULCANBIRD,4*8,16,
-	67,VULCANLASER,6*8,16,
-	66,VULCANBIRD,10*8,16,
-	66,VULCANBIRD,28*8,16,	
-	62,VULCANBIRD,11*8,16,
-	62,VULCANBIRD,24*8,16,
-	59,VULCANLASER,1*8,16,
-	58,VULCANBIRD,15*8,16,
-	58,VULCANBIRD,5*8,16,
-	54,VULCANBIRD,2*8,16,
-	54,VULCANBIRD,21*8,16,
-	51,VULCANLASER,10*8,16,
-	50,VULCANBIRD,28*8,16,
-	50,VULCANBIRD,9*8,16,
-	46,VULCANBIRD,3*8,16,
-	46,VULCANBIRD,19*8,16,
-	43,VULCANLASER,19*8,16,
-	42,VULCANBIRD,27*8,16,
-	42,VULCANBIRD,16*8,16,
-	38,VULCANBIRD,5*8,16,
-	38,VULCANBIRD,25*8,16,
-	36,VULCANBIRD,13*8,16,
-	36,VULCANBIRD,28*8,16,
-	35,VULCANLASER,25*8,16,
-	27,VULCANLASER,15*8,16,
-		
+	124,VULCANBIRD,14 * 8,16,
+	124,VULCANBIRD,20 * 8,16,
+	124,VULCANBIRD,26 * 8,16,
+	116,VULCANBIRD,14 * 8,16,
+	116,VULCANBIRD,20 * 8,16,
+	116,VULCANBIRD,26 * 8,16,
+	111 - 5,VULCANTANKLEFT,0,32,
+	111 - 5,VULCANTANKRIGHT,240,32,
+	106,VULCANTANKSTOP,( 23 * 8 ) + 4,0,
+	104,VULCANBIRD,4 * 8,16,
+	104,VULCANBIRD,10 * 8,16,
+	104,VULCANBIRD,16 * 8,16,
+	98 - 5,VULCANTANKLEFT,0,32,
+	98 - 5,VULCANTANKRIGHT,240,32,
+
+	86,VULCANBIRD,17 * 8,16,
+	86,VULCANBIRD,3 * 8,16,
+	82,VULCANBIRD,10 * 8,16,
+	82,VULCANBIRD,26 * 8,16,
+	78,VULCANBIRD,21 * 8,16,
+	78,VULCANBIRD,6 * 8,16,
+	75,VULCANLASER,19 * 8,16,
+	74,VULCANBIRD,11 * 8,16,
+	74,VULCANBIRD,20 * 8,16,
+	70,VULCANBIRD,25 * 8,16,
+	70,VULCANBIRD,4 * 8,16,
+	67,VULCANLASER,6 * 8,16,
+	66,VULCANBIRD,10 * 8,16,
+	66,VULCANBIRD,28 * 8,16,
+	62,VULCANBIRD,11 * 8,16,
+	62,VULCANBIRD,24 * 8,16,
+	59,VULCANLASER,1 * 8,16,
+	58,VULCANBIRD,15 * 8,16,
+	58,VULCANBIRD,5 * 8,16,
+	54,VULCANBIRD,2 * 8,16,
+	54,VULCANBIRD,21 * 8,16,
+	51,VULCANLASER,10 * 8,16,
+	50,VULCANBIRD,28 * 8,16,
+	50,VULCANBIRD,9 * 8,16,
+	46,VULCANBIRD,3 * 8,16,
+	46,VULCANBIRD,19 * 8,16,
+	43,VULCANLASER,19 * 8,16,
+	42,VULCANBIRD,27 * 8,16,
+	42,VULCANBIRD,16 * 8,16,
+	38,VULCANBIRD,5 * 8,16,
+	38,VULCANBIRD,25 * 8,16,
+	36,VULCANBIRD,13 * 8,16,
+	36,VULCANBIRD,28 * 8,16,
+	35,VULCANLASER,25 * 8,16,
+	27,VULCANLASER,15 * 8,16,
+
 	18,WARNING,0,0,
 	4,STAGE2ENDBOSS,104,0,
-	
+
 };
 
 #define SPAN_ASTEROIDS_FULL_SCRIPT 18
-const unsigned char span_asteroids_full_script[]=
+const unsigned char span_asteroids_full_script[] =
 {
 	1,SCRIPT_INITENEMY,SPACEASTEROIDMEDIUM,0,0,
 	1,SCRIPT_INITENEMY,SPACEASTEROIDLITTLE,0,0,
@@ -1571,7 +1575,7 @@ const unsigned char span_asteroids_full_script[]=
 };
 
 #define SPAN_ASTEROIDS_LITTLE_SCRIPT 19
-const unsigned char span_asteroids_little_script[]=
+const unsigned char span_asteroids_little_script[] =
 {
 	1,SCRIPT_INITENEMY,SPACEASTEROIDBIG,0,0,
 	8,SCRIPT_INITENEMY,SPACEASTEROIDMEDIUM,0,0,
@@ -1583,7 +1587,7 @@ const unsigned char span_asteroids_little_script[]=
 };
 
 #define STAGE3SCRIPTB 20
-const unsigned char stage3scriptb[]=
+const unsigned char stage3scriptb[] =
 {
 	13,SCRIPT_INITSCRIPT,SPAN_ASTEROIDS_FULL_SCRIPT,0,0,
 	42,SCRIPT_INITSCRIPT,SPAN_ASTEROIDS_FULL_SCRIPT,0,0,
@@ -1591,9 +1595,9 @@ const unsigned char stage3scriptb[]=
 	82,SCRIPT_ADVANCESCROLLER,0,0,0,
 	83,SCRIPT_END,0,0,0
 };
-	
+
 #define STAGE3SCRIPT 21
-const unsigned char stage3script[]=
+const unsigned char stage3script[] =
 {
 	10,SCRIPT_INITSCRIPT,SPAN_ASTEROIDS_FULL_SCRIPT,0,0,
 	30,SCRIPT_INITSCRIPT,SPAN_SPREADSHIPS_SCRIPT,0,0,
@@ -1609,7 +1613,7 @@ const unsigned char stage3script[]=
 
 
 // Statics for stage 3
-const unsigned int stage3_statics[]=
+const unsigned int stage3_statics[] =
 {
 	285,WAVESHIP,128,0,
 	283,WAVESHIP,128,0,
@@ -1617,10 +1621,10 @@ const unsigned int stage3_statics[]=
 	279,WAVESHIP,128,0,
 	277,WAVESHIP,128,0,
 	275,WAVESHIP,128,0,
-	
-	265,SPACESHOOTER,15*8,236,
-	261,SPACESHOOTER,8*8,236,
-	261,SPACESHOOTER,22*8,236,
+
+	265,SPACESHOOTER,15 * 8,236,
+	261,SPACESHOOTER,8 * 8,236,
+	261,SPACESHOOTER,22 * 8,236,
 
 	253,WAVESHIP,128,0,
 	251,WAVESHIP,128,0,
@@ -1628,13 +1632,13 @@ const unsigned int stage3_statics[]=
 	247,WAVESHIP,128,0,
 	245,WAVESHIP,128,0,
 
-	245,SPACESHOOTER,1*8,236,
-	245,SPACESHOOTER,29*8,236,
+	245,SPACESHOOTER,1 * 8,236,
+	245,SPACESHOOTER,29 * 8,236,
 
 	243,WAVESHIP,128,0,
-	
-	241,SPACESHOOTER,1*8,236,
-	241,SPACESHOOTER,29*8,236,
+
+	241,SPACESHOOTER,1 * 8,236,
+	241,SPACESHOOTER,29 * 8,236,
 
 	229,WAVESHIP,64,0,
 	227,WAVESHIP,64,0,
@@ -1643,19 +1647,19 @@ const unsigned int stage3_statics[]=
 	221,WAVESHIP,64,0,
 	219,WAVESHIP,64,0,
 
-	219,SPACESHOOTER,20*8,236,
-	219,SPACESHOOTER,27*8,236,
-	
+	219,SPACESHOOTER,20 * 8,236,
+	219,SPACESHOOTER,27 * 8,236,
+
 	206,WAVESHIP,188,0,
 	204,WAVESHIP,188,0,
 	202,WAVESHIP,188,0,
 	200,WAVESHIP,188,0,
 	198,WAVESHIP,188,0,
 	196,WAVESHIP,188,0,
-	
-	196,SPACESHOOTER,2*8,236,
-	193,SPACESHOOTER,7*8,236,
-	
+
+	196,SPACESHOOTER,2 * 8,236,
+	193,SPACESHOOTER,7 * 8,236,
+
 	187,TURNSHIP,48,0,
 	186,TURNSHIP,48,0,
 	185,TURNSHIP,48,0,
@@ -1669,253 +1673,253 @@ const unsigned int stage3_statics[]=
 	177,TURNSHIP,208,0,
 	176,TURNSHIP,208,0,
 
-	171,SPACESHOOTER,15*8,236,
-	167,SPACESHOOTER,8*8,236,
-	167,SPACESHOOTER,21*8,236,
-	
+	171,SPACESHOOTER,15 * 8,236,
+	167,SPACESHOOTER,8 * 8,236,
+	167,SPACESHOOTER,21 * 8,236,
+
 	160,WAVESHIP,108,0,
 	155,WAVESHIP,148,0,
 	150,WAVESHIP,68,0,
 
-	147,SPACESHOOTER,21*8,236,
+	147,SPACESHOOTER,21 * 8,236,
 
 	145,WAVESHIP,208,0,
-	
+
 	140,WAVESHIP,108,0,
-	
-	139,SPACESHOOTER,5*8,236,
-	
+
+	139,SPACESHOOTER,5 * 8,236,
+
 	135,WAVESHIP,88,0,
-		
+
 	130,WAVESHIP,158,0,
-	130,WAVESHIP,118,0,	
-	
-	128,SPACESHOOTER,13*8,236,
-	128,SPACESHOOTER,18*8,236,	
-		
+	130,WAVESHIP,118,0,
+
+	128,SPACESHOOTER,13 * 8,236,
+	128,SPACESHOOTER,18 * 8,236,
+
 	120,WAVESHIP,208,0,
 	120,WAVESHIP,96,0,
-	
-	117,SPACESHOOTER,24*8,236,	
-	114,SPACESHOOTER,24*8,236,	
-	112,SPACESHOOTER,11*8,236,
-	111,SPACESHOOTER,24*8,236,
-	
+
+	117,SPACESHOOTER,24 * 8,236,
+	114,SPACESHOOTER,24 * 8,236,
+	112,SPACESHOOTER,11 * 8,236,
+	111,SPACESHOOTER,24 * 8,236,
+
 	110,WAVESHIP,200,0,
-		
-	109,SPACESHOOTER,7*8,236,
-	109,SPACESHOOTER,13*8,236,
-	
+
+	109,SPACESHOOTER,7 * 8,236,
+	109,SPACESHOOTER,13 * 8,236,
+
 	105,WAVESHIP,130,0,
 	100,WAVESHIP,90,0,
-	
-	95,SPACESHOOTER,10*8,236,
-	93,SPACESHOOTER,23*8,236,
-	
+
+	95,SPACESHOOTER,10 * 8,236,
+	93,SPACESHOOTER,23 * 8,236,
+
 	90,WAVESHIP,138,0,
 	80,WAVESHIP,78,0,
-	
+
 	40,STAGE3ENDBOSS,46,0,
 	39,STAGE3ENDBOSSB,180,0,
 };
 
 
 // Statics for stage 7
-const unsigned int stage7_statics[]=
+const unsigned int stage7_statics[] =
 {
-	448,MONSTERMISSILLEFT,8*8,0,
+	448,MONSTERMISSILLEFT,8 * 8,0,
 
-	445,MONSTERBLOB,10*8,0,
-	445,MONSTERBLOB,19*8,0,
+	445,MONSTERBLOB,10 * 8,0,
+	445,MONSTERBLOB,19 * 8,0,
 
-	444,MONSTERMISSILRIGHT,22*8,0,
+	444,MONSTERMISSILRIGHT,22 * 8,0,
 
-	440,MONSTERBLOB,16*8,0,
-	440,MONSTERBLOB,24*8,0,
+	440,MONSTERBLOB,16 * 8,0,
+	440,MONSTERBLOB,24 * 8,0,
 
-	438,MONSTERMISSILLEFT,4*8,0,
-	
-	435,MONSTERBLOB,15*8,0,
-	
-	433,MONSTERMISSILRIGHT,26*8,0,
-	
-	430,MONSTERBLOB,10*8,0,
-	430,MONSTERBLOB,20*8,0,
-		
-	428,MONSTERMISSILLEFT,4*8,0,
+	438,MONSTERMISSILLEFT,4 * 8,0,
 
-	425,MONSTERBLOB,15*8,0,
-	425,MONSTERBLOB,23*8,0,
-	
-	423,MONSTERMISSILRIGHT,26*8,0,
+	435,MONSTERBLOB,15 * 8,0,
 
-	420,MONSTERBLOB,9*8,0,
-	415,MONSTERBLOB,20*8,0,
-	
-	415,MONSTERMISSILRIGHT,22*8,0,
-	411,MONSTERMISSILLEFT,8*8,0,
+	433,MONSTERMISSILRIGHT,26 * 8,0,
 
-	410,MONSTERBLOB,10*8,0,
-	410,MONSTERBLOB,20*8,0,
+	430,MONSTERBLOB,10 * 8,0,
+	430,MONSTERBLOB,20 * 8,0,
 
-	406,MONSTERMISSILLEFT,4*8,0,
-	402,MONSTERMISSILRIGHT,26*8,0,
+	428,MONSTERMISSILLEFT,4 * 8,0,
 
-	398,MONSTERMISSILRIGHT,10*8,0,
-	394,MONSTERMISSILLEFT,20*8,0,
+	425,MONSTERBLOB,15 * 8,0,
+	425,MONSTERBLOB,23 * 8,0,
 
-	394,MONSTERBLOB,6*8,0,
-	390,MONSTERBLOB,23*8,0,
-	
-	388,MONSTERMISSILLEFT,4*8,0,
-	384,MONSTERMISSILRIGHT,26*8,0,
-	
-	382,MONSTERBLOB,10*8,0,
-	382,MONSTERBLOB,16*8,0,
-	378,MONSTERBLOB,13*8,0,
-	
-	378,MONSTERMISSILLEFT,6*8,0,	
-	
-	376,MONSTERBLOB,14*8,0,
+	423,MONSTERMISSILRIGHT,26 * 8,0,
 
-	373,MONSTERMISSILLEFT,6*8,0,
-	
-	371,MONSTERMISSILRIGHT,20*8,0,
+	420,MONSTERBLOB,9 * 8,0,
+	415,MONSTERBLOB,20 * 8,0,
 
-	370,MONSTERBLOB,20*8,0,
-	
-	360,MONSTERBLOB,7*8,0,
-	360,MONSTERBLOB,14*8,0,
-	
-	357,MONSTERMISSILRIGHT,19*8,0,
+	415,MONSTERMISSILRIGHT,22 * 8,0,
+	411,MONSTERMISSILLEFT,8 * 8,0,
 
-	355,MONSTERBLOB,7*8,0,
-	355,MONSTERBLOB,16*8,0,
-	
-	350,MONSTERBLOB,9*8,0,
-	350,MONSTERBLOB,14*8,0,
-	
-	347,MONSTERMISSILLEFT,5*8,0,
-	345,MONSTERMISSILRIGHT,19*8,0,
+	410,MONSTERBLOB,10 * 8,0,
+	410,MONSTERBLOB,20 * 8,0,
 
-	342,MONSTERBLOB,6*8,0,
-	342,MONSTERBLOB,17*8,0,
+	406,MONSTERMISSILLEFT,4 * 8,0,
+	402,MONSTERMISSILRIGHT,26 * 8,0,
 
-	335,MONSTERBLOB,9*8,0,
-	335,MONSTERBLOB,14*8,0,
-	
-	326,MONSTERHEAD,14*8,0,
-	
-	310,MONSTERBLOB,12*8,0,
-	310,MONSTERBLOB,19*8,0,
-	
-	306,MONSTERMISSILLEFT,10*8,0,
-	
-	305,MONSTERBLOB,14*8,0,
-	305,MONSTERBLOB,17*8,0,
+	398,MONSTERMISSILRIGHT,10 * 8,0,
+	394,MONSTERMISSILLEFT,20 * 8,0,
 
-	300,MONSTERBLOB,20*8,216,
+	394,MONSTERBLOB,6 * 8,0,
+	390,MONSTERBLOB,23 * 8,0,
 
-	291,MONSTERMISSILLEFT,10*8,0,
-	
-	289,MONSTERMISSILRIGHT,24*8,0,
-	
-	288,MONSTERBLOB,21*8,0,
-	285,MONSTERBLOB,12*8,0,
+	388,MONSTERMISSILLEFT,4 * 8,0,
+	384,MONSTERMISSILRIGHT,26 * 8,0,
 
-	280,MONSTERBLOB,13*8,0,
-	280,MONSTERBLOB,19*8,0,
-	
-	271,MONSTERMISSILRIGHT,22*8,0,
-	
-	269,MONSTERMISSILLEFT,8*8,0,
-	
-	269,MONSTERBLOB,11*8,0,
-	265,MONSTERBLOB,20*8,0,
+	382,MONSTERBLOB,10 * 8,0,
+	382,MONSTERBLOB,16 * 8,0,
+	378,MONSTERBLOB,13 * 8,0,
 
-	260,MONSTERMISSILRIGHT,24*8,0,
-	
-	260,MONSTERBLOB,10*8,0,
-	260,MONSTERBLOB,22*8,0,
-	
-	255,MONSTERBLOB,12*8,0,
-	255,MONSTERBLOB,10*8,0,
-	
-	251,MONSTERMISSILLEFT,8*8,0,
-	
-	250,MONSTERBLOB,14*8,0,
-	250,MONSTERBLOB,18*8,0,
-	
-	245,MONSTERBLOB,12*8,0,
-	245,MONSTERBLOB,20*8,216,
-	
-	239,MONSTERMISSILLEFT,8*8,0,
-	
-	236,MONSTERMISSILRIGHT,22*8,0,
+	378,MONSTERMISSILLEFT,6 * 8,0,
 
-	235,MONSTERBLOB,11*8,0,
-	235,MONSTERBLOB,18*8,0,
-	
-	230,MONSTERBLOB,14*8,0,
-		
-	224,MONSTERMISSILRIGHT,22*8,0,
-	224,MONSTERMISSILLEFT,8*8,0,
-	
+	376,MONSTERBLOB,14 * 8,0,
+
+	373,MONSTERMISSILLEFT,6 * 8,0,
+
+	371,MONSTERMISSILRIGHT,20 * 8,0,
+
+	370,MONSTERBLOB,20 * 8,0,
+
+	360,MONSTERBLOB,7 * 8,0,
+	360,MONSTERBLOB,14 * 8,0,
+
+	357,MONSTERMISSILRIGHT,19 * 8,0,
+
+	355,MONSTERBLOB,7 * 8,0,
+	355,MONSTERBLOB,16 * 8,0,
+
+	350,MONSTERBLOB,9 * 8,0,
+	350,MONSTERBLOB,14 * 8,0,
+
+	347,MONSTERMISSILLEFT,5 * 8,0,
+	345,MONSTERMISSILRIGHT,19 * 8,0,
+
+	342,MONSTERBLOB,6 * 8,0,
+	342,MONSTERBLOB,17 * 8,0,
+
+	335,MONSTERBLOB,9 * 8,0,
+	335,MONSTERBLOB,14 * 8,0,
+
+	326,MONSTERHEAD,14 * 8,0,
+
+	310,MONSTERBLOB,12 * 8,0,
+	310,MONSTERBLOB,19 * 8,0,
+
+	306,MONSTERMISSILLEFT,10 * 8,0,
+
+	305,MONSTERBLOB,14 * 8,0,
+	305,MONSTERBLOB,17 * 8,0,
+
+	300,MONSTERBLOB,20 * 8,216,
+
+	291,MONSTERMISSILLEFT,10 * 8,0,
+
+	289,MONSTERMISSILRIGHT,24 * 8,0,
+
+	288,MONSTERBLOB,21 * 8,0,
+	285,MONSTERBLOB,12 * 8,0,
+
+	280,MONSTERBLOB,13 * 8,0,
+	280,MONSTERBLOB,19 * 8,0,
+
+	271,MONSTERMISSILRIGHT,22 * 8,0,
+
+	269,MONSTERMISSILLEFT,8 * 8,0,
+
+	269,MONSTERBLOB,11 * 8,0,
+	265,MONSTERBLOB,20 * 8,0,
+
+	260,MONSTERMISSILRIGHT,24 * 8,0,
+
+	260,MONSTERBLOB,10 * 8,0,
+	260,MONSTERBLOB,22 * 8,0,
+
+	255,MONSTERBLOB,12 * 8,0,
+	255,MONSTERBLOB,10 * 8,0,
+
+	251,MONSTERMISSILLEFT,8 * 8,0,
+
+	250,MONSTERBLOB,14 * 8,0,
+	250,MONSTERBLOB,18 * 8,0,
+
+	245,MONSTERBLOB,12 * 8,0,
+	245,MONSTERBLOB,20 * 8,216,
+
+	239,MONSTERMISSILLEFT,8 * 8,0,
+
+	236,MONSTERMISSILRIGHT,22 * 8,0,
+
+	235,MONSTERBLOB,11 * 8,0,
+	235,MONSTERBLOB,18 * 8,0,
+
+	230,MONSTERBLOB,14 * 8,0,
+
+	224,MONSTERMISSILRIGHT,22 * 8,0,
+	224,MONSTERMISSILLEFT,8 * 8,0,
+
 	194,STAGE7MIDDLEBOSS,104,0,
-	
-	184,MONSTERHEAD,14*8,0,
 
-	175,MONSTERBLOB,23*8,0,
-	175,MONSTERBLOB,7*8,0,
-	
-	174,MONSTERMISSILLEFT,20*8,0,
-	174,MONSTERMISSILRIGHT,10*8,0,
-	
-	170,MONSTERBLOB,20*8,0,
-	170,MONSTERBLOB,10*8,0,
-	
-	166,MONSTERMISSILLEFT,4*8,0,
-	166,MONSTERMISSILRIGHT,26*8,0,
+	184,MONSTERHEAD,14 * 8,0,
 
-	162,MONSTERBLOB,23*8,0,
-	162,MONSTERBLOB,7*8,0,
+	175,MONSTERBLOB,23 * 8,0,
+	175,MONSTERBLOB,7 * 8,0,
 
-	159,MONSTERMISSILLEFT,20*8,0,
-	159,MONSTERMISSILRIGHT,10*8,0,
+	174,MONSTERMISSILLEFT,20 * 8,0,
+	174,MONSTERMISSILRIGHT,10 * 8,0,
 
-	150,MONSTERBLOB,11*8,216,
-	150,MONSTERBLOB,19*8,216,
+	170,MONSTERBLOB,20 * 8,0,
+	170,MONSTERBLOB,10 * 8,0,
 
-	138,MONSTERMISSILLEFT,8*8,0,
-	138,MONSTERMISSILRIGHT,22*8,0,
+	166,MONSTERMISSILLEFT,4 * 8,0,
+	166,MONSTERMISSILRIGHT,26 * 8,0,
 
-	136,MONSTERBLOB,7*8,216,
-	136,MONSTERBLOB,17*8,216,
-	
-	133,MONSTERBLOB,10*8,0,
-	133,MONSTERBLOB,14*8,0,
-	
-	121,MONSTERHEAD,8*8,0,
+	162,MONSTERBLOB,23 * 8,0,
+	162,MONSTERBLOB,7 * 8,0,
 
-	116,MONSTERBLOB,7*8,0,
-	116,MONSTERBLOB,13*8,0,
-	
-	111,MONSTERBLOB,10*8,0,
-	
-	104,MONSTERHEAD,21*8,0,
-	
-	
-	95,MONSTERBLOB,18*8,0,
-	95,MONSTERBLOB,24*8,0,
-	
-	83,MONSTERBLOB,7*8,0,
-	83,MONSTERBLOB,24*8,0,
-	
-	70,MONSTERHEAD,14*8,0,
-	
-	65,MONSTERBLOB,13*8,0,
-	60,MONSTERBLOB,16*8,0,
-	
+	159,MONSTERMISSILLEFT,20 * 8,0,
+	159,MONSTERMISSILRIGHT,10 * 8,0,
+
+	150,MONSTERBLOB,11 * 8,216,
+	150,MONSTERBLOB,19 * 8,216,
+
+	138,MONSTERMISSILLEFT,8 * 8,0,
+	138,MONSTERMISSILRIGHT,22 * 8,0,
+
+	136,MONSTERBLOB,7 * 8,216,
+	136,MONSTERBLOB,17 * 8,216,
+
+	133,MONSTERBLOB,10 * 8,0,
+	133,MONSTERBLOB,14 * 8,0,
+
+	121,MONSTERHEAD,8 * 8,0,
+
+	116,MONSTERBLOB,7 * 8,0,
+	116,MONSTERBLOB,13 * 8,0,
+
+	111,MONSTERBLOB,10 * 8,0,
+
+	104,MONSTERHEAD,21 * 8,0,
+
+
+	95,MONSTERBLOB,18 * 8,0,
+	95,MONSTERBLOB,24 * 8,0,
+
+	83,MONSTERBLOB,7 * 8,0,
+	83,MONSTERBLOB,24 * 8,0,
+
+	70,MONSTERHEAD,14 * 8,0,
+
+	65,MONSTERBLOB,13 * 8,0,
+	60,MONSTERBLOB,16 * 8,0,
+
 	41,WARNING,0,0,
 	11,STAGE7ENDBOSS,128,30,
 };
@@ -1923,7 +1927,7 @@ const unsigned int stage7_statics[]=
 /////////////////////////////////////////////
 // SPAWNERS
 
-const unsigned char *spawners[]=
+const unsigned char *spawners[] =
 {
 	span_waveship80_script,
 	span_waveship160_script,
@@ -1951,42 +1955,42 @@ const unsigned char *spawners[]=
 
 // Function pointers
 
-extern void InitWarning(enemy *en);
-extern void InitIntroSidePlayer(enemy *en);
-extern void InitIntroStar(enemy *en);
-extern void InitWaveShip(enemy *en);
-extern void InitTurnShip(enemy *en);
-extern void InitBombShipLeft(enemy *en);
-extern void InitBombShipRight(enemy *en);
-extern void InitSpreadShip(enemy *en);
-extern void InitWW2Zeppelin(enemy *en);
-extern void InitWW2Plane(enemy *en);
-extern void InitIntro3Object(enemy *en);
-extern void InitMonsterMissilLeft(enemy *en);
-extern void InitStage7MiddleBoss(enemy *en);
-extern void InitStage7EndBoss(enemy *en);
-extern void InitFortressPhantom(enemy *en);
-extern void InitFortressCannonRight(enemy *en);
-extern void InitVulcanBird(enemy *en);
-extern void InitVulcanLaser(enemy *en);
-extern void InitVulcanLava(enemy *en);
-extern void InitSpaceAsteroid(enemy *en);
-extern void InitSkullBoneA(enemy *en);
-extern void InitSkullBoneB(enemy *en);
-extern void InitSkullBoneC(enemy *en);
-extern void InitStage7EndBossB(enemy *en);
-extern void InitStage4EndBossB(enemy *en);
-extern void InitStage3Laser(enemy *en);
-extern void InitStage1MiddleBossB(enemy *en);
-extern void InitStage1MiddleBossC(enemy *en);
-extern void InitStage6EndBossB(enemy *en);
-extern void InitStage8BossA(enemy *en);
-extern void InitStage8BossB(enemy *en);
-extern void InitStage8BossC(enemy *en);
-extern void InitRSGThing(enemy *en);
-extern void InitStage8Lateral(enemy *en);
+extern void InitWarning( enemy *en );
+extern void InitIntroSidePlayer( enemy *en );
+extern void InitIntroStar( enemy *en );
+extern void InitWaveShip( enemy *en );
+extern void InitTurnShip( enemy *en );
+extern void InitBombShipLeft( enemy *en );
+extern void InitBombShipRight( enemy *en );
+extern void InitSpreadShip( enemy *en );
+extern void InitWW2Zeppelin( enemy *en );
+extern void InitWW2Plane( enemy *en );
+extern void InitIntro3Object( enemy *en );
+extern void InitMonsterMissilLeft( enemy *en );
+extern void InitStage7MiddleBoss( enemy *en );
+extern void InitStage7EndBoss( enemy *en );
+extern void InitFortressPhantom( enemy *en );
+extern void InitFortressCannonRight( enemy *en );
+extern void InitVulcanBird( enemy *en );
+extern void InitVulcanLaser( enemy *en );
+extern void InitVulcanLava( enemy *en );
+extern void InitSpaceAsteroid( enemy *en );
+extern void InitSkullBoneA( enemy *en );
+extern void InitSkullBoneB( enemy *en );
+extern void InitSkullBoneC( enemy *en );
+extern void InitStage7EndBossB( enemy *en );
+extern void InitStage4EndBossB( enemy *en );
+extern void InitStage3Laser( enemy *en );
+extern void InitStage1MiddleBossB( enemy *en );
+extern void InitStage1MiddleBossC( enemy *en );
+extern void InitStage6EndBossB( enemy *en );
+extern void InitStage8BossA( enemy *en );
+extern void InitStage8BossB( enemy *en );
+extern void InitStage8BossC( enemy *en );
+extern void InitRSGThing( enemy *en );
+extern void InitStage8Lateral( enemy *en );
 
-const MyInitEnemyFunction initenemyfunctions[]=
+const MyInitEnemyFunction initenemyfunctions[] =
 {
 	0,
 	InitWarning,
@@ -2076,69 +2080,69 @@ const MyInitEnemyFunction initenemyfunctions[]=
 	InitStage8Lateral,
 };
 
-extern unsigned char UpdateWarning(enemy *en);
-extern unsigned char UpdateIntroSidePlayer(enemy *en);
-extern unsigned char UpdateIntroOvni(enemy *en);
-extern unsigned char UpdateIntroStar(enemy *en);
-extern unsigned char UpdateWaveShip(enemy *en);
-extern unsigned char UpdateRectShip(enemy *en);
-extern unsigned char UpdateTurnShip(enemy *en);
-extern unsigned char UpdateBombShip(enemy *en);
-extern unsigned char UpdateSpreadShip(enemy *en);
-extern unsigned char UpdateStage4MiddleBoss(enemy *en);
-extern unsigned char UpdateStage4EndBoss(enemy *en);
-extern unsigned char UpdateWW2Zeppelin(enemy *en);
-extern unsigned char UpdateWW2Ship(enemy *en);
-extern unsigned char UpdateWW2Plane(enemy *en);
-extern unsigned char UpdateStage5EndBoss(enemy *en);
-extern unsigned char UpdateIntro3Object(enemy *en);
-extern unsigned char UpdateMonsterBlob(enemy *en);
-extern unsigned char UpdateMonsterHead(enemy *en);
-extern unsigned char UpdateMonsterMissil(enemy *en);
-extern unsigned char UpdateStage7MiddleBoss(enemy *en);
-extern unsigned char UpdateStage7EndBoss(enemy *en);
-extern unsigned char UpdateStage7Object(enemy *en);
-extern unsigned char UpdateFortressSearcher(enemy *en);
-extern unsigned char UpdateFortressDoor(enemy *en);
-extern unsigned char UpdateFortressWave(enemy *en);
-extern unsigned char UpdateFortressPhantom(enemy *en);
-extern unsigned char UpdateFortressCannon(enemy *en);
-extern unsigned char UpdateStage1MiddleBoss(enemy *en);
-extern unsigned char UpdateStage1EndBoss(enemy *en);
-extern unsigned char UpdateStage4Object(enemy *en);
-extern unsigned char UpdateVulcanStation(enemy *en);
-extern unsigned char UpdateVulcanVulcan(enemy *en);
-extern unsigned char UpdateVulcanBird(enemy *en);
-extern unsigned char UpdateVulcanLaser(enemy *en);
-extern unsigned char UpdateVulcanLava(enemy *en);
-extern unsigned char UpdateVulcanTankLeft(enemy *en);
-extern unsigned char UpdateVulcanTankRight(enemy *en);
-extern unsigned char UpdateVulcanTankStop(enemy *en);
-extern unsigned char UpdateStage2EndBoss(enemy *en);
-extern unsigned char UpdateStage2Object(enemy *en);
-extern unsigned char UpdateSpaceAsteroid(enemy *en);
-extern unsigned char UpdateSpaceStation(enemy *en);
-extern unsigned char UpdateSpaceShooter(enemy *en);
-extern unsigned char UpdateStage3EndBoss(enemy *en);
-extern unsigned char UpdateStage6EndBoss(enemy *en);
-extern unsigned char UpdateSkullBoneAB(enemy *en);
-extern unsigned char UpdateSkullBoneC(enemy *en);
-extern unsigned char UpdateStage5Missile(enemy *en);
-extern unsigned char UpdateStage7EndBossB(enemy *en);
-extern unsigned char UpdateStage4EndBossB(enemy *en);
-extern unsigned char UpdateStage3Laser(enemy *en);
-extern unsigned char UpdateStage1MiddleBossB(enemy *en);
-extern unsigned char UpdateStage1MiddleBossC(enemy *en);
-extern unsigned char UpdateStage6EndBossB(enemy *en);
-extern unsigned char UpdateStage6Object(enemy *en);
-extern unsigned char UpdateStage8BossA(enemy *en);
-extern unsigned char UpdateStage8BossB(enemy *en);
-extern unsigned char UpdateStage8BossC(enemy *en);
-extern unsigned char UpdateRSGThing(enemy *en);
-extern unsigned char UpdateWW2PlaneB(enemy *en);
-extern unsigned char UpdateStage8Lateral(enemy *en);
+extern unsigned char UpdateWarning( enemy *en );
+extern unsigned char UpdateIntroSidePlayer( enemy *en );
+extern unsigned char UpdateIntroOvni( enemy *en );
+extern unsigned char UpdateIntroStar( enemy *en );
+extern unsigned char UpdateWaveShip( enemy *en );
+extern unsigned char UpdateRectShip( enemy *en );
+extern unsigned char UpdateTurnShip( enemy *en );
+extern unsigned char UpdateBombShip( enemy *en );
+extern unsigned char UpdateSpreadShip( enemy *en );
+extern unsigned char UpdateStage4MiddleBoss( enemy *en );
+extern unsigned char UpdateStage4EndBoss( enemy *en );
+extern unsigned char UpdateWW2Zeppelin( enemy *en );
+extern unsigned char UpdateWW2Ship( enemy *en );
+extern unsigned char UpdateWW2Plane( enemy *en );
+extern unsigned char UpdateStage5EndBoss( enemy *en );
+extern unsigned char UpdateIntro3Object( enemy *en );
+extern unsigned char UpdateMonsterBlob( enemy *en );
+extern unsigned char UpdateMonsterHead( enemy *en );
+extern unsigned char UpdateMonsterMissil( enemy *en );
+extern unsigned char UpdateStage7MiddleBoss( enemy *en );
+extern unsigned char UpdateStage7EndBoss( enemy *en );
+extern unsigned char UpdateStage7Object( enemy *en );
+extern unsigned char UpdateFortressSearcher( enemy *en );
+extern unsigned char UpdateFortressDoor( enemy *en );
+extern unsigned char UpdateFortressWave( enemy *en );
+extern unsigned char UpdateFortressPhantom( enemy *en );
+extern unsigned char UpdateFortressCannon( enemy *en );
+extern unsigned char UpdateStage1MiddleBoss( enemy *en );
+extern unsigned char UpdateStage1EndBoss( enemy *en );
+extern unsigned char UpdateStage4Object( enemy *en );
+extern unsigned char UpdateVulcanStation( enemy *en );
+extern unsigned char UpdateVulcanVulcan( enemy *en );
+extern unsigned char UpdateVulcanBird( enemy *en );
+extern unsigned char UpdateVulcanLaser( enemy *en );
+extern unsigned char UpdateVulcanLava( enemy *en );
+extern unsigned char UpdateVulcanTankLeft( enemy *en );
+extern unsigned char UpdateVulcanTankRight( enemy *en );
+extern unsigned char UpdateVulcanTankStop( enemy *en );
+extern unsigned char UpdateStage2EndBoss( enemy *en );
+extern unsigned char UpdateStage2Object( enemy *en );
+extern unsigned char UpdateSpaceAsteroid( enemy *en );
+extern unsigned char UpdateSpaceStation( enemy *en );
+extern unsigned char UpdateSpaceShooter( enemy *en );
+extern unsigned char UpdateStage3EndBoss( enemy *en );
+extern unsigned char UpdateStage6EndBoss( enemy *en );
+extern unsigned char UpdateSkullBoneAB( enemy *en );
+extern unsigned char UpdateSkullBoneC( enemy *en );
+extern unsigned char UpdateStage5Missile( enemy *en );
+extern unsigned char UpdateStage7EndBossB( enemy *en );
+extern unsigned char UpdateStage4EndBossB( enemy *en );
+extern unsigned char UpdateStage3Laser( enemy *en );
+extern unsigned char UpdateStage1MiddleBossB( enemy *en );
+extern unsigned char UpdateStage1MiddleBossC( enemy *en );
+extern unsigned char UpdateStage6EndBossB( enemy *en );
+extern unsigned char UpdateStage6Object( enemy *en );
+extern unsigned char UpdateStage8BossA( enemy *en );
+extern unsigned char UpdateStage8BossB( enemy *en );
+extern unsigned char UpdateStage8BossC( enemy *en );
+extern unsigned char UpdateRSGThing( enemy *en );
+extern unsigned char UpdateWW2PlaneB( enemy *en );
+extern unsigned char UpdateStage8Lateral( enemy *en );
 
-const MyUpdateEnemyFunction updateenemyfunctions[]=
+const MyUpdateEnemyFunction updateenemyfunctions[] =
 {
 	0,
 	UpdateWarning,
@@ -2237,7 +2241,7 @@ extern void UpdateStage6();
 extern void UpdateStage7();
 extern void UpdateStage8();
 
-const MyKillEnemyFunction updatestagefunctions[]=
+const MyKillEnemyFunction updatestagefunctions[] =
 {
 	0,
 	UpdateStage7,
@@ -2259,7 +2263,7 @@ extern void InitStage3();
 extern void InitStage1();
 extern void InitStage6();
 
-const MyKillEnemyFunction initstagefunctions[]=
+const MyKillEnemyFunction initstagefunctions[] =
 {
 	0,
 	InitStage7,
@@ -2282,7 +2286,7 @@ extern void FinishStage6EndBoss();
 extern void FinishStage8BossC();
 
 
-const MyKillEnemyFunction killenemyfunctions[]=
+const MyKillEnemyFunction killenemyfunctions[] =
 {
 	0,
 	0,
@@ -2374,69 +2378,69 @@ const MyKillEnemyFunction killenemyfunctions[]=
 
 // Scrollers
 
-const signed int stage4_scrollers[]=
+const signed int stage4_scrollers[] =
 {
-133*32,12,28*32,0,12,
-133*32,12,28*32,-4,12, 
-133*32,12,28*32,4,12, 
-133*32,2,28*32,2,8, 
-133*32,2,28*32,-2,8,
-133*32,2,28*32,2,8, 
-133*32,2,28*32,-2,8,
-133*32,2,28*32,2,8, 
-133*32,2,28*32,-2,8,
-133*32,200,28*32,0,4,
-126*32,1,0*32,0,8,
-65*32,20,28*32,0,10,
-65*32,10,28*32,-6,10,
-65*32,11,28*32,6,10,
-7*32,1,0*32,0,4,
-7*32,10000,28*32,0,12
+	133 * 32,12,28 * 32,0,12,
+	133 * 32,12,28 * 32,-4,12,
+	133 * 32,12,28 * 32,4,12,
+	133 * 32,2,28 * 32,2,8,
+	133 * 32,2,28 * 32,-2,8,
+	133 * 32,2,28 * 32,2,8,
+	133 * 32,2,28 * 32,-2,8,
+	133 * 32,2,28 * 32,2,8,
+	133 * 32,2,28 * 32,-2,8,
+	133 * 32,200,28 * 32,0,4,
+	126 * 32,1,0 * 32,0,8,
+	65 * 32,20,28 * 32,0,10,
+	65 * 32,10,28 * 32,-6,10,
+	65 * 32,11,28 * 32,6,10,
+	7 * 32,1,0 * 32,0,4,
+	7 * 32,10000,28 * 32,0,12
 };
 
-const signed int stage1_scrollers[]=
+const signed int stage1_scrollers[] =
 {
-292*32,1,0*32,0,2,
-289*32,10000,2*32,0,4,
-2*32,1,0*32,0,2,
-1*32,10000,2*32,0,6
+	292 * 32,1,0 * 32,0,2,
+	289 * 32,10000,2 * 32,0,4,
+	2 * 32,1,0 * 32,0,2,
+	1 * 32,10000,2 * 32,0,6
 };
 
-const signed int stage2_scrollers[]=
+const signed int stage2_scrollers[] =
 {
-(33+29)*32,1,0*32,0,2,
-3*32,1,0*32,0,2,
-2*32,20000,2*32,0,2
+	( 33 + 29 ) * 32,1,0 * 32,0,2,
+	3 * 32,1,0 * 32,0,2,
+	2 * 32,20000,2 * 32,0,2
 };
 
-const signed int stage5_scrollers[]=
+const signed int stage5_scrollers[] =
 {
-412*32,11,28*32,0,6,
-386*32,1,0*32,0,4,
-2*32,1,0*32,0,2,
-1*32,7000,7*32,0,16
+	412 * 32,11,28 * 32,0,6,
+	386 * 32,1,0 * 32,0,4,
+	2 * 32,1,0 * 32,0,2,
+	1 * 32,7000,7 * 32,0,16
 };
 
-const signed int stage3_scrollers[]=
+const signed int stage3_scrollers[] =
 {
-292*32,100,28*32,0,4,
-3*32,100,28*32,0,2
+	292 * 32,100,28 * 32,0,4,
+	3 * 32,100,28 * 32,0,2
 };
 
-const signed int stage7_scrollers[]=
+const signed int stage7_scrollers[] =
 {
-20*32,1,0*32,0,2,
-10*32,10000,7*32,0,6
+	20 * 32,1,0 * 32,0,2,
+	10 * 32,10000,7 * 32,0,6
 };
 
-const signed int stage6_scrollers[]=
+const signed int stage6_scrollers[] =
 {
-8*32,10000,28*32,0,2,
-1*32,10000,28*32,0,12
+	8 * 32,10000,28 * 32,0,2,
+	1 * 32,10000,28 * 32,0,12
 };
 
 // Pointer to sprites and where they go
-const unsigned char *imagepointers[]=
+const unsigned char *imagepointers[] =
 {
 	0,
 	warning_psgcompr,
@@ -2526,7 +2530,7 @@ const unsigned char *imagepointers[]=
 	stage8lateral_psgcompr
 };
 
-const int imagebases[]=
+const int imagebases[] =
 {
 	0,
 	WARNINGBASE,
@@ -2616,7 +2620,7 @@ const int imagebases[]=
 	STAGE8LATERALBASE
 };
 
-const unsigned char imagebanks[]=
+const unsigned char imagebanks[] =
 {
 	0,
 	warning_psgcompr_bank,
@@ -2706,8 +2710,8 @@ const unsigned char imagebanks[]=
 	stage8lateral_psgcompr_bank
 };
 
-const 
-unsigned char stage3spriteslist[]=
+const
+unsigned char stage3spriteslist[] =
 {
 	WAVESHIP,
 	RECTSHIP,
@@ -2723,7 +2727,7 @@ unsigned char stage3spriteslist[]=
 	WARNING
 };
 
-const unsigned char stage1spriteslist[]=
+const unsigned char stage1spriteslist[] =
 {
 	FORTRESSSEARCHER,
 	FORTRESSDOOR,
@@ -2735,7 +2739,7 @@ const unsigned char stage1spriteslist[]=
 	WARNING
 };
 
-const unsigned char stage2spriteslist[]=
+const unsigned char stage2spriteslist[] =
 {
 	VULCANVULCAN,
 	VULCANLASER,
@@ -2747,7 +2751,7 @@ const unsigned char stage2spriteslist[]=
 	WARNING
 };
 
-const unsigned char stage7spriteslist[]=
+const unsigned char stage7spriteslist[] =
 {
 	MONSTERBLOB,
 	MONSTERHEAD,
@@ -2757,7 +2761,7 @@ const unsigned char stage7spriteslist[]=
 	WARNING
 };
 
-const unsigned char stage5spriteslist[]=
+const unsigned char stage5spriteslist[] =
 {
 	WW2ZEPPELIN,
 	WW2SHIP,
@@ -2767,7 +2771,7 @@ const unsigned char stage5spriteslist[]=
 	WARNING
 };
 
-const unsigned char stage4spriteslist[]=
+const unsigned char stage4spriteslist[] =
 {
 	WAVESHIP,
 	RECTSHIP,
@@ -2783,44 +2787,44 @@ const unsigned char stage4spriteslist[]=
 
 
 // ORIGINAL...
-const unsigned char stage6spriteslist[]=
+const unsigned char stage6spriteslist[] =
 {
 	STAGE6ENDBOSS,
 	SKULLBONEA,
 	VULCANLASER
 };
 
-const unsigned char stage6script[]=
+const unsigned char stage6script[] =
 {
 	30,SCRIPT_INITENEMY,STAGE6ENDBOSS,108,0,
 	31,SCRIPT_END,0,0,0
 };
 
-const unsigned char stage6scriptb[]=
+const unsigned char stage6scriptb[] =
 {
-	30,SCRIPT_INITENEMY,STAGE6ENDBOSSB,108,224-56,
+	30,SCRIPT_INITENEMY,STAGE6ENDBOSSB,108,224 - 56,
 	31,SCRIPT_END,0,0,0
 };
 
 
 // Shoot directions for monster head
-signed char monsterheadshootdirecionsx[]={4,3,2,1,0,-1,-2,-3,-4,-3,-2,-1,0,1,2,3};
-signed char monsterheadshootdirecionsy[]={0,1,2,3,4,3,2,1,0,1,2,3,4,3,2,1};
+signed char monsterheadshootdirecionsx[] = { 4,3,2,1,0,-1,-2,-3,-4,-3,-2,-1,0,1,2,3 };
+signed char monsterheadshootdirecionsy[] = { 0,1,2,3,4,3,2,1,0,1,2,3,4,3,2,1 };
 
 // Labels labels labels
-unsigned char *difficultlabels[]={"EASY","HARD"};
+unsigned char *difficultlabels[] = { "EASY","HARD" };
 
 // Stage 6 end boss
 
-extern void UpdateStage6EndBoss0(enemy *en);
-extern void UpdateStage6EndBoss1(enemy *en);
-extern void UpdateStage6EndBoss2(enemy *en);
-extern void UpdateStage6EndBoss3(enemy *en);
-extern void UpdateStage6EndBoss4(enemy *en);
-extern void UpdateStage6EndBoss5(enemy *en);
-extern void UpdateStage6EndBoss3A(enemy *en);
+extern void UpdateStage6EndBoss0( enemy *en );
+extern void UpdateStage6EndBoss1( enemy *en );
+extern void UpdateStage6EndBoss2( enemy *en );
+extern void UpdateStage6EndBoss3( enemy *en );
+extern void UpdateStage6EndBoss4( enemy *en );
+extern void UpdateStage6EndBoss5( enemy *en );
+extern void UpdateStage6EndBoss3A( enemy *en );
 
-const MyInitEnemyFunction updatestage6endbossfunctions[]=
+const MyInitEnemyFunction updatestage6endbossfunctions[] =
 {
 	UpdateStage6EndBoss0,
 	UpdateStage6EndBoss1,
@@ -2831,13 +2835,13 @@ const MyInitEnemyFunction updatestage6endbossfunctions[]=
 	UpdateStage6EndBoss3A
 };
 
-extern void UpdateStage5EndBoss0(enemy *en);
-extern void UpdateStage5EndBoss1(enemy *en);
-extern void UpdateStage5EndBoss2(enemy *en);
-extern void UpdateStage5EndBoss3(enemy *en);
-extern void UpdateStage5EndBoss4(enemy *en);
+extern void UpdateStage5EndBoss0( enemy *en );
+extern void UpdateStage5EndBoss1( enemy *en );
+extern void UpdateStage5EndBoss2( enemy *en );
+extern void UpdateStage5EndBoss3( enemy *en );
+extern void UpdateStage5EndBoss4( enemy *en );
 
-const MyInitEnemyFunction updatestage5endbossfunctions[]=
+const MyInitEnemyFunction updatestage5endbossfunctions[] =
 {
 	UpdateStage5EndBoss0,
 	UpdateStage5EndBoss1,
@@ -2847,13 +2851,13 @@ const MyInitEnemyFunction updatestage5endbossfunctions[]=
 };
 
 
-extern void	DoCommonBossAppearingFunction(enemy *en);
-extern void	UpdateStage3EndBoss1(enemy *en);
-extern void	UpdateStage3EndBoss2(enemy *en);
-extern void	UpdateStage3EndBoss1(enemy *en);
-extern void	UpdateStage3EndBoss2(enemy *en);
+extern void	DoCommonBossAppearingFunction( enemy *en );
+extern void	UpdateStage3EndBoss1( enemy *en );
+extern void	UpdateStage3EndBoss2( enemy *en );
+extern void	UpdateStage3EndBoss1( enemy *en );
+extern void	UpdateStage3EndBoss2( enemy *en );
 
-const MyInitEnemyFunction updatestage3endbossfunctions[]=
+const MyInitEnemyFunction updatestage3endbossfunctions[] =
 {
 	DoCommonBossAppearingFunction,
 	UpdateStage3EndBoss1,
@@ -2863,12 +2867,12 @@ const MyInitEnemyFunction updatestage3endbossfunctions[]=
 };
 
 
-extern void	UpdateStage4MiddleBoss1(enemy *en);
-extern void	UpdateStage4MiddleBoss2(enemy *en);
-extern void	UpdateStage4MiddleBoss3(enemy *en);
-extern void	UpdateStage4MiddleBoss4(enemy *en);
-	
-const MyInitEnemyFunction updatestage4middlebossfunctions[]=
+extern void	UpdateStage4MiddleBoss1( enemy *en );
+extern void	UpdateStage4MiddleBoss2( enemy *en );
+extern void	UpdateStage4MiddleBoss3( enemy *en );
+extern void	UpdateStage4MiddleBoss4( enemy *en );
+
+const MyInitEnemyFunction updatestage4middlebossfunctions[] =
 {
 	DoCommonBossAppearingFunction,
 	UpdateStage4MiddleBoss1,
@@ -2877,16 +2881,16 @@ const MyInitEnemyFunction updatestage4middlebossfunctions[]=
 	UpdateStage4MiddleBoss4
 };
 
-extern void	DoCommonBossAppearingFunction(enemy *en);
-extern void	UpdateStage4EndBoss1(enemy *en);
-extern void	UpdateStage4EndBoss2(enemy *en);
-extern void	UpdateStage4EndBoss3(enemy *en);
-extern void	UpdateStage4EndBoss4(enemy *en);
-extern void	UpdateStage4EndBoss5(enemy *en);
-extern void	UpdateStage4EndBoss6(enemy *en);
-extern void	UpdateStage4EndBoss7(enemy *en);
+extern void	DoCommonBossAppearingFunction( enemy *en );
+extern void	UpdateStage4EndBoss1( enemy *en );
+extern void	UpdateStage4EndBoss2( enemy *en );
+extern void	UpdateStage4EndBoss3( enemy *en );
+extern void	UpdateStage4EndBoss4( enemy *en );
+extern void	UpdateStage4EndBoss5( enemy *en );
+extern void	UpdateStage4EndBoss6( enemy *en );
+extern void	UpdateStage4EndBoss7( enemy *en );
 
-const MyInitEnemyFunction updatestage4endbossfunctions[]=
+const MyInitEnemyFunction updatestage4endbossfunctions[] =
 {
 	DoCommonBossAppearingFunction,
 	UpdateStage4EndBoss1,
@@ -2898,17 +2902,17 @@ const MyInitEnemyFunction updatestage4endbossfunctions[]=
 	UpdateStage4EndBoss7
 };
 
-const signed char vulcantankshootspeedx[]={-DEFAULTENEMYSHOOTSPEED+2,0,DEFAULTENEMYSHOOTSPEED-2};
-const signed char vulcantankshootspeedy[]={DEFAULTENEMYSHOOTSPEED-2,DEFAULTENEMYSHOOTSPEED,DEFAULTENEMYSHOOTSPEED-2};
+const signed char vulcantankshootspeedx[] = { -DEFAULTENEMYSHOOTSPEED + 2,0,DEFAULTENEMYSHOOTSPEED - 2 };
+const signed char vulcantankshootspeedy[] = { DEFAULTENEMYSHOOTSPEED - 2,DEFAULTENEMYSHOOTSPEED,DEFAULTENEMYSHOOTSPEED - 2 };
 
-const signed char vulcanstationshootspeedx[]={-DEFAULTENEMYSHOOTSPEED+1,0,DEFAULTENEMYSHOOTSPEED-1};
-const signed char vulcanstationshootspeedy[]={DEFAULTENEMYSHOOTSPEED-1,DEFAULTENEMYSHOOTSPEED,DEFAULTENEMYSHOOTSPEED-1};
+const signed char vulcanstationshootspeedx[] = { -DEFAULTENEMYSHOOTSPEED + 1,0,DEFAULTENEMYSHOOTSPEED - 1 };
+const signed char vulcanstationshootspeedy[] = { DEFAULTENEMYSHOOTSPEED - 1,DEFAULTENEMYSHOOTSPEED,DEFAULTENEMYSHOOTSPEED - 1 };
 
-const signed char stage8bosscshootspeedx[]={-1,0,1,2,3,4,5,6,7,6,5,4,3,2,1,0};
-const signed char stage8bosscshootspeedy[]={6,7,6,5,4,3,2,1,0,1,2,3,4,5,6};
+const signed char stage8bosscshootspeedx[] = { -1,0,1,2,3,4,5,6,7,6,5,4,3,2,1,0 };
+const signed char stage8bosscshootspeedy[] = { 6,7,6,5,4,3,2,1,0,1,2,3,4,5,6 };
 
-const signed char stage8bossbshootspeedx[]={-8,-6,-4,-2,0,2,4,6,8,6,4,2,0,-2,-4,-6};
-const signed char stage8bossbshootspeedy[]={0,1,3,5,7,5,3,1,0,1,3,5,7,5,3,1};
+const signed char stage8bossbshootspeedx[] = { -8,-6,-4,-2,0,2,4,6,8,6,4,2,0,-2,-4,-6 };
+const signed char stage8bossbshootspeedy[] = { 0,1,3,5,7,5,3,1,0,1,3,5,7,5,3,1 };
 
 extern void UpdatePlayerState1();
 extern void UpdatePlayerState2();
@@ -2918,7 +2922,7 @@ extern void UpdatePlayerState5();
 extern void UpdatePlayerState6();
 
 
-MyKillEnemyFunction playerupdatefunctions[]=
+MyKillEnemyFunction playerupdatefunctions[] =
 {
 	0,
 	UpdatePlayerState1,
@@ -2930,32 +2934,32 @@ MyKillEnemyFunction playerupdatefunctions[]=
 };
 
 
-extern void UpdateStage7MiddleBoss0(enemy *en);
-extern void UpdateStage7MiddleBoss1(enemy *en);
-extern void UpdateStage7MiddleBoss2(enemy *en);
+extern void UpdateStage7MiddleBoss0( enemy *en );
+extern void UpdateStage7MiddleBoss1( enemy *en );
+extern void UpdateStage7MiddleBoss2( enemy *en );
 
-const MyInitEnemyFunction updatestage7middlebossfunctions[]=
+const MyInitEnemyFunction updatestage7middlebossfunctions[] =
 {
 	UpdateStage7MiddleBoss0,
 	UpdateStage7MiddleBoss1,
 	UpdateStage7MiddleBoss2
 };
 
-extern void UpdateSpaceStation1(enemy *en);
-extern void UpdateSpaceStation2(enemy *en);
+extern void UpdateSpaceStation1( enemy *en );
+extern void UpdateSpaceStation2( enemy *en );
 
-const MyInitEnemyFunction updatespacestationfunctions[]=
+const MyInitEnemyFunction updatespacestationfunctions[] =
 {
 	DoCommonBossAppearingFunction,
 	UpdateSpaceStation1,
 	UpdateSpaceStation2
 };
 
-extern void UpdateStage2EndBoss1(enemy *en);
-extern void UpdateStage2EndBoss2(enemy *en);
-extern void UpdateStage2EndBoss3(enemy *en);
+extern void UpdateStage2EndBoss1( enemy *en );
+extern void UpdateStage2EndBoss2( enemy *en );
+extern void UpdateStage2EndBoss3( enemy *en );
 
-const MyInitEnemyFunction updatestage2endbossfunctions[]=
+const MyInitEnemyFunction updatestage2endbossfunctions[] =
 {
 	DoCommonBossAppearingFunction,
 	UpdateStage2EndBoss1,
@@ -2963,12 +2967,12 @@ const MyInitEnemyFunction updatestage2endbossfunctions[]=
 	UpdateStage2EndBoss3
 };
 
-unsigned char CheckCollisionStage7(unsigned char x,unsigned char y);
-unsigned char CheckCollisionStage2(unsigned char x,unsigned char y);
-unsigned char CheckCollisionStage1(unsigned char x,unsigned char y);
+unsigned char CheckCollisionStage7( unsigned char x, unsigned char y );
+unsigned char CheckCollisionStage2( unsigned char x, unsigned char y );
+unsigned char CheckCollisionStage1( unsigned char x, unsigned char y );
 
 
-const MyCheckCollisionFunction checkcollisionfunctions[]=
+const MyCheckCollisionFunction checkcollisionfunctions[] =
 {
 	0,
 	CheckCollisionStage7,
@@ -2981,11 +2985,11 @@ const MyCheckCollisionFunction checkcollisionfunctions[]=
 	0
 };
 
-void UpdateIntro3Object1(enemy *en);
-void UpdateIntro3Object2(enemy *en);
-void UpdateIntro3Object3(enemy *en);
+void UpdateIntro3Object1( enemy *en );
+void UpdateIntro3Object2( enemy *en );
+void UpdateIntro3Object3( enemy *en );
 
-const MyInitEnemyFunction updateintro3objectfunctions[]=
+const MyInitEnemyFunction updateintro3objectfunctions[] =
 {
 	UpdateIntro3Object1,
 	UpdateIntro3Object2,
@@ -2994,7 +2998,7 @@ const MyInitEnemyFunction updateintro3objectfunctions[]=
 
 ////////////////////////////////////////////////////
 
-const unsigned char stage8spriteslist[]=
+const unsigned char stage8spriteslist[] =
 {
 	FORTRESSSEARCHER,
 	TURNSHIP,
@@ -3006,274 +3010,274 @@ const unsigned char stage8spriteslist[]=
 };
 
 // Statics for stage 8
-const unsigned int stage8_statics[]=
+const unsigned int stage8_statics[] =
 {
-	460,FORTRESSSEARCHER,2*8,224,
-	460,FORTRESSSEARCHER,8*8,0,
-	460,FORTRESSSEARCHER,14*8,224,
-	460,FORTRESSSEARCHER,5*8,240,
-	460,FORTRESSSEARCHER,11*8,240,
-	
-	456,FORTRESSSEARCHER,17*8,224,
-	456,FORTRESSSEARCHER,23*8,0,
-	456,FORTRESSSEARCHER,29*8,224,
-	456,FORTRESSSEARCHER,20*8,240,
-	456,FORTRESSSEARCHER,26*8,240,
-	
-	452,FORTRESSSEARCHER,8*8,224,
-	452,FORTRESSSEARCHER,14*8,0,
-	452,FORTRESSSEARCHER,20*8,224,
-	452,FORTRESSSEARCHER,11*8,240,
-	452,FORTRESSSEARCHER,17*8,240,
-	
-	448,FORTRESSSEARCHER,5*8,224,
-	448,FORTRESSSEARCHER,11*8,0,
-	448,FORTRESSSEARCHER,17*8,224,
-	448,FORTRESSSEARCHER,8*8,240,
-	448,FORTRESSSEARCHER,14*8,240,
+	460,FORTRESSSEARCHER,2 * 8,224,
+	460,FORTRESSSEARCHER,8 * 8,0,
+	460,FORTRESSSEARCHER,14 * 8,224,
+	460,FORTRESSSEARCHER,5 * 8,240,
+	460,FORTRESSSEARCHER,11 * 8,240,
 
-	444,FORTRESSSEARCHER,14*8,224,
-	444,FORTRESSSEARCHER,20*8,0,
-	444,FORTRESSSEARCHER,26*8,224,
-	444,FORTRESSSEARCHER,17*8,240,
-	444,FORTRESSSEARCHER,23*8,240,
-	
-	440,FORTRESSSEARCHER,8*8,224,
-	440,FORTRESSSEARCHER,14*8,0,
-	440,FORTRESSSEARCHER,20*8,224,
-	440,FORTRESSSEARCHER,11*8,240,
-	440,FORTRESSSEARCHER,17*8,240,
+	456,FORTRESSSEARCHER,17 * 8,224,
+	456,FORTRESSSEARCHER,23 * 8,0,
+	456,FORTRESSSEARCHER,29 * 8,224,
+	456,FORTRESSSEARCHER,20 * 8,240,
+	456,FORTRESSSEARCHER,26 * 8,240,
 
-	430,WAVESHIP,17*8,0,
-	429,WAVESHIP,17*8,0,
-	428,WAVESHIP,17*8,0,
-	427,WAVESHIP,17*8,0,
-	426,WAVESHIP,17*8,0,
-	
-	420,WAVESHIP,9*8,0,
-	419,WAVESHIP,9*8,0,
-	418,WAVESHIP,9*8,0,
-	417,WAVESHIP,9*8,0,
-	416,WAVESHIP,9*8,0,
+	452,FORTRESSSEARCHER,8 * 8,224,
+	452,FORTRESSSEARCHER,14 * 8,0,
+	452,FORTRESSSEARCHER,20 * 8,224,
+	452,FORTRESSSEARCHER,11 * 8,240,
+	452,FORTRESSSEARCHER,17 * 8,240,
 
-	410,WAVESHIP,25*8,0,
-	409,WAVESHIP,25*8,0,
-	408,WAVESHIP,25*8,0,
-	407,WAVESHIP,25*8,0,
-	406,WAVESHIP,25*8,0,
+	448,FORTRESSSEARCHER,5 * 8,224,
+	448,FORTRESSSEARCHER,11 * 8,0,
+	448,FORTRESSSEARCHER,17 * 8,224,
+	448,FORTRESSSEARCHER,8 * 8,240,
+	448,FORTRESSSEARCHER,14 * 8,240,
 
-	397,STAGE8SHOOTER,11*8,237,
-	397,STAGE8SHOOTER,19*8,237,
-	
-	396,WAVESHIP,11*8,0,
-	392,WAVESHIP,18*8,0,
+	444,FORTRESSSEARCHER,14 * 8,224,
+	444,FORTRESSSEARCHER,20 * 8,0,
+	444,FORTRESSSEARCHER,26 * 8,224,
+	444,FORTRESSSEARCHER,17 * 8,240,
+	444,FORTRESSSEARCHER,23 * 8,240,
 
-	390,FORTRESSSEARCHER,4*8,0,
-	390,FORTRESSSEARCHER,21*8,0,
-	388,WAVESHIP,25*8,0,
-	384,FORTRESSSEARCHER,14*8,0,
-	384,FORTRESSSEARCHER,26*8,0,
-	382,WAVESHIP,25*8,0,
-	400-20,FORTRESSSEARCHER,19*8,0,
-	400-20,FORTRESSSEARCHER,7*8,0,
+	440,FORTRESSSEARCHER,8 * 8,224,
+	440,FORTRESSSEARCHER,14 * 8,0,
+	440,FORTRESSSEARCHER,20 * 8,224,
+	440,FORTRESSSEARCHER,11 * 8,240,
+	440,FORTRESSSEARCHER,17 * 8,240,
 
-	379,STAGE8SHOOTER,11*8,237,
-	379,STAGE8SHOOTER,19*8,237,
+	430,WAVESHIP,17 * 8,0,
+	429,WAVESHIP,17 * 8,0,
+	428,WAVESHIP,17 * 8,0,
+	427,WAVESHIP,17 * 8,0,
+	426,WAVESHIP,17 * 8,0,
 
-	398-20,WAVESHIP,11*8,0,
-	394-20,FORTRESSSEARCHER,13*8,0,
-	394-20,FORTRESSSEARCHER,25*8,0,
-	392-20,FORTRESSSEARCHER,4*8,0,
-	392-20,FORTRESSSEARCHER,19*8,0,
+	420,WAVESHIP,9 * 8,0,
+	419,WAVESHIP,9 * 8,0,
+	418,WAVESHIP,9 * 8,0,
+	417,WAVESHIP,9 * 8,0,
+	416,WAVESHIP,9 * 8,0,
 
-	390-20,WAVESHIP,25*8,0,
-	386-20,WAVESHIP,11*8,0,
-	384-20,FORTRESSSEARCHER,26*8,0,
-	384-20,FORTRESSSEARCHER,14*8,0,
-	382-20,FORTRESSSEARCHER,20*8,0,
-	382-20,FORTRESSSEARCHER,7*8,0,
+	410,WAVESHIP,25 * 8,0,
+	409,WAVESHIP,25 * 8,0,
+	408,WAVESHIP,25 * 8,0,
+	407,WAVESHIP,25 * 8,0,
+	406,WAVESHIP,25 * 8,0,
 
-	361,STAGE8SHOOTER,11*8,237,
-	361,STAGE8SHOOTER,19*8,237,
+	397,STAGE8SHOOTER,11 * 8,237,
+	397,STAGE8SHOOTER,19 * 8,237,
 
-	398-40,WAVESHIP,25*8,0,
-	396-40,FORTRESSSEARCHER,4*8,0,
-	396-40,FORTRESSSEARCHER,18*8,0,
-	394-40,FORTRESSSEARCHER,11*8,0,
-	394-40,FORTRESSSEARCHER,26*8,0,
+	396,WAVESHIP,11 * 8,0,
+	392,WAVESHIP,18 * 8,0,
 
-	390-40,WAVESHIP,18*8,0,
-	388-40,FORTRESSSEARCHER,22*8,0,
-	388-40,FORTRESSSEARCHER,8*8,0,
-	386-40,WAVESHIP,25*8,0,
-	
+	390,FORTRESSSEARCHER,4 * 8,0,
+	390,FORTRESSSEARCHER,21 * 8,0,
+	388,WAVESHIP,25 * 8,0,
+	384,FORTRESSSEARCHER,14 * 8,0,
+	384,FORTRESSSEARCHER,26 * 8,0,
+	382,WAVESHIP,25 * 8,0,
+	400 - 20,FORTRESSSEARCHER,19 * 8,0,
+	400 - 20,FORTRESSSEARCHER,7 * 8,0,
 
-	343,STAGE8SHOOTER,11*8,237,
-	343,STAGE8SHOOTER,19*8,237,
+	379,STAGE8SHOOTER,11 * 8,237,
+	379,STAGE8SHOOTER,19 * 8,237,
 
-	382-40,WAVESHIP,18*8,0,
-	378-40,FORTRESSSEARCHER,14*8,0,
-	378-40,FORTRESSSEARCHER,25*8,0,
-	378-40,WAVESHIP,11*8,0,
-	
-	376-40,WAVESHIP,25*8,0,
-	374-40,FORTRESSSEARCHER,11*8,0,
-	374-40,FORTRESSSEARCHER,21*8,0,
-	372-40,FORTRESSSEARCHER,5*8,0,
-	372-40,FORTRESSSEARCHER,15*8,0,
-	372-40,FORTRESSSEARCHER,25*8,0,
-	370-40,WAVESHIP,11*8,0,
-		
-	319,STAGE8SHOOTER,3*8,237,
-	319,STAGE8SHOOTER,27*8,237,
+	398 - 20,WAVESHIP,11 * 8,0,
+	394 - 20,FORTRESSSEARCHER,13 * 8,0,
+	394 - 20,FORTRESSSEARCHER,25 * 8,0,
+	392 - 20,FORTRESSSEARCHER,4 * 8,0,
+	392 - 20,FORTRESSSEARCHER,19 * 8,0,
 
-	318,WAVESHIP,19*8,0,
-	316,WAVESHIP,19*8,0,
-	314,WAVESHIP,19*8,0,
-	312,WAVESHIP,19*8,0,
-	310,WAVESHIP,19*8,0,
-	
-	305,STAGE8SHOOTER,3*8,237,
-	305,STAGE8SHOOTER,27*8,237,
+	390 - 20,WAVESHIP,25 * 8,0,
+	386 - 20,WAVESHIP,11 * 8,0,
+	384 - 20,FORTRESSSEARCHER,26 * 8,0,
+	384 - 20,FORTRESSSEARCHER,14 * 8,0,
+	382 - 20,FORTRESSSEARCHER,20 * 8,0,
+	382 - 20,FORTRESSSEARCHER,7 * 8,0,
 
-	303,WAVESHIP,19*8,0,
-	301,WAVESHIP,19*8,0,
-	299,WAVESHIP,19*8,0,
-	297,WAVESHIP,19*8,0,
-	295,WAVESHIP,19*8,0,
-	
-	291,STAGE8SHOOTER,3*8,237,
-	291,STAGE8SHOOTER,27*8,237,
+	361,STAGE8SHOOTER,11 * 8,237,
+	361,STAGE8SHOOTER,19 * 8,237,
 
-	289,WAVESHIP,19*8,0,
-	287,WAVESHIP,19*8,0,
-	285,WAVESHIP,19*8,0,
-	283,WAVESHIP,19*8,0,
-	281,WAVESHIP,19*8,0,
-	
-	277,STAGE8SHOOTER,3*8,237,
-	277,STAGE8SHOOTER,27*8,237,
-	
-	275,WAVESHIP,19*8,0,
-	273,WAVESHIP,19*8,0,
-	271,WAVESHIP,19*8,0,
-	269,WAVESHIP,19*8,0,
-	267,WAVESHIP,19*8,0,
+	398 - 40,WAVESHIP,25 * 8,0,
+	396 - 40,FORTRESSSEARCHER,4 * 8,0,
+	396 - 40,FORTRESSSEARCHER,18 * 8,0,
+	394 - 40,FORTRESSSEARCHER,11 * 8,0,
+	394 - 40,FORTRESSSEARCHER,26 * 8,0,
 
-	263,STAGE8SHOOTER,3*8,237,
-	263,STAGE8SHOOTER,27*8,237,
+	390 - 40,WAVESHIP,18 * 8,0,
+	388 - 40,FORTRESSSEARCHER,22 * 8,0,
+	388 - 40,FORTRESSSEARCHER,8 * 8,0,
+	386 - 40,WAVESHIP,25 * 8,0,
 
-	261,WAVESHIP,19*8,0,
-	259,WAVESHIP,19*8,0,
-	257,WAVESHIP,19*8,0,
-	255,WAVESHIP,19*8,0,
-	253,WAVESHIP,19*8,0,
-	
-	249,STAGE8SHOOTER,3*8,237,
-	249,STAGE8SHOOTER,27*8,237,
 
-	247,WAVESHIP,19*8,0,
-	245,WAVESHIP,19*8,0,
-	243,WAVESHIP,19*8,0,
-	241,WAVESHIP,19*8,0,
-	239,WAVESHIP,19*8,0,
-	
-	235,STAGE8SHOOTER,3*8,237,
-	235,STAGE8SHOOTER,27*8,237,
+	343,STAGE8SHOOTER,11 * 8,237,
+	343,STAGE8SHOOTER,19 * 8,237,
 
-	233,WAVESHIP,19*8,0,
-	231,WAVESHIP,19*8,0,
-	229,WAVESHIP,19*8,0,
-	227,WAVESHIP,19*8,0,
-	225,WAVESHIP,19*8,0,
+	382 - 40,WAVESHIP,18 * 8,0,
+	378 - 40,FORTRESSSEARCHER,14 * 8,0,
+	378 - 40,FORTRESSSEARCHER,25 * 8,0,
+	378 - 40,WAVESHIP,11 * 8,0,
 
-	214,STAGE8BOSSC,112,224,	
-	210,STAGE8BOSSC,192,224,	
-	210,STAGE8BOSSC,32,224,	
-	168,STAGE8BOSSA,108,0,	
+	376 - 40,WAVESHIP,25 * 8,0,
+	374 - 40,FORTRESSSEARCHER,11 * 8,0,
+	374 - 40,FORTRESSSEARCHER,21 * 8,0,
+	372 - 40,FORTRESSSEARCHER,5 * 8,0,
+	372 - 40,FORTRESSSEARCHER,15 * 8,0,
+	372 - 40,FORTRESSSEARCHER,25 * 8,0,
+	370 - 40,WAVESHIP,11 * 8,0,
 
-	140,STAGE8SHOOTER,15*8,237,
+	319,STAGE8SHOOTER,3 * 8,237,
+	319,STAGE8SHOOTER,27 * 8,237,
+
+	318,WAVESHIP,19 * 8,0,
+	316,WAVESHIP,19 * 8,0,
+	314,WAVESHIP,19 * 8,0,
+	312,WAVESHIP,19 * 8,0,
+	310,WAVESHIP,19 * 8,0,
+
+	305,STAGE8SHOOTER,3 * 8,237,
+	305,STAGE8SHOOTER,27 * 8,237,
+
+	303,WAVESHIP,19 * 8,0,
+	301,WAVESHIP,19 * 8,0,
+	299,WAVESHIP,19 * 8,0,
+	297,WAVESHIP,19 * 8,0,
+	295,WAVESHIP,19 * 8,0,
+
+	291,STAGE8SHOOTER,3 * 8,237,
+	291,STAGE8SHOOTER,27 * 8,237,
+
+	289,WAVESHIP,19 * 8,0,
+	287,WAVESHIP,19 * 8,0,
+	285,WAVESHIP,19 * 8,0,
+	283,WAVESHIP,19 * 8,0,
+	281,WAVESHIP,19 * 8,0,
+
+	277,STAGE8SHOOTER,3 * 8,237,
+	277,STAGE8SHOOTER,27 * 8,237,
+
+	275,WAVESHIP,19 * 8,0,
+	273,WAVESHIP,19 * 8,0,
+	271,WAVESHIP,19 * 8,0,
+	269,WAVESHIP,19 * 8,0,
+	267,WAVESHIP,19 * 8,0,
+
+	263,STAGE8SHOOTER,3 * 8,237,
+	263,STAGE8SHOOTER,27 * 8,237,
+
+	261,WAVESHIP,19 * 8,0,
+	259,WAVESHIP,19 * 8,0,
+	257,WAVESHIP,19 * 8,0,
+	255,WAVESHIP,19 * 8,0,
+	253,WAVESHIP,19 * 8,0,
+
+	249,STAGE8SHOOTER,3 * 8,237,
+	249,STAGE8SHOOTER,27 * 8,237,
+
+	247,WAVESHIP,19 * 8,0,
+	245,WAVESHIP,19 * 8,0,
+	243,WAVESHIP,19 * 8,0,
+	241,WAVESHIP,19 * 8,0,
+	239,WAVESHIP,19 * 8,0,
+
+	235,STAGE8SHOOTER,3 * 8,237,
+	235,STAGE8SHOOTER,27 * 8,237,
+
+	233,WAVESHIP,19 * 8,0,
+	231,WAVESHIP,19 * 8,0,
+	229,WAVESHIP,19 * 8,0,
+	227,WAVESHIP,19 * 8,0,
+	225,WAVESHIP,19 * 8,0,
+
+	214,STAGE8BOSSC,112,224,
+	210,STAGE8BOSSC,192,224,
+	210,STAGE8BOSSC,32,224,
+	168,STAGE8BOSSA,108,0,
+
+	140,STAGE8SHOOTER,15 * 8,237,
 
 	139,TURNSHIP,32,0,
 	138,TURNSHIP,32,0,
 	137,TURNSHIP,32,0,
 	136,TURNSHIP,32,0,
 
-	133,STAGE8SHOOTER,5*8,237,
-	133,STAGE8SHOOTER,25*8,237,
+	133,STAGE8SHOOTER,5 * 8,237,
+	133,STAGE8SHOOTER,25 * 8,237,
 
 	132,TURNSHIP,208,0,
 	131,TURNSHIP,208,0,
 	130,TURNSHIP,208,0,
 	129,TURNSHIP,208,0,
 
-	125,STAGE8SHOOTER,15*8,237,
+	125,STAGE8SHOOTER,15 * 8,237,
 
 	124,TURNSHIP,32,0,
 	123,TURNSHIP,32,0,
 	122,TURNSHIP,32,0,
 	121,TURNSHIP,32,0,
-	
-	118,STAGE8SHOOTER,5*8,237,
-	118,STAGE8SHOOTER,25*8,237,
+
+	118,STAGE8SHOOTER,5 * 8,237,
+	118,STAGE8SHOOTER,25 * 8,237,
 
 	117,TURNSHIP,208,0,
 	116,TURNSHIP,208,0,
 	115,TURNSHIP,208,0,
 	114,TURNSHIP,208,0,
-	
-	110,STAGE8SHOOTER,15*8,237,
+
+	110,STAGE8SHOOTER,15 * 8,237,
 
 	109,TURNSHIP,32,0,
 	108,TURNSHIP,32,0,
 	107,TURNSHIP,32,0,
 	106,TURNSHIP,32,0,
-	
-	103,STAGE8SHOOTER,5*8,237,
-	103,STAGE8SHOOTER,25*8,237,
-	
+
+	103,STAGE8SHOOTER,5 * 8,237,
+	103,STAGE8SHOOTER,25 * 8,237,
+
 	102,TURNSHIP,208,0,
 	101,TURNSHIP,208,0,
 	100,TURNSHIP,208,0,
 	99,TURNSHIP,208,0,
-	
-	95,STAGE8SHOOTER,15*8,237,
+
+	95,STAGE8SHOOTER,15 * 8,237,
 
 	94,TURNSHIP,32,0,
 	93,TURNSHIP,32,0,
 	92,TURNSHIP,32,0,
 	91,TURNSHIP,32,0,
-	
-	88,STAGE8SHOOTER,5*8,237,
-	88,STAGE8SHOOTER,25*8,237,
+
+	88,STAGE8SHOOTER,5 * 8,237,
+	88,STAGE8SHOOTER,25 * 8,237,
 
 	87,TURNSHIP,208,0,
 	86,TURNSHIP,208,0,
 	85,TURNSHIP,208,0,
 	84,TURNSHIP,208,0,
-	
-	80,STAGE8SHOOTER,15*8,237,
-	
+
+	80,STAGE8SHOOTER,15 * 8,237,
+
 	79,TURNSHIP,32,0,
 	78,TURNSHIP,32,0,
 	77,TURNSHIP,32,0,
 	76,TURNSHIP,32,0,
 
 	53,WARNING,0,0,
-	27,STAGE8BOSSB,112,0,	
+	27,STAGE8BOSSB,112,0,
 	1000,0,0,0,0
 };
 
-const signed int stage8_scrollers[]=
+const signed int stage8_scrollers[] =
 {
-	8*32,10000,0,0,2
+	8 * 32,10000,0,0,2
 };
 
-extern void UpdateStage8BossB1(enemy *en);
-extern void UpdateStage8BossB2(enemy *en);
-extern void UpdateStage8BossB3(enemy *en);
+extern void UpdateStage8BossB1( enemy *en );
+extern void UpdateStage8BossB2( enemy *en );
+extern void UpdateStage8BossB3( enemy *en );
 
-const MyInitEnemyFunction updatestage8bossbfunctions[]=
+const MyInitEnemyFunction updatestage8bossbfunctions[] =
 {
 	DoCommonBossAppearingFunction,
 	UpdateStage8BossB1,
@@ -3282,11 +3286,11 @@ const MyInitEnemyFunction updatestage8bossbfunctions[]=
 };
 
 // Palette changes for stage 8
-const unsigned char stage8animpalette[]={0x3f,0x1f,0x0f,0x07,0x03,0x01,0x00,0x00,0x01,0x03,0x07,0x0f,0x1f,0x3f};
+const unsigned char stage8animpalette[] = { 0x3f,0x1f,0x0f,0x07,0x03,0x01,0x00,0x00,0x01,0x03,0x07,0x0f,0x1f,0x3f };
 
 
 // New! presets for enemies
-const unsigned char enemieswidth[]=
+const unsigned char enemieswidth[] =
 {
 	0,
 	0,	// 1-Warning
@@ -3376,7 +3380,7 @@ const unsigned char enemieswidth[]=
 	16,	// 85-STAGE8LATERAL
 };
 
-const unsigned char enemiesheight[]=
+const unsigned char enemiesheight[] =
 {
 	0,
 	0,	// 1-Warning
@@ -3466,7 +3470,7 @@ const unsigned char enemiesheight[]=
 	16,	// 85-STAGE8LATERAL
 };
 
-const unsigned char enemiesenergy[]=
+const unsigned char enemiesenergy[] =
 {
 	0,
 	255,	// 1-Warning
@@ -3556,3 +3560,154 @@ const unsigned char enemiesenergy[]=
 	1, 		// 85-STAGE8LATERAL
 };
 
+
+const unsigned char intro1_psg[] = {
+	0x8c,0x5f,0x90,0xa0,0x40,0xbf,0xc0,0x40,0xdf,0xe2,0xf0,0x39,0x91,0xf1,0x39,0x92,
+	0xf2,0x38,0x93,0xf3,0x39,0x94,0xf4,0x38,0x95,0xf5,0x39,0x96,0xf6,0x39,0x97,0xf7,
+	0x39,0x98,0xf8,0x3a,0x99,0xf9,0x3a,0x9a,0xfa,0x3b,0x90,0x26,0x09,0x00,0x26,0x09,
+	0x00,0x19,0x09,0x00,0x86,0x6a,0x90,0x19,0x09,0x00,0x8c,0x5f,0x90,0x26,0x09,0x00,
+	0x26,0x09,0x00,0x19,0x09,0x00,0x86,0x6a,0x90,0x19,0x09,0x00,0x8c,0x5f,0x90,0x19,
+	0x09,0x00,0x86,0x6a,0x90,0x19,0x09,0x00,0x8c,0x5f,0x90,0xa5,0x4d,0xbe,0xc9,0x4a,
+	0xde,0xe2,0xf0,0x38,0xa6,0xbd,0xca,0xdd,0x38,0x91,0xf1,0x38,0xa7,0xcb,0x38,0x08,
+	0x0f,0x00,0xa6,0xca,0xf3,0x39,0x94,0xa5,0xbc,0xc9,0xdc,0x08,0x16,0x00,0x38,0xa4,
+	0xc8,0x38,0x96,0xf6,0x38,0xa3,0xc7,0x38,0x97,0xbb,0xdb,0xf7,0x08,0x7e,0x00,0x98,
+	0xf8,0x38,0xa5,0xc9,0x39,0x99,0xa6,0xba,0xca,0xda,0xf9,0x39,0xa7,0xcb,0x38,0x9a,
+	0xfa,0x38,0xa6,0xca,0x39,0xa5,0xb9,0xc9,0xd9,0x38,0x90,0xe2,0xf0,0x08,0x7e,0x00,
+	0x91,0xf1,0x08,0x84,0x00,0x92,0xb8,0xd8,0xf2,0x38,0x93,0xa4,0xc8,0x08,0x74,0x00,
+	0xc9,0x08,0x16,0x00,0x38,0xa6,0xb7,0xca,0xd7,0x08,0x81,0x00,0xa7,0xcb,0x38,0x97,
+	0xf7,0x38,0xa6,0xca,0x38,0x08,0x8f,0x00,0xb6,0xc9,0xd6,0x39,0x99,0xa4,0xc8,0xf9,
+	0x39,0xa3,0xc7,0x38,0x9a,0xb5,0xd5,0xfa,0x38,0xa4,0xc8,0x39,0xa5,0xc9,0x08,0xa9,
+	0x00,0x38,0xa6,0xb4,0xca,0xd4,0x0b,0x68,0x00,0x08,0x0f,0x00,0x0a,0x72,0x00,0xb3,
+	0xc9,0xd3,0xf4,0x38,0x95,0xf5,0x0f,0x7e,0x00,0xb2,0xd2,0xf7,0x08,0x7e,0x00,0x0c,
+	0x8f,0x00,0xb1,0xca,0xd1,0x10,0x9a,0x00,0xb0,0xc9,0xd0,0x08,0xa9,0x00,0x08,0x7e,
+	0x00,0x91,0xf1,0x08,0x84,0x00,0x08,0x0f,0x00,0xa4,0xc8,0x08,0x74,0x00,0xc9,0x08,
+	0x16,0x00,0x08,0xd1,0x00,0x96,0xf6,0x08,0x6b,0x00,0x86,0x6a,0x90,0x08,0x61,0x00,
+	0xca,0x08,0x68,0x00,0xa5,0xc9,0x38,0x08,0x0f,0x00,0xa4,0xc8,0xf3,0x39,0x94,0xa3,
+	0xc7,0x08,0x16,0x00,0x0b,0x7e,0x00,0xa5,0xc9,0x38,0x8c,0x5f,0x90,0xa2,0x4e,0xbe,
+	0xc3,0x4b,0x08,0x60,0x00,0xa3,0xbd,0xc4,0x09,0x67,0x00,0xa4,0xc5,0x38,0x08,0x0f,
+	0x00,0xa3,0xc4,0xf3,0x39,0x94,0xa2,0xbc,0xc3,0xdc,0x08,0x16,0x00,0x38,0xa1,0xc2,
+	0x08,0x81,0x00,0xa0,0xc1,0x09,0x87,0x00,0x38,0xa1,0xc2,0x38,0x98,0xf8,0x38,0xa2,
+	0xc3,0x39,0x99,0xa3,0xba,0xc4,0xda,0xf9,0x39,0xa4,0xc5,0x08,0x9e,0x00,0xa3,0xc4,
+	0x39,0xa2,0xb9,0xc3,0x09,0xa8,0x00,0x08,0x88,0x01,0x91,0xf1,0x38,0xa0,0xc1,0x38,
+	0x0a,0xb5,0x00,0xa1,0xc2,0x08,0x73,0x01,0xc3,0x08,0x16,0x00,0x38,0xa3,0xb7,0xc4,
+	0xd7,0x08,0x81,0x00,0xa4,0xc5,0x08,0xce,0x00,0xa3,0xc4,0x09,0x8b,0x01,0xb6,0xc3,
+	0xd6,0x39,0x99,0xa1,0xc2,0xf9,0x39,0xa0,0xc1,0x0a,0xe3,0x00,0xa1,0xc2,0x39,0xa2,
+	0xc3,0x08,0xa9,0x00,0x38,0xa3,0xb4,0xc4,0xd4,0x08,0x68,0x00,0xa4,0xc5,0x38,0x08,
+	0x0f,0x00,0x0a,0x71,0x01,0xb3,0xc3,0x09,0x01,0x01,0x08,0x88,0x01,0x96,0xf6,0x08,
+	0xac,0x01,0x86,0x6a,0x90,0xb2,0xd2,0xe2,0xf0,0x08,0x88,0x01,0x91,0xf1,0x38,0xa2,
+	0xc3,0x38,0x08,0x0f,0x00,0xa3,0xb1,0xc4,0xd1,0xf3,0x39,0x94,0xa4,0xc5,0x08,0x16,
+	0x00,0x38,0xa3,0xc4,0x08,0x81,0x00,0xa2,0xb0,0xc3,0xd0,0x08,0x59,0x01,0xe2,0xf0,
+	0x08,0x88,0x01,0x0a,0xaa,0x01,0x08,0x0f,0x00,0xa1,0xc2,0x08,0x73,0x01,0xc3,0x08,
+	0x16,0x00,0x38,0xa3,0xc4,0x08,0x81,0x00,0xa4,0xc5,0x38,0x86,0x6a,0x90,0xe2,0xf0,
+	0x38,0xa3,0xc4,0x38,0x0a,0x0c,0x02,0x08,0x0f,0x00,0xa1,0xc2,0xf3,0x39,0x94,0xa0,
+	0xc1,0x08,0x16,0x00,0x08,0x88,0x01,0x96,0xf6,0x08,0x0e,0x02,0x8c,0x5f,0x90,0xbe,
+	0xce,0x08,0x60,0x00,0xa3,0xbd,0xcf,0x09,0x67,0x00,0xa4,0xc0,0x4c,0x38,0x08,0x0f,
+	0x00,0xa3,0xcf,0x4b,0x09,0x73,0x01,0xce,0xdc,0x08,0x16,0x00,0x38,0xa1,0xcd,0x08,
+	0x81,0x00,0xa0,0xcc,0x09,0x87,0x00,0x38,0xa1,0xcd,0x09,0x8b,0x01,0xce,0x08,0x91,
+	0x01,0xcf,0x08,0x96,0x01,0xc0,0x4c,0x08,0x9e,0x00,0xa3,0xcf,0x4b,0x39,0xa2,0xb9,
+	0xce,0x09,0xa8,0x00,0x38,0xa1,0xcd,0x08,0x68,0x00,0xa0,0xcc,0x38,0x0a,0xb5,0x00,
+	0xa1,0xcd,0x08,0x73,0x01,0xce,0x08,0x16,0x00,0x38,0xa3,0xb7,0xcf,0xd7,0x08,0x81,
+	0x00,0x08,0x7a,0x02,0x97,0xf7,0x38,0xa3,0xcf,0x4b,0x09,0x8b,0x01,0xb6,0xce,0x08,
+	0xd0,0x01,0xcd,0xf9,0x39,0xa0,0xcc,0x0a,0xe3,0x00,0xa1,0xcd,0x39,0xa2,0xce,0x08,
+	0xa9,0x00,0x38,0xa3,0xb4,0xcf,0xd4,0x08,0x68,0x00,0x08,0x7a,0x02,0x08,0x0f,0x00,
+	0xa3,0xcf,0x4b,0x08,0x73,0x01,0xb3,0xce,0x09,0x01,0x01,0x38,0xa1,0xcd,0x08,0x81,
+	0x00,0xa0,0xcc,0x38,0x97,0xb2,0xd2,0xf7,0x38,0xa1,0xcd,0x09,0x8b,0x01,0xce,0x39,
+	0x99,0xa3,0xb1,0xcf,0xd1,0xf9,0x39,0x08,0x7a,0x02,0x9a,0xfa,0x08,0xd6,0x02,0x39,
+	0xa2,0xb0,0xce,0xd0,0x08,0xa9,0x00,0x38,0xa1,0xcd,0x08,0x68,0x00,0xa0,0xcc,0x38,
+	0x08,0x0f,0x00,0xa1,0xcd,0x08,0x73,0x01,0xce,0x08,0x16,0x00,0x38,0xa3,0xcf,0x08,
+	0x81,0x00,0x08,0x7a,0x02,0x0b,0x4b,0x02,0xcf,0x4b,0x08,0x68,0x00,0xa2,0xce,0x38,
+	0x08,0x0f,0x00,0xa1,0xcd,0x08,0x5c,0x02,0xcc,0x08,0x16,0x00,0x38,0xa1,0xcd,0x08,
+	0x81,0x00,0xa2,0xce,0x08,0x59,0x01,0xae,0x4f,0xbe,0xc5,0x4d,0x08,0x60,0x00,0xaf,
+	0xbd,0xc6,0x09,0x67,0x00,0xa0,0x50,0xc7,0x38,0x08,0x0f,0x00,0xaf,0x4f,0xc6,0xf3,
+	0x39,0x94,0xae,0xbc,0xc5,0xdc,0x08,0x16,0x00,0x38,0xad,0xc4,0x08,0x81,0x00,0xac,
+	0xc3,0x09,0x87,0x00,0x38,0xad,0xc4,0x08,0x8b,0x01,0xae,0xc5,0x39,0x99,0xaf,0xba,
+	0xc6,0xda,0xf9,0x39,0x08,0x85,0x03,0x9a,0xfa,0x38,0xaf,0x4f,0xc6,0x39,0xae,0xb9,
+	0xc5,0x09,0xa8,0x00,0x38,0xad,0xc4,0x08,0x68,0x00,0xac,0xc3,0x38,0x0a,0xb5,0x00,
+	0xad,0x08,0x72,0x01,0xae,0xc5,0x08,0x16,0x00,0x38,0xaf,0xb7,0xc6,0xd7,0x08,0x81,
+	0x00,0x08,0x85,0x03,0x97,0xf7,0x08,0xb9,0x03,0x08,0x8b,0x01,0xae,0xb6,0xc5,0xd6,
+	0x39,0x99,0xad,0xc4,0xf9,0x39,0xac,0xc3,0x0a,0xe3,0x00,0xad,0xc4,0x39,0xae,0xc5,
+	0x08,0xa9,0x00,0x38,0xaf,0xb4,0xc6,0xd4,0x08,0x68,0x00,0x08,0x85,0x03,0x08,0x0f,
+	0x00,0x0b,0x8c,0x03,0xb3,0xc5,0x09,0x01,0x01,0x38,0xad,0xc4,0x08,0x81,0x00,0xac,
+	0xc3,0x38,0x0b,0x02,0x02,0x38,0xad,0xc4,0x08,0x68,0x00,0xae,0xc5,0x38,0x08,0x0f,
+	0x00,0xaf,0xb1,0xc6,0x08,0x18,0x02,0xa0,0x50,0xc7,0x08,0x16,0x00,0x08,0xb9,0x03,
+	0x08,0x81,0x00,0xae,0xb0,0xc5,0xd0,0x08,0x59,0x01,0xe2,0xf0,0x38,0xad,0xc4,0x08,
+	0x68,0x00,0xac,0xc3,0x38,0x08,0x0f,0x00,0xad,0x08,0x72,0x01,0xae,0xc5,0x08,0x16,
+	0x00,0x38,0xaf,0xc6,0x08,0x81,0x00,0x08,0x85,0x03,0x0a,0x4b,0x02,0xaf,0x4f,0xc6,
+	0x08,0x68,0x00,0xae,0xc5,0x38,0x08,0x0f,0x00,0xad,0x08,0x72,0x01,0xac,0xc3,0xf4,
+	0x38,0x95,0xf5,0x38,0xad,0xc4,0x38,0x96,0xf6,0x38,0xae,0xc5,0x38,0x1b,0x58,0x00,
+	0x08,0x0f,0x00,0x0d,0x72,0x00,0x09,0x7f,0x04,0x11,0x7f,0x00,0x08,0x7e,0x00,0x22,
+	0x8f,0x00,0x08,0x7e,0x00,0x91,0xf1,0x08,0x84,0x00,0x0c,0xb5,0x00,0x08,0x74,0x00,
+	0xc9,0x09,0x7f,0x04,0x08,0xc5,0x00,0x08,0x81,0x00,0x0d,0xcc,0x00,0x08,0x8f,0x00,
+	0x1a,0xd8,0x00,0x08,0xa9,0x00,0x09,0xf1,0x00,0x0b,0x68,0x00,0x08,0x0f,0x00,0x0a,
+	0x72,0x00,0x0b,0xff,0x00,0x0f,0x7e,0x00,0x08,0x15,0x03,0xa4,0xc8,0x38,0x0c,0x8f,
+	0x00,0xb1,0xca,0xd1,0x10,0x9a,0x00,0xb0,0xc9,0xd0,0x08,0xa9,0x00,0x08,0x7e,0x00,
+	0x91,0xf1,0x08,0x84,0x00,0x08,0x0f,0x00,0x09,0x4a,0x01,0xa5,0xc9,0x09,0x7f,0x04,
+	0xa6,0xca,0x08,0x81,0x00,0xa7,0xcb,0x08,0x4a,0x02,0x09,0xd0,0x00,0x91,0x08,0x90,
+	0x00,0x38,0x92,0x08,0xb9,0x00,0xf9,0x08,0x4d,0x01,0x38,0x95,0x08,0xe7,0x00,0x38,
+	0x96,0x38,0x0a,0x57,0x01,0xae,0x4b,0xbe,0xc7,0x49,0x08,0x60,0x00,0xaf,0xbd,0xc8,
+	0x09,0x67,0x00,0xa0,0x4c,0xc9,0x38,0x08,0x0f,0x00,0xaf,0x4b,0x08,0x4b,0x01,0xae,
+	0xbc,0xc7,0xdc,0x0a,0x7f,0x04,0xc6,0x08,0x81,0x00,0xac,0xc5,0x09,0x87,0x00,0x38,
+	0xad,0xc6,0x08,0x8b,0x01,0xae,0xc7,0x08,0xac,0x03,0xc8,0xda,0xf9,0x39,0x08,0x33,
+	0x05,0x08,0xb7,0x03,0x4b,0xc8,0x39,0xae,0xb9,0xc7,0x09,0xa8,0x00,0x38,0xad,0xc6,
+	0x08,0x68,0x00,0xac,0xc5,0x38,0x0a,0xb5,0x00,0xad,0x09,0x8e,0x03,0xc7,0x09,0x7f,
+	0x04,0xaf,0xb7,0xc8,0xd7,0x08,0x81,0x00,0x08,0x33,0x05,0x97,0xf7,0x38,0xaf,0x4b,
+	0xc8,0x08,0x8b,0x01,0xae,0xb6,0xc7,0x08,0xef,0x03,0xc6,0xf9,0x39,0xac,0xc5,0x0a,
+	0xe3,0x00,0xad,0xc6,0x39,0xae,0xc7,0x08,0xa9,0x00,0x38,0xaf,0xb4,0xc8,0xd4,0x08,
+	0x68,0x00,0x08,0x33,0x05,0x08,0x0f,0x00,0xaf,0x4b,0x08,0x4b,0x01,0xae,0xb3,0xc7,
+	0x09,0x01,0x01,0x38,0xad,0xc6,0x08,0x81,0x00,0xac,0x09,0x49,0x02,0x08,0x15,0x03,
+	0xad,0xc6,0x38,0x91,0xf8,0x38,0xae,0xc7,0x38,0x92,0x38,0x93,0xaf,0xb1,0xc8,0xd1,
+	0xf9,0x39,0x94,0x08,0x33,0x05,0x95,0xfa,0x08,0x8d,0x05,0x38,0x96,0x38,0xae,0xb0,
+	0xc7,0xd0,0x08,0x59,0x01,0x08,0x4a,0x04,0xc6,0x08,0x68,0x00,0xac,0xc5,0x38,0x08,
+	0x0f,0x00,0xad,0x09,0x8e,0x03,0xc7,0x09,0x7f,0x04,0xaf,0x09,0x80,0x00,0x08,0x33,
+	0x05,0x86,0x6a,0x90,0x09,0x8c,0x05,0x0e,0xd2,0x05,0xad,0xc6,0xf9,0x39,0x94,0xac,
+	0xc5,0x38,0x95,0xfa,0x38,0xad,0xc6,0x08,0xeb,0x05,0xc7,0x08,0x59,0x01,0xa3,0xbe,
+	0xce,0x48,0x08,0x60,0x00,0xa4,0xbd,0xcf,0x09,0x67,0x00,0xa5,0xc0,0x49,0x38,0x08,
+	0x0f,0x00,0xa4,0xcf,0x48,0x08,0x4c,0x01,0xbc,0xce,0xdc,0x09,0x7f,0x04,0xa2,0xcd,
+	0x08,0x81,0x00,0xa1,0xcc,0x09,0x87,0x00,0x38,0xa2,0xcd,0x08,0x8b,0x01,0xa3,0xce,
+	0x39,0x99,0xa4,0xba,0xcf,0xda,0xf9,0x39,0x08,0x3b,0x06,0x9a,0xfa,0x38,0xa4,0xcf,
+	0x48,0x39,0xa3,0xb9,0xce,0x09,0xa8,0x00,0x38,0xa2,0xcd,0x08,0x68,0x00,0xa1,0xcc,
+	0x38,0x0a,0xb5,0x00,0xa2,0xcd,0x08,0x4c,0x01,0xce,0x09,0x7f,0x04,0xa4,0xb7,0xcf,
+	0xd7,0x08,0x81,0x00,0x08,0x3b,0x06,0x97,0xf7,0x08,0x6d,0x06,0x08,0x8b,0x01,0xa3,
+	0xb6,0xce,0xd6,0x39,0x99,0xa2,0xcd,0xf9,0x39,0xa1,0xcc,0x0a,0xe3,0x00,0xa2,0xcd,
+	0x39,0xa3,0xce,0x08,0xa9,0x00,0x38,0xa4,0xb4,0xcf,0xd4,0x08,0x68,0x00,0x08,0x3b,
+	0x06,0x08,0x0f,0x00,0xa4,0xcf,0x48,0x08,0x4c,0x01,0xb3,0xce,0x09,0x01,0x01,0x38,
+	0xa2,0xcd,0x08,0x81,0x00,0xa1,0x0b,0x12,0x03,0xa2,0xcd,0x08,0x8b,0x01,0x09,0x5e,
+	0x06,0x09,0x22,0x03,0x08,0x3b,0x06,0x0c,0x6b,0x06,0xb0,0xce,0xd0,0x08,0xa9,0x00,
+	0x38,0xa2,0xcd,0x08,0x68,0x00,0xa1,0xcc,0x38,0x08,0x0f,0x00,0xa2,0xcd,0x08,0x4c,
+	0x01,0xce,0x09,0x7f,0x04,0xa4,0xcf,0x08,0x81,0x00,0x08,0x3b,0x06,0x0a,0x4b,0x02,
+	0xa4,0xcf,0x48,0x08,0x68,0x00,0xa3,0xce,0x38,0x08,0x0f,0x00,0xa2,0xcd,0xf3,0x39,
+	0x94,0xa1,0xcc,0x09,0x7f,0x04,0xa2,0xcd,0x09,0x81,0x00,0xce,0x08,0x59,0x01,0xa7,
+	0x49,0xbe,0xcf,0x47,0x08,0x60,0x00,0xa8,0xbd,0xc0,0x48,0x09,0x67,0x00,0xa9,0xc1,
+	0x38,0x08,0x0f,0x00,0xa8,0xc0,0xf3,0x39,0x94,0xa7,0xbc,0xcf,0x47,0xdc,0x09,0x7f,
+	0x04,0xa6,0xce,0x08,0x81,0x00,0xa5,0xcd,0x09,0x87,0x00,0x38,0xa6,0xce,0x08,0x8b,
+	0x01,0xa7,0xcf,0x39,0x99,0xa8,0xba,0xc0,0x48,0xda,0xf9,0x39,0xa9,0xc1,0x08,0x9e,
+	0x00,0xa8,0xc0,0x39,0xa7,0xb9,0xcf,0x47,0x09,0xa8,0x00,0x38,0xa6,0xce,0x08,0x68,
+	0x00,0xa5,0xcd,0x38,0x0a,0xb5,0x00,0xa6,0xce,0x08,0x46,0x07,0xcf,0x09,0x7f,0x04,
+	0xa8,0xb7,0xc0,0x48,0xd7,0x08,0x81,0x00,0xa9,0xc1,0x08,0xce,0x00,0xa8,0xc0,0x08,
+	0x8b,0x01,0xa7,0xb6,0xcf,0x47,0xd6,0x39,0x99,0xa6,0xce,0xf9,0x39,0xa5,0xcd,0x0a,
+	0xe3,0x00,0xa6,0xce,0x39,0xa7,0xcf,0x08,0xa9,0x00,0x38,0xa8,0xb4,0xc0,0x48,0xd4,
+	0x08,0x68,0x00,0xa9,0xc1,0x38,0x08,0x0f,0x00,0x0a,0x44,0x07,0xb3,0xcf,0x47,0x09,
+	0x01,0x01,0x38,0xa6,0xce,0x08,0x81,0x00,0xa5,0xcd,0x38,0x0b,0x02,0x02,0x38,0xa6,
+	0xce,0x09,0x68,0x00,0xcf,0x38,0x08,0x0f,0x00,0xa8,0xb1,0xc0,0x48,0x08,0x18,0x02,
+	0xa9,0xc1,0x09,0x7f,0x04,0xa8,0xc0,0x08,0x81,0x00,0xa7,0xb0,0xcf,0x47,0xd0,0x08,
+	0x59,0x01,0x08,0x61,0x00,0xce,0x08,0x68,0x00,0xa5,0xcd,0x38,0x08,0x0f,0x00,0xa6,
+	0xce,0x08,0x46,0x07,0xcf,0x09,0x7f,0x04,0xa8,0xc0,0x48,0x08,0x81,0x00,0xa9,0xc1,
+	0x0b,0x4a,0x02,0xa8,0xc0,0x09,0x68,0x00,0xcf,0x47,0x38,0x08,0x0f,0x00,0xa6,0xce,
+	0x08,0x74,0x00,0xcd,0x09,0x7f,0x04,0xa6,0xce,0x08,0x81,0x00,0xa7,0xcf,0x08,0x59,
+	0x01,0xe2,0xf0,0x38,0xa8,0xc0,0x48,0x08,0x68,0x00,0xa9,0xc1,0x38,0x08,0x0f,0x00,
+	0x0a,0x44,0x07,0xcf,0x47,0x09,0x7f,0x04,0xa6,0xce,0x08,0x81,0x00,0xa5,0xcd,0x09,
+	0xce,0x00,0xce,0x08,0x8b,0x01,0x09,0x61,0x07,0xc0,0x48,0x08,0x6a,0x07,0x38,0x9a,
+	0xb1,0xd1,0xfa,0x38,0x08,0x71,0x07,0xcf,0x47,0x08,0xa9,0x00,0x38,0xa6,0xce,0x08,
+	0x68,0x00,0xa5,0xcd,0x38,0x92,0xb2,0xd2,0xf2,0x38,0x93,0xa6,0xce,0x08,0x46,0x07,
+	0xcf,0x09,0x7f,0x04,0xa8,0xc0,0x48,0x08,0x81,0x00,0xa9,0xc1,0x38,0x97,0xb3,0xd3,
+	0xf7,0x38,0xa8,0xc0,0x08,0x8b,0x01,0xa7,0xcf,0x47,0x0c,0xa7,0x07,0x38,0x9a,0xb4,
+	0xd4,0xfa,0x38,0x09,0xb2,0x07,0x08,0xa9,0x00,0x08,0x43,0x08,0x08,0x68,0x00,0xa9,
+	0xc1,0x38,0x92,0xb5,0xd5,0xf2,0x38,0x93,0x0a,0x44,0x07,0xcf,0x47,0x09,0x7f,0x04,
+	0xa6,0xce,0x08,0x81,0x00,0xa5,0xcd,0x38,0x97,0xb6,0xd6,0xf7,0x38,0xa6,0xce,0x08,
+	0x8b,0x01,0x09,0x61,0x07,0xc0,0x48,0x08,0x6a,0x07,0x38,0x9a,0xb7,0xd7,0xfa,0x38,
+	0x08,0x71,0x07,0xcf,0x47,0x08,0xa9,0x00,0x38,0xa6,0xce,0x09,0x68,0x00,0xcf,0x38,
+	0x0a,0xb5,0x00,0xba,0xda,0xf3,0x38,0xbb,0xdb,0x38,0x94,0xbc,0xdc,0xf4,0x38,0x95,
+	0xbd,0xdd,0xf5,0x38,0xbe,0xde,0x38,0x96,0xbf,0xdf,0xf6,0x39,0x86,0x6a,0x90,0x19,
+	0x09,0x00,0x8c,0x5f,0x90,0x26,0x09,0x00,0x26,0x09,0x00,0x19,0x09,0x00,0x09,0x4b,
+	0x02,0x17,0x0b,0x00,0x8c,0x5f,0x90,0x19,0x09,0x00,0x09,0x4b,0x02,0x17,0x0b,0x00,
+	0x00 };

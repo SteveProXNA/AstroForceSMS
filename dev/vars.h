@@ -1,10 +1,10 @@
 // Keyboard
 unsigned int keystatus;  		// Estado del teclado
 
-// Frames in stage
+								// Frames in stage
 unsigned int stageframe; 		// Guarda las frames en una stage
 
-// Speeding thins up
+								// Speeding thins up
 unsigned char stageframe2mod;
 unsigned char stageframe4mod;
 unsigned char sprite82anim;
@@ -22,7 +22,7 @@ unsigned char gamelevel;					// Dificultad del juego
 unsigned char gamestock;					// Número de jugadores por defecto
 unsigned char gamepause;					// Si hay pausa
 
-// Player
+											// Player
 #define DEFAULTPLAYERSPEED 2
 #define ENEMYSHOOTDENSITY 4
 
@@ -43,7 +43,7 @@ unsigned char playershootmax;		// Player shoot max
 #define PLAYERSHOOTINTERVAL_NORMAL 3
 #define PLAYERSHOOTINTERVAL_SIDE 6
 
-#define MAXPLAYERSHOOTS 3
+#define MAXPLAYERSHOOTS 3						// stevepro
 unsigned char numplayershoots;					// Disparos actuales
 typedef struct playershoot
 {
@@ -53,7 +53,7 @@ typedef struct playershoot
 	signed char playershootvelx;
 	unsigned char playershootvely;
 }playershoot;
-playershoot playershoots[MAXPLAYERSHOOTS];
+playershoot playershoots[ MAXPLAYERSHOOTS ];
 
 // Disparos de enemigos
 #define ENEMYSHOOT_NORMAL 2
@@ -66,11 +66,11 @@ typedef struct enemyshoot
 {
 	unsigned char enemyshootposx;
 	unsigned char enemyshootposy;
-	signed char enemyshootvelx;	
-	signed char enemyshootvely;	
-	unsigned char enemyshoottype;	
+	signed char enemyshootvelx;
+	signed char enemyshootvely;
+	unsigned char enemyshoottype;
 }enemyshoot;
-enemyshoot enemyshoots[MAXENEMYSHOOTS];
+enemyshoot enemyshoots[ MAXENEMYSHOOTS ];
 unsigned char playstageshootspeed;
 
 // Explosiones
@@ -83,11 +83,11 @@ typedef struct explosion
 	unsigned char explosionsprite;
 	unsigned char explosiontype;
 }explosion;
-explosion explosions[MAXEXPLOSIONS];
+explosion explosions[ MAXEXPLOSIONS ];
 
 #define MAXENEMIES 10
 unsigned char numenemies;
-enemy enemies[MAXENEMIES];
+enemy enemies[ MAXENEMIES ];
 
 // The tilemap
 unsigned char *maplines;				// Lineas de un tilemap
@@ -97,7 +97,7 @@ unsigned int mappositionx;				// Posicion del map
 signed int mappositiony;				// Posicion del map
 signed int oldmappositiony;			// Antigua posicion del map
 
-// Bank changer
+									// Bank changer
 unsigned char lastbank;
 
 // Map statics
@@ -145,7 +145,7 @@ typedef struct script
 	unsigned char scripterframe;
 	signed char scripterloop;
 }script;
-script scripts[MAXSCRIPTS];
+script scripts[ MAXSCRIPTS ];
 
 // Labels
 #define MAXTIMEREDLABELS 3
@@ -153,10 +153,10 @@ unsigned char numtimeredlabels;					// Labels actuales
 
 typedef struct timeredlabel
 {
-unsigned char timeredlabely;	// Posicion Y de una label
-unsigned char timeredlabelt;	// Tiempo final de una label
+	unsigned char timeredlabely;	// Posicion Y de una label
+	unsigned char timeredlabelt;	// Tiempo final de una label
 }timeredlabel;
-timeredlabel timeredlabels[MAXTIMEREDLABELS];
+timeredlabel timeredlabels[ MAXTIMEREDLABELS ];
 
 
 // Usado en intro2 y ending

@@ -1,22 +1,22 @@
-void InitStageSprite(unsigned char b)
+void InitStageSprite( unsigned char b )
 {
 	const unsigned char *pointer;
 	int base;
 	char bank;
-	
-	pointer=imagepointers[b];
-	base=imagebases[b];
-	bank=imagebanks[b];
-	LoadSprite((unsigned char *)pointer,base,bank);
+
+	pointer = imagepointers[ b ];
+	base = imagebases[ b ];
+	bank = imagebanks[ b ];
+	LoadSprite( ( unsigned char * ) pointer, base, bank );
 }
 
-void InitStageSprites(const unsigned char *spl,unsigned char num)
+void InitStageSprites( const unsigned char *spl, unsigned char num )
 {
 	unsigned char a;
-	for(a=0;a<num;a++)
+	for( a = 0; a < num; a++ )
 	{
-		changeBank(FIXEDBANKSLOT);
-		InitStageSprite(spl[a]);
+		changeBank( FIXEDBANKSLOT );
+		InitStageSprite( spl[ a ] );
 	}
 }
 
@@ -24,38 +24,38 @@ void InitAfterBossStage()
 {
 	// Destroy all enemies
 	KillEnemyshoots();
-	KillEnemies(1);
+	KillEnemies( 1 );
 
 	// Music
-	PSGStop();
-	
+	devkit_PSGStop();
+
 	// Exit
-	playertype=5;
-	playercounter=0;
+	playertype = 5;
+	playercounter = 0;
 }
-	
+
 void InitCustomStageData()
 {
-	// Metemos aquÃ­ la velocidad de los disparos, ya que en alguna fase la retocamos
-	playstageshootspeed=DEFAULTENEMYSHOOTSPEED+gamelevel;
+	// Metemos aquí la velocidad de los disparos, ya que en alguna fase la retocamos
+	playstageshootspeed = DEFAULTENEMYSHOOTSPEED + gamelevel;
 
 	// Change bank
-	changeBank(FIXEDBANKSLOT);
+	changeBank( FIXEDBANKSLOT );
 
 	// Custom Init
-	(*(initstagefunctions[playstage]))();
+	( *( initstagefunctions[ playstage ] ) )( );
 }
 
 void UpdatePlayStage()
 {
 	// Change bank
-	changeBank(FIXEDBANKSLOT);
+	changeBank( FIXEDBANKSLOT );
 
 	// Custom Update
-	(*(updatestagefunctions[playstage]))();
+	( *( updatestagefunctions[ playstage ] ) )( );
 }
 
-void InitStageData(unsigned int i)
+void InitStageData( unsigned int i )
 {
 	unsigned char *palette_bin;
 	unsigned int palette_bin_bank;
@@ -65,39 +65,39 @@ void InitStageData(unsigned int i)
 	unsigned char *psg;
 	unsigned int psg_bank;
 	unsigned char loop_psg;
-	
+
 	// Prevent errors
-	changeBank(FIXEDBANKSLOT);
-	
+	changeBank( FIXEDBANKSLOT );
+
 	// Update where we stay
-	i<<=3;
+	i <<= 3;
 
 	// Get all data
-	palette_bin=(unsigned char *)stageinitdata[i];i++;
-	palette_bin_bank=(unsigned int)(stageinitdata[i]);i++;
-	tilemap_l=(unsigned char *)stageinitdata[i];i++;
-	tilemap_l_size=(unsigned int)(stageinitdata[i]);i++;
-	tilemap_m=(unsigned char *)stageinitdata[i];i++;
-	psg=(unsigned char *)stageinitdata[i];i++;
-	psg_bank=(unsigned int)(stageinitdata[i++]);
-	loop_psg=(unsigned int)(stageinitdata[i]);
+	palette_bin = ( unsigned char * ) stageinitdata[ i ]; i++;
+	palette_bin_bank = ( unsigned int ) ( stageinitdata[ i ] ); i++;
+	tilemap_l = ( unsigned char * ) stageinitdata[ i ]; i++;
+	tilemap_l_size = ( unsigned int ) ( stageinitdata[ i ] ); i++;
+	tilemap_m = ( unsigned char * ) stageinitdata[ i ]; i++;
+	psg = ( unsigned char * ) stageinitdata[ i ]; i++;
+	psg_bank = ( unsigned int ) ( stageinitdata[ i++ ] );
+	loop_psg = ( unsigned int ) ( stageinitdata[ i ] );
 
 
 	// The bank
-	playstagebank=palette_bin_bank;
-	
+	playstagebank = palette_bin_bank;
+
 	// Load palette
-	LoadBGPalette(palette_bin,palette_bin_bank);
+	LoadBGPalette( palette_bin, palette_bin_bank );
 
 	// The tilemap
-	SetMapLines(tilemap_l,tilemap_l_size,tilemap_m);
+	SetMapLines( tilemap_l, tilemap_l_size, tilemap_m );
 
 	// Init map
-	InitMap(palette_bin_bank);
+	InitMap( palette_bin_bank );
 
 	// Rom bank
-	if(psg!=0)
-		PlayMusic(psg,psg_bank,loop_psg);
+	if( psg != 0 )
+		PlayMusic( psg, psg_bank, loop_psg );
 }
 
 // Pass A
@@ -113,7 +113,7 @@ void UpdateStagePassA()
 	UpdatePlayer();
 
 	// Update player shoots
-	UpdatePlayershoots();	
+	UpdatePlayershoots();
 
 	// Enemy shoots
 	UpdateEnemyshoots();
@@ -122,52 +122,52 @@ void UpdateStagePassA()
 	UpdateExplosions();
 }
 
-		
-void UpdateStagePassB()		
+
+void UpdateStagePassB()
 {
 	// Enemies!!!
 	UpdateEnemies();
 }
-		
+
 // Pantalla de juego
 void InitPlayStage()
 {
 	// Save continue stage, for continue :)
-	laststagenum=stagenum;
-	
+	laststagenum = stagenum;
+
 	// Init stage
 	InitStage();
 
 	// Init script
 	InitScripts();
-	
+
 	// Enemies set to 0
 	InitEnemies();
-	
+
 	// And enemy shoots
 	InitEnemyshoots();
-	
+
 	// Lo volvemos a apagar
-	SMS_displayOff();
+	devkit_SMS_displayOff();
 
 	// Scroller
 	InitScroller();
 
 	// Barrom
 	InitBarrom();
-	
+
 	// Let's fill playstage
-	if(stagenum<6)
-		playstage=1+((basestage+stagenum)%5);
+	if( stagenum < 6 )
+		playstage = 1 + ( ( basestage + stagenum ) % 5 );
 	else
-		playstage=stagenum;
+		playstage = stagenum;
 
 	// Last but not least, load custom stage data from array data
-	InitStageData(stagedatamarks[playstage-1]);
+	InitStageData( stagedatamarks[ playstage - 1 ] );
 
 	// For the stage custom code 
 	InitCustomStageData();
-	
+
 	// Init player
 	InitPlayerSprite();
 
@@ -179,51 +179,51 @@ void InitPlayStage()
 
 	// Init explosion sprite
 	InitExplosions();
-	
+
 	// Do what we have to do
 	InitPlayer();
 
 	// Lo volvemos a encender
-	SMS_displayOn();
+	devkit_SMS_displayOn();
 
 	// Exit stage flag
-	exitplaystage=0;
-	
+	exitplaystage = 0;
+
 	// To make update at init
-	updateplaystage=1;
-	
+	updateplaystage = 1;
+
 	// We have not pause
-	gamepause=0;
+	gamepause = 0;
 
 	// Bucle
-	while(1)
+	while( 1 )
 	{
 		// Check for game pause
 		checkgamepause();
-		
-		if(gamepause==0)
+
+		if( gamepause == 0 )
 		{
 			// Update stage
 			UpdateStage();
-			
+
 			// Scroller... note this is processed ***ALWAYS*** to do a sweet effect
 			UpdateScroller();
 
 			// Barrom
 			UpdateBarrom();
-			
+
 			// Alternamos
-			if(stageframe2mod==0)
+			if( stageframe2mod == 0 )
 				UpdateStagePassA();
 			else
 				UpdateStagePassB();
 
 			// Scripter
-			if((stageframe%16)==0)
+			if( ( stageframe % 16 ) == 0 )
 				UpdateScripts();
-			
+
 			// Hay que salirse?
-			if(exitplaystage==1)return;
+			if( exitplaystage == 1 )return;
 
 			// Update psg
 			UpdatePSG();
@@ -232,12 +232,12 @@ void InitPlayStage()
 		{
 			// Update psg
 			UpdatePSG();
-			
+
 			// Wait
-			SMS_waitForVBlank();
-		
+			devkit_SMS_waitForVBlank();
+
 			// Reset
-			numinterrupts=0;
+			numinterrupts = 0;
 		}
 	}
 }

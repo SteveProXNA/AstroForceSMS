@@ -1,0 +1,404 @@
+XL2
+H 9 areas 4F global symbols
+M vars
+O -mz80
+S .__.ABS. Def0000
+A _CODE size 0 flags 0 addr 0
+A _DATA size 141 flags 0 addr 0
+S _mapstaticscount Def00F3
+S _disablescroll Def00FF
+S _stagenum Def000B
+S _numexplosions Def0060
+S _sprite82anim Def0006
+S _enemies Def008A
+S _playstagebank Def00F8
+S _mappositionx Def00EA
+S _oldmappositiony Def00EE
+S _mappositiony Def00EC
+S _keystatus Def0000
+S _playershoots Def001C
+S _numtimeredlabels Def0123
+S _basestage Def0008
+S _numinterrupts Def0135
+S _lastplayedmusicbank Def013E
+S _scrolltimes Def00FD
+S _gamelevel Def000F
+S _playerside Def0017
+S _spawnedexplosionwidth Def0131
+S _numenemies Def0089
+S _gamepause Def0011
+S _mapstatics Def00F1
+S _playershootcounter Def0016
+S _numplayershoots Def001B
+S _musicbank Def00F6
+S _stage4playrays Def0134
+S _gamestock Def0010
+S _enemyshoots Def002D
+S _introstagevelx Def012C
+S _playershootmax Def001A
+S _scrolls Def0100
+S _spawnedexplosiontime Def0133
+S _exitplaystage Def000E
+S _playerx Def0012
+S _playery Def0013
+S _powerupt Def0138
+S _scrollact Def00FC
+S _playstageshootspeed Def005F
+S _scripts Def0103
+S _powerupv Def0139
+S _playstage Def0009
+S _introstageposx Def012A
+S _powerupx Def0136
+S _dojukebox Def012E
+S _powerupy Def0137
+S _spawnedexplosionheight Def0132
+S _updateplaystage Def000A
+S _playercounter Def0015
+S _numenemyshoots Def002C
+S _playertype Def0014
+S _numplayers Def000D
+S _lastbank Def00F0
+S _scrollactspeedx Def00FB
+S _stageframe2mod Def0004
+S _scrollactspeedy Def00FA
+S _playershootlevel Def0019
+S _numscrolls Def00F9
+S _powerupcounter Def013A
+S _stageframe4mod Def0005
+S _explosions Def0061
+S _lastplayedmusic Def013C
+S _mapstaticsbank Def00F5
+S _shootcount Def002B
+S _sprite164anim Def0007
+S _lastplayedmusiclooped Def013F
+S _laststagenum Def000C
+S _numscripts Def0102
+S _maplines Def00E4
+S _mapbank Def00F7
+S _maplineslength Def00E6
+S _timeredlabels Def0124
+S _spawnedexplosionposx Def012F
+S _stage8phase Def0140
+S _playerspeed Def0018
+S _spawnedexplosionposy Def0130
+S _stageframe Def0002
+S _maptiles Def00E8
+A _INITIALIZED size 0 flags 0 addr 0
+A _DABS size 0 flags 8 addr 0
+A _HOME size 0 flags 0 addr 0
+A _GSINIT size 0 flags 0 addr 0
+A _GSFINAL size 0 flags 0 addr 0
+A _INITIALIZER size 0 flags 0 addr 0
+A _CABS size 0 flags 8 addr 0
+T 00 00
+R 00 00 01 00
+T 00 00
+R 00 00 01 00
+T 02 00
+R 00 00 01 00
+T 02 00
+R 00 00 01 00
+T 04 00
+R 00 00 01 00
+T 04 00
+R 00 00 01 00
+T 05 00
+R 00 00 01 00
+T 05 00
+R 00 00 01 00
+T 06 00
+R 00 00 01 00
+T 06 00
+R 00 00 01 00
+T 07 00
+R 00 00 01 00
+T 07 00
+R 00 00 01 00
+T 08 00
+R 00 00 01 00
+T 08 00
+R 00 00 01 00
+T 09 00
+R 00 00 01 00
+T 09 00
+R 00 00 01 00
+T 0A 00
+R 00 00 01 00
+T 0A 00
+R 00 00 01 00
+T 0B 00
+R 00 00 01 00
+T 0B 00
+R 00 00 01 00
+T 0C 00
+R 00 00 01 00
+T 0C 00
+R 00 00 01 00
+T 0D 00
+R 00 00 01 00
+T 0D 00
+R 00 00 01 00
+T 0E 00
+R 00 00 01 00
+T 0E 00
+R 00 00 01 00
+T 0F 00
+R 00 00 01 00
+T 0F 00
+R 00 00 01 00
+T 10 00
+R 00 00 01 00
+T 10 00
+R 00 00 01 00
+T 11 00
+R 00 00 01 00
+T 11 00
+R 00 00 01 00
+T 12 00
+R 00 00 01 00
+T 12 00
+R 00 00 01 00
+T 13 00
+R 00 00 01 00
+T 13 00
+R 00 00 01 00
+T 14 00
+R 00 00 01 00
+T 14 00
+R 00 00 01 00
+T 15 00
+R 00 00 01 00
+T 15 00
+R 00 00 01 00
+T 16 00
+R 00 00 01 00
+T 16 00
+R 00 00 01 00
+T 17 00
+R 00 00 01 00
+T 17 00
+R 00 00 01 00
+T 18 00
+R 00 00 01 00
+T 18 00
+R 00 00 01 00
+T 19 00
+R 00 00 01 00
+T 19 00
+R 00 00 01 00
+T 1A 00
+R 00 00 01 00
+T 1A 00
+R 00 00 01 00
+T 1B 00
+R 00 00 01 00
+T 1B 00
+R 00 00 01 00
+T 1C 00
+R 00 00 01 00
+T 1C 00
+R 00 00 01 00
+T 2B 00
+R 00 00 01 00
+T 2B 00
+R 00 00 01 00
+T 2C 00
+R 00 00 01 00
+T 2C 00
+R 00 00 01 00
+T 2D 00
+R 00 00 01 00
+T 2D 00
+R 00 00 01 00
+T 5F 00
+R 00 00 01 00
+T 5F 00
+R 00 00 01 00
+T 60 00
+R 00 00 01 00
+T 60 00
+R 00 00 01 00
+T 61 00
+R 00 00 01 00
+T 61 00
+R 00 00 01 00
+T 89 00
+R 00 00 01 00
+T 89 00
+R 00 00 01 00
+T 8A 00
+R 00 00 01 00
+T 8A 00
+R 00 00 01 00
+T E4 00
+R 00 00 01 00
+T E4 00
+R 00 00 01 00
+T E6 00
+R 00 00 01 00
+T E6 00
+R 00 00 01 00
+T E8 00
+R 00 00 01 00
+T E8 00
+R 00 00 01 00
+T EA 00
+R 00 00 01 00
+T EA 00
+R 00 00 01 00
+T EC 00
+R 00 00 01 00
+T EC 00
+R 00 00 01 00
+T EE 00
+R 00 00 01 00
+T EE 00
+R 00 00 01 00
+T F0 00
+R 00 00 01 00
+T F0 00
+R 00 00 01 00
+T F1 00
+R 00 00 01 00
+T F1 00
+R 00 00 01 00
+T F3 00
+R 00 00 01 00
+T F3 00
+R 00 00 01 00
+T F5 00
+R 00 00 01 00
+T F5 00
+R 00 00 01 00
+T F6 00
+R 00 00 01 00
+T F6 00
+R 00 00 01 00
+T F7 00
+R 00 00 01 00
+T F7 00
+R 00 00 01 00
+T F8 00
+R 00 00 01 00
+T F8 00
+R 00 00 01 00
+T F9 00
+R 00 00 01 00
+T F9 00
+R 00 00 01 00
+T FA 00
+R 00 00 01 00
+T FA 00
+R 00 00 01 00
+T FB 00
+R 00 00 01 00
+T FB 00
+R 00 00 01 00
+T FC 00
+R 00 00 01 00
+T FC 00
+R 00 00 01 00
+T FD 00
+R 00 00 01 00
+T FD 00
+R 00 00 01 00
+T FF 00
+R 00 00 01 00
+T FF 00
+R 00 00 01 00
+T 00 01
+R 00 00 01 00
+T 00 01
+R 00 00 01 00
+T 02 01
+R 00 00 01 00
+T 02 01
+R 00 00 01 00
+T 03 01
+R 00 00 01 00
+T 03 01
+R 00 00 01 00
+T 23 01
+R 00 00 01 00
+T 23 01
+R 00 00 01 00
+T 24 01
+R 00 00 01 00
+T 24 01
+R 00 00 01 00
+T 2A 01
+R 00 00 01 00
+T 2A 01
+R 00 00 01 00
+T 2C 01
+R 00 00 01 00
+T 2C 01
+R 00 00 01 00
+T 2E 01
+R 00 00 01 00
+T 2E 01
+R 00 00 01 00
+T 2F 01
+R 00 00 01 00
+T 2F 01
+R 00 00 01 00
+T 30 01
+R 00 00 01 00
+T 30 01
+R 00 00 01 00
+T 31 01
+R 00 00 01 00
+T 31 01
+R 00 00 01 00
+T 32 01
+R 00 00 01 00
+T 32 01
+R 00 00 01 00
+T 33 01
+R 00 00 01 00
+T 33 01
+R 00 00 01 00
+T 34 01
+R 00 00 01 00
+T 34 01
+R 00 00 01 00
+T 35 01
+R 00 00 01 00
+T 35 01
+R 00 00 01 00
+T 36 01
+R 00 00 01 00
+T 36 01
+R 00 00 01 00
+T 37 01
+R 00 00 01 00
+T 37 01
+R 00 00 01 00
+T 38 01
+R 00 00 01 00
+T 38 01
+R 00 00 01 00
+T 39 01
+R 00 00 01 00
+T 39 01
+R 00 00 01 00
+T 3A 01
+R 00 00 01 00
+T 3A 01
+R 00 00 01 00
+T 3C 01
+R 00 00 01 00
+T 3C 01
+R 00 00 01 00
+T 3E 01
+R 00 00 01 00
+T 3E 01
+R 00 00 01 00
+T 3F 01
+R 00 00 01 00
+T 3F 01
+R 00 00 01 00
+T 40 01
+R 00 00 01 00
+T 40 01
+R 00 00 01 00
