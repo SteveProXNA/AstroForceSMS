@@ -52,6 +52,10 @@ devkit\_snd_manager.rel
 ihx2sms output.ihx output.sms
 
 
+:: Output
+copy output.sms ..\AstroForce2.0.sms
+
+
 cd banks
 if exist "*.asm" del "*.asm" > nul; if exist "*.lst" del "*.lst" > nul; if exist "*.sym" del "*.sym" > nul
 cd ..

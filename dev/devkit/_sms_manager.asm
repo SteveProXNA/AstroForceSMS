@@ -897,10 +897,10 @@ ___SMS__SDSC_signature:
 	.db #0x44	; 68	'D'
 	.db #0x53	; 83	'S'
 	.db #0x43	; 67	'C'
-	.db #0x01	; 1
+	.db #0x02	; 2
 	.db #0x00	; 0
-	.db #0x04	; 4
-	.db #0x04	; 4
+	.db #0x05	; 5
+	.db #0x05	; 5
 	.db #0x20	; 32
 	.db #0x20	; 32
 	.db #0xd2	; 210
