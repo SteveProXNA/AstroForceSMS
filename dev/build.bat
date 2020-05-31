@@ -78,12 +78,12 @@ ihx2sms output.ihx output.sms
 
 REM echo Copy output
 copy output.sms ..\asm
-copy output.sms ..\AstroForce.sms
+copy output.sms ..\AstroForce1.0.sms
 
 
 REM echo Disassemble output
 cd ..\asm
-smsexamine output.sms
+:: smsexamine output.sms
 cd ..\dev
 
 
