@@ -14,7 +14,7 @@ More detailed information on code refactor and setup can be found here:
 http://steveproxna.blogspot.com/2017/09/devkitsms-programming-setup.html
 
 
-Update refactor uses Visual Studio 2015 as Integrated Development Environment
+Updated refactor uses Visual Studio 2015 as Integrated Development Environment
 <br />
 More detailed information on code refactor and setup can be found here:
 <br />
