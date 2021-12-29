@@ -5,9 +5,9 @@ F:G$FinishStage8BossC$0$0({2}DF,SV:S),Z,0,0,0,0,0
 F:G$UpdateStage8BossC$0$0({2}DF,SC:U),Z,0,0,0,0,0
 S:Lstage8bossc.UpdateStage8BossC$en$1$79({2}DG,STenemy:S),B,1,4
 S:Lstage8bossc.UpdateStage8BossC$a$1$80({1}SC:U),R,0,0,[e]
-S:Lstage8bossc.UpdateStage8BossC$sloc0$1$0({2}DG,SC:U),B,1,-3
-S:Lstage8bossc.UpdateStage8BossC$sloc1$1$0({1}SC:U),B,1,-1
-S:Lstage8bossc.UpdateStage8BossC$sloc2$1$0({1}SC:U),B,1,-4
+S:Lstage8bossc.UpdateStage8BossC$sloc0$1$0({2}DG,SC:U),B,1,-4
+S:Lstage8bossc.UpdateStage8BossC$sloc1$1$0({1}SC:U),B,1,-2
+S:Lstage8bossc.UpdateStage8BossC$sloc2$1$0({1}SC:U),B,1,-1
 T:Fstage8bossc$stage3star[({0}S:S$posx$0$0({1}SC:U),Z,0,0)({1}S:S$posy$0$0({1}SC:U),Z,0,0)({2}S:S$speed$0$0({1}SC:U),Z,0,0)]
 T:Fstage8bossc$enemy[({0}S:S$enemyposx$0$0({1}SC:U),Z,0,0)({1}S:S$enemyposy$0$0({1}SC:U),Z,0,0)({2}S:S$enemytype$0$0({1}SC:U),Z,0,0)({3}S:S$enemyframe$0$0({1}SC:U),Z,0,0)({4}S:S$enemyparama$0$0({1}SC:U),Z,0,0)({5}S:S$enemyparamb$0$0({1}SC:U),Z,0,0)({6}S:S$enemyenergy$0$0({1}SC:U),Z,0,0)({7}S:S$enemywidth$0$0({1}SC:U),Z,0,0)({8}S:S$enemyheight$0$0({1}SC:U),Z,0,0)]
 T:Fstage8bossc$enemyshoot[({0}S:S$enemyshootposx$0$0({1}SC:U),Z,0,0)({1}S:S$enemyshootposy$0$0({1}SC:U),Z,0,0)({2}S:S$enemyshootvelx$0$0({1}SC:S),Z,0,0)({3}S:S$enemyshootvely$0$0({1}SC:S),Z,0,0)({4}S:S$enemyshoottype$0$0({1}SC:U),Z,0,0)]

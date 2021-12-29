@@ -1,10 +1,10 @@
 M:playershoot
 F:G$DrawPlayerShoot$0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Lplayershoot.DrawPlayerShoot$ps$1$85({2}DG,STplayershoot:S),B,1,4
-S:Lplayershoot.DrawPlayerShoot$sloc0$1$0({2}DG,SC:U),B,1,-4
+S:Lplayershoot.DrawPlayerShoot$sloc0$1$0({2}DG,SC:U),B,1,-6
 S:Lplayershoot.DrawPlayerShoot$sloc1$1$0({1}SC:U),B,1,-1
-S:Lplayershoot.DrawPlayerShoot$sloc2$1$0({1}SC:U),B,1,-2
-S:Lplayershoot.DrawPlayerShoot$sloc3$1$0({2}DG,SC:U),B,1,-6
+S:Lplayershoot.DrawPlayerShoot$sloc2$1$0({1}SC:U),B,1,-4
+S:Lplayershoot.DrawPlayerShoot$sloc3$1$0({2}DG,SC:U),B,1,-3
 F:G$InitPlayershootSprites$0$0({2}DF,SV:S),Z,0,0,0,0,0
 F:G$UpdatePlayershoot$0$0({2}DF,SV:S),Z,0,2,0,0,0
 S:Lplayershoot.UpdatePlayershoot$a$1$93({2}SI:U),B,1,4

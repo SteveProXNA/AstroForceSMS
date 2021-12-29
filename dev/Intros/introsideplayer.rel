@@ -1,6 +1,6 @@
 ;!FILE introsideplayer.asm
 XL2
-H 9 areas A0 global symbols
+H 9 areas A1 global symbols
 M introsideplayer
 O -mz80
 S _sinustable Ref0000
@@ -8,77 +8,80 @@ S .__.ABS. Def0000
 S _DrawQuadSprite Ref0000
 S _devkit_SMS_addSprite Ref0000
 S _stageframe Ref0000
-A _CODE size E7 flags 0 addr 0
-S A$introsideplayer$234 Def00DE
-S A$introsideplayer$225 Def00D5
-S A$introsideplayer$207 Def00BC
-S A$introsideplayer$180 Def0097
-S A$introsideplayer$171 Def008E
-S A$introsideplayer$162 Def0083
-S A$introsideplayer$144 Def006C
-S A$introsideplayer$135 Def0063
-S A$introsideplayer$126 Def0056
-S A$introsideplayer$117 Def0044
+A _CODE size DC flags 0 addr 0
+S A$introsideplayer$243 Def00D9
+S A$introsideplayer$234 Def00D1
+S A$introsideplayer$225 Def00C9
+S A$introsideplayer$216 Def00C1
+S A$introsideplayer$207 Def00B3
+S A$introsideplayer$180 Def008E
+S A$introsideplayer$171 Def0086
+S A$introsideplayer$162 Def007B
+S A$introsideplayer$144 Def0062
+S A$introsideplayer$135 Def0059
+S A$introsideplayer$126 Def004E
+S A$introsideplayer$117 Def003F
 S _UpdateIntroSidePlayer Def000D
-S A$introsideplayer$226 Def00D6
-S A$introsideplayer$208 Def00BE
-S A$introsideplayer$190 Def00A3
-S A$introsideplayer$181 Def0099
-S A$introsideplayer$172 Def008F
-S A$introsideplayer$163 Def0086
-S A$introsideplayer$154 Def0077
-S A$introsideplayer$145 Def006D
-S A$introsideplayer$136 Def0064
-S A$introsideplayer$127 Def0057
-S A$introsideplayer$118 Def0045
-S A$introsideplayer$209 Def00C0
-S A$introsideplayer$191 Def00A4
-S A$introsideplayer$182 Def009C
-S A$introsideplayer$173 Def0090
-S A$introsideplayer$164 Def0087
-S A$introsideplayer$155 Def0078
-S A$introsideplayer$146 Def006F
-S A$introsideplayer$137 Def0065
-S A$introsideplayer$128 Def0058
-S A$introsideplayer$119 Def0047
-S C$introsideplayer.c$33$2$80 Def00CE
+S A$introsideplayer$235 Def00D3
+S A$introsideplayer$226 Def00CA
+S A$introsideplayer$208 Def00B5
+S A$introsideplayer$190 Def009A
+S A$introsideplayer$181 Def0090
+S A$introsideplayer$172 Def0087
+S A$introsideplayer$163 Def007C
+S A$introsideplayer$145 Def0065
+S A$introsideplayer$136 Def005C
+S A$introsideplayer$127 Def004F
+S A$introsideplayer$118 Def0041
+S A$introsideplayer$227 Def00CB
+S A$introsideplayer$209 Def00B7
+S A$introsideplayer$191 Def009C
+S A$introsideplayer$182 Def0092
+S A$introsideplayer$173 Def0088
+S A$introsideplayer$164 Def007F
+S A$introsideplayer$155 Def0070
+S A$introsideplayer$146 Def0066
+S A$introsideplayer$137 Def005D
+S A$introsideplayer$128 Def0050
+S A$introsideplayer$119 Def0042
+S C$introsideplayer.c$33$2$80 Def00C3
 S C$introsideplayer.c$11$1$76 Def000D
-S A$introsideplayer$192 Def00A6
-S A$introsideplayer$183 Def009D
-S A$introsideplayer$174 Def0091
-S A$introsideplayer$147 Def0072
-S A$introsideplayer$129 Def0059
-S C$introsideplayer.c$34$2$80 Def00D7
-S A$introsideplayer$247 Def00E6
-S A$introsideplayer$193 Def00A7
-S A$introsideplayer$239 Def00E0
-S A$introsideplayer$194 Def00A9
-S A$introsideplayer$149 Def0074
-S A$introsideplayer$195 Def00AA
-S A$introsideplayer$168 Def0089
-S A$introsideplayer$159 Def007B
-S C$introsideplayer.c$22$1$78 Def0066
-S A$introsideplayer$196 Def00AB
-S A$introsideplayer$178 Def0092
-S A$introsideplayer$169 Def008C
-S A$introsideplayer$197 Def00AD
-S A$introsideplayer$188 Def009E
-S A$introsideplayer$179 Def0095
-S C$introsideplayer.c$24$1$78 Def007B
-S A$introsideplayer$198 Def00AE
-S A$introsideplayer$189 Def00A1
-S C$introsideplayer.c$16$1$78 Def0077
-S A$introsideplayer$199 Def00AF
-S C$introsideplayer.c$36$1$78 Def00E0
-S XG$UpdateIntroSidePlayer$0$0 Def00E6
-S C$introsideplayer.c$37$1$78 Def00E6
-S C$introsideplayer.c$26$2$79 Def0089
-S C$introsideplayer.c$19$1$78 Def0036
+S A$introsideplayer$192 Def009D
+S A$introsideplayer$183 Def0095
+S A$introsideplayer$174 Def0089
+S A$introsideplayer$165 Def0080
+S A$introsideplayer$156 Def0071
+S A$introsideplayer$147 Def0068
+S A$introsideplayer$138 Def005E
+S A$introsideplayer$129 Def0051
+S C$introsideplayer.c$34$2$80 Def00CC
+S A$introsideplayer$193 Def009F
+S A$introsideplayer$184 Def0096
+S A$introsideplayer$175 Def008A
+S A$introsideplayer$148 Def006B
+S A$introsideplayer$248 Def00DB
+S A$introsideplayer$194 Def00A0
+S A$introsideplayer$195 Def00A2
+S C$introsideplayer.c$22$1$78 Def005F
+S A$introsideplayer$196 Def00A3
+S A$introsideplayer$169 Def0082
+S A$introsideplayer$197 Def00A4
+S A$introsideplayer$179 Def008B
+S C$introsideplayer.c$24$1$78 Def0074
+S A$introsideplayer$198 Def00A6
+S A$introsideplayer$189 Def0097
+S C$introsideplayer.c$16$1$78 Def0070
+S A$introsideplayer$199 Def00A7
+S C$introsideplayer.c$36$1$78 Def00D5
+S XG$UpdateIntroSidePlayer$0$0 Def00DB
+S C$introsideplayer.c$37$1$78 Def00DB
+S C$introsideplayer.c$26$2$79 Def0082
+S C$introsideplayer.c$19$1$78 Def0033
 S A$introsideplayer$60 Def0002
 S A$introsideplayer$61 Def0003
-S C$introsideplayer.c$28$2$79 Def0092
+S C$introsideplayer.c$28$2$79 Def008B
 S A$introsideplayer$62 Def0004
-S C$introsideplayer.c$29$2$79 Def009E
+S C$introsideplayer.c$29$2$79 Def0097
 S A$introsideplayer$90 Def0017
 S A$introsideplayer$72 Def000C
 S A$introsideplayer$63 Def0007
@@ -95,75 +98,73 @@ S A$introsideplayer$94 Def0021
 S A$introsideplayer$85 Def0015
 S A$introsideplayer$67 Def000B
 S A$introsideplayer$58 Def0000
-S A$introsideplayer$95 Def0024
+S A$introsideplayer$95 Def0022
 S A$introsideplayer$86 Def0016
 S A$introsideplayer$59 Def0001
-S A$introsideplayer$96 Def0027
-S A$introsideplayer$97 Def0028
-S A$introsideplayer$98 Def0029
+S A$introsideplayer$96 Def0023
+S A$introsideplayer$97 Def0024
+S A$introsideplayer$98 Def0025
 S C$introsideplayer.c$8$1$76 Def0000
 S C$introsideplayer.c$6$0$0 Def0000
-S A$introsideplayer$99 Def002A
+S A$introsideplayer$99 Def0026
 S C$introsideplayer.c$9$1$76 Def000C
 S G$InitIntroSidePlayer$0$0 Def0000
 S _InitIntroSidePlayer Def0000
 S G$UpdateIntroSidePlayer$0$0 Def000D
-S A$introsideplayer$100 Def002B
-S A$introsideplayer$200 Def00B0
-S A$introsideplayer$110 Def0036
-S A$introsideplayer$101 Def002E
-S A$introsideplayer$210 Def00C2
-S A$introsideplayer$201 Def00B1
-S A$introsideplayer$120 Def004B
-S A$introsideplayer$111 Def0039
-S A$introsideplayer$102 Def002F
-S A$introsideplayer$220 Def00CE
-S A$introsideplayer$211 Def00C3
-S A$introsideplayer$202 Def00B2
-S A$introsideplayer$130 Def005B
-S A$introsideplayer$121 Def004D
-S A$introsideplayer$112 Def003B
-S A$introsideplayer$103 Def0030
-S A$introsideplayer$230 Def00D7
-S A$introsideplayer$221 Def00D1
-S A$introsideplayer$212 Def00C5
-S A$introsideplayer$203 Def00B4
-S A$introsideplayer$131 Def005C
-S A$introsideplayer$122 Def0050
-S A$introsideplayer$113 Def003D
-S A$introsideplayer$104 Def0033
-S A$introsideplayer$231 Def00D9
-S A$introsideplayer$222 Def00D2
-S A$introsideplayer$213 Def00C8
-S A$introsideplayer$204 Def00B6
-S A$introsideplayer$141 Def0066
-S A$introsideplayer$132 Def005E
-S A$introsideplayer$123 Def0053
-S A$introsideplayer$114 Def003F
-S A$introsideplayer$105 Def0034
+S A$introsideplayer$100 Def0027
+S A$introsideplayer$200 Def00A8
+S A$introsideplayer$101 Def0028
+S A$introsideplayer$210 Def00B9
+S A$introsideplayer$201 Def00A9
+S A$introsideplayer$120 Def0044
+S A$introsideplayer$111 Def0033
+S A$introsideplayer$102 Def002B
+S A$introsideplayer$211 Def00BB
+S A$introsideplayer$202 Def00AA
+S A$introsideplayer$130 Def0052
+S A$introsideplayer$121 Def0048
+S A$introsideplayer$112 Def0036
+S A$introsideplayer$103 Def002C
+S A$introsideplayer$221 Def00C3
+S A$introsideplayer$212 Def00BC
+S A$introsideplayer$203 Def00AB
+S A$introsideplayer$131 Def0054
+S A$introsideplayer$122 Def004A
+S A$introsideplayer$113 Def0038
+S A$introsideplayer$104 Def002D
+S A$introsideplayer$240 Def00D5
+S A$introsideplayer$231 Def00CC
+S A$introsideplayer$222 Def00C6
+S A$introsideplayer$213 Def00BE
+S A$introsideplayer$204 Def00AD
+S A$introsideplayer$150 Def006D
+S A$introsideplayer$132 Def0055
+S A$introsideplayer$123 Def004B
+S A$introsideplayer$114 Def003A
+S A$introsideplayer$105 Def0030
 S XG$InitIntroSidePlayer$0$0 Def000C
-S A$introsideplayer$241 Def00E2
-S A$introsideplayer$232 Def00DA
-S A$introsideplayer$223 Def00D3
-S A$introsideplayer$214 Def00CB
-S A$introsideplayer$205 Def00B8
-S A$introsideplayer$160 Def007F
-S A$introsideplayer$142 Def0067
-S A$introsideplayer$133 Def005F
-S A$introsideplayer$124 Def0054
-S A$introsideplayer$115 Def0041
-S A$introsideplayer$106 Def0035
-S A$introsideplayer$242 Def00E4
-S A$introsideplayer$233 Def00DC
-S A$introsideplayer$224 Def00D4
-S A$introsideplayer$215 Def00CC
-S A$introsideplayer$206 Def00BA
-S A$introsideplayer$170 Def008D
-S A$introsideplayer$161 Def0082
-S A$introsideplayer$143 Def0069
-S A$introsideplayer$134 Def0060
-S A$introsideplayer$125 Def0055
-S A$introsideplayer$116 Def0042
+S A$introsideplayer$232 Def00CE
+S A$introsideplayer$223 Def00C7
+S A$introsideplayer$214 Def00BF
+S A$introsideplayer$205 Def00AF
+S A$introsideplayer$160 Def0074
+S A$introsideplayer$142 Def005F
+S A$introsideplayer$133 Def0057
+S A$introsideplayer$124 Def004C
+S A$introsideplayer$115 Def003C
+S A$introsideplayer$106 Def0031
+S A$introsideplayer$242 Def00D7
+S A$introsideplayer$233 Def00CF
+S A$introsideplayer$224 Def00C8
+S A$introsideplayer$215 Def00C0
+S A$introsideplayer$206 Def00B1
+S A$introsideplayer$170 Def0085
+S A$introsideplayer$161 Def0078
+S A$introsideplayer$143 Def0060
+S A$introsideplayer$134 Def0058
+S A$introsideplayer$125 Def004D
+S A$introsideplayer$116 Def003E
+S A$introsideplayer$107 Def0032
 A _DATA size 0 flags 0 addr 0
 A _INITIALIZED size 0 flags 0 addr 0
 A _DABS size 0 flags 8 addr 0
@@ -180,53 +181,51 @@ T 0D 00
 R 00 00 00 00
 T 0D 00 DD E5 DD 21 00 00 DD 39 F5 3B DD 4E 04 DD
 R 00 00 00 00
-T 1B 00 46 05 21 01 00 09 DD 75 FE DD 74 FF 56 0A
+T 1B 00 46 05 21 01 00 09 E3 E1 E5 56 0A 5F C5 21
 R 00 00 00 00
-T 29 00 5F C5 21 36 01 E5 D5 CD 00 00 F1 F1 C1 2A
-R 00 00 00 00 02 0A 02 00
-T 37 00 00 00 CB 3C CB 1D CB 3C CB 1D 7D E6 01 5F
-R 00 00 00 00 02 02 04 00
-T 45 00 16 00 FD 21 3A 01 FD 19 DD 6E FE DD 66 FF
+T 29 00 36 01 E5 D5 CD 00 00 F1 F1 C1 2A 00 00 CB
+R 00 00 00 00 02 07 02 00 02 0D 04 00
+T 37 00 3C CB 1D CB 3C CB 1D 7D E6 01 5F 16 00 FD
 R 00 00 00 00
-T 53 00 56 14 14 14 14 0A C6 F8 C5 FD E5 5F D5 CD
+T 45 00 21 3A 01 FD 19 E1 E5 56 14 14 14 14 0A C6
 R 00 00 00 00
-T 61 00 00 00 F1 F1 C1 C5 FD E1 FD 7E 04 B7 20 05
-R 00 00 00 00 02 02 03 00
-T 6F 00 11 F0 02 18 03
+T 53 00 F8 C5 FD E5 5F D5 CD 00 00 F1 F1 C1 C5 FD
+R 00 00 00 00 02 09 03 00
+T 61 00 E1 FD 7E 04 B7 20 05 11 F0 02 18 03
 R 00 00 00 00
-T 74 00
+T 6D 00
 R 00 00 00 00
-T 74 00 11 8E 03
+T 6D 00 11 8E 03
 R 00 00 00 00
-T 77 00
+T 70 00
 R 00 00 00 00
-T 77 00 0A DD 77 FD FD 21 00 00 FD 7E 00 93 FD 7E
+T 70 00 0A DD 77 FF FD 21 00 00 FD 7E 00 93 FD 7E
 R 00 00 00 00 02 08 04 00
-T 85 00 01 9A 30 45 21 00 00 7B 96 5F 7A 23 9E DD
+T 7E 00 01 9A 30 41 21 00 00 7B 96 5F 7A 23 9E DD
 R 00 00 00 00 02 07 04 00
-T 93 00 7E FD D6 80 30 05 DD 7E FD 3C 02
+T 8C 00 7E FF D6 80 30 05 DD 7E FF 3C 02
 R 00 00 00 00
-T 9E 00
+T 97 00
 R 00 00 00 00
-T 9E 00 21 00 00 16 00 19 06 00 7E C6 80 4F 78 CE
+T 97 00 21 00 00 16 00 19 06 00 7E C6 80 4F 78 CE
 R 00 00 00 00 02 03 00 00
-T AC 00 FF 47 69 60 29 09 CB 2C CB 1D CB 2C CB 1D
+T A5 00 FF 47 69 60 29 09 CB 2C CB 1D CB 2C CB 1D
 R 00 00 00 00
-T BA 00 CB 2C CB 1D CB 2C CB 1D 7D C6 48 DD 6E FE
+T B3 00 CB 2C CB 1D CB 2C CB 1D 7D C6 48 E1 E5 77
 R 00 00 00 00
-T C8 00 DD 66 FF 77 18 12
+T C1 00 18 12
 R 00 00 00 00
-T CE 00
+T C3 00
 R 00 00 00 00
-T CE 00 DD 5E FD 1C 1C 1C 1C 7B 02 3E F0 93 30 04
+T C3 00 DD 5E FF 1C 1C 1C 1C 7B 02 3E F0 93 30 04
 R 00 00 00 00
-T DC 00 2E 00 18 02
+T D1 00 2E 00 18 02
 R 00 00 00 00
-T E0 00
+T D5 00
 R 00 00 00 00
-T E0 00 2E 01
+T D5 00 2E 01
 R 00 00 00 00
-T E2 00
+T D7 00
 R 00 00 00 00
-T E2 00 DD F9 DD E1 C9
+T D7 00 DD F9 DD E1 C9
 R 00 00 00 00
