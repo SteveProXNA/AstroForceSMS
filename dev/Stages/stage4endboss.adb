@@ -4,9 +4,9 @@ S:Lstage4endboss.DoStage4EndBossSinusMovementVert$en$1$56({2}DG,STenemy:S),B,1,4
 S:Lstage4endboss.DoStage4EndBossSinusMovementVert$sloc0$1$0({1}SC:U),B,1,-1
 F:G$UpdateStage4EndBoss1$0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Lstage4endboss.UpdateStage4EndBoss1$en$1$60({2}DG,STenemy:S),B,1,4
-S:Lstage4endboss.UpdateStage4EndBoss1$sloc0$1$0({2}DG,SC:U),B,1,-3
-S:Lstage4endboss.UpdateStage4EndBoss1$sloc1$1$0({1}SC:U),B,1,-1
-S:Lstage4endboss.UpdateStage4EndBoss1$sloc2$1$0({1}SC:U),B,1,-4
+S:Lstage4endboss.UpdateStage4EndBoss1$sloc0$1$0({2}DG,SC:U),B,1,-2
+S:Lstage4endboss.UpdateStage4EndBoss1$sloc1$1$0({1}SC:U),B,1,-4
+S:Lstage4endboss.UpdateStage4EndBoss1$sloc2$1$0({1}SC:U),B,1,-3
 F:G$UpdateStage4EndBoss2$0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Lstage4endboss.UpdateStage4EndBoss2$en$1$63({2}DG,STenemy:S),B,1,4
 F:G$UpdateStage4EndBoss3$0$0({2}DF,SV:S),Z,0,0,0,0,0

@@ -1,4 +1,4 @@
-::@echo off
+@echo off
 
 :: Time build START
 :: Reference: https://stackoverflow.com/questions/673523/how-do-i-measure-execution-time-of-a-command-on-the-windows-command-line
@@ -262,9 +262,6 @@ defines.rel funcs.rel vars.rel
 :: Execute
 ihx2sms output.ihx output.sms
 
-
-:: Output
-::copy output.sms ../AstroForce2.0.sms
 
 
 cd banks

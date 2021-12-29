@@ -3,9 +3,9 @@ F:G$DoStage3EndBossCrossShooting$0$0({2}DF,SV:S),Z,0,1,0,0,0
 S:Lstage3endboss.DoStage3EndBossCrossShooting$en$1$51({2}DG,STenemy:S),B,1,4
 S:Lstage3endboss.DoStage3EndBossCrossShooting$a$1$52({1}SC:U),R,0,0,[]
 S:Lstage3endboss.DoStage3EndBossCrossShooting$b$1$52({1}SC:U),B,1,-5
-S:Lstage3endboss.DoStage3EndBossCrossShooting$sloc0$1$0({2}DG,SC:U),B,1,-3
-S:Lstage3endboss.DoStage3EndBossCrossShooting$sloc1$1$0({1}SC:U),B,1,-4
-S:Lstage3endboss.DoStage3EndBossCrossShooting$sloc2$1$0({1}SC:U),B,1,-1
+S:Lstage3endboss.DoStage3EndBossCrossShooting$sloc0$1$0({2}DG,SC:U),B,1,-2
+S:Lstage3endboss.DoStage3EndBossCrossShooting$sloc1$1$0({1}SC:U),B,1,-3
+S:Lstage3endboss.DoStage3EndBossCrossShooting$sloc2$1$0({1}SC:U),B,1,-4
 F:G$UpdateStage3EndBoss2$0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Lstage3endboss.UpdateStage3EndBoss2$en$1$55({2}DG,STenemy:S),B,1,4
 F:G$UpdateStage3EndBoss1$0$0({2}DF,SV:S),Z,0,0,0,0,0

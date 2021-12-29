@@ -3,8 +3,8 @@ F:G$UpdateSpaceStation1$0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Lspacestation.UpdateSpaceStation1$en$1$50({2}DG,STenemy:S),B,1,4
 F:G$UpdateSpaceStation2$0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Lspacestation.UpdateSpaceStation2$en$1$52({2}DG,STenemy:S),B,1,4
-S:Lspacestation.UpdateSpaceStation2$sloc0$1$0({2}SI:S),B,1,-2
-S:Lspacestation.UpdateSpaceStation2$sloc1$1$0({1}SC:U),B,1,-3
+S:Lspacestation.UpdateSpaceStation2$sloc0$1$0({2}SI:S),B,1,-3
+S:Lspacestation.UpdateSpaceStation2$sloc1$1$0({1}SC:U),B,1,-1
 S:Lspacestation.UpdateSpaceStation2$sloc2$1$0({2}SI:S),B,1,-5
 F:G$FinishSpaceStation$0$0({2}DF,SV:S),Z,0,0,0,0,0
 F:G$UpdateSpaceStation$0$0({2}DF,SC:U),Z,0,0,0,0,0

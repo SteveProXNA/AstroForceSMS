@@ -1,8 +1,8 @@
 M:stage1endboss
 F:G$UpdateStage1EndBoss1$0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Lstage1endboss.UpdateStage1EndBoss1$en$1$54({2}DG,STenemy:S),B,1,4
-S:Lstage1endboss.UpdateStage1EndBoss1$sloc0$1$0({2}DG,SC:U),B,1,-2
-S:Lstage1endboss.UpdateStage1EndBoss1$sloc1$1$0({1}SC:U),B,1,-3
+S:Lstage1endboss.UpdateStage1EndBoss1$sloc0$1$0({2}DG,SC:U),B,1,-3
+S:Lstage1endboss.UpdateStage1EndBoss1$sloc1$1$0({1}SC:U),B,1,-1
 F:G$UpdateStage1EndBoss$0$0({2}DF,SC:U),Z,0,0,0,0,0
 S:Lstage1endboss.UpdateStage1EndBoss$en$1$59({2}DG,STenemy:S),B,1,4
 T:Fstage1endboss$stage3star[({0}S:S$posx$0$0({1}SC:U),Z,0,0)({1}S:S$posy$0$0({1}SC:U),Z,0,0)({2}S:S$speed$0$0({1}SC:U),Z,0,0)]

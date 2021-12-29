@@ -1,6 +1,6 @@
 ;!FILE monsterhead.asm
 XL2
-H 9 areas AC global symbols
+H 9 areas AA global symbols
 M monsterhead
 O -mz80
 S _changeBank Ref0000
@@ -11,37 +11,34 @@ S _monsterheadshootdirecionsy Ref0000
 S _DrawSpriteArray Ref0000
 S _sprite164anim Ref0000
 S _InitEnemyshootDirection Ref0000
-A _CODE size F9 flags 0 addr 0
-S A$monsterhead$238 Def00F6
-S A$monsterhead$229 Def00EF
-S A$monsterhead$184 Def00AF
-S A$monsterhead$175 Def009F
-S A$monsterhead$157 Def0089
-S A$monsterhead$148 Def0081
-S A$monsterhead$139 Def0075
-S A$monsterhead$194 Def00BF
-S A$monsterhead$185 Def00B0
-S A$monsterhead$176 Def00A0
-S A$monsterhead$158 Def008C
-S A$monsterhead$149 Def0082
-S A$monsterhead$195 Def00C2
-S A$monsterhead$186 Def00B3
-S A$monsterhead$177 Def00A2
-S A$monsterhead$168 Def0092
-S A$monsterhead$159 Def008D
-S C$monsterhead.c$24$1$49 Def00F2
+A _CODE size FB flags 0 addr 0
+S A$monsterhead$193 Def00C4
+S A$monsterhead$184 Def00B5
+S A$monsterhead$175 Def00A4
+S A$monsterhead$166 Def0094
+S A$monsterhead$157 Def008F
+S A$monsterhead$139 Def007A
+S A$monsterhead$194 Def00C6
+S A$monsterhead$176 Def00A7
+S A$monsterhead$167 Def0097
+S A$monsterhead$195 Def00C7
+S A$monsterhead$186 Def00B7
+S A$monsterhead$177 Def00A9
+S A$monsterhead$168 Def0099
+S C$monsterhead.c$24$1$49 Def00F4
 S C$monsterhead.c$15$1$49 Def006C
-S A$monsterhead$196 Def00C4
-S A$monsterhead$178 Def00A5
-S A$monsterhead$169 Def0095
-S C$monsterhead.c$25$1$49 Def00F8
-S A$monsterhead$197 Def00C5
-S A$monsterhead$188 Def00B5
-S A$monsterhead$179 Def00A7
-S A$monsterhead$198 Def00C6
-S A$monsterhead$189 Def00B8
-S C$monsterhead.c$18$1$49 Def0092
-S A$monsterhead$199 Def00C9
+S A$monsterhead$196 Def00C8
+S A$monsterhead$187 Def00BA
+S A$monsterhead$178 Def00AC
+S A$monsterhead$169 Def009A
+S C$monsterhead.c$25$1$49 Def00FA
+S A$monsterhead$197 Def00CB
+S A$monsterhead$188 Def00BC
+S A$monsterhead$179 Def00AE
+S A$monsterhead$198 Def00CE
+S A$monsterhead$189 Def00BD
+S C$monsterhead.c$18$1$49 Def0094
+S A$monsterhead$199 Def00D0
 S A$monsterhead$60 Def000A
 S A$monsterhead$70 Def001D
 S A$monsterhead$80 Def0024
@@ -77,104 +74,105 @@ S A$monsterhead$69 Def001A
 S A$monsterhead$97 Def0040
 S A$monsterhead$79 Def0023
 S A$monsterhead$98 Def0041
-S C$monsterhead.c$8$1$49 Def008E
+S C$monsterhead.c$8$1$49 Def0090
 S C$monsterhead.c$6$0$0 Def0000
 S A$monsterhead$99 Def0042
 S C$monsterhead.c$9$1$49 Def0023
 S _UpdateMonsterHead Def0000
-S XG$UpdateMonsterHead$0$0 Def00F8
+S XG$UpdateMonsterHead$0$0 Def00FA
 S A$monsterhead$100 Def0044
-S A$monsterhead$200 Def00CC
+S A$monsterhead$200 Def00D1
 S A$monsterhead$110 Def0051
 S A$monsterhead$101 Def0045
-S A$monsterhead$210 Def00E0
-S A$monsterhead$201 Def00CE
+S A$monsterhead$210 Def00E4
+S A$monsterhead$201 Def00D4
 S A$monsterhead$120 Def0060
 S A$monsterhead$111 Def0052
 S A$monsterhead$102 Def0046
-S A$monsterhead$211 Def00E1
-S A$monsterhead$202 Def00CF
+S A$monsterhead$211 Def00E5
+S A$monsterhead$202 Def00D7
 S A$monsterhead$130 Def006C
 S A$monsterhead$121 Def0061
 S A$monsterhead$112 Def0054
 S A$monsterhead$103 Def0047
-S C$monsterhead.c$20$2$50 Def00EF
-S A$monsterhead$230 Def00F1
-S A$monsterhead$212 Def00E2
-S A$monsterhead$203 Def00D2
-S A$monsterhead$140 Def0077
-S A$monsterhead$131 Def006D
+S C$monsterhead.c$20$2$50 Def00F1
+S A$monsterhead$221 Def00EE
+S A$monsterhead$212 Def00E6
+S A$monsterhead$203 Def00D8
+S A$monsterhead$140 Def007B
+S A$monsterhead$131 Def006F
 S A$monsterhead$122 Def0063
 S A$monsterhead$113 Def0055
 S A$monsterhead$104 Def0048
-S A$monsterhead$213 Def00E3
-S A$monsterhead$204 Def00D5
-S A$monsterhead$141 Def0078
-S A$monsterhead$132 Def006E
+S A$monsterhead$222 Def00EF
+S A$monsterhead$213 Def00E7
+S A$monsterhead$204 Def00DA
+S A$monsterhead$141 Def007C
+S A$monsterhead$132 Def0072
 S A$monsterhead$123 Def0066
 S A$monsterhead$114 Def0056
 S A$monsterhead$105 Def0049
-S A$monsterhead$223 Def00EC
-S A$monsterhead$214 Def00E4
-S A$monsterhead$205 Def00D6
-S A$monsterhead$142 Def0079
-S A$monsterhead$133 Def006F
+S A$monsterhead$241 Def00FA
+S A$monsterhead$223 Def00F0
+S A$monsterhead$214 Def00E8
+S A$monsterhead$205 Def00DB
+S A$monsterhead$151 Def0086
+S A$monsterhead$142 Def007D
+S A$monsterhead$133 Def0073
 S A$monsterhead$124 Def0069
 S A$monsterhead$115 Def0059
 S A$monsterhead$106 Def004A
-S A$monsterhead$224 Def00ED
-S A$monsterhead$215 Def00E5
-S A$monsterhead$206 Def00D8
-S A$monsterhead$170 Def0097
-S A$monsterhead$143 Def007A
-S A$monsterhead$134 Def0070
+S A$monsterhead$233 Def00F4
+S A$monsterhead$215 Def00EB
+S A$monsterhead$206 Def00DC
+S A$monsterhead$170 Def009D
+S A$monsterhead$161 Def0090
+S A$monsterhead$152 Def0087
+S A$monsterhead$143 Def0080
+S A$monsterhead$134 Def0074
 S A$monsterhead$125 Def006A
 S A$monsterhead$116 Def005A
 S A$monsterhead$107 Def004B
-S A$monsterhead$243 Def00F8
-S A$monsterhead$225 Def00EE
-S A$monsterhead$216 Def00E6
-S A$monsterhead$207 Def00D9
-S A$monsterhead$180 Def00AA
-S A$monsterhead$171 Def0098
-S A$monsterhead$153 Def0084
-S A$monsterhead$144 Def007B
-S A$monsterhead$135 Def0071
+S A$monsterhead$216 Def00EC
+S A$monsterhead$207 Def00DF
+S A$monsterhead$180 Def00AF
+S A$monsterhead$171 Def009F
+S A$monsterhead$162 Def0091
+S A$monsterhead$153 Def0089
+S A$monsterhead$144 Def0081
+S A$monsterhead$135 Def0075
 S A$monsterhead$126 Def006B
 S A$monsterhead$117 Def005D
 S A$monsterhead$108 Def004F
-S A$monsterhead$235 Def00F2
-S A$monsterhead$217 Def00E9
-S A$monsterhead$208 Def00DA
-S A$monsterhead$190 Def00BA
-S A$monsterhead$181 Def00AC
-S A$monsterhead$172 Def009B
-S A$monsterhead$163 Def008E
-S A$monsterhead$154 Def0085
-S A$monsterhead$145 Def007E
-S A$monsterhead$136 Def0072
+S A$monsterhead$235 Def00F6
+S A$monsterhead$217 Def00ED
+S A$monsterhead$208 Def00E2
+S A$monsterhead$190 Def00BE
+S A$monsterhead$181 Def00B0
+S A$monsterhead$172 Def00A0
+S A$monsterhead$154 Def008A
+S A$monsterhead$145 Def0082
+S A$monsterhead$136 Def0076
 S A$monsterhead$118 Def005E
 S A$monsterhead$109 Def0050
-S C$monsterhead.c$17$2$50 Def0084
-S A$monsterhead$218 Def00EA
-S A$monsterhead$209 Def00DD
-S A$monsterhead$191 Def00BB
-S A$monsterhead$182 Def00AD
-S A$monsterhead$173 Def009D
-S A$monsterhead$164 Def008F
-S A$monsterhead$155 Def0087
-S A$monsterhead$146 Def007F
-S A$monsterhead$137 Def0073
+S C$monsterhead.c$17$2$50 Def0086
+S A$monsterhead$236 Def00F8
+S A$monsterhead$227 Def00F1
+S A$monsterhead$209 Def00E3
+S A$monsterhead$182 Def00B1
+S A$monsterhead$173 Def00A1
+S A$monsterhead$155 Def008B
+S A$monsterhead$146 Def0083
+S A$monsterhead$137 Def0077
 S A$monsterhead$119 Def005F
-S A$monsterhead$237 Def00F4
-S A$monsterhead$219 Def00EB
-S A$monsterhead$192 Def00BC
-S A$monsterhead$183 Def00AE
-S A$monsterhead$174 Def009E
-S A$monsterhead$156 Def0088
-S A$monsterhead$147 Def0080
-S A$monsterhead$138 Def0074
-S C$monsterhead.c$19$2$50 Def00EC
+S A$monsterhead$228 Def00F3
+S A$monsterhead$192 Def00C1
+S A$monsterhead$183 Def00B2
+S A$monsterhead$174 Def00A2
+S A$monsterhead$156 Def008E
+S A$monsterhead$147 Def0084
+S A$monsterhead$138 Def0079
+S C$monsterhead.c$19$2$50 Def00EE
 S C$monsterhead.c$12$1$49 Def0031
 A _DATA size 0 flags 0 addr 0
 A _INITIALIZED size 0 flags 0 addr 0
@@ -188,53 +186,53 @@ T 00 00
 R 00 00 00 00
 T 00 00 DD E5 DD 21 00 00 DD 39 F5 F5 3B DD 7E 04
 R 00 00 00 00
-T 0E 00 DD 77 FD DD 7E 05 DD 77 FE DD 5E FD DD 56
+T 0E 00 DD 77 FE DD 7E 05 DD 77 FF DD 5E FE DD 56
 R 00 00 00 00
-T 1C 00 FE 13 1A 4F 0C 79 12 1A DD 77 FF 3E C0 91
+T 1C 00 FF 13 1A 4F 0C 79 12 1A DD 77 FC 3E C0 91
 R 00 00 00 00
-T 2A 00 30 05 2E 00 C3 F4 00
+T 2A 00 30 05 2E 00 C3 F6 00
 R 00 00 00 00 00 07 00 00
 T 31 00
 R 00 00 00 00
-T 31 00 DD 6E FD DD 66 FE 46 21 00 00 4E CB 39 CB
+T 31 00 DD 6E FE DD 66 FF 46 21 00 00 4E CB 39 CB
 R 00 00 00 00 02 0A 06 00
 T 3F 00 39 D5 59 16 00 6B 62 29 29 29 19 D1 FD 21
 R 00 00 00 00
 T 4D 00 53 01 C5 4D 44 FD 09 C1 D5 21 18 18 E5 DD
 R 00 00 00 00
-T 5B 00 7E FF F5 33 C5 33 FD E5 CD 00 00 21 06 00
+T 5B 00 7E FC F5 33 C5 33 FD E5 CD 00 00 21 06 00
 R 00 00 00 00 02 0B 05 00
-T 69 00 39 F9 D1 C1 E1 E5 C5 23 23 23 46 D5 3E 05
+T 69 00 39 F9 D1 DD 6E FE DD 66 FF 23 23 23 46 D5
 R 00 00 00 00
-T 77 00 F5 33 C5 33 CD 00 00 F1 D1 7D B7 20 6E D5
-R 00 00 00 00 02 07 01 00
-T 85 00 3E 0F F5 33 CD 00 00 33 D1 1A DD 77 FF DD
-R 00 00 00 00 02 07 00 00
-T 93 00 7E FD C6 04 4F DD 7E FE CE 00 47 0A 5F 3E
+T 77 00 3E 05 F5 33 C5 33 CD 00 00 F1 D1 7D B7 20
+R 00 00 00 00 02 09 01 00
+T 85 00 6E D5 3E 0F F5 33 CD 00 00 33 D1 1A DD 77
+R 00 00 00 00 02 09 00 00
+T 93 00 FC DD 7E FE C6 04 4F DD 7E FF CE 00 47 0A
 R 00 00 00 00
-T A1 00 60 DD 96 FF 30 0E 21 00 00 16 00 19 56 AF
-R 00 00 00 00 02 09 04 00
-T AF 00 92 DD 77 FB 18 0A
+T A1 00 5F 3E 60 DD 96 FC 30 0E 21 00 00 16 00 19
+R 00 00 00 00 02 0B 04 00
+T AF 00 56 AF 92 DD 77 FB 18 0A
 R 00 00 00 00
-T B5 00
+T B7 00
 R 00 00 00 00
-T B5 00 21 00 00 16 00 19 7E DD 77 FB
+T B7 00 21 00 00 16 00 19 7E DD 77 FB
 R 00 00 00 00 02 03 04 00
-T BF 00
+T C1 00
 R 00 00 00 00
-T BF 00 21 00 00 16 00 19 7E DD 77 FC DD 7E FF C6
+T C1 00 21 00 00 16 00 19 7E DD 77 FD DD 7E FC C6
 R 00 00 00 00 02 03 02 00
-T CD 00 08 5F DD 6E FD DD 66 FE 7E C6 08 57 C5 DD
+T CF 00 08 5F DD 6E FE DD 66 FF 7E C6 08 57 C5 DD
 R 00 00 00 00
-T DB 00 66 FB DD 6E FC E5 7B F5 33 D5 33 CD 00 00
+T DD 00 66 FB DD 6E FD E5 7B F5 33 D5 33 CD 00 00
 R 00 00 00 00 02 0E 07 00
-T E9 00 F1 F1 C1 0A 3C 02 E6 0F 02
-R 00 00 00 00
-T F2 00
-R 00 00 00 00
-T F2 00 2E 01
+T EB 00 F1 F1 C1 0A 3C 02 E6 0F 02
 R 00 00 00 00
 T F4 00
 R 00 00 00 00
-T F4 00 DD F9 DD E1 C9
+T F4 00 2E 01
+R 00 00 00 00
+T F6 00
+R 00 00 00 00
+T F6 00 DD F9 DD E1 C9
 R 00 00 00 00
