@@ -3,8 +3,8 @@
 
 #include "../defines.h"
 
-// ADRIANA
-unsigned char UpdateRSGThing( enemy *en );
-void InitRSGThing( enemy *en );
+// Complete
+unsigned char UpdateRSGThing(enemy *en);
+void InitRSGThing(enemy *en);
 
-#endif//_RSGTHING_H_
+#endif //_RSGTHING_H_

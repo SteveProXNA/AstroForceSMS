@@ -3,7 +3,7 @@
 
 #include "../defines.h"
 
-// ADRIANA
-unsigned char UpdateWW2Ship( enemy *en );
+// Complete
+unsigned char UpdateWW2Ship(enemy *en);
 
-#endif//_WW2SHIP_H_
+#endif //_WW2SHIP_H_

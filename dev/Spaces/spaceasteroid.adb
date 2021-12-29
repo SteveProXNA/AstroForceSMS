@@ -3,8 +3,8 @@ F:G$InitSpaceAsteroid$0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Lspaceasteroid.InitSpaceAsteroid$en$1$75({2}DG,STenemy:S),B,1,4
 F:G$UpdateSpaceAsteroid$0$0({2}DF,SC:U),Z,0,0,0,0,0
 S:Lspaceasteroid.UpdateSpaceAsteroid$en$1$77({2}DG,STenemy:S),B,1,4
-S:Lspaceasteroid.UpdateSpaceAsteroid$sloc0$1$0({2}DG,STenemy:S),B,1,-4
-S:Lspaceasteroid.UpdateSpaceAsteroid$sloc1$1$0({2}DG,SC:U),B,1,-2
+S:Lspaceasteroid.UpdateSpaceAsteroid$sloc0$1$0({2}DG,STenemy:S),B,1,-2
+S:Lspaceasteroid.UpdateSpaceAsteroid$sloc1$1$0({2}DG,SC:U),B,1,-4
 T:Fspaceasteroid$stage3star[({0}S:S$posx$0$0({1}SC:U),Z,0,0)({1}S:S$posy$0$0({1}SC:U),Z,0,0)({2}S:S$speed$0$0({1}SC:U),Z,0,0)]
 T:Fspaceasteroid$enemy[({0}S:S$enemyposx$0$0({1}SC:U),Z,0,0)({1}S:S$enemyposy$0$0({1}SC:U),Z,0,0)({2}S:S$enemytype$0$0({1}SC:U),Z,0,0)({3}S:S$enemyframe$0$0({1}SC:U),Z,0,0)({4}S:S$enemyparama$0$0({1}SC:U),Z,0,0)({5}S:S$enemyparamb$0$0({1}SC:U),Z,0,0)({6}S:S$enemyenergy$0$0({1}SC:U),Z,0,0)({7}S:S$enemywidth$0$0({1}SC:U),Z,0,0)({8}S:S$enemyheight$0$0({1}SC:U),Z,0,0)]
 T:Fspaceasteroid$enemyshoot[({0}S:S$enemyshootposx$0$0({1}SC:U),Z,0,0)({1}S:S$enemyshootposy$0$0({1}SC:U),Z,0,0)({2}S:S$enemyshootvelx$0$0({1}SC:S),Z,0,0)({3}S:S$enemyshootvely$0$0({1}SC:S),Z,0,0)({4}S:S$enemyshoottype$0$0({1}SC:U),Z,0,0)]

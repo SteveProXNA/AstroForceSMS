@@ -1,8 +1,8 @@
 #ifndef _STAGE6_H_
 #define _STAGE6_H_
 
-// ADRIANA
+// Complete
 void InitStage6();
 void UpdateStage6();
 
-#endif//_STAGE6_H_
+#endif //_STAGE6_H_

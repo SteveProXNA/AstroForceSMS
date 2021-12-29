@@ -3,13 +3,13 @@
 
 #include "../defines.h"
 
-// ADRIANA
-void InitSkullBoneA( enemy *en );
-void InitSkullBoneB( enemy *en );
-void InitSkullBoneC( enemy *en );
-unsigned char TestSkullOut( enemy *en );
-unsigned char UpdateSkullBoneAB( enemy *en );
-void UpdateSkullBoneCMovement( enemy *en );
-unsigned char UpdateSkullBoneC( enemy *en );
+// Complete
+void InitSkullBoneA(enemy *en);
+void InitSkullBoneB(enemy *en);
+void InitSkullBoneC(enemy *en);
+unsigned char TestSkullOut(enemy *en);
+unsigned char UpdateSkullBoneAB(enemy *en);
+void UpdateSkullBoneCMovement(enemy *en);
+unsigned char UpdateSkullBoneC(enemy *en);
 
-#endif//_SKULLBONE_H_
+#endif //_SKULLBONE_H_

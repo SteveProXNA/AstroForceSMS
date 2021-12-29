@@ -3,8 +3,8 @@
 
 #include "../defines.h"
 
-// ADRIANA
-void InitStage3Laser( enemy *en );
-unsigned char UpdateStage3Laser( enemy *en );
+// Complete
+void InitStage3Laser(enemy *en);
+unsigned char UpdateStage3Laser(enemy *en);
 
-#endif//_STAGE3LASER_H_
+#endif //_STAGE3LASER_H_

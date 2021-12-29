@@ -1,8 +1,8 @@
 M:stage8lateral
 F:G$UpdateStage8Lateral$0$0({2}DF,SC:U),Z,0,0,0,0,0
 S:Lstage8lateral.UpdateStage8Lateral$en$1$75({2}DG,STenemy:S),B,1,4
-S:Lstage8lateral.UpdateStage8Lateral$sloc0$1$0({2}DG,SC:U),B,1,-2
-S:Lstage8lateral.UpdateStage8Lateral$sloc1$1$0({2}DG,SC:U),B,1,-4
+S:Lstage8lateral.UpdateStage8Lateral$sloc0$1$0({2}DG,SC:U),B,1,-4
+S:Lstage8lateral.UpdateStage8Lateral$sloc1$1$0({2}DG,SC:U),B,1,-2
 F:G$InitStage8Lateral$0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Lstage8lateral.InitStage8Lateral$en$1$77({2}DG,STenemy:S),B,1,4
 T:Fstage8lateral$stage3star[({0}S:S$posx$0$0({1}SC:U),Z,0,0)({1}S:S$posy$0$0({1}SC:U),Z,0,0)({2}S:S$speed$0$0({1}SC:U),Z,0,0)]

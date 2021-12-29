@@ -3,7 +3,7 @@
 
 #include "../defines.h"
 
-// ADRIANA
-unsigned char UpdateRectShip( enemy *en );
+// Complete
+unsigned char UpdateRectShip(enemy *en);
 
-#endif//_RECTSHIP_H_
+#endif //_RECTSHIP_H_

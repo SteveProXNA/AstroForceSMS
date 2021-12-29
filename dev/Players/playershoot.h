@@ -3,12 +3,12 @@
 
 #include "../vars.h"
 
-// ADRIANA
-void DrawPlayerShoot( playershoot *ps );
+// Complete
+void DrawPlayerShoot(playershoot *ps);
 void InitPlayershootSprites();
-void UpdatePlayershoot( unsigned int a );
+void UpdatePlayershoot(unsigned int a);
 void UpdatePlayershoots();
-void InitPlayershoot( unsigned char x, unsigned char y, unsigned char t );
+void InitPlayershoot(unsigned char x, unsigned char y, unsigned char t);
 void InitPlayershoots();
 
-#endif//_PLAYERSHOOT_H_
+#endif //_PLAYERSHOOT_H_

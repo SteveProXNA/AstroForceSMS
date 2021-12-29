@@ -3,7 +3,7 @@
 
 #include "../defines.h"
 
-// ADRIANA
-unsigned char UpdateMonsterHead( enemy *en );
+// Complete
+unsigned char UpdateMonsterHead(enemy *en);
 
-#endif//_MONSTERHEAD_H_
+#endif //_MONSTERHEAD_H_

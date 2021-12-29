@@ -1,10 +1,10 @@
 #ifndef _SCRIPTER_H_
 #define _SCRIPTER_H_
 
-// ADRIANA
+// Complete
 void InitScripts();
-void RemoveScript( signed char a );
-void UpdateScript( unsigned char a );
+void RemoveScript(signed char a);
+void UpdateScript(unsigned char a);
 void UpdateScripts();
 
-#endif//_SCRIPTER_H_
+#endif //_SCRIPTER_H_

@@ -3,9 +3,9 @@
 
 #include "../defines.h"
 
-// ADRIANA
-void DoSideShoot( enemy *en, unsigned char freq );
-void InitFortressCannonRight( enemy *en );
-unsigned char UpdateFortressCannon( enemy *en );
+// Complete
+void DoSideShoot(enemy *en, unsigned char freq);
+void InitFortressCannonRight(enemy *en);
+unsigned char UpdateFortressCannon(enemy *en);
 
-#endif//_FORTRESSCANNON_H_
+#endif //_FORTRESSCANNON_H_

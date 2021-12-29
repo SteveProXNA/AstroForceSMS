@@ -1,8 +1,8 @@
 #ifndef _JUKEBOXSTAGE_H_
 #define _JUKEBOXSTAGE_H_
 
-// ADRIANA
+// Complete
 char UpdateJukeboxInfo();
 void InitJukeboxStage();
 
-#endif//_JUKEBOXSTAGE_H_
+#endif //_JUKEBOXSTAGE_H_

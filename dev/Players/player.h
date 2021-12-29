@@ -1,7 +1,7 @@
 #ifndef _PLAYER_H_
 #define _PLAYER_H_
 
-// ADRIANA
+// Complete
 void RemovePlayer();
 unsigned char CheckPlayerEnemyCollision();
 unsigned char CheckPlayerEnemyshootCollision();
@@ -19,4 +19,4 @@ void UpdatePlayerState2();
 void UpdatePlayerState1();
 void UpdatePlayer();
 
-#endif//_PLAYER_H_
+#endif //_PLAYER_H_

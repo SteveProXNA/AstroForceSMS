@@ -1,6 +1,6 @@
 ;!FILE ww2zeppelin.asm
 XL2
-H 9 areas 7B global symbols
+H 9 areas 79 global symbols
 M ww2zeppelin
 O -mz80
 S _sprite82anim Ref0000
@@ -10,7 +10,7 @@ S .__.ABS. Def0000
 S _DrawSpriteArray Ref0000
 S _stageframe4mod Ref0000
 S _devkit_SMS_addSprite Ref0000
-A _CODE size A5 flags 0 addr 0
+A _CODE size 9B flags 0 addr 0
 S A$ww2zeppelin$98 Def001F
 S A$ww2zeppelin$99 Def0022
 S C$ww2zeppelin.c$9$1$76 Def0000
@@ -19,98 +19,96 @@ S G$InitWW2Zeppelin$0$0 Def0000
 S _InitWW2Zeppelin Def0000
 S G$UpdateWW2Zeppelin$0$0 Def0015
 S A$ww2zeppelin$100 Def0025
-S A$ww2zeppelin$200 Def00A4
 S A$ww2zeppelin$101 Def0028
-S A$ww2zeppelin$120 Def0044
+S A$ww2zeppelin$120 Def003E
 S A$ww2zeppelin$102 Def002B
-S A$ww2zeppelin$130 Def0054
-S A$ww2zeppelin$121 Def0047
-S A$ww2zeppelin$103 Def002E
-S A$ww2zeppelin$140 Def0061
-S A$ww2zeppelin$131 Def0057
-S A$ww2zeppelin$122 Def0048
-S A$ww2zeppelin$113 Def003D
-S A$ww2zeppelin$104 Def0031
-S A$ww2zeppelin$150 Def0077
-S A$ww2zeppelin$141 Def0064
-S A$ww2zeppelin$132 Def0058
-S A$ww2zeppelin$123 Def0049
-S A$ww2zeppelin$114 Def003F
-S A$ww2zeppelin$105 Def0032
+S A$ww2zeppelin$130 Def004C
+S A$ww2zeppelin$121 Def003F
+S A$ww2zeppelin$103 Def002C
+S A$ww2zeppelin$140 Def0059
+S A$ww2zeppelin$131 Def004F
+S A$ww2zeppelin$122 Def0040
+S A$ww2zeppelin$113 Def0039
+S A$ww2zeppelin$104 Def002D
+S A$ww2zeppelin$150 Def006B
+S A$ww2zeppelin$141 Def005C
+S A$ww2zeppelin$132 Def0050
+S A$ww2zeppelin$123 Def0041
+S A$ww2zeppelin$114 Def003B
+S A$ww2zeppelin$105 Def002E
 S XG$InitWW2Zeppelin$0$0 Def0014
-S A$ww2zeppelin$160 Def0085
-S A$ww2zeppelin$151 Def0078
-S A$ww2zeppelin$142 Def0065
-S A$ww2zeppelin$133 Def005B
-S A$ww2zeppelin$124 Def004C
-S A$ww2zeppelin$106 Def0033
-S A$ww2zeppelin$161 Def0086
-S A$ww2zeppelin$152 Def007A
-S A$ww2zeppelin$143 Def0067
-S A$ww2zeppelin$134 Def005E
-S A$ww2zeppelin$125 Def004D
-S A$ww2zeppelin$107 Def0036
-S A$ww2zeppelin$180 Def0093
-S A$ww2zeppelin$171 Def008D
-S A$ww2zeppelin$153 Def007B
-S A$ww2zeppelin$144 Def006B
-S A$ww2zeppelin$135 Def005F
-S A$ww2zeppelin$126 Def0050
-S A$ww2zeppelin$108 Def0038
+S A$ww2zeppelin$160 Def0079
+S A$ww2zeppelin$151 Def006C
+S A$ww2zeppelin$142 Def005D
+S A$ww2zeppelin$133 Def0053
+S A$ww2zeppelin$124 Def0044
+S A$ww2zeppelin$106 Def002F
+S A$ww2zeppelin$161 Def007A
+S A$ww2zeppelin$152 Def006E
+S A$ww2zeppelin$143 Def005F
+S A$ww2zeppelin$134 Def0056
+S A$ww2zeppelin$125 Def0045
+S A$ww2zeppelin$107 Def0032
+S A$ww2zeppelin$180 Def0087
+S A$ww2zeppelin$171 Def0081
+S A$ww2zeppelin$153 Def006F
+S A$ww2zeppelin$144 Def0063
+S A$ww2zeppelin$135 Def0057
+S A$ww2zeppelin$126 Def0048
+S A$ww2zeppelin$108 Def0034
 S _UpdateWW2Zeppelin Def0015
-S A$ww2zeppelin$181 Def0094
-S A$ww2zeppelin$172 Def008E
-S A$ww2zeppelin$154 Def007D
-S A$ww2zeppelin$145 Def006D
-S A$ww2zeppelin$136 Def0060
-S A$ww2zeppelin$127 Def0051
-S A$ww2zeppelin$109 Def003B
+S A$ww2zeppelin$190 Def0094
+S A$ww2zeppelin$181 Def0088
+S A$ww2zeppelin$172 Def0082
+S A$ww2zeppelin$154 Def0071
+S A$ww2zeppelin$145 Def0065
+S A$ww2zeppelin$136 Def0058
+S A$ww2zeppelin$127 Def0049
+S A$ww2zeppelin$109 Def0037
 S C$ww2zeppelin.c$10$1$76 Def0014
-S A$ww2zeppelin$182 Def0095
-S A$ww2zeppelin$173 Def008F
-S A$ww2zeppelin$155 Def007E
-S A$ww2zeppelin$146 Def006E
-S A$ww2zeppelin$128 Def0052
-S A$ww2zeppelin$119 Def0041
-S A$ww2zeppelin$192 Def009E
-S A$ww2zeppelin$183 Def0096
-S A$ww2zeppelin$165 Def0087
-S A$ww2zeppelin$156 Def007F
-S A$ww2zeppelin$147 Def0070
-S A$ww2zeppelin$129 Def0053
+S A$ww2zeppelin$182 Def008B
+S A$ww2zeppelin$173 Def0083
+S A$ww2zeppelin$155 Def0072
+S A$ww2zeppelin$146 Def0066
+S A$ww2zeppelin$128 Def004A
+S A$ww2zeppelin$119 Def003D
+S A$ww2zeppelin$192 Def0096
+S A$ww2zeppelin$183 Def008E
+S A$ww2zeppelin$165 Def007B
+S A$ww2zeppelin$156 Def0073
+S A$ww2zeppelin$147 Def0068
+S A$ww2zeppelin$129 Def004B
 S C$ww2zeppelin.c$12$1$76 Def0015
-S A$ww2zeppelin$184 Def0097
-S A$ww2zeppelin$166 Def008A
-S A$ww2zeppelin$157 Def0080
-S A$ww2zeppelin$148 Def0071
-S A$ww2zeppelin$194 Def00A0
-S A$ww2zeppelin$185 Def0098
-S A$ww2zeppelin$167 Def008B
-S A$ww2zeppelin$158 Def0081
-S A$ww2zeppelin$149 Def0074
-S A$ww2zeppelin$195 Def00A2
-S A$ww2zeppelin$186 Def0099
-S A$ww2zeppelin$159 Def0084
-S C$ww2zeppelin.c$31$1$78 Def009E
-S A$ww2zeppelin$187 Def009C
-S A$ww2zeppelin$178 Def0090
-S C$ww2zeppelin.c$32$1$78 Def00A4
+S A$ww2zeppelin$193 Def0098
+S A$ww2zeppelin$184 Def008F
+S A$ww2zeppelin$166 Def007E
+S A$ww2zeppelin$157 Def0074
+S A$ww2zeppelin$148 Def0069
+S A$ww2zeppelin$185 Def0092
+S A$ww2zeppelin$167 Def007F
+S A$ww2zeppelin$158 Def0075
+S A$ww2zeppelin$149 Def006A
+S A$ww2zeppelin$186 Def0093
+S A$ww2zeppelin$159 Def0078
+S C$ww2zeppelin.c$31$1$78 Def0094
+S A$ww2zeppelin$178 Def0084
+S C$ww2zeppelin.c$32$1$78 Def009A
 S C$ww2zeppelin.c$14$1$78 Def001F
-S A$ww2zeppelin$188 Def009D
-S A$ww2zeppelin$179 Def0092
-S C$ww2zeppelin.c$22$2$79 Def0061
-S C$ww2zeppelin.c$15$1$78 Def003D
-S C$ww2zeppelin.c$25$2$79 Def0087
-S XG$UpdateWW2Zeppelin$0$0 Def00A4
-S C$ww2zeppelin.c$26$2$79 Def008D
+S A$ww2zeppelin$179 Def0086
+S C$ww2zeppelin.c$22$2$79 Def0059
+S C$ww2zeppelin.c$15$1$78 Def0039
+S A$ww2zeppelin$198 Def009A
+S C$ww2zeppelin.c$25$2$79 Def007B
+S XG$UpdateWW2Zeppelin$0$0 Def009A
+S C$ww2zeppelin.c$26$2$79 Def0081
 S A$ww2zeppelin$60 Def0000
 S A$ww2zeppelin$70 Def000C
 S A$ww2zeppelin$61 Def0001
-S C$ww2zeppelin.c$19$2$79 Def0041
+S C$ww2zeppelin.c$19$2$79 Def003D
 S A$ww2zeppelin$80 Def0014
 S A$ww2zeppelin$71 Def000D
 S A$ww2zeppelin$62 Def0002
-S C$ww2zeppelin.c$29$2$79 Def0090
+S C$ww2zeppelin.c$29$2$79 Def0084
 S A$ww2zeppelin$90 Def0015
 S A$ww2zeppelin$72 Def000E
 S A$ww2zeppelin$63 Def0003
@@ -145,33 +143,31 @@ T 15 00
 R 00 00 00 00
 T 15 00 DD E5 DD 21 00 00 DD 39 F5 3B DD 7E 04 DD
 R 00 00 00 00
-T 23 00 77 FE DD 7E 05 DD 77 FF DD 5E FE DD 56 FF
+T 23 00 77 FD DD 7E 05 DD 77 FE D1 D5 13 1A DD 77
 R 00 00 00 00
-T 31 00 13 1A DD 77 FD 3E C0 DD 96 FD 30 04 2E 00
+T 31 00 FF 3E C0 DD 96 FF 30 04 2E 00 18 59
 R 00 00 00 00
-T 3F 00 18 5F
+T 3D 00
 R 00 00 00 00
-T 41 00
+T 3D 00 E1 E5 46 D5 21 10 18 E5 DD 7E FF F5 33 C5
 R 00 00 00 00
-T 41 00 DD 6E FE DD 66 FF 46 D5 21 10 18 E5 DD 7E
+T 4B 00 33 21 7F 01 E5 CD 00 00 21 06 00 39 F9 D1
+R 00 00 00 00 02 08 04 00
+T 59 00 21 00 00 4E 06 00 FD 21 85 01 FD 09 1A C6
+R 00 00 00 00 02 03 00 00
+T 67 00 F8 47 E1 E5 7E C6 04 D5 FD E5 C5 33 F5 33
 R 00 00 00 00
-T 4F 00 FD F5 33 C5 33 21 7F 01 E5 CD 00 00 21
-R 00 00 00 00 02 0C 04 00
-T 5C 00 06 00 39 F9 D1 21 00 00 4E 06 00 FD 21
-R 00 00 00 00 02 08 00 00
-T 69 00 85 01 FD 09 1A C6 F8 47 DD 6E FE DD 66 FF
+T 75 00 CD 00 00 F1 F1 D1 3A 00 00 3D 20 03 1A 3C
+R 00 00 00 00 02 03 06 00 02 09 05 00
+T 83 00 12
 R 00 00 00 00
-T 77 00 7E C6 04 D5 FD E5 C5 33 F5 33 CD 00 00 F1
-R 00 00 00 00 02 0D 06 00
-T 85 00 F1 D1 3A 00 00 3D 20 03 1A 3C 12
-R 00 00 00 00 02 05 05 00
-T 90 00
+T 84 00
 R 00 00 00 00
-T 90 00 3E 15 F5 33 C1 E1 E5 C5 E5 CD 00 00 F1 33
-R 00 00 00 00 02 0C 01 00
-T 9E 00 2E 01
+T 84 00 3E 15 F5 33 DD 6E FD DD 66 FE E5 CD 00 00
+R 00 00 00 00 02 0E 01 00
+T 92 00 F1 33 2E 01
 R 00 00 00 00
-T A0 00
+T 96 00
 R 00 00 00 00
-T A0 00 DD F9 DD E1 C9
+T 96 00 DD F9 DD E1 C9
 R 00 00 00 00

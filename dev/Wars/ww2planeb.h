@@ -3,7 +3,7 @@
 
 #include "../defines.h"
 
-// ADRIANA
-unsigned char UpdateWW2PlaneB( enemy *en );
+// Complete
+unsigned char UpdateWW2PlaneB(enemy *en);
 
-#endif//_WW2PLANEB_H_
+#endif //_WW2PLANEB_H_

@@ -3,8 +3,8 @@
 
 #include "../defines.h"
 
-// ADRIANA
-void InitSpreadShip( enemy *en );
-unsigned char UpdateSpreadShip( enemy *en );
+// Complete
+void InitSpreadShip(enemy *en);
+unsigned char UpdateSpreadShip(enemy *en);
 
-#endif//_SPREADSHIP_H_
+#endif //_SPREADSHIP_H_

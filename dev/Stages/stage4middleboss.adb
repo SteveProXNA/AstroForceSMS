@@ -8,8 +8,8 @@ F:G$UpdateStage4MiddleBoss2$0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Lstage4middleboss.UpdateStage4MiddleBoss2$en$1$56({2}DG,STenemy:S),B,1,4
 F:G$UpdateStage4MiddleBoss3$0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Lstage4middleboss.UpdateStage4MiddleBoss3$en$1$58({2}DG,STenemy:S),B,1,4
-S:Lstage4middleboss.UpdateStage4MiddleBoss3$sloc0$1$0({2}SI:S),B,1,-2
-S:Lstage4middleboss.UpdateStage4MiddleBoss3$sloc1$1$0({2}SI:S),B,1,-5
+S:Lstage4middleboss.UpdateStage4MiddleBoss3$sloc0$1$0({2}SI:S),B,1,-5
+S:Lstage4middleboss.UpdateStage4MiddleBoss3$sloc1$1$0({2}SI:S),B,1,-2
 S:Lstage4middleboss.UpdateStage4MiddleBoss3$sloc2$1$0({1}SC:U),B,1,-3
 F:G$UpdateStage4MiddleBoss4$0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Lstage4middleboss.UpdateStage4MiddleBoss4$en$1$62({2}DG,STenemy:S),B,1,4

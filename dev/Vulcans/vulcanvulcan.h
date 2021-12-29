@@ -3,7 +3,7 @@
 
 #include "../defines.h"
 
-// ADRIANA
-unsigned char UpdateVulcanVulcan( enemy *en );
+// Complete
+unsigned char UpdateVulcanVulcan(enemy *en);
 
-#endif//_VULCANVULCAN_H_
+#endif //_VULCANVULCAN_H_

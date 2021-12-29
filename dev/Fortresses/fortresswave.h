@@ -3,7 +3,7 @@
 
 #include "../defines.h"
 
-// ADRIANA
-unsigned char UpdateFortressWave( enemy *en );
+// Complete
+unsigned char UpdateFortressWave(enemy *en);
 
-#endif//_FORTRESSWAVE_H_
+#endif //_FORTRESSWAVE_H_

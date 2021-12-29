@@ -3,8 +3,8 @@
 
 #include "../defines.h"
 
-// ADRIANA
-void InitSpaceAsteroid( enemy *en );
-unsigned char UpdateSpaceAsteroid( enemy *en );
+// Complete
+void InitSpaceAsteroid(enemy *en);
+unsigned char UpdateSpaceAsteroid(enemy *en);
 
-#endif//_SPACEASTEROID_H_
+#endif //_SPACEASTEROID_H_

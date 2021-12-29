@@ -3,8 +3,8 @@
 
 #include "../defines.h"
 
-// ADRIANA
+// Complete
 void FinishVulcanStation();
-unsigned char UpdateVulcanStation( enemy *en );
+unsigned char UpdateVulcanStation(enemy *en);
 
-#endif//_VULCANSTATION_H_
+#endif //_VULCANSTATION_H_

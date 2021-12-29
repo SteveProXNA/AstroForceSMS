@@ -3,9 +3,9 @@
 
 #include "../defines.h"
 
-// ADRIANA
-void InitBombShipLeft( enemy *en );
-void InitBombShipRight( enemy *en );
-unsigned char UpdateBombShip( enemy *en );
+// Complete
+void InitBombShipLeft(enemy *en);
+void InitBombShipRight(enemy *en);
+unsigned char UpdateBombShip(enemy *en);
 
-#endif//_BOMBSHIP_H_
+#endif //_BOMBSHIP_H_

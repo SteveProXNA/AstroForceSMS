@@ -1,7 +1,7 @@
 #ifndef _INTRO3STAGE_H_
 #define _INTRO3STAGE_H_
 
-// ADRIANA
+// Complete
 void InitIntro3Stage();
 
-#endif//_INTRO3STAGE_H_
+#endif //_INTRO3STAGE_H_

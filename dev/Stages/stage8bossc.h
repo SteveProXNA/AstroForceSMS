@@ -3,9 +3,9 @@
 
 #include "../defines.h"
 
-// ADRIANA
-void InitStage8BossC( enemy *en );
+// Complete
+void InitStage8BossC(enemy *en);
 void FinishStage8BossC();
-unsigned char UpdateStage8BossC( enemy *en );
+unsigned char UpdateStage8BossC(enemy *en);
 
-#endif//_STAGE8BOSSC_H_
+#endif //_STAGE8BOSSC_H_

@@ -3,8 +3,8 @@
 
 #include "../defines.h"
 
-// ADRIANA
-void InitMonsterMissilLeft( enemy *en );
-unsigned char UpdateMonsterMissil( enemy *en );
+// Complete
+void InitMonsterMissilLeft(enemy *en);
+unsigned char UpdateMonsterMissil(enemy *en);
 
-#endif//_MONSTERMISSIL_H_
+#endif //_MONSTERMISSIL_H_

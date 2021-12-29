@@ -3,9 +3,9 @@
 
 #include "../defines.h"
 
-// ADRIANA
+// Complete
 void InitPowerupSprites();
 void InitPowerups();
 void UpdatePowerup();
 
-#endif//_POWERUP_H_
+#endif //_POWERUP_H_

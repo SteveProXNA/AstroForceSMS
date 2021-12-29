@@ -3,8 +3,8 @@
 
 #include "../defines.h"
 
-// ADRIANA
-void InitVulcanBird( enemy *en );
-unsigned char UpdateVulcanBird( enemy *en );
+// Complete
+void InitVulcanBird(enemy *en);
+unsigned char UpdateVulcanBird(enemy *en);
 
-#endif//_VULCANBIRD_H_
+#endif //_VULCANBIRD_H_

@@ -3,10 +3,10 @@
 
 #include "../defines.h"
 
-// ADRIANA
-void UpdateSpaceStation1( enemy *en );
-void UpdateSpaceStation2( enemy *en );
+// Complete
+void UpdateSpaceStation1(enemy *en);
+void UpdateSpaceStation2(enemy *en);
 void FinishSpaceStation();
-unsigned char UpdateSpaceStation( enemy *en );
+unsigned char UpdateSpaceStation(enemy *en);
 
-#endif//_SPACESTATION_H_
+#endif //_SPACESTATION_H_

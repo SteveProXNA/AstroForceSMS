@@ -12,7 +12,7 @@ S _vulcanstationshootspeedx Ref0000
 S _vulcanstationshootspeedy Ref0000
 S _DrawSpriteArray Ref0000
 S _InitEnemy Ref0000
-A _CODE size E5 flags 0 addr 0
+A _CODE size F5 flags 0 addr 0
 S A$vulcanstation$93 Def001E
 S A$vulcanstation$84 Def0013
 S A$vulcanstation$66 Def000A
@@ -30,138 +30,138 @@ S A$vulcanstation$99 Def0027
 S _FinishVulcanStation Def0000
 S _UpdateVulcanStation Def000D
 S XG$FinishVulcanStation$0$0 Def000C
-S XG$UpdateVulcanStation$0$0 Def00E4
+S XG$UpdateVulcanStation$0$0 Def00F4
 S A$vulcanstation$100 Def0029
-S A$vulcanstation$200 Def0098
-S A$vulcanstation$110 Def0037
+S A$vulcanstation$200 Def00A4
+S A$vulcanstation$110 Def003B
 S A$vulcanstation$101 Def002C
-S A$vulcanstation$210 Def00AA
-S A$vulcanstation$201 Def0099
-S A$vulcanstation$111 Def0038
+S A$vulcanstation$210 Def00B6
+S A$vulcanstation$201 Def00A5
+S A$vulcanstation$111 Def003C
 S A$vulcanstation$102 Def002F
-S A$vulcanstation$220 Def00B5
-S A$vulcanstation$211 Def00AB
-S A$vulcanstation$202 Def009A
-S A$vulcanstation$121 Def0040
+S A$vulcanstation$220 Def00C1
+S A$vulcanstation$211 Def00B7
+S A$vulcanstation$202 Def00A6
+S A$vulcanstation$121 Def0044
 S A$vulcanstation$103 Def0031
-S A$vulcanstation$230 Def00BB
-S A$vulcanstation$212 Def00AC
-S A$vulcanstation$203 Def009D
-S A$vulcanstation$140 Def0051
-S A$vulcanstation$122 Def0043
-S A$vulcanstation$231 Def00BE
-S A$vulcanstation$204 Def009E
-S A$vulcanstation$150 Def005A
-S A$vulcanstation$123 Def0044
-S C$vulcanstation.c$41$1$50 Def00C2
-S C$vulcanstation.c$21$2$51 Def004A
-S C$vulcanstation.c$23$1$50 Def0039
-S A$vulcanstation$250 Def00D1
-S A$vulcanstation$241 Def00C2
-S A$vulcanstation$205 Def00A1
-S A$vulcanstation$160 Def006A
-S A$vulcanstation$151 Def005B
-S A$vulcanstation$115 Def0039
-S C$vulcanstation.c$22$2$51 Def004A
-S A$vulcanstation$260 Def00DE
-S A$vulcanstation$251 Def00D2
-S A$vulcanstation$242 Def00C5
-S A$vulcanstation$224 Def00B6
-S A$vulcanstation$206 Def00A2
-S A$vulcanstation$161 Def006B
-S A$vulcanstation$152 Def005D
-S A$vulcanstation$116 Def003C
+S A$vulcanstation$230 Def00C7
+S A$vulcanstation$212 Def00B8
+S A$vulcanstation$203 Def00A9
+S A$vulcanstation$140 Def0055
+S A$vulcanstation$122 Def0047
+S A$vulcanstation$231 Def00CA
+S A$vulcanstation$204 Def00AA
+S A$vulcanstation$150 Def0062
+S A$vulcanstation$123 Def0048
+S C$vulcanstation.c$41$1$50 Def00CE
+S C$vulcanstation.c$21$2$51 Def004E
+S C$vulcanstation.c$23$1$50 Def003D
+S A$vulcanstation$250 Def00E1
+S A$vulcanstation$241 Def00CE
+S A$vulcanstation$205 Def00AD
+S A$vulcanstation$160 Def0072
+S A$vulcanstation$151 Def0063
+S A$vulcanstation$115 Def003D
+S C$vulcanstation.c$22$2$51 Def004E
+S A$vulcanstation$260 Def00EE
+S A$vulcanstation$251 Def00E2
+S A$vulcanstation$242 Def00D1
+S A$vulcanstation$224 Def00C2
+S A$vulcanstation$206 Def00AE
+S A$vulcanstation$161 Def0073
+S A$vulcanstation$152 Def0065
+S A$vulcanstation$116 Def0040
 S A$vulcanstation$107 Def0034
-S C$vulcanstation.c$23$2$51 Def0053
-S C$vulcanstation.c$16$1$50 Def0040
-S A$vulcanstation$261 Def00E0
-S A$vulcanstation$252 Def00D5
-S A$vulcanstation$243 Def00C8
-S A$vulcanstation$225 Def00B7
-S A$vulcanstation$207 Def00A3
-S A$vulcanstation$180 Def007D
-S A$vulcanstation$162 Def006D
-S A$vulcanstation$153 Def005E
-S A$vulcanstation$144 Def0053
-S A$vulcanstation$117 Def003F
-S A$vulcanstation$108 Def0035
-S C$vulcanstation.c$44$1$50 Def00DE
-S C$vulcanstation.c$32$2$52 Def00AE
-S C$vulcanstation.c$26$1$50 Def007B
-S A$vulcanstation$262 Def00E2
-S A$vulcanstation$253 Def00D6
-S A$vulcanstation$244 Def00C9
-S A$vulcanstation$235 Def00C0
-S A$vulcanstation$226 Def00B9
-S A$vulcanstation$217 Def00AE
-S A$vulcanstation$208 Def00A4
-S A$vulcanstation$190 Def0089
-S A$vulcanstation$181 Def007E
-S A$vulcanstation$163 Def006E
-S A$vulcanstation$154 Def005F
-S A$vulcanstation$145 Def0054
-S A$vulcanstation$136 Def004A
-S A$vulcanstation$127 Def0046
-S A$vulcanstation$109 Def0036
-S C$vulcanstation.c$45$1$50 Def00E4
-S C$vulcanstation.c$33$2$52 Def00B6
-S C$vulcanstation.c$25$2$51 Def0076
+S C$vulcanstation.c$23$2$51 Def0057
+S C$vulcanstation.c$16$1$50 Def0044
+S A$vulcanstation$261 Def00F0
+S A$vulcanstation$252 Def00E5
+S A$vulcanstation$243 Def00D4
+S A$vulcanstation$225 Def00C3
+S A$vulcanstation$207 Def00AF
+S A$vulcanstation$180 Def0085
+S A$vulcanstation$162 Def0075
+S A$vulcanstation$153 Def0066
+S A$vulcanstation$144 Def0057
+S A$vulcanstation$117 Def0043
+S A$vulcanstation$108 Def0037
+S C$vulcanstation.c$44$1$50 Def00EE
+S C$vulcanstation.c$32$2$52 Def00BA
+S C$vulcanstation.c$26$1$50 Def0083
+S A$vulcanstation$262 Def00F2
+S A$vulcanstation$253 Def00E6
+S A$vulcanstation$244 Def00D5
+S A$vulcanstation$235 Def00CC
+S A$vulcanstation$226 Def00C5
+S A$vulcanstation$217 Def00BA
+S A$vulcanstation$208 Def00B0
+S A$vulcanstation$190 Def0091
+S A$vulcanstation$181 Def0086
+S A$vulcanstation$163 Def0076
+S A$vulcanstation$154 Def0067
+S A$vulcanstation$145 Def0058
+S A$vulcanstation$136 Def004E
+S A$vulcanstation$127 Def004A
+S A$vulcanstation$109 Def003A
+S C$vulcanstation.c$45$1$50 Def00F4
+S C$vulcanstation.c$33$2$52 Def00C2
+S C$vulcanstation.c$25$2$51 Def007E
 S C$vulcanstation.c$18$1$50 Def0034
 S C$vulcanstation.c$11$1$48 Def000D
-S A$vulcanstation$254 Def00D9
-S A$vulcanstation$245 Def00CA
-S A$vulcanstation$236 Def00C1
-S A$vulcanstation$218 Def00AF
-S A$vulcanstation$209 Def00A7
-S A$vulcanstation$191 Def008C
-S A$vulcanstation$182 Def0081
-S A$vulcanstation$173 Def0076
-S A$vulcanstation$164 Def006F
-S A$vulcanstation$155 Def0060
-S A$vulcanstation$146 Def0056
-S A$vulcanstation$137 Def004B
-S A$vulcanstation$128 Def0047
-S A$vulcanstation$255 Def00DC
-S A$vulcanstation$246 Def00CB
-S A$vulcanstation$219 Def00B2
-S A$vulcanstation$192 Def008D
-S A$vulcanstation$183 Def0082
-S A$vulcanstation$174 Def0077
-S A$vulcanstation$165 Def0070
-S A$vulcanstation$156 Def0062
-S A$vulcanstation$147 Def0057
-S A$vulcanstation$138 Def004D
-S A$vulcanstation$129 Def0048
-S C$vulcanstation.c$27$2$51 Def0086
-S C$vulcanstation.c$18$2$51 Def0046
-S A$vulcanstation$256 Def00DD
-S A$vulcanstation$247 Def00CC
-S A$vulcanstation$193 Def008F
-S A$vulcanstation$184 Def0083
-S A$vulcanstation$175 Def0079
-S A$vulcanstation$166 Def0073
-S A$vulcanstation$157 Def0065
-S A$vulcanstation$148 Def0058
-S A$vulcanstation$139 Def004F
-S A$vulcanstation$248 Def00CF
-S A$vulcanstation$194 Def0090
-S A$vulcanstation$185 Def0084
-S A$vulcanstation$167 Def0074
-S A$vulcanstation$158 Def0066
-S A$vulcanstation$149 Def0059
-S C$vulcanstation.c$35$3$53 Def00BB
-S A$vulcanstation$267 Def00E4
-S A$vulcanstation$249 Def00D0
-S A$vulcanstation$195 Def0091
-S A$vulcanstation$168 Def0075
-S A$vulcanstation$159 Def0069
-S C$vulcanstation.c$36$3$53 Def00C0
-S A$vulcanstation$196 Def0092
-S A$vulcanstation$197 Def0093
-S A$vulcanstation$179 Def007B
-S A$vulcanstation$198 Def0095
-S A$vulcanstation$189 Def0086
-S A$vulcanstation$199 Def0096
+S A$vulcanstation$254 Def00E9
+S A$vulcanstation$245 Def00D8
+S A$vulcanstation$236 Def00CD
+S A$vulcanstation$218 Def00BB
+S A$vulcanstation$209 Def00B3
+S A$vulcanstation$191 Def0094
+S A$vulcanstation$182 Def0089
+S A$vulcanstation$173 Def007E
+S A$vulcanstation$164 Def0077
+S A$vulcanstation$155 Def0068
+S A$vulcanstation$146 Def005A
+S A$vulcanstation$137 Def004F
+S A$vulcanstation$128 Def004B
+S A$vulcanstation$255 Def00EC
+S A$vulcanstation$246 Def00DB
+S A$vulcanstation$219 Def00BE
+S A$vulcanstation$192 Def0095
+S A$vulcanstation$183 Def008A
+S A$vulcanstation$174 Def007F
+S A$vulcanstation$165 Def0078
+S A$vulcanstation$156 Def006A
+S A$vulcanstation$147 Def005B
+S A$vulcanstation$138 Def0051
+S A$vulcanstation$129 Def004C
+S C$vulcanstation.c$27$2$51 Def008E
+S C$vulcanstation.c$18$2$51 Def004A
+S A$vulcanstation$256 Def00ED
+S A$vulcanstation$247 Def00DC
+S A$vulcanstation$193 Def0097
+S A$vulcanstation$184 Def008B
+S A$vulcanstation$175 Def0081
+S A$vulcanstation$166 Def007B
+S A$vulcanstation$157 Def006D
+S A$vulcanstation$148 Def005E
+S A$vulcanstation$139 Def0053
+S A$vulcanstation$248 Def00DF
+S A$vulcanstation$194 Def0098
+S A$vulcanstation$185 Def008C
+S A$vulcanstation$167 Def007C
+S A$vulcanstation$158 Def006E
+S A$vulcanstation$149 Def0061
+S C$vulcanstation.c$35$3$53 Def00C7
+S A$vulcanstation$267 Def00F4
+S A$vulcanstation$249 Def00E0
+S A$vulcanstation$195 Def009B
+S A$vulcanstation$168 Def007D
+S A$vulcanstation$159 Def0071
+S C$vulcanstation.c$36$3$53 Def00CC
+S A$vulcanstation$196 Def009E
+S A$vulcanstation$197 Def009F
+S A$vulcanstation$179 Def0083
+S A$vulcanstation$198 Def00A1
+S A$vulcanstation$189 Def008E
+S A$vulcanstation$199 Def00A2
 S A$vulcanstation$60 Def0000
 S A$vulcanstation$61 Def0003
 S A$vulcanstation$62 Def0004
@@ -190,43 +190,45 @@ T 0D 00
 R 00 00 00 00
 T 0D 00 DD E5 DD 21 00 00 DD 39 F5 F5 3B DD 7E 04
 R 00 00 00 00
-T 1B 00 DD 77 FB DD 7E 05 DD 77 FC DD 7E FB C6 01
+T 1B 00 DD 77 FE DD 7E 05 DD 77 FF DD 7E FE C6 01
 R 00 00 00 00
-T 29 00 DD 77 FE DD 7E FC CE 00 DD 77 FF C1 C5 03
+T 29 00 DD 77 FC DD 7E FF CE 00 DD 77 FD DD 4E FE
 R 00 00 00 00
-T 37 00 03 03 DD 6E FE DD 66 FF 5E 3A 00 00 3D 20
-R 00 00 00 00 02 0C 00 00
-T 45 00 68 0A 4F CB B9 79 FE 29 30 27 E6 03 20 23
+T 37 00 DD 46 FF 03 03 03 DD 6E FC DD 66 FD 5E 3A
 R 00 00 00 00
-T 53 00 7B C6 18 5F E1 E5 6E 79 E6 07 07 07 07 E6
-R 00 00 00 00
-T 61 00 F8 DD 77 FD 7D DD 86 FD 47 C5 16 01 D5 C5
-R 00 00 00 00
-T 6F 00 33 CD 00 00 F1 33 C1
-R 00 00 00 00 02 04 03 00
-T 76 00
-R 00 00 00 00
-T 76 00 79 D6 40 38 47 06 0C C5 CD 00 00 F1 7D B7
-R 00 00 00 00 02 0B 02 00
-T 84 00 20 3C DD 6E FE DD 66 FF 7E C6 18 57 E1 E5
-R 00 00 00 00
-T 92 00 7E C6 10 47 3E 03 F5 33 21 00 00 E5 21
-R 00 00 00 00 02 0B 06 00
-T 9F 00 00 00 E5 58 D5 CD 00 00 21 07 00 39 F9 18
-R 00 00 00 00 02 02 05 00 02 08 01 00
-T AD 00 14
-R 00 00 00 00
-T AE 00
-R 00 00 00 00
-T AE 00 1C DD 6E FE DD 66 FF 73 0A D6 30 20 07 21
-R 00 00 00 00
-T BC 00 00 00 36 01 AF 02
+T 45 00 00 00 3D 20 70 0A 4F CB B9 79 FE 29 30 2B
 R 00 00 00 00 02 02 00 00
-T C2 00
+T 53 00 E6 03 20 27 7B C6 18 5F DD 6E FE DD 66 FF
 R 00 00 00 00
-T C2 00 DD 6E FE DD 66 FF 46 E1 E5 56 21 28 20 E5
+T 61 00 6E 79 E6 07 07 07 07 E6 F8 DD 77 FB 7D DD
 R 00 00 00 00
-T D0 00 4A C5 21 83 01 E5 CD 00 00 21 06 00 39 F9
-R 00 00 00 00 02 09 07 00
-T DE 00 2E 01 DD F9 DD E1 C9
+T 6F 00 86 FB 47 C5 16 01 D5 C5 33 CD 00 00 F1 33
+R 00 00 00 00 02 0C 03 00
+T 7D 00 C1
+R 00 00 00 00
+T 7E 00
+R 00 00 00 00
+T 7E 00 79 D6 40 38 4B 06 0C C5 CD 00 00 F1 7D B7
+R 00 00 00 00 02 0B 02 00
+T 8C 00 20 40 DD 6E FC DD 66 FD 7E C6 18 57 DD 6E
+R 00 00 00 00
+T 9A 00 FE DD 66 FF 7E C6 10 47 3E 03 F5 33 21
+R 00 00 00 00
+T A7 00 00 00 E5 21 00 00 E5 58 D5 CD 00 00 21
+R 00 00 00 00 02 02 06 00 02 06 05 00 02 0C 01 00
+T B4 00 07 00 39 F9 18 14
+R 00 00 00 00
+T BA 00
+R 00 00 00 00
+T BA 00 1C DD 6E FC DD 66 FD 73 0A D6 30 20 07 21
+R 00 00 00 00
+T C8 00 00 00 36 01 AF 02
+R 00 00 00 00 02 02 00 00
+T CE 00
+R 00 00 00 00
+T CE 00 DD 6E FC DD 66 FD 46 DD 6E FE DD 66 FF 56
+R 00 00 00 00
+T DC 00 21 28 20 E5 4A C5 21 83 01 E5 CD 00 00 21
+R 00 00 00 00 02 0D 07 00
+T EA 00 06 00 39 F9 2E 01 DD F9 DD E1 C9
 R 00 00 00 00

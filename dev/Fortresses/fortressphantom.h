@@ -3,8 +3,8 @@
 
 #include "../defines.h"
 
-// ADRIANA
-void InitFortressPhantom( enemy *en );
-unsigned char UpdateFortressPhantom( enemy *en );
+// Complete
+void InitFortressPhantom(enemy *en);
+unsigned char UpdateFortressPhantom(enemy *en);
 
-#endif//_FORTRESSPHANTOM_H_
+#endif //_FORTRESSPHANTOM_H_

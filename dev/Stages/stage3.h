@@ -3,8 +3,8 @@
 
 #include "../defines.h"
 
-// ADRIANA
+// Complete
 void InitStage3();
 void UpdateStage3();
 
-#endif//_STAGE3_H_
+#endif //_STAGE3_H_

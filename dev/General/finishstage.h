@@ -1,7 +1,7 @@
 #ifndef _FINISHSTAGE_H_
 #define _FINISHSTAGE_H_
 
-// ADRIANA
+// Complete
 void InitFinishStage();
 
-#endif//_FINISHSTAGE_H_
+#endif //_FINISHSTAGE_H_

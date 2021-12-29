@@ -3,8 +3,8 @@
 
 #include "../defines.h"
 
-// ADRIANA
-unsigned char UpdateStage8Lateral( enemy *en );
-void InitStage8Lateral( enemy *en );
+// Complete
+unsigned char UpdateStage8Lateral(enemy *en);
+void InitStage8Lateral(enemy *en);
 
-#endif//_STAGE8LATERAL_H_
+#endif //_STAGE8LATERAL_H_

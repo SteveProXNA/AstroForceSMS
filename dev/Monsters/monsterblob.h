@@ -3,7 +3,7 @@
 
 #include "../defines.h"
 
-// ADRIANA
-unsigned char UpdateMonsterBlob( enemy *en );
+// Complete
+unsigned char UpdateMonsterBlob(enemy *en);
 
-#endif//_MONSTERBLOB_H_
+#endif //_MONSTERBLOB_H_

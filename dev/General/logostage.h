@@ -1,7 +1,7 @@
 #ifndef _LOGOSTAGE_H_
 #define _LOGOSTAGE_H_
 
-// ADRIANA
+// Complete
 void InitLogoStage();
 
-#endif//_LOGOSTAGE_H_
+#endif //_LOGOSTAGE_H_

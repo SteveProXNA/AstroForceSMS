@@ -3,8 +3,8 @@
 
 #include "../defines.h"
 
-// ADRIANA
-void InitStage1MiddleBossB( enemy *en );
-unsigned char UpdateStage1MiddleBossB( enemy *en );
+// Complete
+void InitStage1MiddleBossB(enemy *en);
+unsigned char UpdateStage1MiddleBossB(enemy *en);
 
-#endif//_STAGE1MIDDLEBOSSB_H_
+#endif //_STAGE1MIDDLEBOSSB_H_

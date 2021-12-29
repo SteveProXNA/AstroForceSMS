@@ -3,7 +3,7 @@
 
 #include "../defines.h"
 
-// ADRIANA
-unsigned char UpdateFortressSearcher( enemy *en );
+// Complete
+unsigned char UpdateFortressSearcher(enemy *en);
 
-#endif//_FORTRESSSEARCHER_H_
+#endif //_FORTRESSSEARCHER_H_

@@ -3,9 +3,9 @@
 
 #include "../defines.h"
 
-// ADRIANA
-void UpdateStage1MiddleBoss1( enemy *en );
+// Complete
+void UpdateStage1MiddleBoss1(enemy *en);
 void FinishStage1MiddleBoss();
-unsigned char UpdateStage1MiddleBoss( enemy *en );
+unsigned char UpdateStage1MiddleBoss(enemy *en);
 
-#endif//_STAGE1MIDDLEBOSS_H_
+#endif //_STAGE1MIDDLEBOSS_H_

@@ -3,7 +3,7 @@
 
 #include "../defines.h"
 
-// ADRIANA
-unsigned char UpdateStage2Object( enemy *en );
+// Complete
+unsigned char UpdateStage2Object(enemy *en);
 
-#endif//_STAGE2OBJECT_H_
+#endif //_STAGE2OBJECT_H_

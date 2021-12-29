@@ -3,8 +3,8 @@
 
 #include "../defines.h"
 
-// ADRIANA
-void InitWarning( enemy *en );
-unsigned char UpdateWarning( enemy *en );
+// Complete
+void InitWarning(enemy *en);
+unsigned char UpdateWarning(enemy *en);
 
-#endif//_WARNING_H_
+#endif //_WARNING_H_

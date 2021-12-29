@@ -3,8 +3,8 @@
 
 #include "../defines.h"
 
-// ADRIANA
-void InitIntroStar( enemy *en );
-unsigned char UpdateIntroStar( enemy *en );
+// Complete
+void InitIntroStar(enemy *en);
+unsigned char UpdateIntroStar(enemy *en);
 
-#endif//_INTROSTAR_H_
+#endif //_INTROSTAR_H_

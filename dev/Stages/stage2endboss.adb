@@ -2,9 +2,9 @@ M:stage2endboss
 F:G$UpdateStage2EndBoss2$0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Lstage2endboss.UpdateStage2EndBoss2$en$1$51({2}DG,STenemy:S),B,1,4
 S:Lstage2endboss.UpdateStage2EndBoss2$sloc0$1$0({2}DG,SC:U),B,1,-2
-S:Lstage2endboss.UpdateStage2EndBoss2$sloc1$1$0({2}SI:S),B,1,-7
-S:Lstage2endboss.UpdateStage2EndBoss2$sloc2$1$0({2}SI:S),B,1,-5
-S:Lstage2endboss.UpdateStage2EndBoss2$sloc3$1$0({1}SC:U),B,1,-3
+S:Lstage2endboss.UpdateStage2EndBoss2$sloc1$1$0({2}SI:S),B,1,-4
+S:Lstage2endboss.UpdateStage2EndBoss2$sloc2$1$0({2}SI:S),B,1,-7
+S:Lstage2endboss.UpdateStage2EndBoss2$sloc3$1$0({1}SC:U),B,1,-5
 F:G$UpdateStage2EndBoss1$0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Lstage2endboss.UpdateStage2EndBoss1$en$1$54({2}DG,STenemy:S),B,1,4
 F:G$UpdateStage2EndBoss3$0$0({2}DF,SV:S),Z,0,0,0,0,0

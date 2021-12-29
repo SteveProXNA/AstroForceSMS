@@ -3,8 +3,8 @@
 
 #include "../defines.h"
 
-// ADRIANA
-void InitIntroSidePlayer( enemy *en );
-unsigned char UpdateIntroSidePlayer( enemy *en );
+// Complete
+void InitIntroSidePlayer(enemy *en);
+unsigned char UpdateIntroSidePlayer(enemy *en);
 
-#endif//_INTROSIDEPLAYER_H_
+#endif //_INTROSIDEPLAYER_H_

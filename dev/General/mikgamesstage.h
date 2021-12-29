@@ -1,7 +1,7 @@
 #ifndef _MIKGAMESSTAGE_H_
 #define _MIKGAMESSTAGE_H_
 
-// ADRIANA
+// Complete
 void InitMikGamesStage();
 
-#endif//_MIKGAMESSTAGE_H_
+#endif //_MIKGAMESSTAGE_H_

@@ -3,8 +3,8 @@
 
 #include "../defines.h"
 
-// ADRIANA
-void InitWW2Zeppelin( enemy *en );
-unsigned char UpdateWW2Zeppelin( enemy *en );
+// Complete
+void InitWW2Zeppelin(enemy *en);
+unsigned char UpdateWW2Zeppelin(enemy *en);
 
-#endif//_WW2ZEPPELIN_H_
+#endif //_WW2ZEPPELIN_H_

@@ -2,11 +2,11 @@ M:selectorstage
 F:G$UpdateSelectorMarks$0$0({2}DF,SV:S),Z,0,3,0,0,0
 S:Lselectorstage.UpdateSelectorMarks$selected_stage$1$74({1}SC:U),B,1,4
 S:Lselectorstage.UpdateSelectorMarks$a$1$75({1}SC:U),B,1,-3
-S:Lselectorstage.UpdateSelectorMarks$b$1$75({1}SC:U),B,1,-5
-S:Lselectorstage.UpdateSelectorMarks$c$1$75({1}SC:U),B,1,-4
+S:Lselectorstage.UpdateSelectorMarks$b$1$75({1}SC:U),B,1,-4
+S:Lselectorstage.UpdateSelectorMarks$c$1$75({1}SC:U),B,1,-5
 S:Lselectorstage.UpdateSelectorMarks$d$1$75({1}SC:U),R,0,0,[c]
-S:Lselectorstage.UpdateSelectorMarks$sloc0$1$0({1}SC:U),B,1,-1
-S:Lselectorstage.UpdateSelectorMarks$sloc1$1$0({1}SC:U),B,1,-2
+S:Lselectorstage.UpdateSelectorMarks$sloc0$1$0({1}SC:U),B,1,-2
+S:Lselectorstage.UpdateSelectorMarks$sloc1$1$0({1}SC:U),B,1,-1
 F:G$InitSelectorStage$0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Lselectorstage.InitSelectorStage$selected_stage$1$83({1}SC:U),R,0,0,[c]
 S:Lselectorstage.InitSelectorStage$keyfree$1$83({1}SC:U),R,0,0,[b]

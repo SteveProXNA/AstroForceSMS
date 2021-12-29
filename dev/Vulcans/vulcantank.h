@@ -3,10 +3,10 @@
 
 #include "../defines.h"
 
-// ADRIANA
-unsigned char UpdateVulcanTankCommon( enemy *en );
-unsigned char UpdateVulcanTankLeft( enemy *en );
-unsigned char UpdateVulcanTankRight( enemy *en );
-unsigned char UpdateVulcanTankStop( enemy *en );
+// Complete
+unsigned char UpdateVulcanTankCommon(enemy *en);
+unsigned char UpdateVulcanTankLeft(enemy *en);
+unsigned char UpdateVulcanTankRight(enemy *en);
+unsigned char UpdateVulcanTankStop(enemy *en);
 
-#endif//_VULCANTANK_H_
+#endif //_VULCANTANK_H_

@@ -3,7 +3,7 @@
 
 #include "../defines.h"
 
-// ADRIANA
-unsigned char UpdateIntroOvni( enemy *en );
+// Complete
+unsigned char UpdateIntroOvni(enemy *en);
 
-#endif//_INTROOVNI_H_
+#endif //_INTROOVNI_H_
