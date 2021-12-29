@@ -1,0 +1,88 @@
+;!FILE ww2planeb.asm
+XL2
+H 9 areas 36 global symbols
+M ww2planeb
+O -mz80
+S .__.ABS. Def0000
+S _DrawQuadSprite Ref0000
+A _CODE size 44 flags 0 addr 0
+S A$ww2planeb$60 Def0009
+S A$ww2planeb$70 Def0019
+S A$ww2planeb$61 Def000C
+S A$ww2planeb$80 Def0029
+S A$ww2planeb$71 Def001C
+S A$ww2planeb$62 Def000F
+S A$ww2planeb$53 Def0000
+S A$ww2planeb$90 Def0032
+S A$ww2planeb$72 Def001D
+S A$ww2planeb$63 Def0010
+S A$ww2planeb$54 Def0002
+S A$ww2planeb$91 Def0034
+S A$ww2planeb$73 Def0020
+S A$ww2planeb$64 Def0011
+S A$ww2planeb$55 Def0006
+S A$ww2planeb$74 Def0021
+S A$ww2planeb$65 Def0012
+S A$ww2planeb$56 Def0008
+S A$ww2planeb$84 Def002A
+S A$ww2planeb$75 Def0022
+S A$ww2planeb$66 Def0013
+S A$ww2planeb$85 Def002B
+S A$ww2planeb$76 Def0023
+S A$ww2planeb$67 Def0016
+S G$UpdateWW2PlaneB$0$0 Def0000
+S A$ww2planeb$95 Def0036
+S A$ww2planeb$86 Def002C
+S A$ww2planeb$77 Def0024
+S A$ww2planeb$68 Def0017
+S A$ww2planeb$96 Def0038
+S A$ww2planeb$87 Def002E
+S A$ww2planeb$78 Def0027
+S A$ww2planeb$69 Def0018
+S A$ww2planeb$88 Def002F
+S A$ww2planeb$79 Def0028
+S A$ww2planeb$89 Def0031
+S C$ww2planeb.c$8$1$49 Def0009
+S C$ww2planeb.c$6$0$0 Def0000
+S _UpdateWW2PlaneB Def0000
+S XG$UpdateWW2PlaneB$0$0 Def0043
+S A$ww2planeb$110 Def0041
+S A$ww2planeb$101 Def003A
+S A$ww2planeb$102 Def003B
+S A$ww2planeb$103 Def003D
+S A$ww2planeb$115 Def0043
+S A$ww2planeb$107 Def003E
+S C$ww2planeb.c$15$2$50 Def003A
+S A$ww2planeb$109 Def0040
+S C$ww2planeb.c$10$1$49 Def002A
+S C$ww2planeb.c$20$1$49 Def003E
+S C$ww2planeb.c$11$1$49 Def0036
+S C$ww2planeb.c$21$1$49 Def0043
+A _DATA size 0 flags 0 addr 0
+A _INITIALIZED size 0 flags 0 addr 0
+A _DABS size 0 flags 8 addr 0
+A _HOME size 0 flags 0 addr 0
+A _GSINIT size 0 flags 0 addr 0
+A _GSFINAL size 0 flags 0 addr 0
+A _INITIALIZER size 0 flags 0 addr 0
+A _CABS size 0 flags 8 addr 0
+T 00 00
+R 00 00 00 00
+T 00 00 DD E5 DD 21 00 00 DD 39 3B DD 5E 04 DD 56
+R 00 00 00 00
+T 0E 00 05 4B 42 03 0A DD 77 FF 1A 57 C5 21 53 01
+R 00 00 00 00
+T 1C 00 E5 DD 7E FF F5 33 D5 33 CD 00 00 F1 F1 C1
+R 00 00 00 00 02 0B 01 00
+T 2A 00 0A 5F 3E C0 93 30 09 7B D6 D2 30 04 2E 00
+R 00 00 00 00
+T 38 00 18 06
+R 00 00 00 00
+T 3A 00
+R 00 00 00 00
+T 3A 00 7B C6 05 02 2E 01
+R 00 00 00 00
+T 40 00
+R 00 00 00 00
+T 40 00 33 DD E1 C9
+R 00 00 00 00

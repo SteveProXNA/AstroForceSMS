@@ -1,0 +1,83 @@
+;!FILE intro1stage.asm
+XL2
+H 9 areas 39 global symbols
+M intro1stage
+O -mz80
+S _LoadGraphics Ref0000
+S _intro1script Ref0000
+S _introovni_psgcompr Ref0000
+S _introstage1tilemap_bin Ref0000
+S _LoadSprite Ref0000
+S .__.ABS. Def0000
+S _intro1_psg Ref0000
+S _InitScript Ref0000
+S _intro1labels Ref0000
+S _PlayMusic Ref0000
+S _introstage1tiles_psgcompr Ref0000
+A _CODE size 43 flags 0 addr 0
+S A$intro1stage$100 Def003C
+S A$intro1stage$101 Def003D
+S A$intro1stage$102 Def0040
+S A$intro1stage$103 Def0041
+S A$intro1stage$108 Def0042
+S C$intro1stage.c$21$1$49 Def0035
+S C$intro1stage.c$12$1$49 Def0000
+S C$intro1stage.c$22$1$49 Def0042
+S G$InitIntro1Stage$0$0 Def0000
+S C$intro1stage.c$15$1$49 Def0018
+S C$intro1stage.c$18$1$49 Def0028
+S A$intro1stage$60 Def0002
+S A$intro1stage$70 Def0016
+S A$intro1stage$61 Def0003
+S A$intro1stage$80 Def0020
+S A$intro1stage$71 Def0017
+S A$intro1stage$62 Def0004
+S A$intro1stage$90 Def002D
+S A$intro1stage$81 Def0023
+S A$intro1stage$63 Def0007
+S A$intro1stage$91 Def0030
+S A$intro1stage$82 Def0024
+S A$intro1stage$64 Def0008
+S _InitIntro1Stage Def0000
+S A$intro1stage$92 Def0031
+S A$intro1stage$83 Def0027
+S A$intro1stage$65 Def000B
+S A$intro1stage$93 Def0034
+S A$intro1stage$75 Def0018
+S A$intro1stage$66 Def000C
+S A$intro1stage$76 Def001A
+S A$intro1stage$67 Def000F
+S A$intro1stage$77 Def001B
+S A$intro1stage$68 Def0010
+S A$intro1stage$59 Def0000
+S A$intro1stage$87 Def0028
+S A$intro1stage$78 Def001C
+S A$intro1stage$69 Def0013
+S A$intro1stage$97 Def0035
+S A$intro1stage$88 Def0029
+S A$intro1stage$79 Def001F
+S A$intro1stage$98 Def0038
+S A$intro1stage$89 Def002C
+S A$intro1stage$99 Def0039
+S C$intro1stage.c$9$0$0 Def0000
+S XG$InitIntro1Stage$0$0 Def0042
+A _DATA size 0 flags 0 addr 0
+A _INITIALIZED size 0 flags 0 addr 0
+A _DABS size 0 flags 8 addr 0
+A _HOME size 0 flags 0 addr 0
+A _GSINIT size 0 flags 0 addr 0
+A _GSFINAL size 0 flags 0 addr 0
+A _INITIALIZER size 0 flags 0 addr 0
+A _CABS size 0 flags 8 addr 0
+T 00 00
+R 00 00 00 00
+T 00 00 3E 08 F5 33 21 80 02 E5 21 00 00 E5 21
+R 00 00 00 00 02 0B 03 00
+T 0D 00 00 00 E5 CD 00 00 21 07 00 39 F9 3E 04 F5
+R 00 00 00 00 02 02 0A 00 02 06 00 00
+T 1B 00 33 21 36 01 E5 21 00 00 E5 CD 00 00 F1 33
+R 00 00 00 00 02 08 02 00 02 0C 04 00
+T 29 00 21 0F 00 E3 21 00 00 E5 CD 00 00 F1 21
+R 00 00 00 00 02 07 06 00 02 0B 09 00
+T 36 00 00 00 E3 21 00 00 E5 CD 00 00 F1 F1 C9
+R 00 00 00 00 02 02 08 00 02 06 01 00 02 0A 07 00

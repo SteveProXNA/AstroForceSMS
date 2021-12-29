@@ -1,8 +1,13 @@
+#ifndef _FIXEDBANK_H_
+#define _FIXEDBANK_H_
+
 // Data bank
+#include "../defines.h"
+
 #define FIXEDBANKSLOT 15
 
-extern signed char playershootspeedsx[];
-extern signed char playershootspeedsy[];
+extern const signed char playershootspeedsx[];
+extern const signed char playershootspeedsy[];
 
 extern const unsigned char selectorstatebasetiles[];
 extern const unsigned char *selectornamestage[];
@@ -137,7 +142,7 @@ extern const signed int stage8_scrollers[];
 // Listas de sprites
 extern const unsigned char *imagepointers[];
 extern const int imagebases[];
-extern const char imagebanks[];
+extern const unsigned char imagebanks[];
 
 // By stage
 extern const unsigned char stage3spriteslist[];
@@ -231,8 +236,6 @@ extern MyKillEnemyFunction playerupdatefunctions[];
 extern const MyCheckCollisionFunction checkcollisionfunctions[];
 
 extern const MyInitEnemyFunction updateintro3objectfunctions[];
-
-extern const MyInitEnemyFunction updatestage8bossafunctions[];
 extern const MyInitEnemyFunction updatestage8bossbfunctions[];
 
 extern const signed char stage8bosscshootspeedx[];
@@ -248,3 +251,5 @@ extern const unsigned char enemiesenergy[];
 extern const unsigned char	intro1_psg[];
 #define				intro1_psg_size 2369
 #define				intro1_psg_bank 15
+
+#endif//_FIXEDBANK_H_

@@ -1,0 +1,369 @@
+;!FILE skullbone.asm
+XL2
+H 9 areas 113 global symbols
+M skullbone
+O -mz80
+S _TestSkullOut Ref0000
+S _SkullBoneCMove Ref0000
+S _myRand Ref0000
+S __moduchar Ref0000
+S _SkullAccelX Ref0000
+S _SkullAccelY Ref0000
+S _GetEnemyDirection Ref0000
+S .__.ABS. Def0000
+S _DrawQuadSprite Ref0000
+A _CODE size 150 flags 0 addr 0
+S A$skullbone$80 Def0019
+S A$skullbone$71 Def000B
+S A$skullbone$90 Def0024
+S A$skullbone$81 Def001C
+S A$skullbone$72 Def000E
+S A$skullbone$91 Def0025
+S A$skullbone$82 Def001D
+S A$skullbone$73 Def000F
+S A$skullbone$64 Def0000
+S A$skullbone$92 Def0026
+S A$skullbone$83 Def001E
+S A$skullbone$74 Def0012
+S A$skullbone$65 Def0002
+S _InitSkullBoneA Def0000
+S A$skullbone$93 Def0027
+S A$skullbone$84 Def001F
+S A$skullbone$66 Def0006
+S _InitSkullBoneB Def002A
+S _InitSkullBoneC Def005B
+S A$skullbone$78 Def0013
+S A$skullbone$88 Def0020
+S A$skullbone$79 Def0016
+S G$UpdateSkullBoneC$0$0 Def00F6
+S G$UpdateSkullBoneAB$0$0 Def0066
+S A$skullbone$98 Def0029
+S A$skullbone$89 Def0023
+S C$skullbone.c$6$0$0 Def0000
+S C$skullbone.c$8$1$59 Def0008
+S C$skullbone.c$9$1$59 Def0013
+S XG$InitSkullBoneA$0$0 Def0029
+S XG$InitSkullBoneB$0$0 Def005A
+S XG$InitSkullBoneC$0$0 Def0065
+S G$UpdateSkullBoneCMovement$0$0 Def00D0
+S _UpdateSkullBoneC Def00F6
+S _UpdateSkullBoneAB Def0066
+S _UpdateSkullBoneCMovement Def00D0
+S XG$UpdateSkullBoneC$0$0 Def014F
+S XG$UpdateSkullBoneAB$0$0 Def00CF
+S A$skullbone$110 Def0030
+S A$skullbone$300 Def00D9
+S A$skullbone$210 Def008D
+S A$skullbone$120 Def003E
+S XG$UpdateSkullBoneCMovement$0$0 Def00F5
+S A$skullbone$400 Def014A
+S A$skullbone$310 Def00E3
+S A$skullbone$301 Def00DA
+S A$skullbone$211 Def008E
+S A$skullbone$130 Def004D
+S A$skullbone$121 Def0041
+S A$skullbone$311 Def00E6
+S A$skullbone$302 Def00DB
+S A$skullbone$230 Def00A0
+S A$skullbone$221 Def0095
+S A$skullbone$212 Def008F
+S A$skullbone$203 Def0082
+S A$skullbone$140 Def0058
+S A$skullbone$131 Def004E
+S A$skullbone$122 Def0042
+S A$skullbone$411 Def014F
+S A$skullbone$330 Def00F5
+S A$skullbone$312 Def00E7
+S A$skullbone$240 Def00AA
+S A$skullbone$231 Def00A1
+S A$skullbone$222 Def0098
+S A$skullbone$213 Def0090
+S A$skullbone$204 Def0085
+S A$skullbone$132 Def004F
+S A$skullbone$123 Def0044
+S A$skullbone$114 Def0032
+S A$skullbone$340 Def00F6
+S A$skullbone$313 Def00E8
+S A$skullbone$250 Def00B1
+S A$skullbone$232 Def00A2
+S A$skullbone$223 Def0099
+S A$skullbone$214 Def0091
+S A$skullbone$205 Def0088
+S A$skullbone$160 Def005D
+S A$skullbone$133 Def0051
+S A$skullbone$124 Def0045
+S A$skullbone$115 Def0035
+S A$skullbone$404 Def014B
+S A$skullbone$350 Def0108
+S A$skullbone$341 Def00F8
+S A$skullbone$323 Def00F0
+S A$skullbone$314 Def00E9
+S A$skullbone$260 Def00C0
+S A$skullbone$251 Def00B3
+S A$skullbone$233 Def00A3
+S A$skullbone$224 Def009A
+S A$skullbone$215 Def0092
+S A$skullbone$206 Def0089
+S A$skullbone$161 Def005E
+S A$skullbone$125 Def0046
+S A$skullbone$116 Def0038
+S C$skullbone.c$21$1$63 Def005B
+S A$skullbone$360 Def0111
+S A$skullbone$351 Def0109
+S A$skullbone$342 Def00FC
+S A$skullbone$324 Def00F1
+S A$skullbone$315 Def00EA
+S A$skullbone$306 Def00DD
+S A$skullbone$270 Def00C9
+S A$skullbone$261 Def00C1
+S A$skullbone$252 Def00B5
+S A$skullbone$234 Def00A4
+S A$skullbone$225 Def009B
+S A$skullbone$216 Def0093
+S A$skullbone$207 Def008A
+S A$skullbone$180 Def0068
+S A$skullbone$162 Def005F
+S A$skullbone$126 Def0047
+S A$skullbone$117 Def003B
+S A$skullbone$108 Def002A
+S C$skullbone.c$22$1$63 Def0065
+S C$skullbone.c$15$1$61 Def0032
+S A$skullbone$406 Def014D
+S A$skullbone$370 Def0122
+S A$skullbone$361 Def0114
+S A$skullbone$352 Def010A
+S A$skullbone$325 Def00F4
+S A$skullbone$316 Def00EB
+S A$skullbone$307 Def00DE
+S A$skullbone$262 Def00C2
+S A$skullbone$253 Def00B6
+S A$skullbone$244 Def00AB
+S A$skullbone$235 Def00A5
+S A$skullbone$226 Def009C
+S A$skullbone$217 Def0094
+S A$skullbone$208 Def008B
+S A$skullbone$190 Def0079
+S A$skullbone$181 Def006C
+S A$skullbone$163 Def0062
+S A$skullbone$145 Def005A
+S A$skullbone$127 Def0048
+S A$skullbone$118 Def003C
+S A$skullbone$109 Def002C
+S C$skullbone.c$60$1$71 Def0111
+S C$skullbone.c$16$1$61 Def0052
+S A$skullbone$380 Def012F
+S A$skullbone$371 Def0123
+S A$skullbone$362 Def0117
+S A$skullbone$353 Def010B
+S A$skullbone$317 Def00EE
+S A$skullbone$308 Def00DF
+S A$skullbone$272 Def00CB
+S A$skullbone$263 Def00C3
+S A$skullbone$254 Def00B8
+S A$skullbone$245 Def00AC
+S A$skullbone$236 Def00A6
+S A$skullbone$227 Def009D
+S A$skullbone$209 Def008C
+S A$skullbone$191 Def007A
+S A$skullbone$182 Def006E
+S A$skullbone$164 Def0063
+S A$skullbone$137 Def0052
+S A$skullbone$128 Def004B
+S A$skullbone$119 Def003D
+S C$skullbone.c$17$1$61 Def005A
+S C$skullbone.c$10$1$59 Def0020
+S A$skullbone$390 Def013D
+S A$skullbone$381 Def0130
+S A$skullbone$372 Def0124
+S A$skullbone$363 Def0118
+S A$skullbone$354 Def010D
+S A$skullbone$318 Def00EF
+S A$skullbone$309 Def00E2
+S A$skullbone$291 Def00D0
+S A$skullbone$273 Def00CD
+S A$skullbone$264 Def00C4
+S A$skullbone$255 Def00B9
+S A$skullbone$246 Def00AD
+S A$skullbone$237 Def00A7
+S A$skullbone$228 Def009E
+S A$skullbone$192 Def007B
+S A$skullbone$138 Def0055
+S A$skullbone$129 Def004C
+S C$skullbone.c$41$1$65 Def00D0
+S C$skullbone.c$25$1$63 Def0066
+S C$skullbone.c$11$1$59 Def0029
+S A$skullbone$391 Def013E
+S A$skullbone$382 Def0131
+S A$skullbone$373 Def0125
+S A$skullbone$364 Def011B
+S A$skullbone$355 Def010F
+S A$skullbone$346 Def00FE
+S A$skullbone$292 Def00D1
+S A$skullbone$265 Def00C7
+S A$skullbone$256 Def00BA
+S A$skullbone$247 Def00AE
+S A$skullbone$238 Def00A8
+S A$skullbone$229 Def009F
+S A$skullbone$193 Def007C
+S A$skullbone$139 Def0056
+S C$skullbone.c$63$1$71 Def011C
+S C$skullbone.c$19$1$61 Def005B
+S A$skullbone$392 Def013F
+S A$skullbone$383 Def0132
+S A$skullbone$374 Def0126
+S A$skullbone$347 Def0101
+S A$skullbone$293 Def00D2
+S A$skullbone$266 Def00C8
+S A$skullbone$257 Def00BD
+S A$skullbone$248 Def00AF
+S A$skullbone$239 Def00A9
+S A$skullbone$158 Def005B
+S C$skullbone.c$32$2$66 Def0082
+S C$skullbone.c$13$1$59 Def002A
+S A$skullbone$393 Def0141
+S A$skullbone$384 Def0133
+S A$skullbone$375 Def0127
+S A$skullbone$348 Def0104
+S A$skullbone$294 Def00D3
+S A$skullbone$258 Def00BE
+S A$skullbone$249 Def00B0
+S A$skullbone$186 Def006F
+S A$skullbone$159 Def005C
+S C$skullbone.c$33$2$66 Def0095
+S G$InitSkullBoneA$0$0 Def0000
+S A$skullbone$394 Def0142
+S A$skullbone$385 Def0137
+S A$skullbone$376 Def0128
+S A$skullbone$349 Def0105
+S A$skullbone$295 Def00D4
+S A$skullbone$259 Def00BF
+S A$skullbone$187 Def0072
+S A$skullbone$169 Def0065
+S C$skullbone.c$66$1$71 Def014B
+S C$skullbone.c$57$1$71 Def00FE
+S C$skullbone.c$51$1$68 Def00F0
+S C$skullbone.c$27$1$65 Def006F
+S G$InitSkullBoneB$0$0 Def002A
+S A$skullbone$395 Def0143
+S A$skullbone$386 Def0139
+S A$skullbone$377 Def012A
+S A$skullbone$368 Def011C
+S A$skullbone$296 Def00D5
+S A$skullbone$278 Def00CF
+S A$skullbone$197 Def007E
+S A$skullbone$188 Def0075
+S A$skullbone$179 Def0066
+S C$skullbone.c$67$1$71 Def014F
+S C$skullbone.c$52$1$68 Def00F5
+S C$skullbone.c$28$1$65 Def007E
+S G$InitSkullBoneC$0$0 Def005B
+S A$skullbone$396 Def0144
+S A$skullbone$387 Def013A
+S A$skullbone$378 Def012C
+S A$skullbone$369 Def011F
+S A$skullbone$297 Def00D6
+S A$skullbone$198 Def0080
+S A$skullbone$189 Def0076
+S C$skullbone.c$44$1$68 Def00D0
+S C$skullbone.c$38$1$65 Def00C9
+S C$skullbone.c$36$2$66 Def00AB
+S A$skullbone$397 Def0145
+S A$skullbone$388 Def013B
+S A$skullbone$379 Def012D
+S A$skullbone$298 Def00D7
+S C$skullbone.c$54$1$68 Def00F6
+S C$skullbone.c$39$1$65 Def00CF
+S A$skullbone$398 Def0146
+S A$skullbone$389 Def013C
+S A$skullbone$299 Def00D8
+S A$skullbone$399 Def0149
+S C$skullbone.c$46$2$69 Def00DD
+S A$skullbone$70 Def0008
+A _DATA size 0 flags 0 addr 0
+A _INITIALIZED size 0 flags 0 addr 0
+A _DABS size 0 flags 8 addr 0
+A _HOME size 0 flags 0 addr 0
+A _GSINIT size 0 flags 0 addr 0
+A _GSFINAL size 0 flags 0 addr 0
+A _INITIALIZER size 0 flags 0 addr 0
+A _CABS size 0 flags 8 addr 0
+T 00 00
+R 00 00 00 00
+T 00 00 DD E5 DD 21 00 00 DD 39 DD 6E 04 DD 66 05
+R 00 00 00 00
+T 0E 00 E5 CD 00 00 F1 DD 4E 04 DD 46 05 21 04 00
+R 00 00 00 00 02 04 06 00
+T 1C 00 09 7E 87 77 21 05 00 09 7E 87 77 DD E1 C9
+R 00 00 00 00
+T 2A 00
+R 00 00 00 00
+T 2A 00 DD E5 DD 21 00 00 DD 39 DD 4E 04 DD 46 05
+R 00 00 00 00
+T 38 00 21 04 00 09 E5 C5 CD 00 00 55 3E 07 F5 33
+R 00 00 00 00 02 09 02 00
+T 46 00 D5 33 CD 00 00 F1 7D C1 E1 C6 FD 77 21
+R 00 00 00 00 02 05 03 00
+T 53 00 05 00 09 36 04 DD E1 C9
+R 00 00 00 00
+T 5B 00
+R 00 00 00 00
+T 5B 00 D1 C1 C5 D5 21 05 00 09 36 08 C9
+R 00 00 00 00
+T 66 00
+R 00 00 00 00
+T 66 00 DD E5 DD 21 00 00 DD 39 F5 DD 6E 04 DD 66
+R 00 00 00 00
+T 74 00 05 E5 CD 00 00 F1 7D B7 28 04 2E 00 18 49
+R 00 00 00 00 02 05 00 00
+T 82 00
+R 00 00 00 00
+T 82 00 DD 4E 04 DD 46 05 0A 5F 69 60 23 23 23 23
+R 00 00 00 00
+T 90 00 6E 7B 85 57 02 21 01 00 09 E3 E1 E5 5E 69
+R 00 00 00 00
+T 9E 00 60 23 23 23 23 23 6E 7B 85 5F E1 E5 73 69
+R 00 00 00 00
+T AC 00 60 23 23 23 7E CB 3F E6 03 6F 26 00 29 29
+R 00 00 00 00
+T BA 00 01 90 01 09 E5 7B F5 33 D5 33 CD 00 00 F1
+R 00 00 00 00 02 0D 08 00
+T C8 00 F1 2E 01
+R 00 00 00 00
+T CB 00
+R 00 00 00 00
+T CB 00 DD F9 DD E1 C9
+R 00 00 00 00
+T D0 00
+R 00 00 00 00
+T D0 00 D1 C1 C5 D5 69 60 23 23 23 7E 0F 38 13 C5
+R 00 00 00 00
+T DE 00 C5 CD 00 00 F1 21 04 00 39 4E 23 46 C5 CD
+R 00 00 00 00 02 04 04 00
+T EC 00 00 00 F1 C1
+R 00 00 00 00 02 02 05 00
+T F0 00
+R 00 00 00 00
+T F0 00 C5 CD 00 00 F1 C9
+R 00 00 00 00 02 04 01 00
+T F6 00
+R 00 00 00 00
+T F6 00 DD E5 DD 21 00 00 DD 39 DD 6E 04 DD 66 05
+R 00 00 00 00
+T 04 01 E5 CD 00 00 F1 7D B7 28 04 2E 00 18 3C
+R 00 00 00 00 02 04 00 00
+T 11 01
+R 00 00 00 00
+T 11 01 DD 6E 04 DD 66 05 E5 CD D0 00 F1 DD 5E 04
+R 00 00 00 00 00 0A 00 00
+T 1F 01 DD 56 05 6B 62 23 23 23 7E CB 3F E6 03 6F
+R 00 00 00 00
+T 2D 01 26 00 29 29 4D 44 FD 21 90 01 FD 09 6B 62
+R 00 00 00 00
+T 3B 01 23 4E 1A 47 FD E5 79 F5 33 C5 33 CD 00 00
+R 00 00 00 00 02 0E 08 00
+T 49 01 F1 F1 2E 01
+R 00 00 00 00
+T 4D 01
+R 00 00 00 00
+T 4D 01 DD E1 C9
+R 00 00 00 00

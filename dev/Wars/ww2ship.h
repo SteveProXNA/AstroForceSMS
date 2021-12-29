@@ -1,9 +1,9 @@
-unsigned char UpdateWW2Ship( enemy *en )
-{
-	DrawQuadSprite( en->enemyposx, en->enemyposy, WW2SHIPBASE );
+#ifndef _WW2SHIP_H_
+#define _WW2SHIP_H_
 
-	en->enemyposy += 1;
-	if( en->enemyposy > 192 )return 0;
-	return 1;
-}
+#include "../defines.h"
 
+// ADRIANA
+unsigned char UpdateWW2Ship( enemy *en );
+
+#endif//_WW2SHIP_H_

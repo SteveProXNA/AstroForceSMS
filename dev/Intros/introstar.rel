@@ -1,0 +1,103 @@
+;!FILE introstar.asm
+XL2
+H 9 areas 47 global symbols
+M introstar
+O -mz80
+S _myRand Ref0000
+S __moduchar Ref0000
+S .__.ABS. Def0000
+S _devkit_SMS_addSprite Ref0000
+A _CODE size 4D flags 0 addr 0
+S A$introstar$100 Def0025
+S A$introstar$110 Def0035
+S A$introstar$101 Def0028
+S A$introstar$120 Def003E
+S A$introstar$111 Def0036
+S A$introstar$102 Def002B
+S A$introstar$130 Def0048
+S A$introstar$121 Def003F
+S A$introstar$112 Def0037
+S A$introstar$103 Def002C
+S A$introstar$131 Def004A
+S A$introstar$122 Def0040
+S A$introstar$113 Def003A
+S A$introstar$104 Def002D
+S A$introstar$123 Def0042
+S A$introstar$114 Def003B
+S A$introstar$105 Def002E
+S A$introstar$124 Def0045
+S A$introstar$115 Def003C
+S A$introstar$106 Def002F
+S A$introstar$125 Def0046
+S A$introstar$107 Def0030
+S A$introstar$126 Def0047
+S A$introstar$108 Def0031
+S A$introstar$136 Def004C
+S A$introstar$109 Def0032
+S C$introstar.c$10$1$76 Def001D
+S A$introstar$119 Def003D
+S C$introstar.c$12$1$78 Def0025
+S G$InitIntroStar$0$0 Def0000
+S C$introstar.c$13$1$78 Def003D
+S C$introstar.c$14$1$78 Def0048
+S C$introstar.c$15$1$78 Def004C
+S A$introstar$60 Def0002
+S A$introstar$70 Def000F
+S A$introstar$61 Def0003
+S A$introstar$71 Def0010
+S A$introstar$62 Def0004
+S A$introstar$72 Def0011
+S A$introstar$63 Def0005
+S A$introstar$73 Def0012
+S A$introstar$64 Def0006
+S _InitIntroStar Def0000
+S A$introstar$74 Def0013
+S A$introstar$65 Def0007
+S A$introstar$84 Def001C
+S A$introstar$75 Def0016
+S A$introstar$66 Def0008
+S A$introstar$94 Def001D
+S A$introstar$76 Def0017
+S A$introstar$67 Def0009
+S A$introstar$58 Def0000
+S G$UpdateIntroStar$0$0 Def001D
+S A$introstar$95 Def001F
+S A$introstar$77 Def0018
+S A$introstar$68 Def000C
+S A$introstar$59 Def0001
+S A$introstar$96 Def0023
+S A$introstar$78 Def0019
+S A$introstar$69 Def000D
+S A$introstar$79 Def001B
+S C$introstar.c$7$1$76 Def0000
+S C$introstar.c$5$0$0 Def0000
+S C$introstar.c$8$1$76 Def001C
+S XG$InitIntroStar$0$0 Def001C
+S _UpdateIntroStar Def001D
+S XG$UpdateIntroStar$0$0 Def004C
+A _DATA size 0 flags 0 addr 0
+A _INITIALIZED size 0 flags 0 addr 0
+A _DABS size 0 flags 8 addr 0
+A _HOME size 0 flags 0 addr 0
+A _GSINIT size 0 flags 0 addr 0
+A _GSFINAL size 0 flags 0 addr 0
+A _INITIALIZER size 0 flags 0 addr 0
+A _CABS size 0 flags 8 addr 0
+T 00 00
+R 00 00 00 00
+T 00 00 D1 C1 C5 D5 03 03 03 03 C5 CD 00 00 55 3E
+R 00 00 00 00 02 0C 00 00
+T 0E 00 03 F5 33 D5 33 CD 00 00 F1 C1 7D C6 03 02
+R 00 00 00 00 02 08 01 00
+T 1C 00 C9
+R 00 00 00 00
+T 1D 00
+R 00 00 00 00
+T 1D 00 DD E5 DD 21 00 00 DD 39 DD 4E 04 DD 46 05
+R 00 00 00 00
+T 2B 00 69 60 23 56 0A 5F C5 21 3A 01 E5 D5 CD
+R 00 00 00 00
+T 38 00 00 00 F1 F1 C1 0A 5F C5 FD E1 FD 56 04 7B
+R 00 00 00 00 02 02 03 00
+T 46 00 92 02 2E 01 DD E1 C9
+R 00 00 00 00

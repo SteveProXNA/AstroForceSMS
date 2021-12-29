@@ -1,0 +1,149 @@
+;!FILE gameoverstage.asm
+XL2
+H 9 areas 61 global symbols
+M gameoverstage
+O -mz80
+S _devkit_PORT_A_KEY_1 Ref0000
+S _stagenum Ref0000
+S _devkit_SMS_displayOn Ref0000
+S _keystatus Ref0000
+S _WriteText Ref0000
+S _devkit_PSGGetStatus Ref0000
+S _logopalette_bin Ref0000
+S _gamestock Ref0000
+S _gameover_psg Ref0000
+S .__.ABS. Def0000
+S _InitStage Ref0000
+S _devkit_SMS_displayOff Ref0000
+S _UpdatePSG Ref0000
+S _numplayers Ref0000
+S _PlayMusic Ref0000
+S _UpdateStage Ref0000
+S _laststagenum Ref0000
+S _LoadBGPalette Ref0000
+A _CODE size 93 flags 0 addr 0
+S A$gameoverstage$110 Def0036
+S A$gameoverstage$120 Def003B
+S A$gameoverstage$111 Def0039
+S A$gameoverstage$102 Def002B
+S A$gameoverstage$130 Def004B
+S A$gameoverstage$112 Def003A
+S A$gameoverstage$131 Def004C
+S A$gameoverstage$132 Def004F
+S A$gameoverstage$160 Def0069
+S A$gameoverstage$142 Def0058
+S A$gameoverstage$133 Def0050
+S A$gameoverstage$124 Def003E
+S A$gameoverstage$106 Def002E
+S A$gameoverstage$152 Def005F
+S A$gameoverstage$143 Def005B
+S A$gameoverstage$125 Def0041
+S A$gameoverstage$107 Def0031
+S A$gameoverstage$153 Def0062
+S A$gameoverstage$126 Def0042
+S A$gameoverstage$108 Def0032
+S A$gameoverstage$154 Def0063
+S A$gameoverstage$127 Def0043
+S A$gameoverstage$109 Def0035
+S A$gameoverstage$164 Def006B
+S A$gameoverstage$155 Def0064
+S A$gameoverstage$137 Def0052
+S A$gameoverstage$128 Def0047
+S A$gameoverstage$174 Def006F
+S A$gameoverstage$147 Def005E
+S A$gameoverstage$138 Def0055
+S A$gameoverstage$129 Def004A
+S C$gameoverstage.c$40$3$91 Def0052
+S C$gameoverstage.c$41$3$91 Def0058
+S C$gameoverstage.c$34$2$90 Def003B
+S G$InitGameoverStage$0$0 Def0000
+S A$gameoverstage$159 Def0066
+S C$gameoverstage.c$51$3$92 Def0066
+S A$gameoverstage$169 Def006C
+S C$gameoverstage.c$44$3$91 Def005E
+S C$gameoverstage.c$37$2$90 Def003E
+S C$gameoverstage.c$21$1$89 Def0011
+S C$gameoverstage.c$12$1$89 Def0000
+S C$gameoverstage.c$31$1$89 Def003B
+S C$gameoverstage.c$22$1$89 Def001E
+S C$gameoverstage.c$54$3$92 Def006B
+S C$gameoverstage.c$48$2$90 Def005F
+S C$gameoverstage.c$60$1$89 Def006F
+S C$gameoverstage.c$58$2$90 Def006C
+S C$gameoverstage.c$15$1$89 Def0003
+S C$gameoverstage.c$25$1$89 Def002B
+S C$gameoverstage.c$18$1$89 Def0006
+S C$gameoverstage.c$28$1$89 Def002E
+S A$gameoverstage$82 Def0011
+S A$gameoverstage$73 Def0006
+S _InitGameoverStage Def0000
+S A$gameoverstage$92 Def001E
+S A$gameoverstage$83 Def0012
+S A$gameoverstage$74 Def0008
+S A$gameoverstage$65 Def0000
+S A$gameoverstage$93 Def0021
+S A$gameoverstage$84 Def0015
+S A$gameoverstage$75 Def0009
+S A$gameoverstage$94 Def0022
+S A$gameoverstage$85 Def0016
+S A$gameoverstage$76 Def000A
+S A$gameoverstage$95 Def0025
+S A$gameoverstage$86 Def0019
+S A$gameoverstage$77 Def000D
+S A$gameoverstage$96 Def0026
+S A$gameoverstage$87 Def001A
+S A$gameoverstage$78 Def000E
+S A$gameoverstage$69 Def0003
+S Fgameoverstage$__str_0$0$0 Def0071
+S A$gameoverstage$97 Def0029
+S A$gameoverstage$88 Def001D
+S Fgameoverstage$__str_1$0$0 Def007C
+S A$gameoverstage$98 Def002A
+S C$gameoverstage.c$9$0$0 Def0000
+S XG$InitGameoverStage$0$0 Def006F
+A _DATA size 0 flags 0 addr 0
+A _INITIALIZED size 0 flags 0 addr 0
+A _DABS size 0 flags 8 addr 0
+A _HOME size 0 flags 0 addr 0
+A _GSINIT size 0 flags 0 addr 0
+A _GSFINAL size 0 flags 0 addr 0
+A _INITIALIZER size 0 flags 0 addr 0
+A _CABS size 0 flags 8 addr 0
+T 00 00
+R 00 00 00 00
+T 00 00 CD 00 00 CD 00 00 3E 03 F5 33 21 00 00 E5
+R 00 00 00 00 02 03 0A 00 02 06 0B 00 02 0D 06 00
+T 0E 00 CD 00 00 33 21 0B 0C E3 21 71 00 E5 CD
+R 00 00 00 00 02 03 11 00 00 0B 00 00
+T 1B 00 00 00 F1 21 05 0E E3 21 7C 00 E5 CD 00 00
+R 00 00 00 00 02 02 04 00 00 0A 00 00 02 0E 04 00
+T 29 00 F1 F1 CD 00 00 21 08 00 E5 21 00 00 E5 CD
+R 00 00 00 00 02 05 02 00 02 0C 08 00
+T 37 00 00 00 F1 F1
+R 00 00 00 00 02 02 0E 00
+T 3B 00
+R 00 00 00 00
+T 3B 00 CD 00 00 CD 00 00 44 7D FD 21 00 00 FD A6
+R 00 00 00 00 02 03 0F 00 02 06 00 00 02 0C 03 00
+T 49 00 00 4F 78 FD A6 01 B1 28 0D 3A 00 00 32
+R 00 00 00 00 02 0C 10 00
+T 56 00 00 00 3A 00 00 32 00 00 C9
+R 00 00 00 00 02 02 01 00 02 05 07 00 02 08 0D 00
+T 5F 00
+R 00 00 00 00
+T 5F 00 CD 00 00 7D B7 20 06 21 00 00 36 0A C9
+R 00 00 00 00 02 03 05 00 02 0A 01 00
+T 6C 00
+R 00 00 00 00
+T 6C 00 CD 00 00 18 CA
+R 00 00 00 00 02 03 0C 00
+T 71 00
+R 00 00 00 00
+T 71 00 47 41 4D 45 20 20 4F 56 45 52 00
+R 00 00 00 00
+T 7C 00
+R 00 00 00 00
+T 7C 00 50 52 45 53 53 20 46 49 52 45 20 54 4F 20
+R 00 00 00 00
+T 8A 00 43 4F 4E 54 49 4E 55 45 00
+R 00 00 00 00

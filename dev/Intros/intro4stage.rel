@@ -1,0 +1,67 @@
+;!FILE intro4stage.asm
+XL2
+H 9 areas 2B global symbols
+M intro4stage
+O -mz80
+S _LoadGraphics Ref0000
+S _intro4script Ref0000
+S _introstage3tilemap_bin Ref0000
+S .__.ABS. Def0000
+S _InitScript Ref0000
+S _silence_psg Ref0000
+S _PlayMusic Ref0000
+S _introstage3tiles_psgcompr Ref0000
+A _CODE size 32 flags 0 addr 0
+S C$intro4stage.c$11$1$49 Def0000
+S C$intro4stage.c$14$1$49 Def0018
+S G$InitIntro4Stage$0$0 Def0000
+S C$intro4stage.c$17$1$49 Def0024
+S C$intro4stage.c$18$1$49 Def0031
+S A$intro4stage$60 Def0003
+S A$intro4stage$70 Def0017
+S A$intro4stage$61 Def0004
+S A$intro4stage$62 Def0007
+S A$intro4stage$63 Def0008
+S A$intro4stage$64 Def000B
+S _InitIntro4Stage Def0000
+S A$intro4stage$83 Def0024
+S A$intro4stage$74 Def0018
+S A$intro4stage$65 Def000C
+S A$intro4stage$84 Def0027
+S A$intro4stage$75 Def001B
+S A$intro4stage$66 Def000F
+S A$intro4stage$94 Def0031
+S A$intro4stage$85 Def0028
+S A$intro4stage$76 Def001C
+S A$intro4stage$67 Def0010
+S A$intro4stage$58 Def0000
+S A$intro4stage$86 Def002B
+S A$intro4stage$77 Def001F
+S A$intro4stage$68 Def0013
+S A$intro4stage$59 Def0002
+S A$intro4stage$87 Def002C
+S A$intro4stage$78 Def0020
+S A$intro4stage$69 Def0016
+S A$intro4stage$88 Def002F
+S A$intro4stage$79 Def0023
+S A$intro4stage$89 Def0030
+S C$intro4stage.c$8$0$0 Def0000
+S XG$InitIntro4Stage$0$0 Def0031
+A _DATA size 0 flags 0 addr 0
+A _INITIALIZED size 0 flags 0 addr 0
+A _DABS size 0 flags 8 addr 0
+A _HOME size 0 flags 0 addr 0
+A _GSINIT size 0 flags 0 addr 0
+A _GSFINAL size 0 flags 0 addr 0
+A _INITIALIZER size 0 flags 0 addr 0
+A _CABS size 0 flags 8 addr 0
+T 00 00
+R 00 00 00 00
+T 00 00 3E 0C F5 33 21 00 03 E5 21 00 00 E5 21
+R 00 00 00 00 02 0B 02 00
+T 0D 00 00 00 E5 CD 00 00 21 07 00 39 F9 21 02 00
+R 00 00 00 00 02 02 07 00 02 06 00 00
+T 1B 00 E5 21 00 00 E5 CD 00 00 F1 21 00 00 E3 21
+R 00 00 00 00 02 04 05 00 02 08 06 00
+T 29 00 00 00 E5 CD 00 00 F1 F1 C9
+R 00 00 00 00 02 02 01 00 02 06 04 00

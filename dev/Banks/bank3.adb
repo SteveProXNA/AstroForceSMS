@@ -1,0 +1,12 @@
+M:bank3
+S:G$fortresssearch_psgcompr$0$0({719}DA719d,SC:U),D,0,0
+S:G$logopalette_bin$0$0({16}DA16d,SC:U),D,0,0
+S:G$logotilemap_l$0$0({28}DA28d,SC:U),D,0,0
+S:G$logotilemap_m$0$0({896}DA896d,SC:U),D,0,0
+S:G$logotiles_psgcompr$0$0({2674}DA2674d,SC:U),D,0,0
+S:G$spacestation_psgcompr$0$0({187}DA187d,SC:U),D,0,0
+S:G$stage2palette_bin$0$0({16}DA16d,SC:U),D,0,0
+S:G$stage2tilemap_l$0$0({512}DA512d,SC:U),D,0,0
+S:G$stage2tilemap_m$0$0({8576}DA8576d,SC:U),D,0,0
+S:G$stage2tiles_psgcompr$0$0({2645}DA2645d,SC:U),D,0,0
+S:G$ww2ship_psgcompr$0$0({96}DA96d,SC:U),D,0,0

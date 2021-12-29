@@ -1,0 +1,319 @@
+;!FILE enemy.asm
+XL2
+H 9 areas DD global symbols
+M enemy
+O -mz80
+S _changeBank Ref0000
+S _enemies Ref0000
+S _RemoveEnemy Ref0000
+S _numenemies Ref0000
+S _updateenemyfunctions Ref0000
+S .__.ABS. Def0000
+S ___sdcc_call_hl Ref0000
+A _CODE size 122 flags 0 addr 0
+S A$enemy$315 Def0113
+S A$enemy$306 Def010D
+S A$enemy$243 Def00DB
+S A$enemy$225 Def00C8
+S A$enemy$207 Def00B7
+S A$enemy$153 Def0089
+S A$enemy$144 Def007D
+S A$enemy$135 Def0073
+S A$enemy$126 Def0067
+S A$enemy$108 Def004D
+S C$enemy.c$11$1$74 Def000A
+S _UpdateEnemy Def0099
+S A$enemy$316 Def0114
+S A$enemy$271 Def00F5
+S A$enemy$226 Def00CA
+S A$enemy$208 Def00B8
+S A$enemy$190 Def00A2
+S A$enemy$145 Def007E
+S A$enemy$127 Def0068
+S A$enemy$118 Def0058
+S A$enemy$109 Def004E
+S C$enemy.c$12$1$74 Def0040
+S A$enemy$317 Def0117
+S A$enemy$308 Def010E
+S A$enemy$290 Def00F9
+S A$enemy$272 Def00F6
+S A$enemy$254 Def00E4
+S A$enemy$227 Def00CB
+S A$enemy$209 Def00B9
+S A$enemy$191 Def00A5
+S A$enemy$173 Def0098
+S A$enemy$155 Def008B
+S A$enemy$146 Def007F
+S A$enemy$128 Def006A
+S A$enemy$119 Def0059
+S C$enemy.c$13$1$74 Def0058
+S A$enemy$327 Def011A
+S A$enemy$318 Def0118
+S A$enemy$309 Def0110
+S A$enemy$291 Def00FB
+S A$enemy$264 Def00EF
+S A$enemy$255 Def00E7
+S A$enemy$237 Def00D3
+S A$enemy$228 Def00CC
+S A$enemy$219 Def00C0
+S A$enemy$192 Def00A8
+S A$enemy$183 Def0099
+S A$enemy$165 Def0092
+S A$enemy$147 Def0081
+S A$enemy$129 Def006B
+S C$enemy.c$14$1$74 Def0076
+S A$enemy$346 Def0121
+S A$enemy$292 Def00FC
+S A$enemy$265 Def00F0
+S A$enemy$256 Def00E8
+S A$enemy$238 Def00D4
+S A$enemy$229 Def00CD
+S A$enemy$184 Def009B
+S A$enemy$148 Def0082
+S A$enemy$139 Def0076
+S C$enemy.c$40$1$76 Def00BC
+S C$enemy.c$31$1$76 Def00A2
+S C$enemy.c$24$1$74 Def0099
+S C$enemy.c$15$1$74 Def008E
+S A$enemy$293 Def00FD
+S A$enemy$266 Def00F1
+S A$enemy$257 Def00E9
+S A$enemy$248 Def00DE
+S A$enemy$239 Def00D5
+S A$enemy$185 Def009F
+S A$enemy$167 Def0094
+S A$enemy$149 Def0083
+S XG$InitEnemies$0$0 Def0121
+S C$enemy.c$16$1$74 Def0092
+S A$enemy$294 Def0100
+S A$enemy$267 Def00F2
+S A$enemy$258 Def00EC
+S A$enemy$249 Def00E1
+S A$enemy$186 Def00A1
+S A$enemy$168 Def0096
+S A$enemy$159 Def008E
+S C$enemy.c$17$1$74 Def0098
+S A$enemy$277 Def00F8
+S A$enemy$268 Def00F3
+S A$enemy$259 Def00ED
+S A$enemy$196 Def00A9
+S C$enemy.c$56$2$80 Def00EF
+S C$enemy.c$43$1$76 Def00C0
+S A$enemy$269 Def00F4
+S C$enemy.c$33$2$77 Def00A9
+S _UpdateEnemies Def00F9
+S G$checkEnemyPlayerShoot$0$0 Def0000
+S A$enemy$298 Def0101
+S C$enemy.c$91$1$76 Def00F9
+S C$enemy.c$51$2$79 Def00E4
+S C$enemy.c$37$1$76 Def00AB
+S A$enemy$299 Def0105
+S C$enemy.c$96$1$81 Def00F9
+S XG$UpdateEnemy$0$0 Def00F8
+S C$enemy.c$45$2$78 Def00D3
+S A$enemy$60 Def0008
+S C$enemy.c$49$1$76 Def00DE
+S A$enemy$70 Def0017
+S A$enemy$61 Def0009
+S C$enemy.c$99$1$81 Def0101
+S A$enemy$80 Def0029
+S A$enemy$71 Def0018
+S A$enemy$90 Def0037
+S A$enemy$81 Def002A
+S A$enemy$72 Def0019
+S C$enemy.c$88$1$76 Def00F8
+S A$enemy$91 Def0038
+S A$enemy$82 Def002B
+S A$enemy$73 Def001A
+S A$enemy$92 Def003B
+S A$enemy$83 Def002C
+S A$enemy$74 Def001D
+S A$enemy$65 Def000A
+S A$enemy$84 Def002E
+S A$enemy$75 Def0020
+S A$enemy$66 Def000D
+S A$enemy$57 Def0000
+S A$enemy$94 Def003D
+S A$enemy$85 Def0031
+S A$enemy$76 Def0023
+S A$enemy$67 Def0010
+S A$enemy$58 Def0002
+S XG$UpdateEnemies$0$0 Def011A
+S A$enemy$86 Def0032
+S A$enemy$77 Def0026
+S A$enemy$68 Def0013
+S A$enemy$59 Def0006
+S _checkEnemyPlayerShoot Def0000
+S A$enemy$87 Def0034
+S A$enemy$78 Def0027
+S A$enemy$69 Def0016
+S A$enemy$88 Def0035
+S A$enemy$79 Def0028
+S A$enemy$98 Def0040
+S A$enemy$89 Def0036
+S A$enemy$99 Def0041
+S C$enemy.c$9$0$0 Def0000
+S XG$checkEnemyPlayerShoot$0$0 Def0098
+S G$InitEnemies$0$0 Def011C
+S C$enemy.c$110$1$81 Def011C
+S C$enemy.c$100$2$82 Def0119
+S C$enemy.c$104$1$81 Def011A
+S C$enemy.c$112$1$84 Def011C
+S C$enemy.c$102$3$83 Def0111
+S C$enemy.c$113$1$84 Def0121
+S G$UpdateEnemy$0$0 Def0099
+S A$enemy$100 Def0042
+S A$enemy$200 Def00AB
+S A$enemy$110 Def004F
+S A$enemy$101 Def0043
+S _InitEnemies Def011C
+S A$enemy$300 Def0108
+S A$enemy$210 Def00BA
+S A$enemy$201 Def00AE
+S A$enemy$120 Def005A
+S A$enemy$111 Def0050
+S A$enemy$102 Def0046
+S A$enemy$301 Def0109
+S A$enemy$220 Def00C3
+S A$enemy$211 Def00BB
+S A$enemy$202 Def00B1
+S A$enemy$130 Def006C
+S A$enemy$121 Def005B
+S A$enemy$112 Def0053
+S A$enemy$103 Def0047
+S A$enemy$230 Def00CE
+S A$enemy$221 Def00C4
+S A$enemy$203 Def00B3
+S A$enemy$140 Def0077
+S A$enemy$131 Def006D
+S A$enemy$122 Def005E
+S A$enemy$104 Def0048
+S G$UpdateEnemies$0$0 Def00F9
+S A$enemy$240 Def00D6
+S A$enemy$231 Def00CF
+S A$enemy$222 Def00C5
+S A$enemy$204 Def00B4
+S A$enemy$150 Def0084
+S A$enemy$141 Def0078
+S A$enemy$132 Def006E
+S A$enemy$123 Def0061
+S A$enemy$114 Def0055
+S A$enemy$105 Def0049
+S A$enemy$340 Def011C
+S A$enemy$322 Def0119
+S A$enemy$313 Def0111
+S A$enemy$250 Def00E2
+S A$enemy$241 Def00D9
+S A$enemy$232 Def00D0
+S A$enemy$223 Def00C6
+S A$enemy$205 Def00B5
+S A$enemy$160 Def0090
+S A$enemy$151 Def0085
+S A$enemy$142 Def0079
+S A$enemy$133 Def0071
+S A$enemy$124 Def0062
+S A$enemy$106 Def004B
+S A$enemy$341 Def011F
+S A$enemy$314 Def0112
+S A$enemy$305 Def010A
+S A$enemy$242 Def00DA
+S A$enemy$233 Def00D1
+S A$enemy$224 Def00C7
+S A$enemy$215 Def00BC
+S A$enemy$206 Def00B6
+S A$enemy$152 Def0086
+S A$enemy$143 Def007C
+S A$enemy$125 Def0064
+S A$enemy$107 Def004C
+A _DATA size 0 flags 0 addr 0
+A _INITIALIZED size 0 flags 0 addr 0
+A _DABS size 0 flags 8 addr 0
+A _HOME size 0 flags 0 addr 0
+A _GSINIT size 0 flags 0 addr 0
+A _GSFINAL size 0 flags 0 addr 0
+A _INITIALIZER size 0 flags 0 addr 0
+A _CABS size 0 flags 8 addr 0
+T 00 00
+R 00 00 00 00
+T 00 00 DD E5 DD 21 00 00 DD 39 F5 F5 DD 7E 04 DD
+R 00 00 00 00
+T 0E 00 77 FC DD 7E 05 DD 77 FD E1 E5 23 5E DD 7E
+R 00 00 00 00
+T 1C 00 06 DD 77 FE DD 7E 07 DD 77 FF C1 E1 E5 C5
+R 00 00 00 00
+T 2A 00 23 4E 06 00 21 0C 00 09 16 00 7B 95 7A 9C
+R 00 00 00 00
+T 38 00 E2 3D 00 EE 80
+R 00 00 00 00 00 03 00 00
+T 3D 00
+R 00 00 00 00
+T 3D 00 F2 92 00 E1 E5 C5 01 08 00 09 C1 6E 26 00
+R 00 00 00 00 00 03 00 00
+T 4B 00 19 79 95 78 9C E2 55 00 EE 80
+R 00 00 00 00 00 08 00 00
+T 55 00
+R 00 00 00 00
+T 55 00 F2 92 00 E1 E5 5E DD 6E FE DD 66 FF 4E 06
+R 00 00 00 00 00 03 00 00
+T 63 00 00 21 10 00 09 16 00 7B 95 7A 9C E2 73 00
+R 00 00 00 00 00 0E 00 00
+T 71 00 EE 80
+R 00 00 00 00
+T 73 00
+R 00 00 00 00
+T 73 00 F2 92 00 E1 E5 C5 01 07 00 09 C1 6E 26 00
+R 00 00 00 00 00 03 00 00
+T 81 00 19 79 95 78 9C E2 8B 00 EE 80
+R 00 00 00 00 00 08 00 00
+T 8B 00
+R 00 00 00 00
+T 8B 00 F2 92 00 2E 01 18 02
+R 00 00 00 00 00 03 00 00
+T 92 00
+R 00 00 00 00
+T 92 00 2E 00
+R 00 00 00 00
+T 94 00
+R 00 00 00 00
+T 94 00 DD F9 DD E1 C9
+R 00 00 00 00
+T 99 00
+R 00 00 00 00
+T 99 00 DD E5 DD 21 00 00 DD 39 3B 21 00 00 DD 7E
+R 00 00 00 00 02 0C 03 00
+T A7 00 04 96 30 4A 01 00 00 DD 5E 04 16 00 6B 62
+R 00 00 00 00 02 07 01 00
+T B5 00 29 29 29 19 09 4D 44 DD 36 FF 01 11 00 00
+R 00 00 00 00 02 0E 04 00
+T C3 00 69 60 23 23 6E 26 00 29 19 5E 23 66 7C B3
+R 00 00 00 00
+T D1 00 28 0B C5 C5 6B CD 00 00 F1 C1 DD 75 FF
+R 00 00 00 00 02 08 06 00
+T DE 00
+R 00 00 00 00
+T DE 00 DD 7E FF B7 20 0B DD 7E 04 F5 33 CD 00 00
+R 00 00 00 00 02 0E 02 00
+T EC 00 33 18 06
+R 00 00 00 00
+T EF 00
+R 00 00 00 00
+T EF 00 03 03 03 0A 3C 02
+R 00 00 00 00
+T F5 00
+R 00 00 00 00
+T F5 00 33 DD E1 C9
+R 00 00 00 00
+T F9 00
+R 00 00 00 00
+T F9 00 3E 0F F5 33 CD 00 00 33 FD 21 00 00 FD 7E
+R 00 00 00 00 02 07 00 00 02 0C 03 00
+T 07 01 00 B7 C8 FD 46 00 05
+R 00 00 00 00
+T 0E 01
+R 00 00 00 00
+T 0E 01 CB 78 C0 C5 C5 33 CD 99 00 33 C1 05 18 F2
+R 00 00 00 00 00 09 00 00
+T 1C 01
+R 00 00 00 00
+T 1C 01 21 00 00 36 00 C9
+R 00 00 00 00 02 03 03 00

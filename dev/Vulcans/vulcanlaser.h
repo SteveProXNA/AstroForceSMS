@@ -1,27 +1,10 @@
-// warning 85: unreferenced function argument: 'en'
-#ifdef _CONSOLE
-#else
-#pragma disable_warning 85
-#endif
+#ifndef _VULCANLASER_H_
+#define _VULCANLASER_H_
 
-void InitVulcanLaser( enemy *en )
-{
-	// Sound
-	PlaySound( enemylaser_psg, 1 );
-}
+#include "../defines.h"
 
-unsigned char UpdateVulcanLaser( enemy *en )
-{
-	// Movement
-	en->enemyposy += ( DEFAULTENEMYSHOOTLASERSPEED + 1 + ( gamelevel << 1 ) );
+// ADRIANA
+void InitVulcanLaser( enemy *en );
+unsigned char UpdateVulcanLaser( enemy *en );
 
-	// Exit?
-	if( ( en->enemyposy >= 208 ) && ( en->enemyposy < 224 ) )
-		return 0;
-
-	// Draw the sprite
-	DrawSpriteArray( VULCANLASERBASE, en->enemyposx, en->enemyposy, 8, 48 );
-
-	return 1;
-}
-
+#endif//_VULCANLASER_H_

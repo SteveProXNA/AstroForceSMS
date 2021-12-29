@@ -1,0 +1,140 @@
+;!FILE vulcanvulcan.asm
+XL2
+H 9 areas 60 global symbols
+M vulcanvulcan
+O -mz80
+S .__.ABS. Def0000
+S _InitEnemy Ref0000
+S _devkit_SMS_addSprite Ref0000
+S _stageframe Ref0000
+A _CODE size 79 flags 0 addr 0
+S A$vulcanvulcan$70 Def0018
+S A$vulcanvulcan$61 Def0009
+S A$vulcanvulcan$80 Def0020
+S A$vulcanvulcan$71 Def0019
+S A$vulcanvulcan$62 Def000C
+S A$vulcanvulcan$81 Def0021
+S A$vulcanvulcan$72 Def001A
+S A$vulcanvulcan$63 Def000F
+S A$vulcanvulcan$54 Def0000
+S A$vulcanvulcan$91 Def0027
+S A$vulcanvulcan$64 Def0012
+S A$vulcanvulcan$55 Def0002
+S A$vulcanvulcan$92 Def002B
+S A$vulcanvulcan$65 Def0013
+S A$vulcanvulcan$56 Def0006
+S A$vulcanvulcan$93 Def002D
+S A$vulcanvulcan$66 Def0014
+S A$vulcanvulcan$57 Def0008
+S A$vulcanvulcan$94 Def002F
+S A$vulcanvulcan$85 Def0023
+S A$vulcanvulcan$76 Def001B
+S A$vulcanvulcan$67 Def0015
+S G$UpdateVulcanVulcan$0$0 Def0000
+S A$vulcanvulcan$95 Def0031
+S A$vulcanvulcan$86 Def0025
+S A$vulcanvulcan$77 Def001C
+S A$vulcanvulcan$68 Def0016
+S A$vulcanvulcan$96 Def0033
+S A$vulcanvulcan$78 Def001D
+S A$vulcanvulcan$69 Def0017
+S A$vulcanvulcan$97 Def0034
+S A$vulcanvulcan$79 Def001E
+S C$vulcanvulcan.c$8$1$75 Def0009
+S A$vulcanvulcan$98 Def0036
+S C$vulcanvulcan.c$6$0$0 Def0000
+S A$vulcanvulcan$99 Def0037
+S _UpdateVulcanVulcan Def0000
+S XG$UpdateVulcanVulcan$0$0 Def0078
+S A$vulcanvulcan$100 Def0039
+S A$vulcanvulcan$110 Def0049
+S A$vulcanvulcan$101 Def003D
+S A$vulcanvulcan$111 Def004A
+S A$vulcanvulcan$102 Def003F
+S A$vulcanvulcan$130 Def005B
+S A$vulcanvulcan$121 Def0053
+S A$vulcanvulcan$112 Def004B
+S A$vulcanvulcan$103 Def0040
+S A$vulcanvulcan$131 Def005C
+S A$vulcanvulcan$122 Def0054
+S A$vulcanvulcan$113 Def004C
+S A$vulcanvulcan$104 Def0042
+S A$vulcanvulcan$150 Def0071
+S A$vulcanvulcan$141 Def0065
+S A$vulcanvulcan$132 Def005D
+S A$vulcanvulcan$123 Def0055
+S A$vulcanvulcan$114 Def004D
+S A$vulcanvulcan$105 Def0043
+S A$vulcanvulcan$142 Def0066
+S A$vulcanvulcan$133 Def005E
+S A$vulcanvulcan$124 Def0056
+S A$vulcanvulcan$115 Def0050
+S A$vulcanvulcan$106 Def0044
+S A$vulcanvulcan$143 Def0067
+S A$vulcanvulcan$134 Def005F
+S A$vulcanvulcan$125 Def0057
+S A$vulcanvulcan$116 Def0051
+S A$vulcanvulcan$107 Def0045
+S A$vulcanvulcan$144 Def0069
+S A$vulcanvulcan$135 Def0060
+S A$vulcanvulcan$126 Def0059
+S A$vulcanvulcan$117 Def0052
+S A$vulcanvulcan$108 Def0046
+S C$vulcanvulcan.c$10$1$75 Def001B
+S A$vulcanvulcan$163 Def0078
+S A$vulcanvulcan$145 Def006A
+S A$vulcanvulcan$136 Def0061
+S A$vulcanvulcan$109 Def0048
+S C$vulcanvulcan.c$20$1$75 Def0078
+S C$vulcanvulcan.c$11$1$75 Def0023
+S A$vulcanvulcan$155 Def0072
+S A$vulcanvulcan$146 Def006B
+S A$vulcanvulcan$137 Def0063
+S A$vulcanvulcan$147 Def006C
+S C$vulcanvulcan.c$13$1$75 Def0027
+S A$vulcanvulcan$157 Def0074
+S A$vulcanvulcan$148 Def006D
+S A$vulcanvulcan$158 Def0076
+S A$vulcanvulcan$149 Def0070
+S C$vulcanvulcan.c$16$1$75 Def0053
+S C$vulcanvulcan.c$17$1$75 Def005B
+S C$vulcanvulcan.c$18$1$75 Def0065
+S C$vulcanvulcan.c$19$1$75 Def0072
+A _DATA size 0 flags 0 addr 0
+A _INITIALIZED size 0 flags 0 addr 0
+A _DABS size 0 flags 8 addr 0
+A _HOME size 0 flags 0 addr 0
+A _GSINIT size 0 flags 0 addr 0
+A _GSFINAL size 0 flags 0 addr 0
+A _INITIALIZER size 0 flags 0 addr 0
+A _CABS size 0 flags 8 addr 0
+T 00 00
+R 00 00 00 00
+T 00 00 DD E5 DD 21 00 00 DD 39 F5 DD 4E 04 DD 46
+R 00 00 00 00
+T 0E 00 05 21 01 00 09 E3 E1 E5 5E 1C E1 E5 73 E1
+R 00 00 00 00
+T 1C 00 E5 6E 3E C0 93 30 04 2E 00 18 4D
+R 00 00 00 00
+T 27 00
+R 00 00 00 00
+T 27 00 ED 5B 00 00 CB 3A CB 1B CB 3A CB 1B 7B E6
+R 00 00 00 00 02 04 03 00
+T 35 00 03 5F 16 00 FD 21 47 01 FD 19 7D C6 F8 5F
+R 00 00 00 00
+T 43 00 0A 57 C5 FD E5 7B F5 33 D5 33 CD 00 00 F1
+R 00 00 00 00 02 0D 02 00
+T 51 00 F1 C1 E1 E5 56 7A D6 90 30 17 69 60 23 23
+R 00 00 00 00
+T 5F 00 23 7E E6 07 20 0D 0A 47 3E 2E F5 33 58 D5
+R 00 00 00 00
+T 6D 00 CD 00 00 F1 33
+R 00 00 00 00 02 03 01 00
+T 72 00
+R 00 00 00 00
+T 72 00 2E 01
+R 00 00 00 00
+T 74 00
+R 00 00 00 00
+T 74 00 DD F9 DD E1 C9
+R 00 00 00 00

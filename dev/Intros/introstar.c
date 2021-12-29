@@ -1,0 +1,16 @@
+#include "introstar.h"
+#include "../devkit/_sms_manager.h"
+#include "../funcs.h"
+
+void InitIntroStar( enemy *en )
+{
+	en->enemyparama = ( myRand() % 3 ) + 3;
+}
+
+unsigned char UpdateIntroStar( enemy *en )
+{
+	devkit_SMS_addSprite( en->enemyposx, en->enemyposy, INTROSTARBASE );
+	en->enemyposx -= en->enemyparama;
+	return 1;
+}
+

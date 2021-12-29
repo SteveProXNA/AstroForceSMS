@@ -1,0 +1,878 @@
+;!FILE player.asm
+XL2
+H 9 areas 294 global symbols
+M player
+O -mz80
+S _changeBank Ref0000
+S _devkit_PORT_A_KEY_1 Ref0000
+S _stagenum Ref0000
+S _devkit_PORT_A_KEY_2 Ref0000
+S _sprite82anim Ref0000
+S _playerupdatefunctions Ref0000
+S _KillEnemyshoots Ref0000
+S _devkit_PORT_A_KEY_DOWN Ref0000
+S _keystatus Ref0000
+S _InitPlayershoot Ref0000
+S _devkit_PORT_A_KEY_RIGHT Ref0000
+S _afterboss_psg Ref0000
+S _playerside Ref0000
+S _LoadSprite Ref0000
+S _playershootcounter Ref0000
+S _numplayershoots Ref0000
+S _InitPlayerConstants Ref0000
+S .__.ABS. Def0000
+S _playershootmax Ref0000
+S _exitplaystage Ref0000
+S _playerx Ref0000
+S _playery Ref0000
+S ___sdcc_call_hl Ref0000
+S _playercounter Ref0000
+S _playertype Ref0000
+S _numplayers Ref0000
+S _DrawQuadSprite Ref0000
+S _KillEnemies Ref0000
+S _InitExplosion Ref0000
+S _DoBarrom Ref0000
+S _player_psgcompr Ref0000
+S _devkit_PORT_A_KEY_UP Ref0000
+S _PlayMusic Ref0000
+S _devkit_SMS_addSprite Ref0000
+S _devkit_PORT_A_KEY_LEFT Ref0000
+S _playerspeed Ref0000
+S __moduint Ref0000
+S _stageframe Ref0000
+A _CODE size 34D flags 0 addr 0
+S A$player$998 Def0344
+S A$player$899 Def02F1
+S A$player$999 Def0345
+S A$player$92 Def0005
+S C$player.c$89$1$86 Def002E
+S _CheckPlayerEnemyshootCollision Def002C
+S XG$CheckShootPlayer$0$0 Def0245
+S A$player$96 Def0008
+S A$player$87 Def0000
+S A$player$97 Def000A
+S A$player$88 Def0003
+S XG$RemovePlayer$0$0 Def0028
+S A$player$98 Def000B
+S A$player$99 Def000C
+S C$player.c$211$1$110 Def0296
+S G$CheckPlayerEnemyCollision$0$0 Def0029
+S G$InitPlayerSprite$0$0 Def006A
+S XG$UpdatePlayerIndicators$0$0 Def0053
+S C$player.c$224$1$110 Def02B5
+S C$player.c$222$2$111 Def02B5
+S C$player.c$213$2$111 Def029C
+S C$player.c$231$1$113 Def02C6
+S C$player.c$214$2$111 Def02A3
+S C$player.c$200$1$108 Def0275
+S C$player.c$161$3$100 Def01C1
+S XG$CheckPlayerEnemyshootCollision$0$0 Def002E
+S C$player.c$241$1$113 Def02C9
+S C$player.c$226$1$110 Def02B8
+S C$player.c$201$1$108 Def0278
+S G$DrawPlayer$0$0 Def007D
+S C$player.c$280$1$120 Def0324
+S C$player.c$251$1$113 Def02DF
+S C$player.c$252$1$113 Def02E2
+S C$player.c$172$2$102 Def021B
+S C$player.c$253$1$113 Def02E5
+S C$player.c$163$4$101 Def01D8
+S C$player.c$283$1$120 Def0328
+S C$player.c$254$1$113 Def02E5
+S C$player.c$245$1$113 Def02D5
+S C$player.c$217$3$112 Def02AA
+S C$player.c$203$2$109 Def027E
+S C$player.c$190$1$105 Def0262
+S C$player.c$164$4$101 Def01DD
+S C$player.c$260$1$117 Def02FB
+S C$player.c$243$2$115 Def02CD
+S C$player.c$228$1$113 Def02B8
+S C$player.c$218$3$112 Def02AF
+S C$player.c$204$2$109 Def0283
+S C$player.c$165$4$101 Def01F2
+S C$player.c$256$1$113 Def02E8
+S C$player.c$207$1$108 Def0295
+S C$player.c$205$2$109 Def0290
+S C$player.c$174$3$103 Def0225
+S G$InitPlayer$0$0 Def0055
+S _CheckPlayerEnemyCollision Def0029
+S C$player.c$286$1$120 Def032D
+S G$UpdatePlayerState1$0$0 Def0308
+S C$player.c$262$1$117 Def02FE
+S C$player.c$287$1$120 Def0335
+S C$player.c$263$1$117 Def0305
+S G$UpdatePlayerState2$0$0 Def02E8
+S C$player.c$209$1$108 Def0296
+S C$player.c$185$1$105 Def0246
+S A$player$1000 Def0346
+S C$player.c$288$1$120 Def0349
+S C$player.c$270$2$119 Def0317
+S G$UpdatePlayerState3$0$0 Def02B8
+S C$player.c$195$1$105 Def0271
+S C$player.c$192$2$107 Def0268
+S G$MovePlayer$0$0 Def00BD
+S _InitPlayerSprite Def006A
+S A$player$1001 Def0347
+S C$player.c$289$1$120 Def034A
+S C$player.c$273$1$118 Def0321
+S C$player.c$271$2$119 Def031C
+S C$player.c$265$1$117 Def0308
+S C$player.c$247$2$116 Def02D9
+S G$UpdatePlayerState4$0$0 Def0296
+S C$player.c$193$2$107 Def026C
+S C$player.c$176$4$104 Def022D
+S A$player$1011 Def034A
+S A$player$1002 Def0348
+S C$player.c$274$1$118 Def0321
+S C$player.c$197$1$105 Def0272
+S G$UpdatePlayerState5$0$0 Def0272
+S C$player.c$177$4$104 Def0232
+S C$player.c$258$1$117 Def02E8
+S C$player.c$187$2$106 Def0259
+S G$UpdatePlayerState6$0$0 Def0246
+S _DrawPlayer Def007D
+S C$player.c$267$1$118 Def0308
+S C$player.c$259$1$117 Def02F8
+S C$player.c$188$2$106 Def025F
+S C$player.c$277$1$118 Def0324
+S C$player.c$268$1$118 Def030F
+S A$player$1006 Def0349
+S C$player.c$199$1$108 Def0272
+S C$player.c$101$2$91 Def0055
+S C$player.c$111$1$92 Def006A
+S XG$CheckPlayerEnemyCollision$0$0 Def002B
+S _InitPlayer Def0055
+S _UpdatePlayerState1 Def0308
+S C$player.c$120$1$94 Def007D
+S C$player.c$104$1$92 Def0055
+S _UpdatePlayerState2 Def02E8
+S G$UpdatePlayer$0$0 Def0324
+S XG$InitPlayerSprite$0$0 Def007C
+S C$player.c$113$1$93 Def006A
+S C$player.c$105$1$92 Def005A
+S _UpdatePlayerState3 Def02B8
+S _MovePlayer Def00BD
+S C$player.c$130$1$95 Def00BD
+S C$player.c$114$1$93 Def007C
+S C$player.c$106$1$92 Def005F
+S _UpdatePlayerState4 Def0296
+S C$player.c$123$1$94 Def0097
+S C$player.c$107$1$92 Def0064
+S _UpdatePlayerState5 Def0272
+S XG$DrawPlayer$0$0 Def00BC
+S C$player.c$124$1$94 Def00BC
+S C$player.c$108$1$92 Def0069
+S _UpdatePlayerState6 Def0246
+S A$player$100 Def000F
+S C$player.c$151$1$95 Def019E
+S C$player.c$142$1$95 Def014B
+S C$player.c$117$1$93 Def007D
+S A$player$200 Def0041
+S A$player$101 Def0010
+S C$player.c$143$1$95 Def015F
+S C$player.c$140$2$97 Def013C
+S C$player.c$132$2$96 Def00D1
+S A$player$300 Def0087
+S A$player$210 Def0050
+S A$player$201 Def0042
+S A$player$120 Def0022
+S A$player$111 Def001B
+S A$player$102 Def0011
+S C$player.c$144$1$95 Def016A
+S C$player.c$133$2$96 Def00D6
+S C$player.c$127$1$94 Def00BD
+S A$player$400 Def0100
+S A$player$301 Def0088
+S A$player$220 Def0053
+S A$player$211 Def0051
+S A$player$202 Def0045
+S A$player$121 Def0023
+S A$player$103 Def0014
+S C$player.c$145$1$95 Def0175
+S C$player.c$136$1$95 Def0103
+S C$player.c$134$2$96 Def00F4
+S A$player$500 Def0183
+S A$player$410 Def0108
+S A$player$401 Def0101
+S A$player$320 Def00A3
+S A$player$302 Def008B
+S A$player$203 Def0046
+S A$player$122 Def0024
+S A$player$104 Def0015
+S C$player.c$170$1$98 Def0208
+S G$CheckShootPlayer$0$0 Def019E
+S C$player.c$146$1$95 Def0188
+S A$player$501 Def0186
+S A$player$420 Def0117
+S A$player$411 Def010C
+S A$player$402 Def0102
+S A$player$330 Def00B2
+S A$player$321 Def00A6
+S A$player$303 Def008C
+S A$player$204 Def0048
+S A$player$141 Def0029
+S A$player$123 Def0027
+S A$player$105 Def0016
+S C$player.c$147$1$95 Def0192
+S XG$InitPlayer$0$0 Def0069
+S A$player$700 Def025F
+S A$player$610 Def0201
+S A$player$601 Def01F2
+S A$player$520 Def019C
+S A$player$502 Def0187
+S A$player$430 Def0125
+S A$player$421 Def011A
+S A$player$412 Def010F
+S A$player$331 Def00B3
+S A$player$322 Def00A8
+S A$player$313 Def0097
+S A$player$304 Def008D
+S A$player$205 Def0049
+S A$player$115 Def001E
+S A$player$106 Def0019
+S XG$UpdatePlayerState1$0$0 Def0321
+S C$player.c$181$1$98 Def0245
+S C$player.c$154$1$98 Def019E
+S C$player.c$148$1$95 Def019D
+S A$player$800 Def02AA
+S A$player$620 Def020B
+S A$player$611 Def0202
+S A$player$602 Def01F5
+S A$player$440 Def0133
+S A$player$431 Def0126
+S A$player$413 Def0110
+S A$player$332 Def00B4
+S A$player$323 Def00A9
+S A$player$314 Def009A
+S A$player$305 Def0090
+S A$player$233 Def0055
+S A$player$215 Def0052
+S A$player$206 Def004A
+S A$player$170 Def002E
+S A$player$107 Def001A
+S XG$UpdatePlayerState2$0$0 Def0305
+S G$RemovePlayer$0$0 Def0000
+S A$player$900 Def02F3
+S A$player$801 Def02AD
+S A$player$711 Def0268
+S A$player$621 Def020C
+S A$player$612 Def0203
+S A$player$603 Def01F7
+S A$player$513 Def0192
+S A$player$450 Def0140
+S A$player$441 Def0134
+S A$player$432 Def0128
+S A$player$414 Def0111
+S A$player$360 Def00C9
+S A$player$342 Def00BC
+S A$player$333 Def00B5
+S A$player$324 Def00AC
+S A$player$315 Def009B
+S A$player$306 Def0091
+S A$player$270 Def006E
+S A$player$243 Def005F
+S A$player$234 Def0058
+S A$player$207 Def004B
+S A$player$162 Def002C
+S XG$UpdatePlayerState3$0$0 Def02E5
+S C$player.c$183$1$98 Def0246
+S XG$MovePlayer$0$0 Def019D
+S C$player.c$138$2$97 Def0117
+S C$player.c$40$1$81 Def0029
+S _UpdatePlayer Def0324
+S A$player$910 Def02FB
+S A$player$901 Def02F6
+S A$player$712 Def026B
+S A$player$640 Def0228
+S A$player$622 Def020D
+S A$player$613 Def0206
+S A$player$604 Def01F8
+S A$player$550 Def01B0
+S A$player$514 Def0195
+S A$player$451 Def0144
+S A$player$442 Def0137
+S A$player$433 Def0129
+S A$player$415 Def0114
+S A$player$361 Def00CA
+S A$player$334 Def00B6
+S A$player$325 Def00AD
+S A$player$316 Def009D
+S A$player$307 Def0092
+S A$player$271 Def0071
+S A$player$244 Def0062
+S A$player$208 Def004C
+S A$player$190 Def0035
+S XG$UpdatePlayerState4$0$0 Def02B5
+S C$player.c$157$1$98 Def01A2
+S C$player.c$139$2$97 Def011C
+S C$player.c$32$1$81 Def001B
+S C$player.c$23$1$81 Def0000
+S A$player$830 Def02BC
+S A$player$722 Def0271
+S A$player$641 Def022B
+S A$player$632 Def021B
+S A$player$623 Def0211
+S A$player$614 Def0207
+S A$player$605 Def01FA
+S A$player$551 Def01B3
+S A$player$515 Def0196
+S A$player$506 Def0188
+S A$player$470 Def015D
+S A$player$461 Def014B
+S A$player$452 Def0146
+S A$player$434 Def012A
+S A$player$425 Def011C
+S A$player$416 Def0115
+S A$player$407 Def0103
+S A$player$380 Def00E2
+S A$player$362 Def00CB
+S A$player$335 Def00B7
+S A$player$326 Def00AE
+S A$player$317 Def00A0
+S A$player$308 Def0095
+S A$player$272 Def0072
+S A$player$254 Def0069
+S A$player$209 Def004F
+S A$player$191 Def0036
+S A$player$128 Def0028
+S A$player$119 Def0021
+S XG$UpdatePlayerState5$0$0 Def0295
+S A$player$840 Def02C7
+S A$player$831 Def02BF
+S A$player$750 Def0281
+S A$player$705 Def0262
+S A$player$660 Def0240
+S A$player$651 Def0232
+S A$player$642 Def022C
+S A$player$633 Def021D
+S A$player$624 Def0214
+S A$player$606 Def01FB
+S A$player$570 Def01CE
+S A$player$552 Def01B4
+S A$player$543 Def01A2
+S A$player$525 Def019D
+S A$player$516 Def0198
+S A$player$507 Def018C
+S A$player$462 Def014E
+S A$player$453 Def0147
+S A$player$444 Def0139
+S A$player$435 Def012D
+S A$player$426 Def011F
+S A$player$408 Def0106
+S A$player$390 Def00F1
+S A$player$381 Def00E5
+S A$player$363 Def00CE
+S A$player$336 Def00BA
+S A$player$327 Def00AF
+S A$player$318 Def00A1
+S A$player$309 Def0096
+S A$player$282 Def007C
+S A$player$273 Def0075
+S A$player$192 Def0037
+S A$player$183 Def002F
+S XG$UpdatePlayerState6$0$0 Def0271
+S A$player$940 Def030F
+S A$player$922 Def0305
+S A$player$850 Def02D0
+S A$player$832 Def02C0
+S A$player$805 Def02AF
+S A$player$760 Def028F
+S A$player$706 Def0265
+S A$player$661 Def0243
+S A$player$652 Def0234
+S A$player$634 Def0221
+S A$player$625 Def0215
+S A$player$607 Def01FC
+S A$player$580 Def01DB
+S A$player$571 Def01CF
+S A$player$544 Def01A5
+S A$player$517 Def0199
+S A$player$508 Def018F
+S A$player$481 Def016A
+S A$player$463 Def014F
+S A$player$454 Def0148
+S A$player$436 Def012E
+S A$player$427 Def0120
+S A$player$409 Def0107
+S A$player$382 Def00E6
+S A$player$373 Def00D6
+S A$player$364 Def00CF
+S A$player$355 Def00BD
+S A$player$337 Def00BB
+S A$player$328 Def00B0
+S A$player$319 Def00A2
+S A$player$274 Def0076
+S A$player$238 Def005A
+S A$player$193 Def0038
+S G$UpdatePlayerIndicators$0$0 Def002F
+S C$player.c$35$1$81 Def001E
+S C$player.c$26$1$81 Def0005
+S C$player.c$20$0$0 Def0000
+S A$player$941 Def0312
+S A$player$914 Def02FE
+S A$player$851 Def02D1
+S A$player$833 Def02C3
+S A$player$815 Def02B5
+S A$player$806 Def02B2
+S A$player$770 Def0295
+S A$player$743 Def0278
+S A$player$716 Def026C
+S A$player$707 Def0267
+S A$player$680 Def0246
+S A$player$662 Def0244
+S A$player$653 Def0235
+S A$player$635 Def0224
+S A$player$626 Def0216
+S A$player$608 Def01FF
+S A$player$590 Def01E6
+S A$player$572 Def01D0
+S A$player$563 Def01C1
+S A$player$545 Def01A6
+S A$player$518 Def019A
+S A$player$509 Def0191
+S A$player$482 Def016D
+S A$player$464 Def0150
+S A$player$455 Def0149
+S A$player$437 Def0130
+S A$player$428 Def0122
+S A$player$383 Def00E8
+S A$player$374 Def00D9
+S A$player$356 Def00C0
+S A$player$329 Def00B1
+S A$player$275 Def0079
+S A$player$248 Def0064
+S A$player$239 Def005D
+S A$player$194 Def0039
+S A$player$185 Def0031
+S A$player$149 Def002B
+S C$player.c$159$2$99 Def01B6
+S C$player.c$36$1$81 Def0021
+S A$player$960 Def0321
+S A$player$951 Def031C
+S A$player$942 Def0314
+S A$player$915 Def0301
+S A$player$906 Def02F8
+S A$player$852 Def02D2
+S A$player$834 Def02C4
+S A$player$807 Def02B4
+S A$player$744 Def027B
+S A$player$735 Def0272
+S A$player$717 Def026F
+S A$player$681 Def0249
+S A$player$654 Def0236
+S A$player$627 Def0219
+S A$player$609 Def0200
+S A$player$591 Def01E9
+S A$player$573 Def01D3
+S A$player$564 Def01C4
+S A$player$546 Def01A7
+S A$player$519 Def019B
+S A$player$483 Def016E
+S A$player$474 Def015F
+S A$player$465 Def0154
+S A$player$456 Def014A
+S A$player$438 Def0131
+S A$player$429 Def0124
+S A$player$384 Def00E9
+S A$player$375 Def00DA
+S A$player$357 Def00C1
+S A$player$276 Def007A
+S A$player$267 Def006A
+S A$player$249 Def0067
+S A$player$195 Def003A
+S G$CheckPlayerEnemyshootCollision$0$0 Def002C
+S C$player.c$63$1$82 Def002B
+S C$player.c$37$1$81 Def0028
+S A$player$952 Def031F
+S A$player$916 Def0303
+S A$player$871 Def02DF
+S A$player$853 Def02D4
+S A$player$844 Def02C9
+S A$player$835 Def02C5
+S A$player$790 Def02A0
+S A$player$754 Def0283
+S A$player$745 Def027D
+S A$player$682 Def024A
+S A$player$655 Def0239
+S A$player$646 Def022D
+S A$player$628 Def021A
+S A$player$619 Def0208
+S A$player$592 Def01EA
+S A$player$565 Def01C5
+S A$player$556 Def01B6
+S A$player$547 Def01AB
+S A$player$538 Def019E
+S A$player$493 Def0175
+S A$player$484 Def0170
+S A$player$475 Def0161
+S A$player$466 Def0157
+S A$player$448 Def013C
+S A$player$439 Def0132
+S A$player$394 Def00F4
+S A$player$385 Def00EA
+S A$player$376 Def00DC
+S A$player$358 Def00C2
+S A$player$295 Def007D
+S A$player$277 Def007B
+S A$player$268 Def006C
+S A$player$196 Def003C
+S C$player.c$64$1$82 Def002B
+S C$player.c$46$1$82 Def0029
+S C$player.c$29$1$81 Def0008
+S A$player$935 Def0308
+S A$player$917 Def0304
+S A$player$863 Def02D9
+S A$player$845 Def02CB
+S A$player$764 Def0290
+S A$player$755 Def0286
+S A$player$683 Def024B
+S A$player$656 Def023A
+S A$player$647 Def0230
+S A$player$593 Def01EB
+S A$player$584 Def01DD
+S A$player$575 Def01D5
+S A$player$566 Def01C7
+S A$player$557 Def01B8
+S A$player$548 Def01AE
+S A$player$539 Def01A1
+S A$player$494 Def0178
+S A$player$485 Def0171
+S A$player$476 Def0165
+S A$player$467 Def0158
+S A$player$449 Def013F
+S A$player$395 Def00F7
+S A$player$386 Def00EB
+S A$player$377 Def00DF
+S A$player$368 Def00D1
+S A$player$359 Def00C6
+S A$player$296 Def0080
+S A$player$269 Def006D
+S A$player$197 Def003D
+S _CheckShootPlayer Def019E
+S A$player$936 Def030C
+S A$player$864 Def02DC
+S A$player$828 Def02B8
+S A$player$783 Def0296
+S A$player$765 Def0293
+S A$player$756 Def0287
+S A$player$693 Def0259
+S A$player$684 Def024C
+S A$player$657 Def023B
+S A$player$639 Def0225
+S A$player$594 Def01EC
+S A$player$585 Def01E0
+S A$player$567 Def01C8
+S A$player$558 Def01BC
+S A$player$549 Def01AF
+S A$player$495 Def0179
+S A$player$486 Def0172
+S A$player$477 Def0168
+S A$player$468 Def0159
+S A$player$396 Def00F8
+S A$player$387 Def00EC
+S A$player$378 Def00E0
+S A$player$369 Def00D4
+S A$player$297 Def0081
+S A$player$198 Def003F
+S A$player$189 Def0034
+S A$player$991 Def0335
+S A$player$973 Def0324
+S A$player$946 Def0317
+S A$player$883 Def02E5
+S A$player$865 Def02DD
+S A$player$829 Def02BB
+S A$player$784 Def0299
+S A$player$757 Def028A
+S A$player$739 Def0275
+S A$player$694 Def025C
+S A$player$685 Def024D
+S A$player$667 Def0245
+S A$player$658 Def023E
+S A$player$595 Def01ED
+S A$player$586 Def01E2
+S A$player$568 Def01CB
+S A$player$559 Def01BF
+S A$player$496 Def017A
+S A$player$487 Def0173
+S A$player$469 Def015C
+S A$player$397 Def00FC
+S A$player$388 Def00EF
+S A$player$379 Def00E1
+S A$player$298 Def0083
+S A$player$199 Def0040
+S C$player.c$90$1$86 Def002E
+S C$player.c$67$1$82 Def002C
+S A$player$992 Def0338
+S A$player$983 Def032D
+S A$player$974 Def0327
+S A$player$947 Def031A
+S A$player$875 Def02E2
+S A$player$866 Def02DE
+S A$player$839 Def02C6
+S A$player$794 Def02A3
+S A$player$785 Def029B
+S A$player$758 Def028B
+S A$player$749 Def027E
+S A$player$695 Def025D
+S A$player$686 Def024F
+S A$player$659 Def023F
+S A$player$596 Def01F0
+S A$player$587 Def01E3
+S A$player$569 Def01CD
+S A$player$497 Def017E
+S A$player$488 Def0174
+S A$player$398 Def00FE
+S A$player$299 Def0086
+S C$player.c$73$1$86 Def002C
+S _RemovePlayer Def0000
+S A$player$993 Def033C
+S A$player$984 Def032F
+S A$player$858 Def02D5
+S A$player$849 Def02CD
+S A$player$795 Def02A6
+S A$player$759 Def028E
+S A$player$696 Def025E
+S A$player$687 Def0250
+S A$player$597 Def01F1
+S A$player$588 Def01E4
+S A$player$579 Def01D8
+S A$player$498 Def0181
+S A$player$399 Def00FF
+S XG$UpdatePlayer$0$0 Def034A
+S A$player$994 Def033F
+S A$player$985 Def0330
+S A$player$859 Def02D7
+S A$player$796 Def02A7
+S A$player$688 Def0254
+S A$player$589 Def01E5
+S A$player$499 Def0182
+S C$player.c$96$2$91 Def0052
+S C$player.c$93$1$86 Def002F
+S A$player$995 Def0341
+S A$player$986 Def0331
+S A$player$896 Def02E8
+S A$player$689 Def0257
+S C$player.c$97$2$91 Def0034
+S A$player$996 Def0342
+S A$player$987 Def0334
+S A$player$978 Def0328
+S A$player$897 Def02EA
+S A$player$789 Def029C
+S C$player.c$98$2$91 Def0053
+S A$player$997 Def0343
+S A$player$979 Def032B
+S A$player$898 Def02EE
+S _UpdatePlayerIndicators Def002F
+A _DATA size 0 flags 0 addr 0
+A _INITIALIZED size 0 flags 0 addr 0
+A _DABS size 0 flags 8 addr 0
+A _HOME size 0 flags 0 addr 0
+A _GSINIT size 0 flags 0 addr 0
+A _GSFINAL size 0 flags 0 addr 0
+A _INITIALIZER size 0 flags 0 addr 0
+A _CABS size 0 flags 8 addr 0
+T 00 00
+R 00 00 00 00
+T 00 00 21 00 00 36 04 CD 00 00 3E 01 F5 33 3A
+R 00 00 00 00 02 03 18 00 02 08 10 00
+T 0D 00 00 00 F5 33 3A 00 00 F5 33 CD 00 00 F1 33
+R 00 00 00 00 02 02 15 00 02 07 14 00 02 0C 1C 00
+T 1B 00 CD 00 00 CD 00 00 AF F5 33 CD 00 00 33 C9
+R 00 00 00 00 02 03 1D 00 02 06 06 00 02 0C 1B 00
+T 29 00
+R 00 00 00 00
+T 29 00 2E 00 C9
+R 00 00 00 00
+T 2C 00
+R 00 00 00 00
+T 2C 00 2E 00 C9
+R 00 00 00 00
+T 2F 00
+R 00 00 00 00
+T 2F 00 0E 00
+R 00 00 00 00
+T 31 00
+R 00 00 00 00
+T 31 00 21 00 00 79 BE D0 07 07 07 E6 F8 47 3E F0
+R 00 00 00 00 02 03 19 00
+T 3F 00 90 47 C5 21 0E 01 E5 3E 04 F5 33 C5 33 CD
+R 00 00 00 00
+T 4D 00 00 00 F1 F1 C1 0C 18 DC
+R 00 00 00 00 02 02 21 00
+T 55 00
+R 00 00 00 00
+T 55 00 21 00 00 36 80 21 00 00 36 C8 21 00 00 36
+R 00 00 00 00 02 03 14 00 02 08 15 00 02 0D 18 00
+T 63 00 01 21 00 00 36 00 C9
+R 00 00 00 00 02 04 17 00
+T 6A 00
+R 00 00 00 00
+T 6A 00 3E 0E F5 33 21 00 01 E5 21 00 00 E5 CD
+R 00 00 00 00 02 0B 1E 00
+T 77 00 00 00 F1 F1 33 C9
+R 00 00 00 00 02 02 0D 00
+T 7D 00
+R 00 00 00 00
+T 7D 00 21 00 00 4E 06 00 21 00 01 09 E5 3A 00 00
+R 00 00 00 00 02 03 0C 00 02 0E 15 00
+T 8B 00 F5 33 3A 00 00 F5 33 CD 00 00 F1 F1 21
+R 00 00 00 00 02 05 14 00 02 0A 1A 00
+T 98 00 00 00 4E 06 00 21 0C 01 09 4D 44 3A 00 00
+R 00 00 00 00 02 02 04 00 02 0E 15 00
+T A6 00 C6 10 5F 21 00 00 56 14 14 14 14 C5 7B F5
+R 00 00 00 00 02 06 14 00
+T B4 00 33 D5 33 CD 00 00 F1 F1 C9
+R 00 00 00 00 02 06 21 00
+T BD 00
+R 00 00 00 00
+T BD 00 CD 00 00 44 7D FD 21 00 00 FD A6 00 4F 78
+R 00 00 00 00 02 03 22 00 02 09 08 00
+T CB 00 FD A6 01 B1 28 32 21 00 00 36 04 21 00 00
+R 00 00 00 00 02 09 0C 00 02 0E 23 00
+T D9 00 4E 06 00 21 0F 00 09 4D 44 21 00 00 5E 16
+R 00 00 00 00 02 0C 14 00
+T E7 00 00 79 93 78 9A E2 F1 00 EE 80
+R 00 00 00 00 00 08 00 00
+T F1 00
+R 00 00 00 00
+T F1 00 F2 03 01 21 00 00 D5 FD 21 00 00 FD E5 D1
+R 00 00 00 00 00 03 00 00 02 06 23 00 02 0B 14 00
+T FF 00 1A 96 12 D1
+R 00 00 00 00
+T 03 01
+R 00 00 00 00
+T 03 01 CD 00 00 44 7D FD 21 00 00 FD A6 00 4F 78
+R 00 00 00 00 02 03 0A 00 02 09 08 00
+T 11 01 FD A6 01 B1 28 34 21 00 00 36 08 21 00 00
+R 00 00 00 00 02 09 0C 00 02 0E 23 00
+T 1F 01 4E 06 00 3E E9 91 4F 3E 00 98 47 21 00 00
+R 00 00 00 00 02 0E 14 00
+T 2D 01 5E 16 00 7B 91 7A 98 E2 39 01 EE 80
+R 00 00 00 00 00 0A 00 00
+T 39 01
+R 00 00 00 00
+T 39 01 F2 4B 01 21 00 00 D5 FD 21 00 00 FD E5 D1
+R 00 00 00 00 00 03 00 00 02 06 23 00 02 0B 14 00
+T 47 01 1A 86 12 D1
+R 00 00 00 00
+T 4B 01
+R 00 00 00 00
+T 4B 01 CD 00 00 44 7D FD 21 00 00 FD A6 00 4F 78
+R 00 00 00 00 02 03 1F 00 02 09 08 00
+T 59 01 FD A6 01 B1 28 16 3E 18 FD 21 00 00 FD 96
+R 00 00 00 00 02 0C 15 00
+T 67 01 00 30 0B 21 00 00 D5 FD E5 D1 1A 96 12 D1
+R 00 00 00 00 02 06 23 00
+T 75 01
+R 00 00 00 00
+T 75 01 CD 00 00 44 7D FD 21 00 00 FD A6 00 4F 78
+R 00 00 00 00 02 03 07 00 02 09 08 00
+T 83 01 FD A6 01 B1 C8 FD 21 00 00 FD 7E 00 D6 AC
+R 00 00 00 00 02 09 15 00
+T 91 01 D0 21 00 00 D5 FD E5 D1 1A 86 12 D1 C9
+R 00 00 00 00 02 04 23 00
+T 9E 01
+R 00 00 00 00
+T 9E 01 21 00 00 34 CD 00 00 44 7D FD 21 00 00 FD
+R 00 00 00 00 02 03 0E 00 02 07 03 00 02 0D 08 00
+T AC 01 A6 00 4F 78 FD A6 01 B1 28 52 3E 06 FD 21
+R 00 00 00 00
+T BA 01 00 00 FD 96 00 30 47 21 00 00 4E 06 00 0B
+R 00 00 00 00 02 02 0E 00 02 0A 12 00
+T C8 01 3A 00 00 16 00 91 7A 98 E2 D5 01 EE 80
+R 00 00 00 00 02 03 0F 00 00 0B 00 00
+T D5 01
+R 00 00 00 00
+T D5 01 F2 08 02 21 00 00 36 00 3A 00 00 C6 F8 47
+R 00 00 00 00 00 03 00 00 02 06 0E 00 02 0B 14 00
+T E3 01 AF F5 33 3A 00 00 F5 33 C5 33 CD 00 00 F1
+R 00 00 00 00 02 06 15 00 02 0D 09 00
+T F1 01 33 3A 00 00 C6 08 47 3E 03 F5 33 3A 00 00
+R 00 00 00 00 02 04 14 00 02 0E 15 00
+T FF 01 F5 33 C5 33 CD 00 00 F1 33
+R 00 00 00 00 02 07 09 00
+T 08 02
+R 00 00 00 00
+T 08 02 CD 00 00 44 7D FD 21 00 00 FD A6 00 4F 78
+R 00 00 00 00 02 03 01 00 02 09 08 00
+T 16 02 FD A6 01 B1 C8 3E 03 FD 21 00 00 FD 96 00
+R 00 00 00 00 02 0B 0E 00
+T 24 02 D0 21 00 00 3A 00 00 96 D0 21 00 00 36 00
+R 00 00 00 00 02 04 12 00 02 07 0F 00 02 0C 0E 00
+T 32 02 3E 01 F5 33 3A 00 00 F5 33 3A 00 00 F5 33
+R 00 00 00 00 02 07 15 00 02 0C 14 00
+T 40 02 CD 00 00 F1 33 C9
+R 00 00 00 00 02 03 09 00
+T 46 02
+R 00 00 00 00
+T 46 02 3A 00 00 07 07 07 07 E6 0F 4F FD 21 00 00
+R 00 00 00 00 02 03 17 00 02 0E 15 00
+T 54 02 FD 96 00 30 09 21 00 00 7E 91 77 CD 7D 00
+R 00 00 00 00 02 08 15 00 00 0E 00 00
+T 62 02
+R 00 00 00 00
+T 62 02 3A 00 00 D6 A0 C0 21 00 00 34 21 00 00 36
+R 00 00 00 00 02 03 17 00 02 09 02 00 02 0D 13 00
+T 70 02 01 C9
+R 00 00 00 00
+T 72 02
+R 00 00 00 00
+T 72 02 CD BD 00 CD 7D 00 3A 00 00 D6 50 C0 21
+R 00 00 00 00 00 03 00 00 00 06 00 00 02 09 17 00
+T 7F 02 00 00 36 06 21 09 00 E5 21 00 00 E5 CD
+R 00 00 00 00 02 02 18 00 02 0B 0B 00
+T 8C 02 00 00 F1 F1 21 00 00 36 00 C9
+R 00 00 00 00 02 02 20 00 02 07 17 00
+T 96 02
+R 00 00 00 00
+T 96 02 3A 00 00 D6 28 D8 FD 21 00 00 FD 35 00 FD
+R 00 00 00 00 02 03 17 00 02 0A 19 00
+T A4 02 7E 00 B7 C2 55 00 21 00 00 36 00 21 00 00
+R 00 00 00 00 00 06 00 00 02 09 02 00 02 0E 13 00
+T B2 02 36 01 C9 C3 55 00
+R 00 00 00 00 00 06 00 00
+T B8 02
+R 00 00 00 00
+T B8 02 21 06 00 E5 2A 00 00 E5 CD 00 00 F1 F1 7D
+R 00 00 00 00 02 07 25 00 02 0B 24 00
+T C6 02 B7 28 16 FE 02 20 08 CD 29 00 7D B7 28 0B
+R 00 00 00 00 00 0A 00 00
+T D4 02 C9
+R 00 00 00 00
+T D5 02
+R 00 00 00 00
+T D5 02 D6 04 20 06 CD 2C 00 7D B7 C0
+R 00 00 00 00 00 07 00 00
+T DF 02
+R 00 00 00 00
+T DF 02 CD 9E 01 CD BD 00 C3 7D 00
+R 00 00 00 00 00 03 00 00 00 06 00 00 00 09 00 00
+T E8 02
+R 00 00 00 00
+T E8 02 3E 40 FD 21 00 00 FD 96 00 30 05 21 00 00
+R 00 00 00 00 02 06 17 00 02 0E 18 00
+T F6 02 36 03
+R 00 00 00 00
+T F8 02
+R 00 00 00 00
+T F8 02 CD 9E 01 CD BD 00 3A 00 00 CB 3F 0F D8 C3
+R 00 00 00 00 00 03 00 00 00 06 00 00 02 09 17 00
+T 06 03 7D 00
+R 00 00 00 00 00 02 00 00
+T 08 03
+R 00 00 00 00
+T 08 03 FD 21 00 00 FD 35 00 FD 7E 00 D6 96 D2
+R 00 00 00 00 02 04 15 00
+T 15 03 7D 00 21 00 00 36 02 21 00 00 36 00 C3
+R 00 00 00 00 00 02 00 00 02 05 18 00 02 0A 17 00
+T 22 03 7D 00
+R 00 00 00 00 00 02 00 00
+T 24 03
+R 00 00 00 00
+T 24 03 21 00 00 34 21 00 00 36 00 3E 0F F5 33 CD
+R 00 00 00 00 02 03 17 00 02 07 0C 00
+T 32 03 00 00 33 01 00 00 FD 21 00 00 FD 6E 00 26
+R 00 00 00 00 02 02 00 00 02 06 05 00 02 0A 18 00
+T 40 03 00 29 09 4E 23 66 7C B1 C8 69 C3 00 00
+R 00 00 00 00 02 0D 16 00

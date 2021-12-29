@@ -1,5 +1,5 @@
 XL2
-H A areas 6 global symbols
+H A areas B global symbols
 M bank12
 O -mz80
 S .__.ABS. Def0000
@@ -12,8 +12,13 @@ A _GSINIT size 0 flags 0 addr 0
 A _GSFINAL size 0 flags 0 addr 0
 A _BANK12 size 3F51 flags 0 addr 0
 S _flight_psg Def2616
+S G$introstage3tilemap_bin$0$0 Def399E
 S _introstage3tilemap_bin Def399E
+S G$escape_psg$0$0 Def1ABC
+S G$introstage3tiles_psgcompr$0$0 Def3C9E
+S G$boss_psg$0$0 Def0000
 S _escape_psg Def1ABC
+S G$flight_psg$0$0 Def2616
 S _introstage3tiles_psgcompr Def3C9E
 S _boss_psg Def0000
 A _INITIALIZER size 0 flags 0 addr 0

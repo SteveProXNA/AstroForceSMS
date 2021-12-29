@@ -1,0 +1,775 @@
+;!FILE stage4endboss.asm
+XL2
+H 9 areas 225 global symbols
+M stage4endboss
+O -mz80
+S _myRand Ref0000
+S __moduchar Ref0000
+S _InitEnemyshootLaser Ref0000
+S .__.ABS. Def0000
+S _TestEnemyShootComplex Ref0000
+S _DrawSpriteArray Ref0000
+S _DoEnemyWait Ref0000
+S ___sdcc_call_hl Ref0000
+S _updatestage4endbossfunctions Ref0000
+S _InitEnemy Ref0000
+S _DoSkullSinusMovement Ref0000
+A _CODE size 2A8 flags 0 addr 0
+S G$UpdateStage4EndBoss4$0$0 Def013C
+S G$UpdateStage4EndBoss5$0$0 Def01DD
+S G$UpdateStage4EndBoss6$0$0 Def01F7
+S G$UpdateStage4EndBoss7$0$0 Def023C
+S C$stage4endboss.c$100$1$74 Def023B
+S C$stage4endboss.c$102$1$74 Def023C
+S _UpdateStage4EndBoss1 Def003F
+S _UpdateStage4EndBoss2 Def00E5
+S _UpdateStage4EndBoss3 Def00F7
+S G$UpdateStage4EndBoss$0$0 Def024E
+S _UpdateStage4EndBoss4 Def013C
+S C$stage4endboss.c$110$1$79 Def0256
+S _UpdateStage4EndBoss5 Def01DD
+S C$stage4endboss.c$104$1$77 Def023C
+S _UpdateStage4EndBoss6 Def01F7
+S C$stage4endboss.c$105$1$77 Def024D
+S _UpdateStage4EndBoss7 Def023C
+S C$stage4endboss.c$114$1$79 Def028A
+S C$stage4endboss.c$107$1$77 Def024E
+S A$stage4endboss$300 Def00F1
+S A$stage4endboss$210 Def0098
+S A$stage4endboss$201 Def008A
+S A$stage4endboss$120 Def0036
+S C$stage4endboss.c$115$1$79 Def029E
+S A$stage4endboss$400 Def0142
+S A$stage4endboss$301 Def00F4
+S A$stage4endboss$220 Def00A6
+S A$stage4endboss$211 Def009A
+S A$stage4endboss$202 Def008B
+S A$stage4endboss$121 Def0037
+S A$stage4endboss$112 Def002F
+S A$stage4endboss$103 Def0026
+S A$stage4endboss$410 Def0150
+S A$stage4endboss$401 Def0144
+S A$stage4endboss$302 Def00F5
+S A$stage4endboss$221 Def00A7
+S A$stage4endboss$212 Def009C
+S A$stage4endboss$203 Def008C
+S A$stage4endboss$131 Def003E
+S A$stage4endboss$122 Def0039
+S A$stage4endboss$113 Def0030
+S A$stage4endboss$104 Def0028
+S A$stage4endboss$600 Def0202
+S A$stage4endboss$510 Def01C3
+S A$stage4endboss$501 Def01B5
+S A$stage4endboss$420 Def015B
+S A$stage4endboss$411 Def0152
+S A$stage4endboss$330 Def010E
+S A$stage4endboss$240 Def00BE
+S A$stage4endboss$222 Def00AA
+S A$stage4endboss$213 Def009D
+S A$stage4endboss$204 Def008D
+S A$stage4endboss$150 Def004C
+S A$stage4endboss$141 Def003F
+S A$stage4endboss$123 Def003A
+S A$stage4endboss$114 Def0032
+S A$stage4endboss$105 Def002A
+S C$stage4endboss.c$118$1$79 Def02A3
+S XG$UpdateStage4EndBoss1$0$0 Def00E4
+S C$stage4endboss.c$21$1$61 Def0049
+S A$stage4endboss$601 Def0205
+S A$stage4endboss$520 Def01C9
+S A$stage4endboss$511 Def01C4
+S A$stage4endboss$502 Def01B6
+S A$stage4endboss$430 Def0164
+S A$stage4endboss$421 Def015C
+S A$stage4endboss$412 Def0154
+S A$stage4endboss$340 Def0115
+S A$stage4endboss$250 Def00C6
+S A$stage4endboss$241 Def00BF
+S A$stage4endboss$223 Def00AB
+S A$stage4endboss$205 Def008E
+S A$stage4endboss$151 Def004F
+S A$stage4endboss$142 Def0041
+S A$stage4endboss$115 Def0033
+S A$stage4endboss$106 Def002C
+S C$stage4endboss.c$119$1$79 Def02A7
+S XG$UpdateStage4EndBoss2$0$0 Def00F6
+S C$stage4endboss.c$31$1$61 Def00C6
+S A$stage4endboss$710 Def0259
+S A$stage4endboss$620 Def021A
+S A$stage4endboss$611 Def0210
+S A$stage4endboss$602 Def0208
+S A$stage4endboss$530 Def01D2
+S A$stage4endboss$521 Def01CB
+S A$stage4endboss$512 Def01C5
+S A$stage4endboss$503 Def01B9
+S A$stage4endboss$440 Def0171
+S A$stage4endboss$431 Def0165
+S A$stage4endboss$341 Def0116
+S A$stage4endboss$323 Def00FF
+S A$stage4endboss$260 Def00D3
+S A$stage4endboss$251 Def00C9
+S A$stage4endboss$242 Def00C2
+S A$stage4endboss$224 Def00AC
+S A$stage4endboss$215 Def009F
+S A$stage4endboss$206 Def0090
+S A$stage4endboss$170 Def0065
+S A$stage4endboss$161 Def005B
+S A$stage4endboss$152 Def0050
+S A$stage4endboss$143 Def0045
+S A$stage4endboss$125 Def003B
+S A$stage4endboss$107 Def002D
+S XG$UpdateStage4EndBoss3$0$0 Def013B
+S A$stage4endboss$720 Def0265
+S A$stage4endboss$711 Def025C
+S A$stage4endboss$630 Def0225
+S A$stage4endboss$621 Def021C
+S A$stage4endboss$612 Def0211
+S A$stage4endboss$603 Def0209
+S A$stage4endboss$540 Def01DA
+S A$stage4endboss$531 Def01D3
+S A$stage4endboss$504 Def01BA
+S A$stage4endboss$450 Def017A
+S A$stage4endboss$441 Def0172
+S A$stage4endboss$432 Def0166
+S A$stage4endboss$405 Def0145
+S A$stage4endboss$360 Def0127
+S A$stage4endboss$351 Def0122
+S A$stage4endboss$342 Def0117
+S A$stage4endboss$324 Def0102
+S A$stage4endboss$270 Def00DE
+S A$stage4endboss$261 Def00D4
+S A$stage4endboss$252 Def00CC
+S A$stage4endboss$243 Def00C3
+S A$stage4endboss$234 Def00B5
+S A$stage4endboss$225 Def00AD
+S A$stage4endboss$207 Def0093
+S A$stage4endboss$180 Def0070
+S A$stage4endboss$171 Def0066
+S A$stage4endboss$153 Def0051
+S A$stage4endboss$144 Def0047
+S A$stage4endboss$126 Def003C
+S XG$UpdateStage4EndBoss4$0$0 Def01DC
+S C$stage4endboss.c$24$1$61 Def006D
+S _UpdateStage4EndBoss Def024E
+S A$stage4endboss$730 Def0276
+S A$stage4endboss$721 Def0266
+S A$stage4endboss$712 Def025D
+S A$stage4endboss$703 Def024E
+S A$stage4endboss$640 Def022B
+S A$stage4endboss$622 Def021D
+S A$stage4endboss$613 Def0212
+S A$stage4endboss$604 Def020A
+S A$stage4endboss$505 Def01BC
+S A$stage4endboss$460 Def0189
+S A$stage4endboss$451 Def017B
+S A$stage4endboss$442 Def0174
+S A$stage4endboss$433 Def0168
+S A$stage4endboss$406 Def0148
+S A$stage4endboss$370 Def0130
+S A$stage4endboss$361 Def0128
+S A$stage4endboss$352 Def0123
+S A$stage4endboss$343 Def0118
+S A$stage4endboss$325 Def0105
+S A$stage4endboss$307 Def00F6
+S A$stage4endboss$262 Def00D5
+S A$stage4endboss$253 Def00CD
+S A$stage4endboss$244 Def00C4
+S A$stage4endboss$235 Def00B6
+S A$stage4endboss$226 Def00AE
+S A$stage4endboss$217 Def00A1
+S A$stage4endboss$208 Def0094
+S A$stage4endboss$190 Def007F
+S A$stage4endboss$181 Def0071
+S A$stage4endboss$172 Def0069
+S A$stage4endboss$163 Def005D
+S A$stage4endboss$154 Def0052
+S A$stage4endboss$145 Def0048
+S XG$UpdateStage4EndBoss5$0$0 Def01F6
+S C$stage4endboss.c$40$1$64 Def00E5
+S C$stage4endboss.c$25$1$61 Def008A
+S A$stage4endboss$740 Def0287
+S A$stage4endboss$731 Def0279
+S A$stage4endboss$722 Def0267
+S A$stage4endboss$713 Def025E
+S A$stage4endboss$704 Def0250
+S A$stage4endboss$650 Def0234
+S A$stage4endboss$641 Def022C
+S A$stage4endboss$623 Def021E
+S A$stage4endboss$614 Def0213
+S A$stage4endboss$605 Def020C
+S A$stage4endboss$560 Def01DF
+S A$stage4endboss$506 Def01BD
+S A$stage4endboss$470 Def0193
+S A$stage4endboss$461 Def018A
+S A$stage4endboss$452 Def017C
+S A$stage4endboss$434 Def0169
+S A$stage4endboss$425 Def015D
+S A$stage4endboss$407 Def014B
+S A$stage4endboss$380 Def0137
+S A$stage4endboss$371 Def0131
+S A$stage4endboss$362 Def0129
+S A$stage4endboss$353 Def0124
+S A$stage4endboss$344 Def011A
+S A$stage4endboss$335 Def0110
+S A$stage4endboss$326 Def0108
+S A$stage4endboss$317 Def00F7
+S A$stage4endboss$272 Def00E0
+S A$stage4endboss$263 Def00D6
+S A$stage4endboss$254 Def00CF
+S A$stage4endboss$245 Def00C5
+S A$stage4endboss$236 Def00B9
+S A$stage4endboss$227 Def00B1
+S A$stage4endboss$218 Def00A4
+S A$stage4endboss$209 Def0097
+S A$stage4endboss$191 Def0080
+S A$stage4endboss$182 Def0074
+S A$stage4endboss$173 Def006A
+S A$stage4endboss$164 Def005E
+S A$stage4endboss$155 Def0053
+S A$stage4endboss$119 Def0034
+S XG$UpdateStage4EndBoss6$0$0 Def023B
+S C$stage4endboss.c$41$1$64 Def00F6
+S C$stage4endboss.c$33$2$62 Def00D1
+S C$stage4endboss.c$10$2$58 Def0026
+S G$DoStage4EndBossSinusMovementVert$0$0 Def0000
+S A$stage4endboss$750 Def0292
+S A$stage4endboss$741 Def0288
+S A$stage4endboss$732 Def027A
+S A$stage4endboss$723 Def0269
+S A$stage4endboss$714 Def025F
+S A$stage4endboss$705 Def0254
+S A$stage4endboss$651 Def0235
+S A$stage4endboss$642 Def022E
+S A$stage4endboss$624 Def021F
+S A$stage4endboss$615 Def0214
+S A$stage4endboss$606 Def020E
+S A$stage4endboss$561 Def01E0
+S A$stage4endboss$525 Def01CD
+S A$stage4endboss$507 Def01BE
+S A$stage4endboss$480 Def01A0
+S A$stage4endboss$471 Def0194
+S A$stage4endboss$462 Def018B
+S A$stage4endboss$453 Def017F
+S A$stage4endboss$435 Def016A
+S A$stage4endboss$426 Def0160
+S A$stage4endboss$417 Def0156
+S A$stage4endboss$408 Def014E
+S A$stage4endboss$381 Def0138
+S A$stage4endboss$372 Def0132
+S A$stage4endboss$363 Def012A
+S A$stage4endboss$354 Def0125
+S A$stage4endboss$345 Def011C
+S A$stage4endboss$336 Def0111
+S A$stage4endboss$327 Def0109
+S A$stage4endboss$318 Def00F9
+S A$stage4endboss$291 Def00E5
+S A$stage4endboss$273 Def00E2
+S A$stage4endboss$264 Def00D7
+S A$stage4endboss$237 Def00BA
+S A$stage4endboss$228 Def00B2
+S A$stage4endboss$219 Def00A5
+S A$stage4endboss$192 Def0083
+S A$stage4endboss$183 Def0077
+S A$stage4endboss$174 Def006B
+S A$stage4endboss$165 Def005F
+S A$stage4endboss$156 Def0054
+S XG$UpdateStage4EndBoss7$0$0 Def024D
+S C$stage4endboss.c$36$1$61 Def00E4
+S C$stage4endboss.c$34$2$62 Def00D8
+S A$stage4endboss$751 Def0293
+S A$stage4endboss$742 Def0289
+S A$stage4endboss$733 Def027B
+S A$stage4endboss$724 Def026B
+S A$stage4endboss$715 Def0260
+S A$stage4endboss$652 Def0236
+S A$stage4endboss$625 Def0220
+S A$stage4endboss$616 Def0215
+S A$stage4endboss$562 Def01E1
+S A$stage4endboss$535 Def01D4
+S A$stage4endboss$526 Def01CE
+S A$stage4endboss$517 Def01C6
+S A$stage4endboss$508 Def01BF
+S A$stage4endboss$490 Def01AB
+S A$stage4endboss$481 Def01A1
+S A$stage4endboss$472 Def0195
+S A$stage4endboss$463 Def018C
+S A$stage4endboss$454 Def0180
+S A$stage4endboss$436 Def016B
+S A$stage4endboss$427 Def0161
+S A$stage4endboss$418 Def0157
+S A$stage4endboss$409 Def014F
+S A$stage4endboss$373 Def0133
+S A$stage4endboss$364 Def012B
+S A$stage4endboss$346 Def011D
+S A$stage4endboss$337 Def0112
+S A$stage4endboss$328 Def010A
+S A$stage4endboss$319 Def00FD
+S A$stage4endboss$292 Def00E7
+S A$stage4endboss$238 Def00BC
+S A$stage4endboss$229 Def00B3
+S A$stage4endboss$193 Def0084
+S A$stage4endboss$184 Def0078
+S A$stage4endboss$175 Def006C
+S A$stage4endboss$166 Def0060
+S A$stage4endboss$157 Def0056
+S C$stage4endboss.c$50$1$66 Def0126
+S C$stage4endboss.c$43$1$64 Def00F7
+S C$stage4endboss.c$28$1$61 Def00B5
+S A$stage4endboss$770 Def02A5
+S A$stage4endboss$752 Def0296
+S A$stage4endboss$734 Def027C
+S A$stage4endboss$725 Def026F
+S A$stage4endboss$716 Def0261
+S A$stage4endboss$680 Def0240
+S A$stage4endboss$635 Def0226
+S A$stage4endboss$617 Def0216
+S A$stage4endboss$572 Def01EC
+S A$stage4endboss$563 Def01E4
+S A$stage4endboss$545 Def01DC
+S A$stage4endboss$536 Def01D5
+S A$stage4endboss$527 Def01CF
+S A$stage4endboss$518 Def01C7
+S A$stage4endboss$509 Def01C2
+S A$stage4endboss$491 Def01AC
+S A$stage4endboss$482 Def01A2
+S A$stage4endboss$473 Def0196
+S A$stage4endboss$464 Def018D
+S A$stage4endboss$455 Def0182
+S A$stage4endboss$446 Def0176
+S A$stage4endboss$437 Def016C
+S A$stage4endboss$428 Def0162
+S A$stage4endboss$419 Def0158
+S A$stage4endboss$383 Def0139
+S A$stage4endboss$374 Def0134
+S A$stage4endboss$365 Def012C
+S A$stage4endboss$347 Def011E
+S A$stage4endboss$338 Def0113
+S A$stage4endboss$329 Def010C
+S A$stage4endboss$293 Def00E8
+S A$stage4endboss$239 Def00BD
+S A$stage4endboss$194 Def0085
+S A$stage4endboss$185 Def0079
+S A$stage4endboss$167 Def0061
+S A$stage4endboss$158 Def0058
+S A$stage4endboss$149 Def0049
+S C$stage4endboss.c$38$1$61 Def00E5
+S A$stage4endboss$762 Def029E
+S A$stage4endboss$753 Def0297
+S A$stage4endboss$735 Def027D
+S A$stage4endboss$717 Def0262
+S A$stage4endboss$681 Def0243
+S A$stage4endboss$636 Def0227
+S A$stage4endboss$627 Def0222
+S A$stage4endboss$618 Def0217
+S A$stage4endboss$573 Def01EE
+S A$stage4endboss$564 Def01E5
+S A$stage4endboss$537 Def01D6
+S A$stage4endboss$528 Def01D0
+S A$stage4endboss$519 Def01C8
+S A$stage4endboss$492 Def01AD
+S A$stage4endboss$483 Def01A3
+S A$stage4endboss$474 Def0198
+S A$stage4endboss$465 Def018E
+S A$stage4endboss$456 Def0183
+S A$stage4endboss$447 Def0177
+S A$stage4endboss$438 Def016F
+S A$stage4endboss$429 Def0163
+S A$stage4endboss$375 Def0135
+S A$stage4endboss$366 Def012E
+S A$stage4endboss$348 Def011F
+S A$stage4endboss$339 Def0114
+S A$stage4endboss$294 Def00E9
+S A$stage4endboss$258 Def00D1
+S A$stage4endboss$195 Def0086
+S A$stage4endboss$186 Def007A
+S A$stage4endboss$168 Def0063
+S A$stage4endboss$159 Def0059
+S A$stage4endboss$763 Def029F
+S A$stage4endboss$754 Def0298
+S A$stage4endboss$736 Def027E
+S A$stage4endboss$727 Def0271
+S A$stage4endboss$718 Def0263
+S A$stage4endboss$709 Def0256
+S A$stage4endboss$682 Def0244
+S A$stage4endboss$664 Def023B
+S A$stage4endboss$646 Def0230
+S A$stage4endboss$637 Def0228
+S A$stage4endboss$628 Def0223
+S A$stage4endboss$619 Def0218
+S A$stage4endboss$583 Def01F6
+S A$stage4endboss$574 Def01EF
+S A$stage4endboss$565 Def01E6
+S A$stage4endboss$529 Def01D1
+S A$stage4endboss$493 Def01B0
+S A$stage4endboss$484 Def01A4
+S A$stage4endboss$475 Def019A
+S A$stage4endboss$466 Def018F
+S A$stage4endboss$457 Def0184
+S A$stage4endboss$448 Def0178
+S A$stage4endboss$439 Def0170
+S A$stage4endboss$376 Def0136
+S A$stage4endboss$349 Def0120
+S A$stage4endboss$295 Def00EC
+S A$stage4endboss$268 Def00D8
+S A$stage4endboss$259 Def00D2
+S A$stage4endboss$196 Def0087
+S A$stage4endboss$187 Def007C
+S A$stage4endboss$169 Def0064
+S C$stage4endboss.c$83$1$72 Def01DD
+S C$stage4endboss.c$75$2$70 Def01CD
+S C$stage4endboss.c$17$1$57 Def003E
+S C$stage4endboss.c$14$2$59 Def002F
+S A$stage4endboss$764 Def02A2
+S A$stage4endboss$755 Def0299
+S A$stage4endboss$746 Def028A
+S A$stage4endboss$737 Def027F
+S A$stage4endboss$719 Def0264
+S A$stage4endboss$683 Def0245
+S A$stage4endboss$656 Def0237
+S A$stage4endboss$647 Def0231
+S A$stage4endboss$638 Def0229
+S A$stage4endboss$629 Def0224
+S A$stage4endboss$593 Def01F7
+S A$stage4endboss$575 Def01F0
+S A$stage4endboss$566 Def01E8
+S A$stage4endboss$539 Def01D8
+S A$stage4endboss$494 Def01B1
+S A$stage4endboss$485 Def01A6
+S A$stage4endboss$476 Def019C
+S A$stage4endboss$467 Def0190
+S A$stage4endboss$458 Def0185
+S A$stage4endboss$449 Def0179
+S A$stage4endboss$359 Def0126
+S A$stage4endboss$296 Def00ED
+S A$stage4endboss$278 Def00E4
+S A$stage4endboss$269 Def00DB
+S A$stage4endboss$197 Def0088
+S A$stage4endboss$188 Def007D
+S A$stage4endboss$179 Def006D
+S C$stage4endboss.c$76$2$70 Def01D4
+S C$stage4endboss.c$60$1$69 Def0145
+S C$stage4endboss.c$52$2$67 Def0130
+S C$stage4endboss.c$15$2$59 Def0034
+S A$stage4endboss$756 Def029A
+S A$stage4endboss$747 Def028B
+S A$stage4endboss$738 Def0281
+S A$stage4endboss$729 Def0275
+S A$stage4endboss$693 Def024D
+S A$stage4endboss$684 Def0246
+S A$stage4endboss$657 Def0238
+S A$stage4endboss$648 Def0232
+S A$stage4endboss$639 Def022A
+S A$stage4endboss$594 Def01F9
+S A$stage4endboss$576 Def01F1
+S A$stage4endboss$567 Def01EA
+S A$stage4endboss$558 Def01DD
+S A$stage4endboss$495 Def01B2
+S A$stage4endboss$486 Def01A7
+S A$stage4endboss$468 Def0191
+S A$stage4endboss$459 Def0186
+S A$stage4endboss$297 Def00EE
+S A$stage4endboss$189 Def007E
+S C$stage4endboss.c$92$1$74 Def01FF
+S C$stage4endboss.c$70$1$69 Def01B5
+S C$stage4endboss.c$55$1$66 Def013B
+S C$stage4endboss.c$53$2$67 Def0137
+S C$stage4endboss.c$46$1$66 Def00FF
+S C$stage4endboss.c$19$1$57 Def003F
+S A$stage4endboss$775 Def02A7
+S A$stage4endboss$757 Def029B
+S A$stage4endboss$748 Def028D
+S A$stage4endboss$739 Def0284
+S A$stage4endboss$685 Def0247
+S A$stage4endboss$649 Def0233
+S A$stage4endboss$595 Def01FD
+S A$stage4endboss$577 Def01F4
+S A$stage4endboss$559 Def01DE
+S A$stage4endboss$496 Def01B3
+S A$stage4endboss$487 Def01A8
+S A$stage4endboss$478 Def019E
+S A$stage4endboss$469 Def0192
+S A$stage4endboss$388 Def013B
+S A$stage4endboss$298 Def00EF
+S C$stage4endboss.c$86$1$72 Def01EC
+S C$stage4endboss.c$80$1$69 Def01DD
+S A$stage4endboss$758 Def029C
+S A$stage4endboss$749 Def0290
+S A$stage4endboss$686 Def0248
+S A$stage4endboss$677 Def023C
+S A$stage4endboss$659 Def0239
+S A$stage4endboss$578 Def01F5
+S A$stage4endboss$488 Def01A9
+S A$stage4endboss$398 Def013C
+S A$stage4endboss$299 Def00F0
+S C$stage4endboss.c$94$1$74 Def0210
+S C$stage4endboss.c$87$1$72 Def01F6
+S C$stage4endboss.c$63$1$69 Def0156
+S C$stage4endboss.c$57$1$66 Def013C
+S A$stage4endboss$687 Def024B
+S A$stage4endboss$678 Def023E
+S A$stage4endboss$489 Def01AA
+S A$stage4endboss$399 Def013E
+S XG$UpdateStage4EndBoss$0$0 Def02A7
+S C$stage4endboss.c$95$1$74 Def0226
+S C$stage4endboss.c$73$1$69 Def01C6
+S C$stage4endboss.c$49$1$66 Def0110
+S A$stage4endboss$769 Def02A3
+S A$stage4endboss$688 Def024C
+S A$stage4endboss$679 Def023F
+S C$stage4endboss.c$89$1$72 Def01F7
+S A$stage4endboss$599 Def01FF
+S A$stage4endboss$70 Def0008
+S C$stage4endboss.c$66$1$69 Def015D
+S _DoStage4EndBossSinusMovementVert Def0000
+S A$stage4endboss$80 Def0015
+S C$stage4endboss.c$67$1$69 Def0176
+S A$stage4endboss$81 Def0016
+S C$stage4endboss.c$97$2$75 Def0230
+S A$stage4endboss$91 Def001C
+S C$stage4endboss.c$98$2$75 Def0237
+S C$stage4endboss.c$78$1$69 Def01DC
+S A$stage4endboss$92 Def001F
+S A$stage4endboss$74 Def0009
+S A$stage4endboss$93 Def0020
+S A$stage4endboss$75 Def000C
+S A$stage4endboss$85 Def0019
+S A$stage4endboss$76 Def000F
+S A$stage4endboss$67 Def0000
+S A$stage4endboss$86 Def001A
+S A$stage4endboss$77 Def0012
+S A$stage4endboss$68 Def0002
+S A$stage4endboss$87 Def001B
+S A$stage4endboss$78 Def0013
+S A$stage4endboss$69 Def0006
+S C$stage4endboss.c$7$1$57 Def001C
+S A$stage4endboss$97 Def0022
+S A$stage4endboss$79 Def0014
+S C$stage4endboss.c$5$0$0 Def0000
+S A$stage4endboss$98 Def0023
+S C$stage4endboss.c$9$1$57 Def0019
+S A$stage4endboss$99 Def0025
+S XG$DoStage4EndBossSinusMovementVert$0$0 Def003E
+S C$stage4endboss.c$9$2$58 Def0022
+S G$UpdateStage4EndBoss1$0$0 Def003F
+S G$UpdateStage4EndBoss2$0$0 Def00E5
+S G$UpdateStage4EndBoss3$0$0 Def00F7
+A _DATA size 0 flags 0 addr 0
+A _INITIALIZED size 0 flags 0 addr 0
+A _DABS size 0 flags 8 addr 0
+A _HOME size 0 flags 0 addr 0
+A _GSINIT size 0 flags 0 addr 0
+A _GSFINAL size 0 flags 0 addr 0
+A _INITIALIZER size 0 flags 0 addr 0
+A _CABS size 0 flags 8 addr 0
+T 00 00
+R 00 00 00 00
+T 00 00 DD E5 DD 21 00 00 DD 39 3B DD 5E 04 DD 56
+R 00 00 00 00
+T 0E 00 05 21 05 00 19 4D 44 0A DD 77 FF EB 23 5E
+R 00 00 00 00
+T 1C 00 DD 7E FF B7 20 0D 7B C6 03 77 D6 80 38 11
+R 00 00 00 00
+T 2A 00 3E 01 02 18 0C
+R 00 00 00 00
+T 2F 00
+R 00 00 00 00
+T 2F 00 7B C6 FD 5F 73 3E 1E 93 38 02 AF 02
+R 00 00 00 00
+T 3B 00
+R 00 00 00 00
+T 3B 00 33 DD E1 C9
+R 00 00 00 00
+T 3F 00
+R 00 00 00 00
+T 3F 00 DD E5 DD 21 00 00 DD 39 F5 F5 DD 4E 04 DD
+R 00 00 00 00
+T 4D 00 46 05 59 50 13 13 1A D6 0D 20 03 67 18 02
+R 00 00 00 00
+T 5B 00
+R 00 00 00 00
+T 5B 00 26 18
+R 00 00 00 00
+T 5D 00
+R 00 00 00 00
+T 5D 00 C5 D5 E5 33 3E 03 F5 33 C5 CD 00 00 F1 F1
+R 00 00 00 00 02 0C 0A 00
+T 6B 00 D1 C1 21 03 00 09 DD 75 FE DD 74 FF 66 C5
+R 00 00 00 00
+T 79 00 D5 3E 26 F5 33 E5 33 CD 00 00 F1 D1 C1 7D
+R 00 00 00 00 02 0A 01 00
+T 87 00 B7 20 2B 69 60 23 7E C6 28 DD 77 FC 0A DD
+R 00 00 00 00
+T 95 00 77 FD 1A D6 0D 20 03 5F 18 02
+R 00 00 00 00
+T 9F 00
+R 00 00 00 00
+T 9F 00 1E 10
+R 00 00 00 00
+T A1 00
+R 00 00 00 00
+T A1 00 DD 7E FD 83 57 C5 DD 7E FC F5 33 D5 33 CD
+R 00 00 00 00
+T AF 00 00 00 F1 C1 18 11
+R 00 00 00 00 02 02 02 00
+T B5 00
+R 00 00 00 00
+T B5 00 C5 21 08 30 E5 3E 18 F5 33 C5 CD 00 00 F1
+R 00 00 00 00 02 0D 04 00
+T C3 00 F1 33 C1
+R 00 00 00 00
+T C6 00
+R 00 00 00 00
+T C6 00 DD 6E FE DD 66 FF 7E D6 A5 20 0F 03 03 03
+R 00 00 00 00
+T D4 00 03 0A 3C 02 DD 6E FE DD 66 FF 36 00
+R 00 00 00 00
+T E0 00
+R 00 00 00 00
+T E0 00 DD F9 DD E1 C9
+R 00 00 00 00
+T E5 00
+R 00 00 00 00
+T E5 00 3E 03 F5 33 21 03 00 39 4E 23 46 C5 CD
+R 00 00 00 00
+T F2 00 00 00 F1 33 C9
+R 00 00 00 00 02 02 06 00
+T F7 00
+R 00 00 00 00
+T F7 00 DD E5 DD 21 00 00 DD 39 DD 4E 04 DD 46 05
+R 00 00 00 00
+T 05 01 21 06 00 09 7E D6 0A 30 02 36 0A
+R 00 00 00 00
+T 10 01
+R 00 00 00 00
+T 10 01 69 60 23 23 56 0A 5F 7A D6 0D 20 06 1D 1D
+R 00 00 00 00
+T 1E 01 7B 02 18 04
+R 00 00 00 00
+T 22 01
+R 00 00 00 00
+T 22 01 1C 1C 7B 02
+R 00 00 00 00
+T 26 01
+R 00 00 00 00
+T 26 01 59 50 13 13 13 1A D6 2D 38 09 03 03 03 03
+R 00 00 00 00
+T 34 01 0A 3C 02 AF 12
+R 00 00 00 00
+T 39 01
+R 00 00 00 00
+T 39 01 DD E1 C9
+R 00 00 00 00
+T 3C 01
+R 00 00 00 00
+T 3C 01 DD E5 DD 21 00 00 DD 39 F5 DD 4E 04 DD 46
+R 00 00 00 00
+T 4A 01 05 21 06 00 09 7E D6 0A 30 02 36 0A
+R 00 00 00 00
+T 56 01
+R 00 00 00 00
+T 56 01 C5 C5 CD 00 00 F1 C1 21 03 00 09 E3 E1 E5
+R 00 00 00 00 00 05 00 00
+T 64 01 56 C5 3E 24 F5 33 D5 33 CD 00 00 F1 C1 7D
+R 00 00 00 00 02 0B 01 00
+T 72 01 D6 0C 20 3F 69 60 23 5E C5 D5 CD 00 00 65
+R 00 00 00 00 02 0D 00 00
+T 80 01 3E 28 F5 33 E5 33 CD 00 00 F1 D1 C1 7B 85
+R 00 00 00 00 02 09 01 00
+T 8E 01 5F 0A 57 69 60 23 23 7E D6 0D 20 04 2E 18
+R 00 00 00 00
+T 9C 01 18 02
+R 00 00 00 00
+T 9E 01
+R 00 00 00 00
+T 9E 01 2E 00
+R 00 00 00 00
+T A0 01
+R 00 00 00 00
+T A0 01 7A 85 57 C5 3E 40 F5 33 7B F5 33 D5 33 CD
+R 00 00 00 00
+T AE 01 00 00 F1 33 C1 18 11
+R 00 00 00 00 02 02 09 00
+T B5 01
+R 00 00 00 00
+T B5 01 C5 21 0C 10 E5 3E 1C F5 33 C5 CD 00 00 F1
+R 00 00 00 00 02 0D 04 00
+T C3 01 F1 33 C1
+R 00 00 00 00
+T C6 01
+R 00 00 00 00
+T C6 01 E1 E5 7E D6 87 20 0B 03 03 03 03 0A 3C 02
+R 00 00 00 00
+T D4 01 E1 E5 36 00
+R 00 00 00 00
+T D8 01
+R 00 00 00 00
+T D8 01 DD F9 DD E1 C9
+R 00 00 00 00
+T DD 01
+R 00 00 00 00
+T DD 01 D1 C1 C5 D5 21 06 00 09 7E D6 0A 30 02 36
+R 00 00 00 00
+T EB 01 0A
+R 00 00 00 00
+T EC 01
+R 00 00 00 00
+T EC 01 3E 06 F5 33 C5 CD 00 00 F1 33 C9
+R 00 00 00 00 02 08 06 00
+T F7 01
+R 00 00 00 00
+T F7 01 DD E5 DD 21 00 00 DD 39 DD 4E 04 DD 46 05
+R 00 00 00 00
+T 05 02 21 06 00 09 7E D6 0A 30 02 36 0A
+R 00 00 00 00
+T 10 02
+R 00 00 00 00
+T 10 02 69 60 23 23 56 0A 5F 7A D6 0D 20 06 1C 1C
+R 00 00 00 00
+T 1E 02 7B 02 18 04
+R 00 00 00 00
+T 22 02
+R 00 00 00 00
+T 22 02 1D 1D 7B 02
+R 00 00 00 00
+T 26 02
+R 00 00 00 00
+T 26 02 59 50 13 13 13 1A D6 2D 38 09 03 03 03 03
+R 00 00 00 00
+T 34 02 0A 3C 02 AF 12
+R 00 00 00 00
+T 39 02
+R 00 00 00 00
+T 39 02 DD E1 C9
+R 00 00 00 00
+T 3C 02
+R 00 00 00 00
+T 3C 02 3E 01 F5 33 21 03 00 39 4E 23 46 C5 CD
+R 00 00 00 00
+T 49 02 00 00 F1 33 C9
+R 00 00 00 00 02 02 06 00
+T 4E 02
+R 00 00 00 00
+T 4E 02 DD E5 DD 21 00 00 DD 39 DD 4E 04 DD 46 05
+R 00 00 00 00
+T 5C 02 69 60 23 5E 0A 57 69 60 23 23 7E D6 0D 20
+R 00 00 00 00
+T 6A 02 06 FD 21 9A 01 18 04
+R 00 00 00 00
+T 71 02
+R 00 00 00 00
+T 71 02 FD 21 AC 01
+R 00 00 00 00
+T 75 02
+R 00 00 00 00
+T 75 02 C5 21 18 30 E5 7B F5 33 D5 33 FD E5 CD
+R 00 00 00 00
+T 82 02 00 00 21 06 00 39 F9 C1 C5 FD E1 FD 6E 04
+R 00 00 00 00 02 02 05 00
+T 90 02 26 00 29 11 00 00 19 7E 23 66 6F B4 28 05
+R 00 00 00 00 02 06 08 00
+T 9E 02 C5 CD 00 00 F1
+R 00 00 00 00 02 04 07 00
+T A3 02
+R 00 00 00 00
+T A3 02 2E 01 DD E1 C9
+R 00 00 00 00

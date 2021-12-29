@@ -1,11 +1,7 @@
-void InitIntro4Stage()
-{
-	// Cargamos los graficos a la pantalla
-	LoadGraphics( introstage3tiles_psgcompr, introstage3tilemap_bin, introstage3tilemap_bin_size, introstage3tiles_psgcompr_bank );
+#ifndef _INTRO4STAGE_H_
+#define _INTRO4STAGE_H_
 
-	// Music
-	PlayMusic( silence_psg, silence_psg_bank, 0 );
+// ADRIANA
+void InitIntro4Stage();
 
-	// Scripter
-	InitScript( intro4script, 0 );
-}
+#endif//_INTRO4STAGE_H_

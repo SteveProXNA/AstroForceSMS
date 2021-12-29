@@ -1,18 +1,9 @@
-unsigned char UpdateRectShip( enemy *en )
-{
-	DrawQuadSprite( en->enemyposx, en->enemyposy, RECTSHIPBASE );
-	devkit_SMS_addSprite( en->enemyposx + 4, en->enemyposy - 8, RECTSHIPBASE + 4 + sprite82anim );
+#ifndef _RECTSHIP_H_
+#define _RECTSHIP_H_
 
-	if( ( en->enemyposy > 192 ) && ( en->enemyposy < 210 ) )
-		return 0;
-	else
-	{
-		// Move
-		en->enemyposy += 7;
+#include "../defines.h"
 
-		// Shoot?
-		TestEnemyShootOne( en, 3 );
-	}
-	return 1;
-}
+// ADRIANA
+unsigned char UpdateRectShip( enemy *en );
 
+#endif//_RECTSHIP_H_

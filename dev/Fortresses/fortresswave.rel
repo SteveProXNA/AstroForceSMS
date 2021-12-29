@@ -1,0 +1,123 @@
+;!FILE fortresswave.asm
+XL2
+H 9 areas 4D global symbols
+M fortresswave
+O -mz80
+S .__.ABS. Def0000
+S _DrawQuadSprite Ref0000
+A _CODE size 68 flags 0 addr 0
+S A$fortresswave$120 Def0042
+S A$fortresswave$102 Def0033
+S A$fortresswave$121 Def0044
+S A$fortresswave$103 Def0034
+S A$fortresswave$140 Def0056
+S A$fortresswave$122 Def0047
+S A$fortresswave$113 Def003B
+S A$fortresswave$104 Def0036
+S C$fortresswave.c$12$2$50 Def0030
+S A$fortresswave$141 Def0057
+S A$fortresswave$132 Def004F
+S A$fortresswave$114 Def003F
+S A$fortresswave$151 Def0062
+S A$fortresswave$142 Def005A
+S C$fortresswave.c$20$3$52 Def0041
+S A$fortresswave$143 Def005B
+S C$fortresswave.c$24$2$50 Def0053
+S C$fortresswave.c$21$3$52 Def0048
+S A$fortresswave$153 Def0064
+S A$fortresswave$144 Def005C
+S A$fortresswave$126 Def0048
+S A$fortresswave$108 Def0037
+S C$fortresswave.c$22$3$52 Def004F
+S C$fortresswave.c$14$3$51 Def0033
+S A$fortresswave$154 Def0065
+S A$fortresswave$145 Def005D
+S A$fortresswave$127 Def004A
+S A$fortresswave$109 Def0039
+S C$fortresswave.c$15$3$51 Def0037
+S A$fortresswave$146 Def0060
+S A$fortresswave$137 Def0053
+S A$fortresswave$128 Def004D
+S A$fortresswave$119 Def0041
+S C$fortresswave.c$16$3$51 Def003B
+S A$fortresswave$147 Def0061
+S A$fortresswave$138 Def0054
+S A$fortresswave$139 Def0055
+S C$fortresswave.c$14$1$49 Def002C
+S A$fortresswave$159 Def0067
+S C$fortresswave.c$26$1$49 Def0062
+S C$fortresswave.c$27$1$49 Def0067
+S A$fortresswave$60 Def0009
+S A$fortresswave$61 Def000C
+S A$fortresswave$62 Def000F
+S A$fortresswave$53 Def0000
+S A$fortresswave$90 Def002C
+S A$fortresswave$72 Def0018
+S A$fortresswave$63 Def0010
+S A$fortresswave$54 Def0002
+S A$fortresswave$91 Def002D
+S A$fortresswave$73 Def001A
+S A$fortresswave$64 Def0011
+S A$fortresswave$55 Def0006
+S A$fortresswave$92 Def002E
+S A$fortresswave$74 Def001D
+S A$fortresswave$65 Def0012
+S A$fortresswave$56 Def0008
+S A$fortresswave$93 Def002F
+S A$fortresswave$84 Def0023
+S A$fortresswave$66 Def0013
+S A$fortresswave$85 Def0027
+S A$fortresswave$67 Def0014
+S G$UpdateFortressWave$0$0 Def0000
+S A$fortresswave$86 Def0029
+S A$fortresswave$68 Def0017
+S A$fortresswave$78 Def001F
+S A$fortresswave$97 Def0030
+S A$fortresswave$79 Def0021
+S C$fortresswave.c$7$1$49 Def0009
+S C$fortresswave.c$5$0$0 Def0000
+S A$fortresswave$98 Def0031
+S C$fortresswave.c$8$1$49 Def0018
+S C$fortresswave.c$9$1$49 Def001F
+S _UpdateFortressWave Def0000
+S XG$UpdateFortressWave$0$0 Def0067
+A _DATA size 0 flags 0 addr 0
+A _INITIALIZED size 0 flags 0 addr 0
+A _DABS size 0 flags 8 addr 0
+A _HOME size 0 flags 0 addr 0
+A _GSINIT size 0 flags 0 addr 0
+A _GSFINAL size 0 flags 0 addr 0
+A _INITIALIZER size 0 flags 0 addr 0
+A _CABS size 0 flags 8 addr 0
+T 00 00
+R 00 00 00 00
+T 00 00 DD E5 DD 21 00 00 DD 39 3B DD 4E 04 DD 46
+R 00 00 00 00
+T 0E 00 05 59 50 13 1A 3C DD 77 FF 12 3E C0 DD 96
+R 00 00 00 00
+T 1C 00 FF 30 04 2E 00 18 41
+R 00 00 00 00
+T 23 00
+R 00 00 00 00
+T 23 00 FD 21 04 00 FD 09 FD 7E 00 F5 0A 6F F1 B7
+R 00 00 00 00
+T 31 00 20 0E 7D C6 02 02 D6 D0 38 18 FD 36 00 01
+R 00 00 00 00
+T 3F 00 18 12
+R 00 00 00 00
+T 41 00
+R 00 00 00 00
+T 41 00 7D C6 FE DD 77 FF 02 3E 20 DD 96 FF 38 04
+R 00 00 00 00
+T 4F 00 FD 36 00 00
+R 00 00 00 00
+T 53 00
+R 00 00 00 00
+T 53 00 1A 57 0A 47 21 63 01 E5 58 D5 CD 00 00 F1
+R 00 00 00 00 02 0D 01 00
+T 61 00 F1 2E 01
+R 00 00 00 00
+T 64 00
+R 00 00 00 00
+T 64 00 33 DD E1 C9
+R 00 00 00 00

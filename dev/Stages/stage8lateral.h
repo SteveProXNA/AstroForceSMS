@@ -1,24 +1,10 @@
-unsigned char UpdateStage8Lateral( enemy *en )
-{
-	// Out?
-	if( ( en->enemyposx <= 4 ) || ( en->enemyposx >= 252 ) )
-		return 0;
+#ifndef _STAGE8LATERAL_H_
+#define _STAGE8LATERAL_H_
 
-	// Move
-	en->enemyposx += ( en->enemyparama << 1 ) - 4;
+#include "../defines.h"
 
-	// Draw
-	DrawQuadSprite( en->enemyposx, en->enemyposy, STAGE8LATERALBASE + en->enemyparama );
-	devkit_SMS_addSprite( en->enemyposx + 16 - ( en->enemyparama * 6 ), en->enemyposy + 4, STAGE8LATERALBASE + 8 + sprite82anim );
+// ADRIANA
+unsigned char UpdateStage8Lateral( enemy *en );
+void InitStage8Lateral( enemy *en );
 
-	// Shoot?
-	TestEnemyShootOne( en, 50 );
-
-	// OK
-	return 1;
-}
-
-void InitStage8Lateral( enemy *en )
-{
-	en->enemyparama = ( en->enemyposx > 128 ? 0 : 4 );
-}
+#endif//_STAGE8LATERAL_H_

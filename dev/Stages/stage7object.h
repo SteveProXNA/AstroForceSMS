@@ -1,9 +1,9 @@
-unsigned char UpdateStage7Object( enemy *en )
-{
-	if( en->enemyframe > 80 )
-	{
-		disablescroll = 0;
-		return 0;
-	}
-	else return 1;
-}
+#ifndef _STAGE7OBJECT_H_
+#define _STAGE7OBJECT_H_
+
+#include "../defines.h"
+
+// ADRIANA
+unsigned char UpdateStage7Object( enemy *en );
+
+#endif//_STAGE7OBJECT_H_

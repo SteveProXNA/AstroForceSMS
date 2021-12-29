@@ -1,28 +1,10 @@
-void InitWaveShip( enemy *en )
-{
-	en->enemyparama = en->enemyposx;
-	en->enemyparamb = 4 + ( myRand() % 16 );
-}
+#ifndef _WAVESHIP_H_
+#define _WAVESHIP_H_
 
-unsigned char UpdateWaveShip( enemy *en )
-{
-	signed int p;
+#include "../defines.h"
 
-	if( en->enemyposy > 192 )
-		return 0;
-	else
-	{
-		// Sinus movement
-		en->enemyposy += 2;
-		p = ( sinus( en->enemyframe << 3 ) >> 2 ) - 32 + en->enemyparama;
-		en->enemyposx = p;
+// ADRIANA
+void InitWaveShip( enemy *en );
+unsigned char UpdateWaveShip( enemy *en );
 
-		// Sprite
-		DrawQuadSprite( en->enemyposx, en->enemyposy, WAVESHIPBASE + sprite164anim );
-
-		// Shoot?
-		TestEnemyShootOne( en, 10 );
-	}
-	return 1;
-}
-
+#endif//_WAVESHIP_H_

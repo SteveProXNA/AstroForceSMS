@@ -1,0 +1,13 @@
+M:bank9
+S:G$afterboss_psg$0$0({571}DA571d,SC:U),D,0,0
+S:G$firetiles_bin$0$0({1024}DA1024d,SC:U),D,0,0
+S:G$fortressphantom_psgcompr$0$0({385}DA385d,SC:U),D,0,0
+S:G$norefuge_psg$0$0({357}DA357d,SC:U),D,0,0
+S:G$stage1endboss_psgcompr$0$0({744}DA744d,SC:U),D,0,0
+S:G$stage1middleboss_psgcompr$0$0({610}DA610d,SC:U),D,0,0
+S:G$stage2endboss_psgcompr$0$0({806}DA806d,SC:U),D,0,0
+S:G$stage7middleboss_psgcompr$0$0({1204}DA1204d,SC:U),D,0,0
+S:G$stage7palette_bin$0$0({16}DA16d,SC:U),D,0,0
+S:G$stage7tilemap_l$0$0({480}DA480d,SC:U),D,0,0
+S:G$stage7tilemap_m$0$0({8896}DA8896d,SC:U),D,0,0
+S:G$stage7tiles_psgcompr$0$0({1161}DA1161d,SC:U),D,0,0

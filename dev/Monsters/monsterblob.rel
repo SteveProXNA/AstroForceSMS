@@ -1,0 +1,137 @@
+;!FILE monsterblob.asm
+XL2
+H 9 areas 5D global symbols
+M monsterblob
+O -mz80
+S _GetEnemyDirection Ref0000
+S .__.ABS. Def0000
+S _DrawQuadSprite Ref0000
+S _sprite164anim Ref0000
+A _CODE size 84 flags 0 addr 0
+S A$monsterblob$100 Def0032
+S A$monsterblob$110 Def0040
+S A$monsterblob$101 Def0034
+S A$monsterblob$111 Def0041
+S A$monsterblob$102 Def0037
+S A$monsterblob$130 Def0057
+S A$monsterblob$121 Def004D
+S A$monsterblob$112 Def0043
+S A$monsterblob$103 Def003A
+S A$monsterblob$140 Def0064
+S A$monsterblob$131 Def005A
+S A$monsterblob$122 Def0050
+S A$monsterblob$113 Def0046
+S A$monsterblob$104 Def003B
+S A$monsterblob$150 Def0073
+S A$monsterblob$141 Def0066
+S A$monsterblob$132 Def005B
+S A$monsterblob$123 Def0052
+S A$monsterblob$114 Def0049
+S A$monsterblob$160 Def007D
+S A$monsterblob$151 Def0074
+S A$monsterblob$142 Def006A
+S A$monsterblob$133 Def005C
+S A$monsterblob$115 Def004A
+S C$monsterblob.c$14$2$50 Def002D
+S A$monsterblob$161 Def007F
+S A$monsterblob$152 Def0076
+S A$monsterblob$143 Def006B
+S A$monsterblob$116 Def004B
+S C$monsterblob.c$15$2$50 Def003C
+S A$monsterblob$162 Def0081
+S A$monsterblob$153 Def0077
+S A$monsterblob$144 Def006C
+S A$monsterblob$108 Def003C
+S A$monsterblob$154 Def0078
+S A$monsterblob$145 Def006D
+S A$monsterblob$127 Def0054
+S A$monsterblob$109 Def003D
+S A$monsterblob$155 Def007B
+S A$monsterblob$146 Def006F
+S A$monsterblob$128 Def0055
+S C$monsterblob.c$20$1$49 Def0054
+S C$monsterblob.c$11$1$49 Def0026
+S A$monsterblob$156 Def007C
+S A$monsterblob$147 Def0070
+S A$monsterblob$138 Def005D
+S A$monsterblob$129 Def0056
+S A$monsterblob$148 Def0071
+S A$monsterblob$139 Def0061
+S A$monsterblob$167 Def0083
+S A$monsterblob$149 Def0072
+S C$monsterblob.c$23$1$49 Def005D
+S C$monsterblob.c$15$1$49 Def0018
+S C$monsterblob.c$25$1$49 Def007D
+S C$monsterblob.c$26$1$49 Def0083
+S C$monsterblob.c$18$1$49 Def004D
+S A$monsterblob$61 Def0009
+S A$monsterblob$80 Def001E
+S A$monsterblob$62 Def000C
+S A$monsterblob$81 Def0020
+S A$monsterblob$63 Def000F
+S A$monsterblob$54 Def0000
+S A$monsterblob$91 Def0026
+S A$monsterblob$73 Def0018
+S A$monsterblob$64 Def0010
+S A$monsterblob$55 Def0002
+S A$monsterblob$92 Def0028
+S A$monsterblob$74 Def0019
+S A$monsterblob$65 Def0011
+S A$monsterblob$56 Def0006
+S A$monsterblob$93 Def002B
+S A$monsterblob$75 Def001A
+S A$monsterblob$66 Def0012
+S A$monsterblob$57 Def0008
+S A$monsterblob$85 Def0022
+S A$monsterblob$67 Def0013
+S G$UpdateMonsterBlob$0$0 Def0000
+S A$monsterblob$86 Def0024
+S A$monsterblob$68 Def0014
+S A$monsterblob$69 Def0015
+S A$monsterblob$97 Def002D
+S A$monsterblob$79 Def001B
+S C$monsterblob.c$7$1$49 Def001B
+S C$monsterblob.c$5$0$0 Def0000
+S A$monsterblob$98 Def002E
+S A$monsterblob$99 Def0031
+S C$monsterblob.c$9$1$49 Def0022
+S _UpdateMonsterBlob Def0000
+S XG$UpdateMonsterBlob$0$0 Def0083
+A _DATA size 0 flags 0 addr 0
+A _INITIALIZED size 0 flags 0 addr 0
+A _DABS size 0 flags 8 addr 0
+A _HOME size 0 flags 0 addr 0
+A _GSINIT size 0 flags 0 addr 0
+A _GSFINAL size 0 flags 0 addr 0
+A _INITIALIZER size 0 flags 0 addr 0
+A _CABS size 0 flags 8 addr 0
+T 00 00
+R 00 00 00 00
+T 00 00 DD E5 DD 21 00 00 DD 39 F5 DD 4E 04 DD 46
+R 00 00 00 00
+T 0E 00 05 69 60 23 23 23 7E DD 77 FE 59 50 13 DD
+R 00 00 00 00
+T 1C 00 7E FE D6 1E 38 04 36 00 18 37
+R 00 00 00 00
+T 26 00
+R 00 00 00 00
+T 26 00 3E 05 DD 96 FE 30 20 0A DD 77 FF C5 FD E1
+R 00 00 00 00
+T 34 00 FD 6E 04 DD 7E FF 85 02 1A DD 77 FF C5 FD
+R 00 00 00 00
+T 42 00 E1 FD 6E 05 DD 7E FF 85 12 18 10
+R 00 00 00 00
+T 4D 00
+R 00 00 00 00
+T 4D 00 DD 7E FE D6 05 20 09 C5 D5 C5 CD 00 00 F1
+R 00 00 00 00 02 0D 00 00
+T 5B 00 D1 C1
+R 00 00 00 00
+T 5D 00
+R 00 00 00 00
+T 5D 00 FD 21 00 00 FD 6E 00 26 00 FD 21 47 01 C5
+R 00 00 00 00 02 04 03 00
+T 6B 00 4D 44 FD 09 C1 1A 57 0A 47 FD E5 58 D5 CD
+R 00 00 00 00
+T 79 00 00 00 F1 F1 2E 01 DD F9 DD E1 C9
+R 00 00 00 00 02 02 02 00

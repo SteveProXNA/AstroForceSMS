@@ -1,0 +1,146 @@
+;!FILE rsgthing.asm
+XL2
+H 9 areas 64 global symbols
+M rsgthing
+O -mz80
+S _TestSkullOut Ref0000
+S _sprite82anim Ref0000
+S _myRand Ref0000
+S .__.ABS. Def0000
+S _UpdateSkullBoneCMovement Ref0000
+S _DrawQuadSprite Ref0000
+A _CODE size 8A flags 0 addr 0
+S A$rsgthing$100 Def0040
+S A$rsgthing$110 Def004E
+S A$rsgthing$101 Def0041
+S A$rsgthing$111 Def004F
+S A$rsgthing$102 Def0044
+S A$rsgthing$112 Def0050
+S A$rsgthing$103 Def0047
+S A$rsgthing$140 Def0060
+S A$rsgthing$122 Def0059
+S A$rsgthing$113 Def0051
+S A$rsgthing$104 Def0048
+S A$rsgthing$150 Def0071
+S A$rsgthing$141 Def0064
+S A$rsgthing$114 Def0052
+S A$rsgthing$105 Def0049
+S A$rsgthing$160 Def007E
+S A$rsgthing$151 Def0072
+S A$rsgthing$124 Def005B
+S A$rsgthing$115 Def0053
+S A$rsgthing$106 Def004A
+S A$rsgthing$161 Def0080
+S A$rsgthing$152 Def0075
+S A$rsgthing$116 Def0054
+S A$rsgthing$107 Def004B
+S A$rsgthing$153 Def0076
+S A$rsgthing$117 Def0057
+S A$rsgthing$108 Def004C
+S A$rsgthing$154 Def0077
+S A$rsgthing$145 Def0066
+S A$rsgthing$118 Def0058
+S A$rsgthing$109 Def004D
+S C$rsgthing.c$20$1$57 Def005D
+S A$rsgthing$173 Def0089
+S A$rsgthing$155 Def0078
+S A$rsgthing$146 Def0069
+S C$rsgthing.c$12$1$57 Def001B
+S A$rsgthing$165 Def0081
+S A$rsgthing$156 Def007A
+S A$rsgthing$147 Def006C
+S A$rsgthing$129 Def005D
+S C$rsgthing.c$22$1$57 Def005E
+S C$rsgthing.c$13$1$57 Def0026
+S A$rsgthing$166 Def0084
+S A$rsgthing$157 Def007B
+S A$rsgthing$148 Def006F
+S A$rsgthing$139 Def005E
+S A$rsgthing$167 Def0085
+S A$rsgthing$158 Def007C
+S A$rsgthing$149 Def0070
+S G$InitRSGThing$0$0 Def005E
+S A$rsgthing$168 Def0087
+S A$rsgthing$159 Def007D
+S C$rsgthing.c$16$1$57 Def0031
+S C$rsgthing.c$24$1$59 Def0066
+S C$rsgthing.c$25$1$59 Def0081
+S C$rsgthing.c$26$1$59 Def0089
+S C$rsgthing.c$19$1$57 Def0059
+S A$rsgthing$70 Def0015
+S A$rsgthing$80 Def0022
+S A$rsgthing$71 Def0017
+S A$rsgthing$81 Def0025
+S A$rsgthing$72 Def0019
+S A$rsgthing$63 Def0008
+S A$rsgthing$64 Def000B
+S _InitRSGThing Def005E
+S A$rsgthing$65 Def000E
+S A$rsgthing$93 Def0031
+S A$rsgthing$66 Def000F
+S A$rsgthing$57 Def0000
+S A$rsgthing$94 Def0035
+S A$rsgthing$85 Def0026
+S A$rsgthing$67 Def0012
+S A$rsgthing$58 Def0002
+S G$UpdateRSGThing$0$0 Def0000
+S A$rsgthing$95 Def0038
+S A$rsgthing$86 Def0029
+S A$rsgthing$77 Def001B
+S A$rsgthing$68 Def0013
+S A$rsgthing$59 Def0006
+S A$rsgthing$96 Def003A
+S A$rsgthing$87 Def002C
+S A$rsgthing$78 Def001E
+S A$rsgthing$69 Def0014
+S A$rsgthing$97 Def003B
+S A$rsgthing$88 Def002D
+S A$rsgthing$79 Def0021
+S A$rsgthing$98 Def003C
+S A$rsgthing$89 Def0030
+S C$rsgthing.c$9$1$57 Def0008
+S C$rsgthing.c$6$0$0 Def0000
+S A$rsgthing$99 Def003F
+S XG$InitRSGThing$0$0 Def0089
+S _UpdateRSGThing Def0000
+S XG$UpdateRSGThing$0$0 Def005D
+A _DATA size 0 flags 0 addr 0
+A _INITIALIZED size 0 flags 0 addr 0
+A _DABS size 0 flags 8 addr 0
+A _HOME size 0 flags 0 addr 0
+A _GSINIT size 0 flags 0 addr 0
+A _GSFINAL size 0 flags 0 addr 0
+A _INITIALIZER size 0 flags 0 addr 0
+A _CABS size 0 flags 8 addr 0
+T 00 00
+R 00 00 00 00
+T 00 00 DD E5 DD 21 00 00 DD 39 DD 6E 04 DD 66 05
+R 00 00 00 00
+T 0E 00 E5 CD 00 00 F1 7D B7 28 04 2E 00 18 40
+R 00 00 00 00 02 04 00 00
+T 1B 00
+R 00 00 00 00
+T 1B 00 DD 6E 04 DD 66 05 E5 CD 00 00 F1 DD 6E 04
+R 00 00 00 00 02 0A 04 00
+T 29 00 DD 66 05 E5 CD 00 00 F1 FD 21 00 00 FD 6E
+R 00 00 00 00 02 07 04 00 02 0C 01 00
+T 37 00 00 26 00 29 29 01 B7 01 09 EB DD 4E 04 DD
+R 00 00 00 00
+T 45 00 46 05 69 60 23 7E F5 0A 47 F1 D5 F5 33 C5
+R 00 00 00 00
+T 53 00 33 CD 00 00 F1 F1 2E 01
+R 00 00 00 00 02 04 05 00
+T 5B 00
+R 00 00 00 00
+T 5B 00 DD E1 C9
+R 00 00 00 00
+T 5E 00
+R 00 00 00 00
+T 5E 00 DD E5 DD 21 00 00 DD 39 DD 4E 04 DD 46 05
+R 00 00 00 00
+T 6C 00 21 04 00 09 E5 C5 CD 00 00 7D C1 E1 E6 01
+R 00 00 00 00 02 09 02 00
+T 7A 00 07 07 07 07 E6 F0 77 21 05 00 09 36 10 DD
+R 00 00 00 00
+T 88 00 E1 C9
+R 00 00 00 00

@@ -1,16 +1,19 @@
-#include "Banks\bank2.h"
-#include "Banks\bank3.h"
-#include "Banks\bank4.h"
-#include "Banks\bank5.h"
-#include "Banks\bank6.h"
-#include "Banks\bank7.h"
-#include "Banks\bank8.h"
-#include "Banks\bank9.h"
-#include "Banks\bank10.h"
-#include "Banks\bank11.h"
-#include "Banks\bank12.h"
-#include "Banks\bank13.h"
-#include "Banks\bank14.h"
+#ifndef _DEFINES_H_
+#define _DEFINES_H_
+
+//#include "Banks\bank2.h"
+//#include "Banks\bank3.h"
+//#include "Banks\bank4.h"
+//#include "Banks\bank5.h"
+//#include "Banks\bank6.h"
+//#include "Banks\bank7.h"
+//#include "Banks\bank8.h"
+//#include "Banks\bank9.h"
+//#include "Banks\bank10.h"
+//#include "Banks\bank11.h"
+//#include "Banks\bank12.h"
+//#include "Banks\bank13.h"
+//#include "Banks\bank14.h"
 //#include "Banks\bank15.h"
 
 // For debug only
@@ -320,3 +323,4 @@ typedef unsigned char( *MyCheckCollisionFunction )( unsigned char, unsigned char
 #define STAGE8BOSSCBASE 410+12
 #define STAGE8LATERALBASE 410+12+16
 
+#endif//_DEFINES_H_

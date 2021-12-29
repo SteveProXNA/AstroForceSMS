@@ -1,0 +1,17 @@
+M:bank10
+S:G$animtilestage1_bin$0$0({128}DA128d,SC:U),D,0,0
+S:G$introstar_psgcompr$0$0({14}DA14d,SC:U),D,0,0
+S:G$powerup_psgcompr$0$0({165}DA165d,SC:U),D,0,0
+S:G$scrolltilestage1_bin$0$0({192}DA192d,SC:U),D,0,0
+S:G$skull_psgcompr$0$0({744}DA744d,SC:U),D,0,0
+S:G$spaceanimtiles_bin$0$0({448}DA448d,SC:U),D,0,0
+S:G$spaceasteroidbig_psgcompr$0$0({210}DA210d,SC:U),D,0,0
+S:G$spaceasteroidlittle_psgcompr$0$0({28}DA28d,SC:U),D,0,0
+S:G$spaceasteroidmedium_psgcompr$0$0({104}DA104d,SC:U),D,0,0
+S:G$stage1palette_bin$0$0({9}DA9d,SC:U),D,0,0
+S:G$stage1tilemap_l$0$0({512}DA512d,SC:U),D,0,0
+S:G$stage1tilemap_m$0$0({4608}DA4608d,SC:U),D,0,0
+S:G$stage1tiles_psgcompr$0$0({130}DA130d,SC:U),D,0,0
+S:G$stage2_psg$0$0({8328}DA8328d,SC:U),D,0,0
+S:G$stage3endboss_psgcompr$0$0({476}DA476d,SC:U),D,0,0
+S:G$stage8lateral_psgcompr$0$0({258}DA258d,SC:U),D,0,0

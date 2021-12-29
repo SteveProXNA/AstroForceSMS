@@ -1,73 +1,14 @@
-#ifdef _CONSOLE
-#pragma warning(disable: 4090)
-#else
-#endif
+#ifndef _INTRO3OBJECT_H_
+#define _INTRO3OBJECT_H_
 
-void InitIntro3Object( enemy *en )
-{
-	en = 0;
-	PlayMusic( ( unsigned char * ) intro3_psg, intro3_psg_bank, 0 );
-}
+#include "../defines.h"
 
-void DrawIntro3Object( unsigned int *d, unsigned char i, unsigned char l )
-{
-	unsigned char b, c;
+// ADRIANA
+void InitIntro3Object( enemy *en );
+void DrawIntro3Object( unsigned int *d, unsigned char i, unsigned char l );
+void UpdateIntro3Object1( enemy *en );
+void UpdateIntro3Object2( enemy *en );
+void UpdateIntro3Object3( enemy *en );
+unsigned char UpdateIntro3Object( enemy *en );
 
-	// Rom bank
-	changeBank( persons_bin_bank );
-
-	// Images
-	for( b = 0; b < 6; b++ )
-	{
-		devkit_SMS_setNextTileatXY( i, b + 2 );
-		for( c = 0; c < l; c++ )
-			devkit_SMS_setTile( *d++ );
-		d += 18 - l;
-	}
-	changeBank( FIXEDBANKSLOT );
-}
-
-void UpdateIntro3Object1( enemy *en )
-{
-	if( en->enemyframe == 16 )
-	{
-		DrawIntro3Object( persons_bin + 2, 7, 6 );
-		en->enemyparama++;
-		en->enemyframe = 0;
-	}
-}
-
-void UpdateIntro3Object2( enemy *en )
-{
-	if( en->enemyframe == 160 )
-	{
-		DrawIntro3Object( persons_bin + 14, 19, 6 );
-		en->enemyparama++;
-		en->enemyframe = 0;
-	}
-}
-
-void UpdateIntro3Object3( enemy *en )
-{
-	if( en->enemyframe == 160 )
-	{
-		DrawIntro3Object( persons_bin + 216, 7, 18 );
-		en->enemyparama++;
-		en->enemyframe = 0;
-	}
-}
-
-unsigned char UpdateIntro3Object( enemy *en )
-{
-	// Call custom function
-	if( en->enemyparama < 3 )
-	{
-		//changeBank(FIXEDBANKSLOT);
-		( *( updateintro3objectfunctions[ en->enemyparama ] ) )( en );
-	}
-
-	// Return
-	return 1;
-}
-
-
+#endif//_INTRO3OBJECT_H_

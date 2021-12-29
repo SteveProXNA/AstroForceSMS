@@ -1,23 +1,9 @@
-unsigned char UpdateMonsterBlob( enemy *en )
-{
-	if( en->enemyframe >= 30 )
-		// Looping
-		en->enemyframe = 0;
-	else
-		if( en->enemyframe > 5 )
-		{
-			// Movement
-			en->enemyposx += en->enemyparama;
-			en->enemyposy += en->enemyparamb;
-		}
-		else
-			if( en->enemyframe == 5 )
-				// New direction
-				GetEnemyDirection( en );
+#ifndef _MONSTERBLOB_H_
+#define _MONSTERBLOB_H_
 
-	// Animated sprite
-	DrawQuadSprite( en->enemyposx, en->enemyposy, MONSTERBLOBBASE + sprite164anim );
+#include "../defines.h"
 
-	return 1;
-}
+// ADRIANA
+unsigned char UpdateMonsterBlob( enemy *en );
 
+#endif//_MONSTERBLOB_H_

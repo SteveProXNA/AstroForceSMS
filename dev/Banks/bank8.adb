@@ -1,0 +1,9 @@
+M:bank8
+S:G$gameover_psg$0$0({576}DA576d,SC:U),D,0,0
+S:G$introstage1tilemap_bin$0$0({640}DA640d,SC:U),D,0,0
+S:G$introstage1tiles_psgcompr$0$0({2409}DA2409d,SC:U),D,0,0
+S:G$introstage2tilemap_bin$0$0({704}DA704d,SC:U),D,0,0
+S:G$introstage2tiles_psgcompr$0$0({306}DA306d,SC:U),D,0,0
+S:G$playershoot_psgcompr$0$0({86}DA86d,SC:U),D,0,0
+S:G$stage4_psg$0$0({10079}DA10079d,SC:U),D,0,0
+S:G$stage7a_psg$0$0({1497}DA1497d,SC:U),D,0,0

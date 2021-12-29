@@ -1,5 +1,5 @@
 XL2
-H A areas 14 global symbols
+H A areas 27 global symbols
 M bank2
 O -mz80
 S .__.ABS. Def0000
@@ -15,18 +15,37 @@ S _persons_bin Def2BE6
 S _playershoot_psg Def3859
 S _enemybomb_psg Def27F1
 S _selectorpalette_bin Def38B2
+S G$ray_psg$0$0 Def388F
+S G$fortressdoor_psgcompr$0$0 Def2A09
+S G$mikgamestiles_psgcompr$0$0 Def2AC5
+S G$powerup_psg$0$0 Def3861
+S G$font_psgcompr$0$0 Def283A
 S _ray_psg Def388F
 S _fortressdoor_psgcompr Def2A09
 S _mikgamestiles_psgcompr Def2AC5
+S G$pause_psg$0$0 Def2BC3
 S _powerup_psg Def3861
+S G$explosion_psg$0$0 Def2821
+S G$silence_psg$0$0 Def3F84
+S G$selectortiles_psgcompr$0$0 Def38C2
 S _font_psgcompr Def283A
+S G$personspalette_bin$0$0 Def3849
+S G$mikgamestilemap_bin$0$0 Def2A45
 S _pause_psg Def2BC3
+S G$persons_psgcompr$0$0 Def2DDE
 S _explosion_psg Def2821
 S _selectortiles_psgcompr Def38C2
 S _silence_psg Def3F84
+S G$bigexplosion_psgcompr$0$0 Def0000
 S _personspalette_bin Def3849
+S G$enemylaser_psg$0$0 Def2809
+S G$ending_psg$0$0 Def00A7
 S _mikgamestilemap_bin Def2A45
 S _persons_psgcompr Def2DDE
+S G$persons_bin$0$0 Def2BE6
+S G$playershoot_psg$0$0 Def3859
+S G$enemybomb_psg$0$0 Def27F1
+S G$selectorpalette_bin$0$0 Def38B2
 S _bigexplosion_psgcompr Def0000
 S _ending_psg Def00A7
 S _enemylaser_psg Def2809

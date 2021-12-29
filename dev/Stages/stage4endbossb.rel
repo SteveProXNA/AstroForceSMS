@@ -1,0 +1,131 @@
+;!FILE stage4endbossb.asm
+XL2
+H 9 areas 57 global symbols
+M stage4endbossb
+O -mz80
+S .__.ABS. Def0000
+S _devkit_SMS_addSprite Ref0000
+A _CODE size 69 flags 0 addr 0
+S A$stage4endbossb$60 Def0003
+S A$stage4endbossb$70 Def000D
+S A$stage4endbossb$61 Def0004
+S A$stage4endbossb$62 Def0005
+S A$stage4endbossb$63 Def0007
+S A$stage4endbossb$64 Def0008
+S C$stage4endbossb.c$8$1$33 Def0000
+S _InitStage4EndBossB Def0000
+S A$stage4endbossb$92 Def0019
+S C$stage4endbossb.c$9$1$33 Def0009
+S A$stage4endbossb$93 Def001C
+S A$stage4endbossb$75 Def000F
+S A$stage4endbossb$57 Def0000
+S A$stage4endbossb$94 Def001F
+S A$stage4endbossb$85 Def0010
+S A$stage4endbossb$58 Def0001
+S G$UpdateStage4EndBossB$0$0 Def0010
+S A$stage4endbossb$95 Def0020
+S A$stage4endbossb$86 Def0012
+S A$stage4endbossb$68 Def0009
+S A$stage4endbossb$59 Def0002
+S A$stage4endbossb$96 Def0021
+S A$stage4endbossb$87 Def0016
+S A$stage4endbossb$69 Def000C
+S A$stage4endbossb$97 Def0022
+S A$stage4endbossb$88 Def0018
+S C$stage4endbossb.c$5$0$0 Def0000
+S A$stage4endbossb$98 Def0024
+S A$stage4endbossb$99 Def0027
+S XG$InitStage4EndBossB$0$0 Def000F
+S _UpdateStage4EndBossB Def0010
+S XG$UpdateStage4EndBossB$0$0 Def0068
+S A$stage4endbossb$100 Def0029
+S A$stage4endbossb$110 Def0031
+S A$stage4endbossb$101 Def002A
+S A$stage4endbossb$111 Def0033
+S C$stage4endbossb.c$10$1$33 Def000F
+S A$stage4endbossb$130 Def0049
+S A$stage4endbossb$121 Def003C
+S A$stage4endbossb$112 Def0035
+S A$stage4endbossb$140 Def0052
+S A$stage4endbossb$131 Def004A
+S A$stage4endbossb$122 Def003F
+S A$stage4endbossb$113 Def0036
+S C$stage4endbossb.c$12$1$33 Def0010
+S A$stage4endbossb$150 Def0061
+S A$stage4endbossb$141 Def0053
+S A$stage4endbossb$132 Def004D
+S A$stage4endbossb$123 Def0040
+S A$stage4endbossb$105 Def002B
+S C$stage4endbossb.c$20$1$35 Def0050
+S A$stage4endbossb$142 Def0054
+S A$stage4endbossb$133 Def004E
+S A$stage4endbossb$124 Def0041
+S A$stage4endbossb$115 Def0038
+S A$stage4endbossb$106 Def002C
+S A$stage4endbossb$143 Def0056
+S A$stage4endbossb$134 Def004F
+S A$stage4endbossb$125 Def0042
+S A$stage4endbossb$116 Def003A
+S A$stage4endbossb$107 Def002D
+S A$stage4endbossb$162 Def0068
+S A$stage4endbossb$144 Def0057
+S A$stage4endbossb$126 Def0043
+S A$stage4endbossb$108 Def002E
+S C$stage4endbossb.c$23$1$35 Def0062
+S A$stage4endbossb$154 Def0062
+S A$stage4endbossb$145 Def005A
+S A$stage4endbossb$127 Def0044
+S A$stage4endbossb$109 Def002F
+S C$stage4endbossb.c$24$1$35 Def0068
+S C$stage4endbossb.c$15$1$35 Def0019
+S A$stage4endbossb$146 Def005B
+S A$stage4endbossb$128 Def0045
+S C$stage4endbossb.c$16$1$35 Def002B
+S A$stage4endbossb$156 Def0064
+S A$stage4endbossb$147 Def005C
+S A$stage4endbossb$138 Def0050
+S A$stage4endbossb$129 Def0048
+S A$stage4endbossb$157 Def0066
+S A$stage4endbossb$148 Def005D
+S A$stage4endbossb$139 Def0051
+S A$stage4endbossb$149 Def0060
+S C$stage4endbossb.c$19$1$35 Def003C
+S G$InitStage4EndBossB$0$0 Def0000
+A _DATA size 0 flags 0 addr 0
+A _INITIALIZED size 0 flags 0 addr 0
+A _DABS size 0 flags 8 addr 0
+A _HOME size 0 flags 0 addr 0
+A _GSINIT size 0 flags 0 addr 0
+A _GSFINAL size 0 flags 0 addr 0
+A _INITIALIZER size 0 flags 0 addr 0
+A _CABS size 0 flags 8 addr 0
+T 00 00
+R 00 00 00 00
+T 00 00 C1 E1 E5 C5 4E 3E 78 91 D8 01 04 00 09 36
+R 00 00 00 00
+T 0E 00 10 C9
+R 00 00 00 00
+T 10 00
+R 00 00 00 00
+T 10 00 DD E5 DD 21 00 00 DD 39 F5 DD 4E 04 DD 46
+R 00 00 00 00
+T 1E 00 05 0A 5F C5 FD E1 FD 7E 04 C6 F8 83 02 F5
+R 00 00 00 00
+T 2C 00 0A 5F F1 D6 0C 38 05 3E E6 93 30 04
+R 00 00 00 00
+T 38 00
+R 00 00 00 00
+T 38 00 2E 00 18 28
+R 00 00 00 00
+T 3C 00
+R 00 00 00 00
+T 3C 00 21 01 00 09 E3 E1 E5 56 C5 21 BE 01 E5 D5
+R 00 00 00 00
+T 4A 00 CD 00 00 F1 F1 C1 E1 E5 56 0A C6 08 47 21
+R 00 00 00 00 02 03 01 00
+T 58 00 BF 01 E5 58 D5 CD 00 00 F1 F1 2E 01
+R 00 00 00 00 02 08 01 00
+T 64 00
+R 00 00 00 00
+T 64 00 DD F9 DD E1 C9
+R 00 00 00 00

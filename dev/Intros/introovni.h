@@ -1,19 +1,9 @@
-unsigned char UpdateIntroOvni( enemy *en )
-{
-	// Draw
-	DrawQuadSprite( en->enemyposx, en->enemyposy, INTROOVNIBASE + ( ( ( en->enemyframe >> 2 ) % 4 ) << 2 ) );
+#ifndef _INTROOVNI_H_
+#define _INTROOVNI_H_
 
-	// Update
-	if( en->enemytype == INTROOVNILEFT )
-	{
-		if( en->enemyposx < 60 )en->enemyposx++;
-	}
-	else
-	{
-		if( en->enemyposx > 180 )en->enemyposx--;
-	}
+#include "../defines.h"
 
-	// Return
-	return 1;
-}
+// ADRIANA
+unsigned char UpdateIntroOvni( enemy *en );
 
+#endif//_INTROOVNI_H_

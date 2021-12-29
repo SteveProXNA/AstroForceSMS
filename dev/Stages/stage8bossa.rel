@@ -1,0 +1,164 @@
+;!FILE stage8bossa.asm
+XL2
+H 9 areas 72 global symbols
+M stage8bossa
+O -mz80
+S _disablescroll Ref0000
+S _myRand Ref0000
+S .__.ABS. Def0000
+S _InitEnemy Ref0000
+S _stage8phase Ref0000
+S _stageframe Ref0000
+A _CODE size 81 flags 0 addr 0
+S A$stage8bossa$201 Def0080
+S A$stage8bossa$120 Def0037
+S A$stage8bossa$111 Def0029
+S A$stage8bossa$102 Def001D
+S A$stage8bossa$130 Def0041
+S A$stage8bossa$121 Def0038
+S A$stage8bossa$112 Def002B
+S A$stage8bossa$103 Def001E
+S C$stage8bossa.c$12$1$50 Def0010
+S A$stage8bossa$140 Def004D
+S A$stage8bossa$131 Def0042
+S A$stage8bossa$122 Def0039
+S A$stage8bossa$113 Def002C
+S A$stage8bossa$104 Def0020
+S C$stage8bossa.c$20$1$52 Def0055
+S A$stage8bossa$150 Def0056
+S A$stage8bossa$141 Def004E
+S A$stage8bossa$132 Def0044
+S A$stage8bossa$123 Def003A
+S A$stage8bossa$114 Def002E
+S A$stage8bossa$105 Def0022
+S C$stage8bossa.c$21$1$52 Def005A
+S XG$InitStage8BossA$0$0 Def000F
+S A$stage8bossa$151 Def0058
+S A$stage8bossa$142 Def0051
+S A$stage8bossa$133 Def0045
+S A$stage8bossa$124 Def003B
+S A$stage8bossa$115 Def002F
+S A$stage8bossa$106 Def0024
+S C$stage8bossa.c$40$1$52 Def0080
+S A$stage8bossa$170 Def006B
+S A$stage8bossa$143 Def0052
+S A$stage8bossa$134 Def0047
+S A$stage8bossa$125 Def003C
+S A$stage8bossa$116 Def0030
+S C$stage8bossa.c$14$1$52 Def0010
+S A$stage8bossa$180 Def0070
+S A$stage8bossa$162 Def0061
+S A$stage8bossa$144 Def0053
+S A$stage8bossa$135 Def0048
+S A$stage8bossa$126 Def003D
+S A$stage8bossa$117 Def0033
+S C$stage8bossa.c$24$1$52 Def0061
+S _UpdateStage8BossA Def0010
+S A$stage8bossa$190 Def007B
+S A$stage8bossa$181 Def0073
+S A$stage8bossa$163 Def0062
+S A$stage8bossa$136 Def0049
+S A$stage8bossa$127 Def003E
+S A$stage8bossa$118 Def0034
+S C$stage8bossa.c$25$1$52 Def0066
+S A$stage8bossa$191 Def007D
+S A$stage8bossa$164 Def0064
+S A$stage8bossa$155 Def005A
+S A$stage8bossa$137 Def004A
+S A$stage8bossa$128 Def003F
+S A$stage8bossa$119 Def0035
+S C$stage8bossa.c$32$2$54 Def0075
+S C$stage8bossa.c$26$1$52 Def006D
+S A$stage8bossa$156 Def005D
+S A$stage8bossa$138 Def004B
+S A$stage8bossa$129 Def0040
+S C$stage8bossa.c$16$2$53 Def001D
+S A$stage8bossa$175 Def006D
+S A$stage8bossa$157 Def005F
+S A$stage8bossa$139 Def004C
+S C$stage8bossa.c$17$2$53 Def0026
+S A$stage8bossa$185 Def0075
+S A$stage8bossa$176 Def006E
+S A$stage8bossa$149 Def0055
+S C$stage8bossa.c$35$2$54 Def007B
+S A$stage8bossa$186 Def0078
+S A$stage8bossa$168 Def0066
+S C$stage8bossa.c$39$1$52 Def007E
+S A$stage8bossa$196 Def007E
+S A$stage8bossa$169 Def0069
+S C$stage8bossa.c$29$2$54 Def0070
+S XG$UpdateStage8BossA$0$0 Def0080
+S A$stage8bossa$70 Def000E
+S A$stage8bossa$90 Def0012
+S A$stage8bossa$63 Def0005
+S C$stage8bossa.c$8$1$50 Def0000
+S A$stage8bossa$91 Def0013
+S A$stage8bossa$64 Def0006
+S C$stage8bossa.c$9$1$50 Def0005
+S A$stage8bossa$92 Def0014
+S A$stage8bossa$65 Def0007
+S A$stage8bossa$93 Def0015
+S A$stage8bossa$75 Def000F
+S A$stage8bossa$66 Def0008
+S A$stage8bossa$94 Def0016
+S A$stage8bossa$67 Def0009
+S A$stage8bossa$58 Def0000
+S A$stage8bossa$95 Def0017
+S A$stage8bossa$68 Def000C
+S A$stage8bossa$59 Def0003
+S A$stage8bossa$96 Def0018
+S A$stage8bossa$69 Def000D
+S A$stage8bossa$97 Def001A
+S A$stage8bossa$88 Def0010
+S C$stage8bossa.c$5$0$0 Def0000
+S A$stage8bossa$98 Def001B
+S A$stage8bossa$89 Def0011
+S G$InitStage8BossA$0$0 Def0000
+S _InitStage8BossA Def0000
+S G$UpdateStage8BossA$0$0 Def0010
+S A$stage8bossa$110 Def0026
+S C$stage8bossa.c$10$1$50 Def000F
+A _DATA size 0 flags 0 addr 0
+A _INITIALIZED size 0 flags 0 addr 0
+A _DABS size 0 flags 8 addr 0
+A _HOME size 0 flags 0 addr 0
+A _GSINIT size 0 flags 0 addr 0
+A _GSFINAL size 0 flags 0 addr 0
+A _INITIALIZER size 0 flags 0 addr 0
+A _CABS size 0 flags 8 addr 0
+T 00 00
+R 00 00 00 00
+T 00 00 21 00 00 36 01 D1 C1 C5 D5 21 06 00 09 4E
+R 00 00 00 00 02 03 00 00
+T 0E 00 71 C9
+R 00 00 00 00
+T 10 00
+R 00 00 00 00
+T 10 00 C1 E1 E5 C5 23 23 23 4E 3E 10 91 30 38 79
+R 00 00 00 00
+T 1E 00 FE D4 30 33 E6 07 20 58 CD 00 00 CB BD 7D
+R 00 00 00 00 02 0B 01 00
+T 2C 00 C6 18 4F C5 CD 00 00 C1 7D E6 01 5F 87 83
+R 00 00 00 00 02 07 01 00
+T 3A 00 87 83 87 83 87 87 87 87 C6 08 47 3E 55 F5
+R 00 00 00 00
+T 48 00 33 79 F5 33 C5 33 CD 00 00 F1 33 18 29
+R 00 00 00 00 02 09 03 00
+T 55 00
+R 00 00 00 00
+T 55 00 79 D6 10 20 07 21 00 00 36 01 18 1D
+R 00 00 00 00 02 08 04 00
+T 61 00
+R 00 00 00 00
+T 61 00 79 D6 F0 20 07 21 00 00 36 02 18 11
+R 00 00 00 00 02 08 04 00
+T 6D 00
+R 00 00 00 00
+T 6D 00 0C 20 0E 21 00 00 36 00 21 00 00 22 00 00
+R 00 00 00 00 02 06 00 00 02 0E 05 00
+T 7B 00 2E 00 C9
+R 00 00 00 00
+T 7E 00
+R 00 00 00 00
+T 7E 00 2E 01 C9
+R 00 00 00 00

@@ -1,8 +1,96 @@
-#include "..\defines.h"
+#include "fixedbank.h"
+#include "bank2.h"
+#include "bank3.h"
+#include "bank4.h"
+#include "bank5.h"
+#include "bank6.h"
+#include "bank7.h"
+#include "bank8.h"
+#include "bank9.h"
+#include "bank10.h"
+#include "bank11.h"
+#include "bank12.h"
+#include "bank13.h"
+#include "bank14.h"
+#include "../Fortresses/fortresscannon.h"
+#include "../Fortresses/fortressdoor.h"
+#include "../Fortresses/fortressphantom.h"
+#include "../Fortresses/fortresssearcher.h"
+#include "../Fortresses/fortresswave.h"
+#include "../General/bombship.h"
+#include "../General/rectship.h"
+#include "../General/rsgthing.h"
+#include "../General/skullbone.h"
+#include "../General/spreadship.h"
+#include "../General/turnship.h"
+#include "../General/warning.h"
+#include "../General/waveship.h"	
+#include "../Intros/intro1stage.h"
+#include "../Intros/intro2stage.h"
+#include "../Intros/intro3object.h"
+#include "../Intros/intro3stage.h"
+#include "../Intros/intro4stage.h"
+#include "../Intros/introovni.h"
+#include "../Intros/introsideplayer.h"
+#include "../Intros/introstage.h"
+#include "../Intros/introstar.h"
+#include "../Monsters/monsterblob.h"
+#include "../Monsters/monsterhead.h"
+#include "../Monsters/monstermissil.h"
+#include "../Players/player.h"
+#include "../Players/playstage.h"
+#include "../Spaces/spaceasteroid.h"
+#include "../Spaces/spaceshooter.h"
+#include "../Spaces/spacestation.h"
+#include "../Stages/stage1.h"
+#include "../Stages/stage1endboss.h"
+#include "../Stages/stage1middleboss.h"
+#include "../Stages/stage1middlebossb.h"
+#include "../Stages/stage1middlebossc.h"
+#include "../Stages/stage2.h"
+#include "../Stages/stage2endboss.h"
+#include "../Stages/stage2object.h"
+#include "../Stages/stage3.h"
+#include "../Stages/stage3endboss.h"
+#include "../Stages/stage3laser.h"
+#include "../Stages/stage3star.h"
+#include "../Stages/stage4.h"
+#include "../Stages/stage4endboss.h"
+#include "../Stages/stage4endbossb.h"
+#include "../Stages/stage4middleboss.h"
+#include "../Stages/stage4object.h"
+#include "../Stages/stage5.h"
+#include "../Stages/stage5endboss.h"
+#include "../Stages/stage5missile.h"
+#include "../Stages/stage6.h"
+#include "../Stages/stage6endboss.h"
+#include "../Stages/stage6endbossb.h"
+#include "../Stages/stage6object.h"
+#include "../Stages/stage7.h"
+#include "../Stages/stage7endboss.h"
+#include "../Stages/stage7middleboss.h"
+#include "../Stages/stage7object.h"
+#include "../Stages/stage8.h"
+#include "../Stages/stage8bossa.h"
+#include "../Stages/stage8bossb.h"
+#include "../Stages/stage8bossc.h"
+#include "../Stages/stage8lateral.h"
+#include "../Vulcans/vulcanstation.h"
+#include "../Vulcans/vulcantank.h"
+#include "../Vulcans/vulcanvulcan.h"
+#include "../Vulcans/vulcanlava.h"
+#include "../Vulcans/vulcanbird.h"
+#include "../Vulcans/vulcanlaser.h"
+#include "../Wars/ww2plane.h"
+#include "../Wars/ww2planeb.h"
+#include "../Wars/ww2ship.h"
+#include "../Wars/ww2zeppelin.h"
+#include "../funcs.h"
 
 #ifdef _CONSOLE
 #pragma warning(disable: 4047)
 #else
+#pragma disable_warning 158
 #endif
 
 // Player shoots speeds
@@ -481,7 +569,7 @@ const unsigned char finishscript[] =
 //////////////////////////////////////////////////
 // STAGES INIT INFO
 
-unsigned char stagedatamarks[] = { 6,4,3,1,7,2,0,5 };
+const unsigned char stagedatamarks[] = { 6,4,3,1,7,2,0,5 };
 
 const unsigned char *stageinitdata[] =
 {
@@ -1953,42 +2041,42 @@ const unsigned char *spawners[] =
 	stage3script
 };
 
-// Function pointers
-
-extern void InitWarning( enemy *en );
-extern void InitIntroSidePlayer( enemy *en );
-extern void InitIntroStar( enemy *en );
-extern void InitWaveShip( enemy *en );
-extern void InitTurnShip( enemy *en );
-extern void InitBombShipLeft( enemy *en );
-extern void InitBombShipRight( enemy *en );
-extern void InitSpreadShip( enemy *en );
-extern void InitWW2Zeppelin( enemy *en );
-extern void InitWW2Plane( enemy *en );
-extern void InitIntro3Object( enemy *en );
-extern void InitMonsterMissilLeft( enemy *en );
-extern void InitStage7MiddleBoss( enemy *en );
-extern void InitStage7EndBoss( enemy *en );
-extern void InitFortressPhantom( enemy *en );
-extern void InitFortressCannonRight( enemy *en );
-extern void InitVulcanBird( enemy *en );
-extern void InitVulcanLaser( enemy *en );
-extern void InitVulcanLava( enemy *en );
-extern void InitSpaceAsteroid( enemy *en );
-extern void InitSkullBoneA( enemy *en );
-extern void InitSkullBoneB( enemy *en );
-extern void InitSkullBoneC( enemy *en );
-extern void InitStage7EndBossB( enemy *en );
-extern void InitStage4EndBossB( enemy *en );
-extern void InitStage3Laser( enemy *en );
-extern void InitStage1MiddleBossB( enemy *en );
-extern void InitStage1MiddleBossC( enemy *en );
-extern void InitStage6EndBossB( enemy *en );
-extern void InitStage8BossA( enemy *en );
-extern void InitStage8BossB( enemy *en );
-extern void InitStage8BossC( enemy *en );
-extern void InitRSGThing( enemy *en );
-extern void InitStage8Lateral( enemy *en );
+//// Function pointers
+//
+//extern void InitWarning( enemy *en );
+//extern void InitIntroSidePlayer( enemy *en );
+//extern void InitIntroStar( enemy *en );
+//extern void InitWaveShip( enemy *en );
+//extern void InitTurnShip( enemy *en );
+//extern void InitBombShipLeft( enemy *en );
+//extern void InitBombShipRight( enemy *en );
+//extern void InitSpreadShip( enemy *en );
+//extern void InitWW2Zeppelin( enemy *en );
+//extern void InitWW2Plane( enemy *en );
+//extern void InitIntro3Object( enemy *en );
+//extern void InitMonsterMissilLeft( enemy *en );
+//extern void InitStage7MiddleBoss( enemy *en );
+//extern void InitStage7EndBoss( enemy *en );
+//extern void InitFortressPhantom( enemy *en );
+//extern void InitFortressCannonRight( enemy *en );
+//extern void InitVulcanBird( enemy *en );
+//extern void InitVulcanLaser( enemy *en );
+//extern void InitVulcanLava( enemy *en );
+//extern void InitSpaceAsteroid( enemy *en );
+//extern void InitSkullBoneA( enemy *en );
+//extern void InitSkullBoneB( enemy *en );
+//extern void InitSkullBoneC( enemy *en );
+//extern void InitStage7EndBossB( enemy *en );
+//extern void InitStage4EndBossB( enemy *en );
+//extern void InitStage3Laser( enemy *en );
+//extern void InitStage1MiddleBossB( enemy *en );
+//extern void InitStage1MiddleBossC( enemy *en );
+//extern void InitStage6EndBossB( enemy *en );
+//extern void InitStage8BossA( enemy *en );
+//extern void InitStage8BossB( enemy *en );
+//extern void InitStage8BossC( enemy *en );
+//extern void InitRSGThing( enemy *en );
+//extern void InitStage8Lateral( enemy *en );
 
 const MyInitEnemyFunction initenemyfunctions[] =
 {
@@ -2080,67 +2168,67 @@ const MyInitEnemyFunction initenemyfunctions[] =
 	InitStage8Lateral,
 };
 
-extern unsigned char UpdateWarning( enemy *en );
-extern unsigned char UpdateIntroSidePlayer( enemy *en );
-extern unsigned char UpdateIntroOvni( enemy *en );
-extern unsigned char UpdateIntroStar( enemy *en );
-extern unsigned char UpdateWaveShip( enemy *en );
-extern unsigned char UpdateRectShip( enemy *en );
-extern unsigned char UpdateTurnShip( enemy *en );
-extern unsigned char UpdateBombShip( enemy *en );
-extern unsigned char UpdateSpreadShip( enemy *en );
-extern unsigned char UpdateStage4MiddleBoss( enemy *en );
-extern unsigned char UpdateStage4EndBoss( enemy *en );
-extern unsigned char UpdateWW2Zeppelin( enemy *en );
-extern unsigned char UpdateWW2Ship( enemy *en );
-extern unsigned char UpdateWW2Plane( enemy *en );
-extern unsigned char UpdateStage5EndBoss( enemy *en );
-extern unsigned char UpdateIntro3Object( enemy *en );
-extern unsigned char UpdateMonsterBlob( enemy *en );
-extern unsigned char UpdateMonsterHead( enemy *en );
-extern unsigned char UpdateMonsterMissil( enemy *en );
-extern unsigned char UpdateStage7MiddleBoss( enemy *en );
-extern unsigned char UpdateStage7EndBoss( enemy *en );
-extern unsigned char UpdateStage7Object( enemy *en );
-extern unsigned char UpdateFortressSearcher( enemy *en );
-extern unsigned char UpdateFortressDoor( enemy *en );
-extern unsigned char UpdateFortressWave( enemy *en );
-extern unsigned char UpdateFortressPhantom( enemy *en );
-extern unsigned char UpdateFortressCannon( enemy *en );
-extern unsigned char UpdateStage1MiddleBoss( enemy *en );
-extern unsigned char UpdateStage1EndBoss( enemy *en );
-extern unsigned char UpdateStage4Object( enemy *en );
-extern unsigned char UpdateVulcanStation( enemy *en );
-extern unsigned char UpdateVulcanVulcan( enemy *en );
-extern unsigned char UpdateVulcanBird( enemy *en );
-extern unsigned char UpdateVulcanLaser( enemy *en );
-extern unsigned char UpdateVulcanLava( enemy *en );
-extern unsigned char UpdateVulcanTankLeft( enemy *en );
-extern unsigned char UpdateVulcanTankRight( enemy *en );
-extern unsigned char UpdateVulcanTankStop( enemy *en );
-extern unsigned char UpdateStage2EndBoss( enemy *en );
-extern unsigned char UpdateStage2Object( enemy *en );
-extern unsigned char UpdateSpaceAsteroid( enemy *en );
-extern unsigned char UpdateSpaceStation( enemy *en );
-extern unsigned char UpdateSpaceShooter( enemy *en );
-extern unsigned char UpdateStage3EndBoss( enemy *en );
-extern unsigned char UpdateStage6EndBoss( enemy *en );
-extern unsigned char UpdateSkullBoneAB( enemy *en );
-extern unsigned char UpdateSkullBoneC( enemy *en );
-extern unsigned char UpdateStage5Missile( enemy *en );
-extern unsigned char UpdateStage7EndBossB( enemy *en );
-extern unsigned char UpdateStage4EndBossB( enemy *en );
-extern unsigned char UpdateStage3Laser( enemy *en );
-extern unsigned char UpdateStage1MiddleBossB( enemy *en );
-extern unsigned char UpdateStage1MiddleBossC( enemy *en );
-extern unsigned char UpdateStage6EndBossB( enemy *en );
-extern unsigned char UpdateStage6Object( enemy *en );
-extern unsigned char UpdateStage8BossA( enemy *en );
-extern unsigned char UpdateStage8BossB( enemy *en );
-extern unsigned char UpdateStage8BossC( enemy *en );
-extern unsigned char UpdateRSGThing( enemy *en );
-extern unsigned char UpdateWW2PlaneB( enemy *en );
-extern unsigned char UpdateStage8Lateral( enemy *en );
+//extern unsigned char UpdateWarning( enemy *en );
+//extern unsigned char UpdateIntroSidePlayer( enemy *en );
+//extern unsigned char UpdateIntroOvni( enemy *en );
+//extern unsigned char UpdateIntroStar( enemy *en );
+//extern unsigned char UpdateWaveShip( enemy *en );
+//extern unsigned char UpdateRectShip( enemy *en );
+//extern unsigned char UpdateTurnShip( enemy *en );
+//extern unsigned char UpdateBombShip( enemy *en );
+//extern unsigned char UpdateSpreadShip( enemy *en );
+//extern unsigned char UpdateStage4MiddleBoss( enemy *en );
+//extern unsigned char UpdateStage4EndBoss( enemy *en );
+//extern unsigned char UpdateWW2Zeppelin( enemy *en );
+//extern unsigned char UpdateWW2Ship( enemy *en );
+//extern unsigned char UpdateWW2Plane( enemy *en );
+//extern unsigned char UpdateStage5EndBoss( enemy *en );
+//extern unsigned char UpdateIntro3Object( enemy *en );
+//extern unsigned char UpdateMonsterBlob( enemy *en );
+//extern unsigned char UpdateMonsterHead( enemy *en );
+//extern unsigned char UpdateMonsterMissil( enemy *en );
+//extern unsigned char UpdateStage7MiddleBoss( enemy *en );
+//extern unsigned char UpdateStage7EndBoss( enemy *en );
+//extern unsigned char UpdateStage7Object( enemy *en );
+//extern unsigned char UpdateFortressSearcher( enemy *en );
+//extern unsigned char UpdateFortressDoor( enemy *en );
+//extern unsigned char UpdateFortressWave( enemy *en );
+//extern unsigned char UpdateFortressPhantom( enemy *en );
+//extern unsigned char UpdateFortressCannon( enemy *en );
+//extern unsigned char UpdateStage1MiddleBoss( enemy *en );
+//extern unsigned char UpdateStage1EndBoss( enemy *en );
+//extern unsigned char UpdateStage4Object( enemy *en );
+//extern unsigned char UpdateVulcanStation( enemy *en );
+//extern unsigned char UpdateVulcanVulcan( enemy *en );
+//extern unsigned char UpdateVulcanBird( enemy *en );
+//extern unsigned char UpdateVulcanLaser( enemy *en );
+//extern unsigned char UpdateVulcanLava( enemy *en );
+//extern unsigned char UpdateVulcanTankLeft( enemy *en );
+//extern unsigned char UpdateVulcanTankRight( enemy *en );
+//extern unsigned char UpdateVulcanTankStop( enemy *en );
+//extern unsigned char UpdateStage2EndBoss( enemy *en );
+//extern unsigned char UpdateStage2Object( enemy *en );
+//extern unsigned char UpdateSpaceAsteroid( enemy *en );
+//extern unsigned char UpdateSpaceStation( enemy *en );
+//extern unsigned char UpdateSpaceShooter( enemy *en );
+//extern unsigned char UpdateStage3EndBoss( enemy *en );
+//extern unsigned char UpdateStage6EndBoss( enemy *en );
+//extern unsigned char UpdateSkullBoneAB( enemy *en );
+//extern unsigned char UpdateSkullBoneC( enemy *en );
+//extern unsigned char UpdateStage5Missile( enemy *en );
+//extern unsigned char UpdateStage7EndBossB( enemy *en );
+//extern unsigned char UpdateStage4EndBossB( enemy *en );
+//extern unsigned char UpdateStage3Laser( enemy *en );
+//extern unsigned char UpdateStage1MiddleBossB( enemy *en );
+//extern unsigned char UpdateStage1MiddleBossC( enemy *en );
+//extern unsigned char UpdateStage6EndBossB( enemy *en );
+//extern unsigned char UpdateStage6Object( enemy *en );
+//extern unsigned char UpdateStage8BossA( enemy *en );
+//extern unsigned char UpdateStage8BossB( enemy *en );
+//extern unsigned char UpdateStage8BossC( enemy *en );
+//extern unsigned char UpdateRSGThing( enemy *en );
+//extern unsigned char UpdateWW2PlaneB( enemy *en );
+//extern unsigned char UpdateStage8Lateral( enemy *en );
 
 const MyUpdateEnemyFunction updateenemyfunctions[] =
 {
@@ -2232,14 +2320,14 @@ const MyUpdateEnemyFunction updateenemyfunctions[] =
 	UpdateStage8Lateral
 };
 
-extern void UpdateStage1();
-extern void UpdateStage2();
-extern void UpdateStage3();
-extern void UpdateStage4();
-extern void UpdateStage5();
-extern void UpdateStage6();
-extern void UpdateStage7();
-extern void UpdateStage8();
+//extern void UpdateStage1();
+//extern void UpdateStage2();
+//extern void UpdateStage3();
+//extern void UpdateStage4();
+//extern void UpdateStage5();
+//extern void UpdateStage6();
+//extern void UpdateStage7();
+//extern void UpdateStage8();
 
 const MyKillEnemyFunction updatestagefunctions[] =
 {
@@ -2254,14 +2342,14 @@ const MyKillEnemyFunction updatestagefunctions[] =
 	UpdateStage6
 };
 
-extern void InitStage7();
-extern void InitStage5();
-extern void InitStage4();
-extern void InitStage2();
-extern void InitStage8();
-extern void InitStage3();
-extern void InitStage1();
-extern void InitStage6();
+//extern void InitStage7();
+//extern void InitStage5();
+//extern void InitStage4();
+//extern void InitStage2();
+//extern void InitStage8();
+//extern void InitStage3();
+//extern void InitStage1();
+//extern void InitStage6();
 
 const MyKillEnemyFunction initstagefunctions[] =
 {
@@ -2275,15 +2363,15 @@ const MyKillEnemyFunction initstagefunctions[] =
 	InitStage1,
 	InitStage6,
 };
-
-extern void FinishStage4MiddleBoss();
-extern void InitAfterBossStage();
-extern void FinishStage7MiddleBoss();
-extern void FinishStage1MiddleBoss();
-extern void FinishVulcanStation();
-extern void FinishSpaceStation();
-extern void FinishStage6EndBoss();
-extern void FinishStage8BossC();
+//
+//extern void FinishStage4MiddleBoss();
+//extern void InitAfterBossStage();
+//extern void FinishStage7MiddleBoss();
+//extern void FinishStage1MiddleBoss();
+//extern void FinishVulcanStation();
+//extern void FinishSpaceStation();
+//extern void FinishStage6EndBoss();
+//extern void FinishStage8BossC();
 
 
 const MyKillEnemyFunction killenemyfunctions[] =
@@ -2373,7 +2461,7 @@ const MyKillEnemyFunction killenemyfunctions[] =
 	0,
 	0,
 	0,
-	0
+	//	0
 };
 
 // Scrollers
@@ -2816,30 +2904,30 @@ unsigned char *difficultlabels[] = { "EASY","HARD" };
 
 // Stage 6 end boss
 
-extern void UpdateStage6EndBoss0( enemy *en );
-extern void UpdateStage6EndBoss1( enemy *en );
-extern void UpdateStage6EndBoss2( enemy *en );
-extern void UpdateStage6EndBoss3( enemy *en );
-extern void UpdateStage6EndBoss4( enemy *en );
-extern void UpdateStage6EndBoss5( enemy *en );
-extern void UpdateStage6EndBoss3A( enemy *en );
+//extern void UpdateStage6EndBoss0( enemy *en );
+//extern void UpdateStage6EndBoss1( enemy *en );
+//extern void UpdateStage6EndBoss2( enemy *en );
+//extern void UpdateStage6EndBoss3( enemy *en );
+//extern void UpdateStage6EndBoss4( enemy *en );
+//extern void UpdateStage6EndBoss5( enemy *en );
+//extern void UpdateStage6EndBoss3A( enemy *en );
 
 const MyInitEnemyFunction updatestage6endbossfunctions[] =
 {
-	UpdateStage6EndBoss0,
-	UpdateStage6EndBoss1,
-	UpdateStage6EndBoss2,
-	UpdateStage6EndBoss3,
-	UpdateStage6EndBoss4,
-	UpdateStage6EndBoss5,
-	UpdateStage6EndBoss3A
+	updatestage6endbossAssert,//UpdateStage6EndBoss0,
+	updatestage6endbossAssert,//UpdateStage6EndBoss1,
+	updatestage6endbossAssert,//UpdateStage6EndBoss2,
+	updatestage6endbossAssert,//UpdateStage6EndBoss3,
+	updatestage6endbossAssert,//UpdateStage6EndBoss4,
+	updatestage6endbossAssert,//UpdateStage6EndBoss5,
+	updatestage6endbossAssert,//UpdateStage6EndBoss3A
 };
 
-extern void UpdateStage5EndBoss0( enemy *en );
-extern void UpdateStage5EndBoss1( enemy *en );
-extern void UpdateStage5EndBoss2( enemy *en );
-extern void UpdateStage5EndBoss3( enemy *en );
-extern void UpdateStage5EndBoss4( enemy *en );
+//extern void UpdateStage5EndBoss0( enemy *en );
+//extern void UpdateStage5EndBoss1( enemy *en );
+//extern void UpdateStage5EndBoss2( enemy *en );
+//extern void UpdateStage5EndBoss3( enemy *en );
+//extern void UpdateStage5EndBoss4( enemy *en );
 
 const MyInitEnemyFunction updatestage5endbossfunctions[] =
 {
@@ -2851,11 +2939,11 @@ const MyInitEnemyFunction updatestage5endbossfunctions[] =
 };
 
 
-extern void	DoCommonBossAppearingFunction( enemy *en );
-extern void	UpdateStage3EndBoss1( enemy *en );
-extern void	UpdateStage3EndBoss2( enemy *en );
-extern void	UpdateStage3EndBoss1( enemy *en );
-extern void	UpdateStage3EndBoss2( enemy *en );
+//extern void	DoCommonBossAppearingFunction( enemy *en );
+//extern void	UpdateStage3EndBoss1( enemy *en );
+//extern void	UpdateStage3EndBoss2( enemy *en );
+//extern void	UpdateStage3EndBoss1( enemy *en );
+//extern void	UpdateStage3EndBoss2( enemy *en );
 
 const MyInitEnemyFunction updatestage3endbossfunctions[] =
 {
@@ -2867,10 +2955,10 @@ const MyInitEnemyFunction updatestage3endbossfunctions[] =
 };
 
 
-extern void	UpdateStage4MiddleBoss1( enemy *en );
-extern void	UpdateStage4MiddleBoss2( enemy *en );
-extern void	UpdateStage4MiddleBoss3( enemy *en );
-extern void	UpdateStage4MiddleBoss4( enemy *en );
+//extern void	UpdateStage4MiddleBoss1( enemy *en );
+//extern void	UpdateStage4MiddleBoss2( enemy *en );
+//extern void	UpdateStage4MiddleBoss3( enemy *en );
+//extern void	UpdateStage4MiddleBoss4( enemy *en );
 
 const MyInitEnemyFunction updatestage4middlebossfunctions[] =
 {
@@ -2881,14 +2969,14 @@ const MyInitEnemyFunction updatestage4middlebossfunctions[] =
 	UpdateStage4MiddleBoss4
 };
 
-extern void	DoCommonBossAppearingFunction( enemy *en );
-extern void	UpdateStage4EndBoss1( enemy *en );
-extern void	UpdateStage4EndBoss2( enemy *en );
-extern void	UpdateStage4EndBoss3( enemy *en );
-extern void	UpdateStage4EndBoss4( enemy *en );
-extern void	UpdateStage4EndBoss5( enemy *en );
-extern void	UpdateStage4EndBoss6( enemy *en );
-extern void	UpdateStage4EndBoss7( enemy *en );
+//extern void	DoCommonBossAppearingFunction( enemy *en );
+//extern void	UpdateStage4EndBoss1( enemy *en );
+//extern void	UpdateStage4EndBoss2( enemy *en );
+//extern void	UpdateStage4EndBoss3( enemy *en );
+//extern void	UpdateStage4EndBoss4( enemy *en );
+//extern void	UpdateStage4EndBoss5( enemy *en );
+//extern void	UpdateStage4EndBoss6( enemy *en );
+//extern void	UpdateStage4EndBoss7( enemy *en );
 
 const MyInitEnemyFunction updatestage4endbossfunctions[] =
 {
@@ -2914,12 +3002,12 @@ const signed char stage8bosscshootspeedy[] = { 6,7,6,5,4,3,2,1,0,1,2,3,4,5,6 };
 const signed char stage8bossbshootspeedx[] = { -8,-6,-4,-2,0,2,4,6,8,6,4,2,0,-2,-4,-6 };
 const signed char stage8bossbshootspeedy[] = { 0,1,3,5,7,5,3,1,0,1,3,5,7,5,3,1 };
 
-extern void UpdatePlayerState1();
-extern void UpdatePlayerState2();
-extern void UpdatePlayerState3();
-extern void UpdatePlayerState4();
-extern void UpdatePlayerState5();
-extern void UpdatePlayerState6();
+//extern void UpdatePlayerState1();
+//extern void UpdatePlayerState2();
+//extern void UpdatePlayerState3();
+//extern void UpdatePlayerState4();
+//extern void UpdatePlayerState5();
+//extern void UpdatePlayerState6();
 
 
 MyKillEnemyFunction playerupdatefunctions[] =
@@ -2934,9 +3022,9 @@ MyKillEnemyFunction playerupdatefunctions[] =
 };
 
 
-extern void UpdateStage7MiddleBoss0( enemy *en );
-extern void UpdateStage7MiddleBoss1( enemy *en );
-extern void UpdateStage7MiddleBoss2( enemy *en );
+//extern void UpdateStage7MiddleBoss0( enemy *en );
+//extern void UpdateStage7MiddleBoss1( enemy *en );
+//extern void UpdateStage7MiddleBoss2( enemy *en );
 
 const MyInitEnemyFunction updatestage7middlebossfunctions[] =
 {
@@ -2945,8 +3033,8 @@ const MyInitEnemyFunction updatestage7middlebossfunctions[] =
 	UpdateStage7MiddleBoss2
 };
 
-extern void UpdateSpaceStation1( enemy *en );
-extern void UpdateSpaceStation2( enemy *en );
+//extern void UpdateSpaceStation1( enemy *en );
+//extern void UpdateSpaceStation2( enemy *en );
 
 const MyInitEnemyFunction updatespacestationfunctions[] =
 {
@@ -2955,9 +3043,9 @@ const MyInitEnemyFunction updatespacestationfunctions[] =
 	UpdateSpaceStation2
 };
 
-extern void UpdateStage2EndBoss1( enemy *en );
-extern void UpdateStage2EndBoss2( enemy *en );
-extern void UpdateStage2EndBoss3( enemy *en );
+//extern void UpdateStage2EndBoss1( enemy *en );
+//extern void UpdateStage2EndBoss2( enemy *en );
+//extern void UpdateStage2EndBoss3( enemy *en );
 
 const MyInitEnemyFunction updatestage2endbossfunctions[] =
 {
@@ -2967,9 +3055,9 @@ const MyInitEnemyFunction updatestage2endbossfunctions[] =
 	UpdateStage2EndBoss3
 };
 
-unsigned char CheckCollisionStage7( unsigned char x, unsigned char y );
-unsigned char CheckCollisionStage2( unsigned char x, unsigned char y );
-unsigned char CheckCollisionStage1( unsigned char x, unsigned char y );
+//unsigned char CheckCollisionStage7( unsigned char x, unsigned char y );
+//unsigned char CheckCollisionStage2( unsigned char x, unsigned char y );
+//unsigned char CheckCollisionStage1( unsigned char x, unsigned char y );
 
 
 const MyCheckCollisionFunction checkcollisionfunctions[] =
@@ -2985,9 +3073,9 @@ const MyCheckCollisionFunction checkcollisionfunctions[] =
 	0
 };
 
-void UpdateIntro3Object1( enemy *en );
-void UpdateIntro3Object2( enemy *en );
-void UpdateIntro3Object3( enemy *en );
+//void UpdateIntro3Object1( enemy *en );
+//void UpdateIntro3Object2( enemy *en );
+//void UpdateIntro3Object3( enemy *en );
 
 const MyInitEnemyFunction updateintro3objectfunctions[] =
 {
@@ -3273,10 +3361,10 @@ const signed int stage8_scrollers[] =
 	8 * 32,10000,0,0,2
 };
 
-extern void UpdateStage8BossB1( enemy *en );
-extern void UpdateStage8BossB2( enemy *en );
-extern void UpdateStage8BossB3( enemy *en );
-
+//extern void UpdateStage8BossB1( enemy *en );
+//extern void UpdateStage8BossB2( enemy *en );
+//extern void UpdateStage8BossB3( enemy *en );
+//
 const MyInitEnemyFunction updatestage8bossbfunctions[] =
 {
 	DoCommonBossAppearingFunction,

@@ -1,24 +1,10 @@
-void InitStage3Laser( enemy *en )
-{
-	// Velocity
-	en->enemyparama = stage3laservelx[ en->enemytype - STAGE3LASERUP ];
-	en->enemyparamb = stage3laservely[ en->enemytype - STAGE3LASERUP ];
-}
+#ifndef _STAGE3LASER_H_
+#define _STAGE3LASER_H_
 
-unsigned char UpdateStage3Laser( enemy *en )
-{
-	// Move and check X
-	en->enemyposx += en->enemyparama - 8;
-	if( ( en->enemyposx < 8 ) || ( en->enemyposx > 240 ) )return 0;
+#include "../defines.h"
 
-	// Move and check Y
-	en->enemyposy += en->enemyparamb - 8;
-	if( ( en->enemyposy < 8 ) || ( en->enemyposy > 188 ) )return 0;
+// ADRIANA
+void InitStage3Laser( enemy *en );
+unsigned char UpdateStage3Laser( enemy *en );
 
-	// Draw
-	devkit_SMS_addSprite( en->enemyposx, en->enemyposy, STAGE3ENDBOSSBASE + 16 + sprite82anim );
-
-	// Good exit
-	return 1;
-}
-
+#endif//_STAGE3LASER_H_

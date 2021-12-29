@@ -1,5 +1,5 @@
 XL2
-H A areas 9 global symbols
+H A areas 11 global symbols
 M bank13
 O -mz80
 S .__.ABS. Def0000
@@ -11,11 +11,19 @@ A _HOME size 0 flags 0 addr 0
 A _GSINIT size 0 flags 0 addr 0
 A _GSFINAL size 0 flags 0 addr 0
 A _BANK13 size 3FEA flags 0 addr 0
+S G$stage8bossb_psgcompr$0$0 Def388C
+S G$stage8bossc_psgcompr$0$0 Def3ECA
+S G$monsterblob_psgcompr$0$0 Def0000
+S G$stage8_psg$0$0 Def0428
 S _stage8bossb_psgcompr Def388C
 S _stage8bossc_psgcompr Def3ECA
 S _monsterblob_psgcompr Def0000
 S _stage8_psg Def0428
+S G$stage8animtilescloudsmov_bin$0$0 Def378C
 S _stage8animtilescloudsmov_bin Def378C
+S G$skullb_psgcompr$0$0 Def0120
+S G$stage8animtilesamov_bin$0$0 Def298C
+S G$stage8animtilesbmov_bin$0$0 Def308C
 S _skullb_psgcompr Def0120
 S _stage8animtilesamov_bin Def298C
 S _stage8animtilesbmov_bin Def308C

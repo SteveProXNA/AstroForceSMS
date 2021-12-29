@@ -1,5 +1,5 @@
 XL2
-H A areas D global symbols
+H A areas 19 global symbols
 M bank9
 O -mz80
 S .__.ABS. Def0000
@@ -11,9 +11,19 @@ A _HOME size 0 flags 0 addr 0
 A _GSINIT size 0 flags 0 addr 0
 A _GSFINAL size 0 flags 0 addr 0
 A _BANK9 size 3F7E flags 0 addr 0
+S G$afterboss_psg$0$0 Def0000
+S G$stage1middleboss_psgcompr$0$0 Def0C09
+S G$stage7tiles_psgcompr$0$0 Def3AF5
+S G$fortressphantom_psgcompr$0$0 Def063B
+S G$stage7middleboss_psgcompr$0$0 Def1191
+S G$stage1endboss_psgcompr$0$0 Def0921
+S G$stage2endboss_psgcompr$0$0 Def0E6B
 S _afterboss_psg Def0000
 S _stage1middleboss_psgcompr Def0C09
+S G$stage7tilemap_l$0$0 Def1655
 S _stage7tiles_psgcompr Def3AF5
+S G$stage7tilemap_m$0$0 Def1835
+S G$norefuge_psg$0$0 Def07BC
 S _fortressphantom_psgcompr Def063B
 S _stage7middleboss_psgcompr Def1191
 S _stage1endboss_psgcompr Def0921
@@ -21,7 +31,9 @@ S _stage2endboss_psgcompr Def0E6B
 S _stage7tilemap_l Def1655
 S _stage7tilemap_m Def1835
 S _norefuge_psg Def07BC
+S G$stage7palette_bin$0$0 Def1645
 S _stage7palette_bin Def1645
+S G$firetiles_bin$0$0 Def023B
 S _firetiles_bin Def023B
 A _INITIALIZER size 0 flags 0 addr 0
 A _CABS size 0 flags 8 addr 0

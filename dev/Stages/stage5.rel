@@ -1,0 +1,213 @@
+;!FILE stage5.asm
+XL2
+H 9 areas A1 global symbols
+M stage5
+O -mz80
+S _changeBank Ref0000
+S _stage5_statics Ref0000
+S _InitStageSprites Ref0000
+S _stage3stars Ref0000
+S _stage5tiles_psgcompr Ref0000
+S _LoadSprite Ref0000
+S _devkit_UNSAFE_SMS_VRAMmemcpy32 Ref0000
+S .__.ABS. Def0000
+S _ww2cloud_psgcompr Ref0000
+S _stage5_scrollers Ref0000
+S _LoadTiles Ref0000
+S _AddScrollers Ref0000
+S _UpdateStage5Cloud Ref0000
+S _InitScript Ref0000
+S _stage5spriteslist Ref0000
+S _InitStage3Star Ref0000
+S _SetStaticEnemies Ref0000
+S _watertiles_bin Ref0000
+S _stage5script Ref0000
+S _stageframe Ref0000
+A _CODE size B6 flags 0 addr 0
+S A$stage5$86 Def0018
+S A$stage5$77 Def000D
+S A$stage5$68 Def0003
+S A$stage5$87 Def0019
+S A$stage5$78 Def000F
+S A$stage5$69 Def0004
+S A$stage5$97 Def0026
+S A$stage5$88 Def001C
+S A$stage5$79 Def0010
+S A$stage5$98 Def0029
+S A$stage5$89 Def001D
+S A$stage5$99 Def002B
+S G$InitStage5$0$0 Def0000
+S _InitStage5 Def0000
+S G$UpdateStage5$0$0 Def0074
+S A$stage5$100 Def002C
+S A$stage5$200 Def008E
+S A$stage5$110 Def0036
+S A$stage5$101 Def002D
+S A$stage5$201 Def008F
+S A$stage5$111 Def0037
+S A$stage5$102 Def002E
+S A$stage5$220 Def00A1
+S A$stage5$202 Def0090
+S A$stage5$130 Def004A
+S A$stage5$112 Def003A
+S A$stage5$103 Def0031
+S A$stage5$221 Def00A2
+S A$stage5$203 Def0091
+S A$stage5$140 Def0057
+S A$stage5$131 Def004B
+S A$stage5$122 Def0045
+S A$stage5$113 Def003B
+S A$stage5$104 Def0032
+S A$stage5$222 Def00A3
+S A$stage5$213 Def009C
+S A$stage5$204 Def0092
+S A$stage5$150 Def0060
+S A$stage5$141 Def0058
+S A$stage5$132 Def004D
+S A$stage5$114 Def003E
+S XG$InitStage5$0$0 Def0073
+S A$stage5$241 Def00B5
+S A$stage5$223 Def00A4
+S A$stage5$205 Def0093
+S A$stage5$160 Def006A
+S A$stage5$151 Def0061
+S A$stage5$142 Def0059
+S A$stage5$133 Def004E
+S A$stage5$115 Def003F
+S A$stage5$233 Def00AF
+S A$stage5$224 Def00A7
+S A$stage5$206 Def0096
+S A$stage5$161 Def006D
+S A$stage5$152 Def0062
+S A$stage5$143 Def005A
+S A$stage5$134 Def004F
+S A$stage5$116 Def0042
+S A$stage5$234 Def00B0
+S A$stage5$225 Def00A8
+S A$stage5$207 Def0097
+S A$stage5$162 Def006E
+S A$stage5$153 Def0064
+S A$stage5$144 Def005D
+S A$stage5$135 Def0050
+S A$stage5$117 Def0043
+S A$stage5$108 Def0033
+S _UpdateStage5 Def0074
+S A$stage5$235 Def00B1
+S A$stage5$226 Def00A9
+S A$stage5$208 Def009A
+S A$stage5$190 Def007C
+S A$stage5$163 Def0071
+S A$stage5$145 Def005E
+S A$stage5$136 Def0051
+S A$stage5$127 Def0047
+S A$stage5$118 Def0044
+S A$stage5$109 Def0035
+S A$stage5$236 Def00B3
+S A$stage5$227 Def00AA
+S A$stage5$218 Def009E
+S A$stage5$209 Def009B
+S A$stage5$191 Def007F
+S A$stage5$182 Def0074
+S A$stage5$164 Def0072
+S A$stage5$146 Def005F
+S A$stage5$137 Def0054
+S A$stage5$128 Def0048
+S A$stage5$228 Def00AD
+S A$stage5$219 Def00A0
+S A$stage5$192 Def0082
+S A$stage5$183 Def0076
+S A$stage5$138 Def0055
+S A$stage5$129 Def0049
+S C$stage5.c$50$3$90 Def009C
+S A$stage5$229 Def00AE
+S A$stage5$193 Def0084
+S A$stage5$184 Def0077
+S A$stage5$157 Def0066
+S A$stage5$139 Def0056
+S A$stage5$194 Def0086
+S A$stage5$185 Def0078
+S A$stage5$158 Def0068
+S C$stage5.c$52$3$90 Def009E
+S C$stage5.c$31$1$86 Def0033
+S C$stage5.c$22$1$86 Def000D
+S A$stage5$195 Def0087
+S A$stage5$186 Def007B
+S A$stage5$159 Def0069
+S A$stage5$196 Def0089
+S A$stage5$169 Def0073
+S C$stage5.c$14$0$0 Def0000
+S A$stage5$197 Def008A
+S C$stage5.c$32$2$87 Def0060
+S C$stage5.c$25$1$86 Def0018
+S A$stage5$198 Def008C
+S C$stage5.c$33$2$87 Def0047
+S A$stage5$199 Def008D
+S C$stage5.c$50$2$89 Def00AF
+S C$stage5.c$36$1$86 Def0066
+S C$stage5.c$44$1$88 Def0074
+S C$stage5.c$37$1$86 Def0073
+S C$stage5.c$28$1$86 Def0026
+S C$stage5.c$19$1$86 Def0000
+S XG$UpdateStage5$0$0 Def00B5
+S C$stage5.c$39$1$86 Def0074
+S A$stage5$70 Def0007
+S C$stage5.c$54$2$89 Def00B5
+S C$stage5.c$47$1$88 Def007C
+S A$stage5$80 Def0011
+S A$stage5$71 Def0008
+S A$stage5$90 Def0020
+S A$stage5$81 Def0014
+S A$stage5$72 Def000B
+S A$stage5$91 Def0021
+S A$stage5$82 Def0015
+S A$stage5$73 Def000C
+S A$stage5$92 Def0024
+S A$stage5$93 Def0025
+S A$stage5$66 Def0000
+S A$stage5$67 Def0002
+A _DATA size 0 flags 0 addr 0
+A _INITIALIZED size 0 flags 0 addr 0
+A _DABS size 0 flags 8 addr 0
+A _HOME size 0 flags 0 addr 0
+A _GSINIT size 0 flags 0 addr 0
+A _GSFINAL size 0 flags 0 addr 0
+A _INITIALIZER size 0 flags 0 addr 0
+A _CABS size 0 flags 8 addr 0
+T 00 00
+R 00 00 00 00
+T 00 00 3E 06 F5 33 21 00 00 E5 CD 00 00 F1 33 3E
+R 00 00 00 00 02 07 04 00 02 0B 0A 00
+T 0E 00 06 F5 33 21 00 00 E5 CD 00 00 33 21 00 00
+R 00 00 00 00 02 06 0E 00 02 0A 02 00
+T 1C 00 E3 21 00 00 E5 CD 00 00 F1 F1 01 00 00 3E
+R 00 00 00 00 02 04 12 00 02 08 0D 00 02 0D 09 00
+T 2A 00 04 F5 33 C5 CD 00 00 F1 33 3E 06 F5 33 21
+R 00 00 00 00 02 07 0B 00
+T 38 00 B3 01 E5 21 00 00 E5 CD 00 00 F1 F1 33 0E
+R 00 00 00 00 02 06 08 00 02 0A 05 00
+T 46 00 00
+R 00 00 00 00
+T 47 00
+R 00 00 00 00
+T 47 00 41 04 04 59 16 00 6B 62 29 19 11 00 00 19
+R 00 00 00 00 02 0D 03 00
+T 55 00 EB C5 C5 33 D5 CD 00 00 F1 33 C1 0C 79 D6
+R 00 00 00 00 02 08 0F 00
+T 63 00 02 38 E1 3E 0F F5 33 21 00 00 E5 CD 00 00
+R 00 00 00 00 02 0A 01 00 02 0E 10 00
+T 71 00 F1 33 C9
+R 00 00 00 00
+T 74 00
+R 00 00 00 00
+T 74 00 3E 06 F5 33 CD 00 00 33 01 00 00 2A 00 00
+R 00 00 00 00 02 07 00 00 02 0B 11 00 02 0E 13 00
+T 82 00 CB 3C CB 1D 7D E6 07 6F 26 00 29 29 29 29
+R 00 00 00 00
+T 90 00 29 09 E5 21 00 00 E5 CD 00 00 F1 F1 0E 00
+R 00 00 00 00 02 0A 06 00
+T 9E 00
+R 00 00 00 00
+T 9E 00 06 00 69 60 29 09 11 00 00 19 C5 E5 CD
+R 00 00 00 00 02 09 03 00
+T AB 00 00 00 F1 C1 0C 79 D6 02 38 E9 C9
+R 00 00 00 00 02 02 0C 00

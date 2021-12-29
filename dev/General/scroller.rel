@@ -1,0 +1,420 @@
+;!FILE scroller.asm
+XL2
+H 9 areas 11E global symbols
+M scroller
+O -mz80
+S _changeBank Ref0000
+S _disablescroll Ref0000
+S _oldmappositiony Ref0000
+S _mappositiony Ref0000
+S _scrolltimes Ref0000
+S _MoveMap Ref0000
+S .__.ABS. Def0000
+S _scrolls Ref0000
+S _scrollact Ref0000
+S _scrollactspeedx Ref0000
+S _scrollactspeedy Ref0000
+S _numscrolls Ref0000
+S _stageframe4mod Ref0000
+A _CODE size 1A1 flags 0 addr 0
+S A$scroller$110 Def002C
+S A$scroller$300 Def0120
+S A$scroller$210 Def009F
+S A$scroller$201 Def0091
+S A$scroller$111 Def002D
+S A$scroller$310 Def012C
+S A$scroller$301 Def0121
+S A$scroller$202 Def0092
+S A$scroller$410 Def0196
+S A$scroller$320 Def0135
+S A$scroller$311 Def012D
+S A$scroller$302 Def0122
+S A$scroller$230 Def00B6
+S A$scroller$212 Def00A1
+S A$scroller$203 Def0093
+S A$scroller$140 Def0042
+S A$scroller$104 Def0020
+S C$scroller.c$10$1$35 Def0005
+S A$scroller$411 Def0199
+S A$scroller$321 Def0136
+S A$scroller$303 Def0123
+S A$scroller$240 Def00C6
+S A$scroller$231 Def00B9
+S A$scroller$222 Def00A9
+S A$scroller$204 Def0094
+S A$scroller$150 Def0050
+S A$scroller$141 Def0045
+S A$scroller$123 Def0038
+S A$scroller$105 Def0023
+S XG$InitScroller$0$0 Def001F
+S C$scroller.c$11$1$35 Def000A
+S A$scroller$421 Def01A0
+S A$scroller$340 Def014A
+S A$scroller$322 Def0137
+S A$scroller$304 Def0124
+S A$scroller$250 Def00D3
+S A$scroller$232 Def00BC
+S A$scroller$223 Def00AA
+S A$scroller$205 Def0095
+S A$scroller$160 Def005B
+S A$scroller$142 Def0046
+S A$scroller$133 Def0039
+S A$scroller$115 Def0030
+S A$scroller$106 Def0024
+S C$scroller.c$12$1$35 Def000F
+S A$scroller$350 Def0157
+S A$scroller$341 Def014B
+S A$scroller$305 Def0127
+S A$scroller$260 Def00E1
+S A$scroller$251 Def00D6
+S A$scroller$242 Def00C8
+S A$scroller$233 Def00BD
+S A$scroller$224 Def00AB
+S A$scroller$215 Def00A3
+S A$scroller$206 Def0098
+S A$scroller$161 Def005C
+S A$scroller$134 Def003B
+S A$scroller$116 Def0033
+S A$scroller$107 Def0025
+S C$scroller.c$20$1$37 Def0030
+S C$scroller.c$13$1$35 Def0014
+S A$scroller$360 Def0164
+S A$scroller$351 Def015A
+S A$scroller$342 Def014E
+S A$scroller$315 Def012E
+S A$scroller$306 Def0128
+S A$scroller$270 Def00EE
+S A$scroller$261 Def00E4
+S A$scroller$243 Def00CB
+S A$scroller$234 Def00BE
+S A$scroller$225 Def00AE
+S A$scroller$216 Def00A6
+S A$scroller$180 Def0070
+S A$scroller$171 Def0065
+S A$scroller$162 Def005D
+S A$scroller$135 Def003F
+S A$scroller$117 Def0034
+S A$scroller$108 Def0028
+S C$scroller.c$21$1$37 Def0038
+S C$scroller.c$14$1$35 Def0019
+S _UpdateScroller Def0039
+S A$scroller$415 Def019A
+S A$scroller$361 Def0167
+S A$scroller$343 Def014F
+S A$scroller$334 Def0144
+S A$scroller$316 Def0131
+S A$scroller$307 Def0129
+S A$scroller$280 Def0107
+S A$scroller$271 Def00F1
+S A$scroller$262 Def00E5
+S A$scroller$253 Def00D8
+S A$scroller$244 Def00CD
+S A$scroller$235 Def00BF
+S A$scroller$226 Def00AF
+S A$scroller$217 Def00A7
+S A$scroller$208 Def009A
+S A$scroller$190 Def0081
+S A$scroller$181 Def0071
+S A$scroller$172 Def0068
+S A$scroller$163 Def005E
+S A$scroller$154 Def0051
+S A$scroller$136 Def0041
+S A$scroller$118 Def0035
+S A$scroller$109 Def002B
+S C$scroller.c$15$1$35 Def001F
+S A$scroller$416 Def019D
+S A$scroller$380 Def0181
+S A$scroller$362 Def016A
+S A$scroller$344 Def0151
+S A$scroller$335 Def0145
+S A$scroller$326 Def0138
+S A$scroller$317 Def0132
+S A$scroller$308 Def012A
+S A$scroller$290 Def0113
+S A$scroller$281 Def010A
+S A$scroller$272 Def00F4
+S A$scroller$263 Def00E6
+S A$scroller$254 Def00DB
+S A$scroller$236 Def00C0
+S A$scroller$227 Def00B0
+S A$scroller$218 Def00A8
+S A$scroller$209 Def009D
+S A$scroller$191 Def0082
+S A$scroller$182 Def0072
+S A$scroller$173 Def0069
+S A$scroller$164 Def005F
+S A$scroller$155 Def0055
+S A$scroller$146 Def0049
+S C$scroller.c$51$4$42 Def0157
+S C$scroller.c$23$1$37 Def0039
+S A$scroller$381 Def0184
+S A$scroller$363 Def016B
+S A$scroller$345 Def0154
+S A$scroller$336 Def0146
+S A$scroller$327 Def013C
+S A$scroller$318 Def0133
+S A$scroller$309 Def012B
+S A$scroller$291 Def0114
+S A$scroller$282 Def010B
+S A$scroller$273 Def00F5
+S A$scroller$255 Def00DD
+S A$scroller$246 Def00CF
+S A$scroller$237 Def00C1
+S A$scroller$228 Def00B1
+S A$scroller$192 Def0083
+S A$scroller$183 Def0073
+S A$scroller$165 Def0062
+S A$scroller$156 Def0057
+S A$scroller$147 Def004B
+S C$scroller.c$52$4$42 Def015D
+S C$scroller.c$45$3$41 Def011D
+S C$scroller.c$30$2$39 Def0049
+S C$scroller.c$17$1$35 Def0020
+S A$scroller$391 Def0191
+S A$scroller$382 Def0187
+S A$scroller$373 Def0172
+S A$scroller$355 Def015D
+S A$scroller$346 Def0155
+S A$scroller$337 Def0147
+S A$scroller$328 Def013F
+S A$scroller$319 Def0134
+S A$scroller$292 Def0115
+S A$scroller$283 Def010C
+S A$scroller$274 Def00F6
+S A$scroller$247 Def00D0
+S A$scroller$238 Def00C2
+S A$scroller$229 Def00B2
+S A$scroller$193 Def0084
+S A$scroller$184 Def0074
+S A$scroller$166 Def0063
+S A$scroller$157 Def0058
+S A$scroller$148 Def004C
+S C$scroller.c$64$1$43 Def0196
+S C$scroller.c$60$1$38 Def0195
+S C$scroller.c$53$4$42 Def0164
+S C$scroller.c$46$3$41 Def012E
+S C$scroller.c$38$3$40 Def006B
+S A$scroller$392 Def0193
+S A$scroller$383 Def0188
+S A$scroller$374 Def0173
+S A$scroller$356 Def0161
+S A$scroller$338 Def0148
+S A$scroller$329 Def0141
+S A$scroller$293 Def0118
+S A$scroller$284 Def010D
+S A$scroller$275 Def00F9
+S A$scroller$257 Def00DF
+S A$scroller$248 Def00D1
+S A$scroller$239 Def00C3
+S A$scroller$194 Def0085
+S A$scroller$185 Def0078
+S A$scroller$167 Def0064
+S A$scroller$158 Def0059
+S A$scroller$149 Def004D
+S C$scroller.c$65$1$43 Def019A
+S C$scroller.c$54$4$42 Def016D
+S C$scroller.c$39$3$40 Def00A9
+S A$scroller$384 Def0189
+S A$scroller$375 Def0176
+S A$scroller$339 Def0149
+S A$scroller$285 Def010E
+S A$scroller$276 Def00FD
+S A$scroller$249 Def00D2
+S A$scroller$195 Def0088
+S A$scroller$186 Def007B
+S A$scroller$177 Def006B
+S A$scroller$159 Def005A
+S C$scroller.c$66$1$43 Def01A0
+S C$scroller.c$62$1$38 Def0196
+S C$scroller.c$48$3$41 Def0138
+S C$scroller.c$33$2$39 Def0051
+S A$scroller$385 Def018A
+S A$scroller$376 Def0177
+S A$scroller$367 Def016D
+S A$scroller$295 Def011A
+S A$scroller$286 Def010F
+S A$scroller$277 Def0100
+S A$scroller$268 Def00E7
+S A$scroller$187 Def007E
+S A$scroller$178 Def006C
+S C$scroller.c$49$3$41 Def0144
+S C$scroller.c$43$2$39 Def00E7
+S C$scroller.c$27$1$38 Def0042
+S C$scroller.c$19$1$37 Def0020
+S A$scroller$386 Def018B
+S A$scroller$377 Def0179
+S A$scroller$368 Def0170
+S A$scroller$287 Def0110
+S A$scroller$278 Def0103
+S A$scroller$269 Def00EB
+S A$scroller$197 Def008A
+S A$scroller$188 Def007F
+S A$scroller$179 Def006D
+S A$scroller$387 Def018C
+S A$scroller$378 Def017C
+S A$scroller$288 Def0111
+S A$scroller$279 Def0104
+S A$scroller$198 Def008D
+S A$scroller$189 Def0080
+S C$scroller.c$36$2$39 Def0065
+S A$scroller$397 Def0195
+S A$scroller$388 Def018F
+S A$scroller$379 Def017D
+S A$scroller$289 Def0112
+S A$scroller$199 Def008F
+S A$scroller$389 Def0190
+S A$scroller$299 Def011D
+S XG$UpdateScroller$0$0 Def0195
+S A$scroller$60 Def0000
+S C$scroller.c$58$2$39 Def0172
+S G$AddScrollers$0$0 Def0020
+S A$scroller$70 Def000A
+S A$scroller$61 Def0003
+S A$scroller$80 Def0014
+S A$scroller$71 Def000D
+S A$scroller$81 Def0017
+S A$scroller$91 Def001F
+S A$scroller$65 Def0005
+S A$scroller$75 Def000F
+S A$scroller$66 Def0008
+S A$scroller$85 Def0019
+S A$scroller$76 Def0012
+S C$scroller.c$9$1$35 Def0000
+S A$scroller$86 Def001C
+S G$updatescrollact$0$0 Def0196
+S C$scroller.c$7$0$0 Def0000
+S _AddScrollers Def0020
+S _updatescrollact Def0196
+S XG$AddScrollers$0$0 Def0038
+S G$InitScroller$0$0 Def0000
+S XG$updatescrollact$0$0 Def01A0
+S _InitScroller Def0000
+S G$UpdateScroller$0$0 Def0039
+A _DATA size 0 flags 0 addr 0
+A _INITIALIZED size 0 flags 0 addr 0
+A _DABS size 0 flags 8 addr 0
+A _HOME size 0 flags 0 addr 0
+A _GSINIT size 0 flags 0 addr 0
+A _GSFINAL size 0 flags 0 addr 0
+A _INITIALIZER size 0 flags 0 addr 0
+A _CABS size 0 flags 8 addr 0
+T 00 00
+R 00 00 00 00
+T 00 00 21 00 00 36 00 21 00 00 36 00 21 00 00 36
+R 00 00 00 00 02 03 0B 00 02 08 09 00 02 0D 0A 00
+T 0E 00 00 21 00 00 36 00 21 00 00 36 00 21 00 00
+R 00 00 00 00 02 04 08 00 02 09 01 00
+T 1C 00 22 00 00 C9
+R 00 00 00 00 02 03 04 00
+T 20 00
+R 00 00 00 00
+T 20 00 21 02 00 39 7E 32 00 00 21 03 00 39 7E 32
+R 00 00 00 00 02 08 07 00
+T 2E 00 01 00 21 04 00 39 7E 32 00 00 C9
+R 00 00 00 00 02 02 07 00 02 0A 0B 00
+T 39 00
+R 00 00 00 00
+T 39 00 DD E5 DD 21 00 00 DD 39 F5 3A 00 00 B7 C2
+R 00 00 00 00 02 0C 01 00
+T 47 00 91 01 3E 0F F5 33 CD 00 00 33 ED 4B 00 00
+R 00 00 00 00 00 02 00 00 02 09 00 00 02 0E 08 00
+T 55 00 06 00 69 60 29 29 09 29 4D 44 2A 00 00 09
+R 00 00 00 00 02 0D 07 00
+T 63 00 4D 44 3A 00 00 B7 20 7C 69 60 11 06 00 19
+R 00 00 00 00 02 05 0C 00
+T 71 00 5E 23 56 FD 21 00 00 FD 6E 00 FD 7E 00 17
+R 00 00 00 00 02 07 09 00
+T 7F 00 9F 67 7D 93 7C 9A E2 8A 00 EE 80
+R 00 00 00 00 00 09 00 00
+T 8A 00
+R 00 00 00 00
+T 8A 00 F2 91 00 1E 01 18 12
+R 00 00 00 00 00 03 00 00
+T 91 00
+R 00 00 00 00
+T 91 00 7B 95 7A 9C E2 9A 00 EE 80
+R 00 00 00 00 00 07 00 00
+T 9A 00
+R 00 00 00 00
+T 9A 00 F2 A1 00 1E FF 18 02
+R 00 00 00 00 00 03 00 00
+T A1 00
+R 00 00 00 00
+T A1 00 1E 00
+R 00 00 00 00
+T A3 00
+R 00 00 00 00
+T A3 00
+R 00 00 00 00
+T A3 00 21 00 00 7E 83 77 69 60 11 08 00 19 5E 23
+R 00 00 00 00 02 03 09 00
+T B1 00 56 FD 21 00 00 FD 6E 00 FD 7E 00 17 9F 67
+R 00 00 00 00 02 05 0A 00
+T BF 00 7D 93 7C 9A E2 C8 00 EE 80
+R 00 00 00 00 00 07 00 00
+T C8 00
+R 00 00 00 00
+T C8 00 F2 CF 00 1E 01 18 12
+R 00 00 00 00 00 03 00 00
+T CF 00
+R 00 00 00 00
+T CF 00 7B 95 7A 9C E2 D8 00 EE 80
+R 00 00 00 00 00 07 00 00
+T D8 00
+R 00 00 00 00
+T D8 00 F2 DF 00 1E FF 18 02
+R 00 00 00 00 00 03 00 00
+T DF 00
+R 00 00 00 00
+T DF 00 1E 00
+R 00 00 00 00
+T E1 00
+R 00 00 00 00
+T E1 00
+R 00 00 00 00
+T E1 00 21 00 00 7E 83 77
+R 00 00 00 00 02 03 0A 00
+T E7 00
+R 00 00 00 00
+T E7 00 FD 21 00 00 FD 7E 00 DD 77 FE FD 7E 00 17
+R 00 00 00 00 02 04 0A 00
+T F5 00 9F DD 77 FF FD 21 00 00 FD 7E 00 DD 96 FE
+R 00 00 00 00 02 08 03 00
+T 03 01 5F FD 7E 01 DD 9E FF 57 69 60 7E 23 66 6F
+R 00 00 00 00
+T 11 01 7B 95 7A 9C E2 1A 01 EE 80
+R 00 00 00 00 00 07 00 00
+T 1A 01
+R 00 00 00 00
+T 1A 01 F2 72 01 21 04 00 09 5E 23 56 21 00 00 7E
+R 00 00 00 00 00 03 00 00 02 0D 03 00
+T 28 01 83 77 23 7E 8A 77 21 00 00 7E 83 77 23 7E
+R 00 00 00 00 02 09 02 00
+T 36 01 8A 77 FD 21 00 00 FD 34 00 20 03 FD 34 01
+R 00 00 00 00 02 06 04 00
+T 44 01
+R 00 00 00 00
+T 44 01 69 60 23 23 4E 23 46 FD 7E 00 91 20 21 FD
+R 00 00 00 00
+T 52 01 7E 01 90 20 1B 21 00 00 22 00 00 FD 21
+R 00 00 00 00 02 0B 04 00
+T 5F 01 00 00 FD 34 00 21 00 00 FD 7E 00 96 38 05
+R 00 00 00 00 02 02 08 00 02 08 0B 00
+T 6D 01 21 00 00 36 01
+R 00 00 00 00 02 03 01 00
+T 72 01
+R 00 00 00 00
+T 72 01 AF DD 96 FE 4F 3E 00 DD 9E FF 47 FD 21
+R 00 00 00 00
+T 7F 01 00 00 FD 5E 00 FD 7E 00 17 9F 57 C5 D5 CD
+R 00 00 00 00 02 02 09 00
+T 8D 01 00 00 F1 F1
+R 00 00 00 00 02 02 05 00
+T 91 01
+R 00 00 00 00
+T 91 01 DD F9 DD E1 C9
+R 00 00 00 00
+T 96 01
+R 00 00 00 00
+T 96 01 21 00 00 34 21 00 00 22 00 00 C9
+R 00 00 00 00 02 03 08 00 02 0A 04 00

@@ -1,5 +1,5 @@
 XL2
-H A areas 14 global symbols
+H A areas 27 global symbols
 M bank4
 O -mz80
 S .__.ABS. Def0000
@@ -13,23 +13,42 @@ A _GSFINAL size 0 flags 0 addr 0
 A _BANK4 size 3FBD flags 0 addr 0
 S _stage4endbossb_psgcompr Def27F4
 S _stage4endbossc_psgcompr Def2824
+S G$stage3_psg$0$0 Def0F67
+S G$waveship_psgcompr$0$0 Def3E9C
+S G$introovni_psgcompr$0$0 Def0B69
+S G$stage4tiles_psgcompr$0$0 Def34FD
+S G$endingstagetiles_psgcompr$0$0 Def02C0
 S _introsideplayer_psgcompr Def0CA2
 S _select_psg Def0DBF
+S G$stage4middleboss_psgcompr$0$0 Def2995
 S _rectship_psgcompr Def0D1A
 S _stage3_psg Def0F67
 S _waveship_psgcompr Def3E9C
 S _introovni_psgcompr Def0B69
+S G$stage4tilemap_l$0$0 Def2C00
 S _stage4tiles_psgcompr Def34FD
+S G$warning_psgcompr$0$0 Def3E1B
+S G$stage4tilemap_m$0$0 Def2CBD
+S G$stage4endboss_psgcompr$0$0 Def2683
 S _endingstagetiles_psgcompr Def02C0
+S G$vulcantank_psgcompr$0$0 Def3C63
 S _stage4middleboss_psgcompr Def2995
+S G$intro2_psg$0$0 Def02DC
 S _stage4tilemap_l Def2C00
 S _stage4endboss_psgcompr Def2683
 S _stage4tilemap_m Def2CBD
 S _warning_psgcompr Def3E1B
+S G$endingstagetilemap_bin$0$0 Def0000
 S _vulcantank_psgcompr Def3C63
+S G$stage4palette_bin$0$0 Def2BF0
 S _intro2_psg Def02DC
 S _endingstagetilemap_bin Def0000
 S _stage4palette_bin Def2BF0
+S G$stage4endbossb_psgcompr$0$0 Def27F4
+S G$stage4endbossc_psgcompr$0$0 Def2824
+S G$introsideplayer_psgcompr$0$0 Def0CA2
+S G$select_psg$0$0 Def0DBF
+S G$rectship_psgcompr$0$0 Def0D1A
 A _INITIALIZER size 0 flags 0 addr 0
 A _CABS size 0 flags 8 addr 0
 T 00 00

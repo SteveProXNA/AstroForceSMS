@@ -1,5 +1,5 @@
 XL2
-H A areas C global symbols
+H A areas 17 global symbols
 M bank5
 O -mz80
 S .__.ABS. Def0000
@@ -11,17 +11,28 @@ A _HOME size 0 flags 0 addr 0
 A _GSINIT size 0 flags 0 addr 0
 A _GSFINAL size 0 flags 0 addr 0
 A _BANK5 size 3FDB flags 0 addr 0
+S G$stage1_psg$0$0 Def1734
 S _monstermissil_psgcompr Def15AA
 S _monsterhead_psgcompr Def1327
+S G$vulcanbird_psgcompr$0$0 Def3C36
 S _vulcanlaser_psgcompr Def3E16
+S G$vulcanlava_psgcompr$0$0 Def3E5C
+S G$littleexplosion_psgcompr$0$0 Def1310
 S _stage1_psg Def1734
 S _vulcanbird_psgcompr Def3C36
+S G$stage7endboss_psgcompr$0$0 Def3AAD
 S _vulcanlava_psgcompr Def3E5C
 S _littleexplosion_psgcompr Def1310
+S G$intro3_psg$0$0 Def0000
 S _stage7endboss_psgcompr Def3AAD
+S G$ww2zeppelin_psgcompr$0$0 Def3EFC
 S _intro3_psg Def0000
+S G$vulcanvulcan_psgcompr$0$0 Def3ED7
 S _ww2zeppelin_psgcompr Def3EFC
+S G$monstermissil_psgcompr$0$0 Def15AA
+S G$monsterhead_psgcompr$0$0 Def1327
 S _vulcanvulcan_psgcompr Def3ED7
+S G$vulcanlaser_psgcompr$0$0 Def3E16
 A _INITIALIZER size 0 flags 0 addr 0
 A _CABS size 0 flags 8 addr 0
 T 00 00

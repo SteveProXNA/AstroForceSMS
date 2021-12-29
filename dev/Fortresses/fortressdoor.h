@@ -1,12 +1,9 @@
-unsigned char UpdateFortressDoor( enemy *en )
-{
-	en->enemyposy++;
+#ifndef _FORTRESSDOOR_H_
+#define _FORTRESSDOOR_H_
 
-	if( en->enemyposy > 192 )
-		return 0;
-	else
-		DrawSpriteArray( FORTRESSDOORBASE, en->enemyposx - 8, en->enemyposy, 32, 8 );
-	DrawSpriteArray( FORTRESSDOORBASE, en->enemyposx - 8, en->enemyposy + 8, 32, 8 );
-	return 1;
-}
+#include "../defines.h"
 
+// ADRIANA
+unsigned char UpdateFortressDoor( enemy *en );
+
+#endif//_FORTRESSDOOR_H_

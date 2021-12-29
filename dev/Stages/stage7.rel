@@ -1,0 +1,405 @@
+;!FILE stage7.asm
+XL2
+H 9 areas 139 global symbols
+M stage7
+O -mz80
+S _changeBank Ref0000
+S _disablescroll Ref0000
+S _stage7_statics Ref0000
+S _stage7animtiles_bin Ref0000
+S _mappositiony Ref0000
+S _InitStageSprites Ref0000
+S _stage7tiles_psgcompr Ref0000
+S _devkit_UNSAFE_SMS_VRAMmemcpy32 Ref0000
+S .__.ABS. Def0000
+S _LoadTiles Ref0000
+S _AddScrollers Ref0000
+S _stage7_scrollers Ref0000
+S _getTileAt Ref0000
+S _devkit_UNSAFE_SMS_VRAMmemcpy64 Ref0000
+S _playerx Ref0000
+S _playery Ref0000
+S _playstageshootspeed Ref0000
+S _stage7animtilesc_bin Ref0000
+S _stage7animtilesd_bin Ref0000
+S _stage7animtilese_bin Ref0000
+S _stage7spriteslist Ref0000
+S _maplines Ref0000
+S _mapbank Ref0000
+S _SetStaticEnemies Ref0000
+S _stageframe Ref0000
+S _maptiles Ref0000
+A _CODE size 18D flags 0 addr 0
+S A$stage7$84 Def0020
+S A$stage7$75 Def000D
+S A$stage7$66 Def0000
+S A$stage7$94 Def002D
+S A$stage7$85 Def0021
+S A$stage7$76 Def000F
+S A$stage7$67 Def0003
+S A$stage7$95 Def0030
+S A$stage7$86 Def0023
+S A$stage7$77 Def0011
+S A$stage7$68 Def0004
+S A$stage7$96 Def0031
+S A$stage7$87 Def0025
+S A$stage7$78 Def0013
+S A$stage7$69 Def0005
+S A$stage7$88 Def0027
+S A$stage7$79 Def0015
+S A$stage7$89 Def0029
+S G$CheckCollisionStage7$0$0 Def0170
+S G$InitStage7$0$0 Def0137
+S G$CheckStage7PlayerMovement$0$0 Def0000
+S _CheckCollisionStage7 Def0170
+S C$stage7.c$100$1$84 Def016B
+S C$stage7.c$101$1$84 Def016F
+S _InitStage7 Def0137
+S XG$CheckCollisionStage7$0$0 Def018C
+S C$stage7.c$103$1$84 Def0170
+S _CheckStage7PlayerMovement Def0000
+S G$UpdateStage7$0$0 Def0072
+S C$stage7.c$105$1$86 Def0170
+S A$stage7$100 Def0032
+S C$stage7.c$106$1$86 Def018A
+S A$stage7$200 Def0089
+S A$stage7$110 Def003A
+S C$stage7.c$107$1$86 Def018C
+S A$stage7$300 Def010C
+S A$stage7$210 Def0094
+S A$stage7$201 Def008A
+S A$stage7$120 Def004D
+S A$stage7$111 Def003B
+S A$stage7$310 Def0118
+S A$stage7$301 Def010D
+S A$stage7$211 Def0097
+S A$stage7$202 Def008D
+S A$stage7$121 Def004E
+S A$stage7$112 Def003C
+S A$stage7$320 Def0124
+S A$stage7$311 Def0119
+S A$stage7$230 Def00AF
+S A$stage7$221 Def00A2
+S A$stage7$212 Def0098
+S A$stage7$203 Def008E
+S A$stage7$131 Def0054
+S A$stage7$113 Def0040
+S A$stage7$104 Def0034
+S A$stage7$420 Def0177
+S A$stage7$402 Def016F
+S A$stage7$330 Def0131
+S A$stage7$321 Def0125
+S A$stage7$312 Def011B
+S A$stage7$231 Def00B1
+S A$stage7$222 Def00A5
+S A$stage7$213 Def0099
+S A$stage7$204 Def0091
+S A$stage7$150 Def0068
+S A$stage7$132 Def0055
+S A$stage7$114 Def0043
+S A$stage7$105 Def0035
+S XG$InitStage7$0$0 Def016F
+S A$stage7$430 Def0187
+S A$stage7$421 Def017A
+S A$stage7$331 Def0133
+S A$stage7$322 Def0128
+S A$stage7$313 Def011C
+S A$stage7$250 Def00CA
+S A$stage7$241 Def00BB
+S A$stage7$232 Def00B3
+S A$stage7$223 Def00A6
+S A$stage7$214 Def009C
+S A$stage7$205 Def0092
+S A$stage7$142 Def005F
+S A$stage7$133 Def0059
+S A$stage7$115 Def0045
+S A$stage7$106 Def0036
+S C$stage7.c$21$1$80 Def0009
+S A$stage7$431 Def0189
+S A$stage7$422 Def017B
+S A$stage7$323 Def0129
+S A$stage7$314 Def011E
+S A$stage7$260 Def00D7
+S A$stage7$242 Def00BE
+S A$stage7$233 Def00B4
+S A$stage7$215 Def009D
+S A$stage7$206 Def0093
+S A$stage7$161 Def006D
+S A$stage7$143 Def0061
+S A$stage7$134 Def005B
+S A$stage7$125 Def004F
+S A$stage7$116 Def0047
+S A$stage7$107 Def0037
+S XG$CheckStage7PlayerMovement$0$0 Def0071
+S C$stage7.c$22$1$80 Def002D
+S A$stage7$441 Def018C
+S A$stage7$423 Def017C
+S A$stage7$324 Def012C
+S A$stage7$315 Def011F
+S A$stage7$306 Def010E
+S A$stage7$270 Def00E4
+S A$stage7$261 Def00D8
+S A$stage7$243 Def00BF
+S A$stage7$234 Def00B6
+S A$stage7$216 Def00A0
+S A$stage7$180 Def0072
+S A$stage7$162 Def0070
+S A$stage7$144 Def0062
+S A$stage7$126 Def0052
+S A$stage7$117 Def0049
+S A$stage7$108 Def0038
+S C$stage7.c$30$2$81 Def005F
+S C$stage7.c$23$1$80 Def0032
+S _UpdateStage7 Def0072
+S A$stage7$424 Def017D
+S A$stage7$415 Def0170
+S A$stage7$370 Def0150
+S A$stage7$352 Def0137
+S A$stage7$325 Def012D
+S A$stage7$316 Def0120
+S A$stage7$307 Def0111
+S A$stage7$271 Def00E6
+S A$stage7$244 Def00C0
+S A$stage7$235 Def00B7
+S A$stage7$217 Def00A1
+S A$stage7$190 Def007F
+S A$stage7$181 Def0074
+S A$stage7$145 Def0063
+S A$stage7$127 Def0053
+S A$stage7$118 Def004B
+S A$stage7$109 Def0039
+S C$stage7.c$31$2$81 Def0065
+S C$stage7.c$24$1$80 Def0034
+S A$stage7$425 Def017E
+S A$stage7$416 Def0173
+S A$stage7$380 Def015C
+S A$stage7$353 Def0139
+S A$stage7$317 Def0121
+S A$stage7$308 Def0114
+S A$stage7$290 Def00FF
+S A$stage7$281 Def00F0
+S A$stage7$272 Def00E8
+S A$stage7$254 Def00CB
+S A$stage7$245 Def00C1
+S A$stage7$236 Def00B9
+S A$stage7$227 Def00A8
+S A$stage7$191 Def0080
+S A$stage7$182 Def0075
+S A$stage7$155 Def0069
+S A$stage7$119 Def004C
+S C$stage7.c$32$2$81 Def0069
+S C$stage7.c$25$1$80 Def004F
+S A$stage7$426 Def0181
+S A$stage7$417 Def0174
+S A$stage7$390 Def0166
+S A$stage7$381 Def015D
+S A$stage7$363 Def0144
+S A$stage7$354 Def013A
+S A$stage7$318 Def0122
+S A$stage7$309 Def0116
+S A$stage7$282 Def00F3
+S A$stage7$273 Def00E9
+S A$stage7$255 Def00CE
+S A$stage7$246 Def00C4
+S A$stage7$237 Def00BA
+S A$stage7$228 Def00AB
+S A$stage7$192 Def0082
+S A$stage7$183 Def0076
+S A$stage7$156 Def006A
+S A$stage7$138 Def005E
+S C$stage7.c$51$1$82 Def00A2
+S C$stage7.c$33$2$81 Def006D
+S C$stage7.c$26$1$80 Def0054
+S C$stage7.c$17$1$80 Def0000
+S C$stage7.c$10$0$0 Def0000
+S A$stage7$436 Def018A
+S A$stage7$427 Def0182
+S A$stage7$418 Def0175
+S A$stage7$391 Def0169
+S A$stage7$364 Def0146
+S A$stage7$355 Def013B
+S A$stage7$319 Def0123
+S A$stage7$283 Def00F4
+S A$stage7$274 Def00EB
+S A$stage7$265 Def00D9
+S A$stage7$256 Def00CF
+S A$stage7$247 Def00C5
+S A$stage7$229 Def00AD
+S A$stage7$193 Def0083
+S A$stage7$184 Def0079
+S A$stage7$157 Def006C
+S C$stage7.c$70$1$82 Def012E
+S C$stage7.c$43$1$82 Def0072
+S C$stage7.c$36$1$80 Def0071
+S A$stage7$428 Def0184
+S A$stage7$419 Def0176
+S A$stage7$392 Def016A
+S A$stage7$374 Def0151
+S A$stage7$365 Def0147
+S A$stage7$356 Def013E
+S A$stage7$329 Def012E
+S A$stage7$284 Def00F5
+S A$stage7$275 Def00EC
+S A$stage7$266 Def00DC
+S A$stage7$257 Def00D0
+S A$stage7$248 Def00C8
+S A$stage7$167 Def0071
+S A$stage7$149 Def0065
+S C$stage7.c$71$1$82 Def0134
+S C$stage7.c$28$1$80 Def005E
+S A$stage7$429 Def0185
+S A$stage7$375 Def0153
+S A$stage7$366 Def0148
+S A$stage7$357 Def013F
+S A$stage7$339 Def0134
+S A$stage7$294 Def0100
+S A$stage7$285 Def00F6
+S A$stage7$276 Def00EE
+S A$stage7$267 Def00DE
+S A$stage7$258 Def00D3
+S A$stage7$249 Def00C9
+S C$stage7.c$61$2$83 Def00D9
+S C$stage7.c$38$1$80 Def0072
+S A$stage7$385 Def015E
+S A$stage7$376 Def0154
+S A$stage7$367 Def014B
+S A$stage7$358 Def0142
+S A$stage7$295 Def0103
+S A$stage7$286 Def00F9
+S A$stage7$277 Def00EF
+S A$stage7$268 Def00E0
+S A$stage7$259 Def00D4
+S C$stage7.c$73$1$82 Def0134
+S C$stage7.c$62$2$83 Def00F0
+S C$stage7.c$46$1$82 Def007A
+S A$stage7$386 Def0160
+S A$stage7$377 Def0155
+S A$stage7$368 Def014C
+S A$stage7$359 Def0143
+S A$stage7$296 Def0104
+S A$stage7$287 Def00FA
+S A$stage7$269 Def00E2
+S A$stage7$197 Def0084
+S A$stage7$188 Def007A
+S C$stage7.c$63$2$83 Def0100
+S C$stage7.c$47$1$82 Def0084
+S A$stage7$396 Def016B
+S A$stage7$387 Def0161
+S A$stage7$378 Def0158
+S A$stage7$369 Def014F
+S A$stage7$297 Def0105
+S A$stage7$288 Def00FD
+S A$stage7$198 Def0087
+S A$stage7$189 Def007D
+S C$stage7.c$82$1$84 Def0144
+S C$stage7.c$55$2$83 Def00A8
+S C$stage7.c$48$1$82 Def0094
+S A$stage7$397 Def016E
+S A$stage7$388 Def0162
+S A$stage7$379 Def0159
+S A$stage7$298 Def0108
+S A$stage7$289 Def00FE
+S A$stage7$199 Def0088
+S C$stage7.c$76$1$82 Def0137
+S C$stage7.c$67$1$82 Def010E
+S C$stage7.c$56$2$83 Def00BB
+S A$stage7$389 Def0165
+S A$stage7$299 Def0109
+S C$stage7.c$57$2$83 Def00CB
+S C$stage7.c$94$1$84 Def0151
+S XG$UpdateStage7$0$0 Def0134
+S A$stage7$70 Def0008
+S A$stage7$80 Def0019
+S C$stage7.c$97$1$84 Def015E
+S C$stage7.c$79$1$84 Def0137
+S A$stage7$90 Def002B
+S A$stage7$81 Def001C
+S A$stage7$82 Def001E
+S A$stage7$83 Def001F
+S A$stage7$74 Def0009
+A _DATA size 0 flags 0 addr 0
+A _INITIALIZED size 0 flags 0 addr 0
+A _DABS size 0 flags 8 addr 0
+A _HOME size 0 flags 0 addr 0
+A _GSINIT size 0 flags 0 addr 0
+A _GSFINAL size 0 flags 0 addr 0
+A _INITIALIZER size 0 flags 0 addr 0
+A _CABS size 0 flags 8 addr 0
+T 00 00
+R 00 00 00 00
+T 00 00 3A 00 00 F5 33 CD 00 00 33 ED 4B 00 00 CB
+R 00 00 00 00 02 03 16 00 02 08 00 00 02 0D 04 00
+T 0E 00 28 CB 19 CB 28 CB 19 FD 21 00 00 FD 6E 00
+R 00 00 00 00 02 0B 0F 00
+T 1C 00 26 00 09 4D 44 CB 38 CB 19 CB 38 CB 19 CB
+R 00 00 00 00
+T 2A 00 38 CB 19 2A 00 00 09 6E 26 00 29 29 29 29
+R 00 00 00 00 02 06 15 00
+T 38 00 29 29 4D 44 FD 21 00 00 FD 6E 00 CB 3D CB
+R 00 00 00 00 02 08 0E 00
+T 46 00 3D CB 3D 26 00 29 09 4D 44 2A 00 00 09 5E
+R 00 00 00 00 02 0C 19 00
+T 54 00 03 FD 2A 00 00 FD 09 FD 4E 00 7B D6 0C C0
+R 00 00 00 00 02 05 19 00
+T 62 00 B1 20 04 21 00 00 35
+R 00 00 00 00 02 06 0E 00
+T 69 00
+R 00 00 00 00
+T 69 00 79 D6 02 C0 21 00 00 34 C9
+R 00 00 00 00 02 07 0E 00
+T 72 00
+R 00 00 00 00
+T 72 00 3E 07 F5 33 CD 00 00 33 3A 00 00 E6 0F 6F
+R 00 00 00 00 02 07 00 00 02 0B 18 00
+T 80 00 26 00 29 29 01 00 00 09 E5 E5 01 00 00 C5
+R 00 00 00 00 02 07 13 00
+T 8E 00 CD 00 00 F1 F1 E1 01 80 00 09 E5 21 40 00
+R 00 00 00 00 02 03 0D 00
+T 9C 00 E5 CD 00 00 F1 F1 3A 00 00 B7 20 66 2A
+R 00 00 00 00 02 04 0D 00 02 09 01 00
+T A9 00 00 00 CB 3C CB 1D CB 3C CB 1D 7D E6 0F 6F
+R 00 00 00 00 02 02 18 00
+T B7 00 26 00 29 29 01 00 00 09 E5 E5 01 00 01 C5
+R 00 00 00 00 02 07 12 00
+T C5 00 CD 00 00 F1 F1 E1 01 80 00 09 E5 21 40 01
+R 00 00 00 00 02 03 0D 00
+T D3 00 E5 CD 00 00 F1 F1 2A 00 00 CB 3C CB 1D CB
+R 00 00 00 00 02 04 0D 00 02 09 18 00
+T E1 00 3C CB 1D CB 3C CB 1D 7D E6 0F 6F 26 00 29
+R 00 00 00 00
+T EF 00 29 01 00 00 09 E5 E5 01 80 00 C5 CD 00 00
+R 00 00 00 00 02 04 03 00 02 0E 0D 00
+T FD 00 F1 F1 E1 01 80 00 09 E5 21 C0 00 E5 CD
+R 00 00 00 00
+T 0A 01 00 00 F1 F1
+R 00 00 00 00 02 02 0D 00
+T 0E 01
+R 00 00 00 00
+T 0E 01 01 00 00 2A 00 00 CB 3C CB 1D 7D E6 07 6F
+R 00 00 00 00 02 03 11 00 02 06 18 00
+T 1C 01 26 00 29 29 29 29 29 09 E5 21 80 01 E5 CD
+R 00 00 00 00
+T 2A 01 00 00 F1 F1 21 00 00 CB 46 C0 C3 00 00
+R 00 00 00 00 02 02 07 00 02 07 18 00 00 0D 00 00
+T 37 01
+R 00 00 00 00
+T 37 01 3E 09 F5 33 21 00 00 E5 CD 00 00 F1 33 3E
+R 00 00 00 00 02 07 06 00 02 0B 09 00
+T 45 01 06 F5 33 21 00 00 E5 CD 00 00 F1 33 3E 02
+R 00 00 00 00 02 06 14 00 02 0A 05 00
+T 53 01 F5 33 21 00 00 E5 CD 00 00 F1 33 3E 0F F5
+R 00 00 00 00 02 05 0B 00 02 09 0A 00
+T 61 01 33 21 00 00 E5 CD 00 00 F1 33 21 00 00 35
+R 00 00 00 00 02 04 02 00 02 08 17 00 02 0D 10 00
+T 6F 01 C9
+R 00 00 00 00
+T 70 01
+R 00 00 00 00
+T 70 01 21 03 00 39 7E F5 33 21 03 00 39 7E F5 33
+R 00 00 00 00
+T 7E 01 CD 00 00 F1 3E 1D 95 30 03 2E 01 C9
+R 00 00 00 00 02 03 0C 00
+T 8A 01
+R 00 00 00 00
+T 8A 01 2E 00 C9
+R 00 00 00 00

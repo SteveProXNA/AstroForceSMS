@@ -10,15 +10,15 @@ void main()
 	while( 1 )
 	{
 		// Mikgames
-		InitMikGamesStage();
+		//InitMikGamesStage();
 
 		// Game intro
-		InitIntroStage( 1 );
-		InitIntroStage( 4 );
-		InitIntroStage( 2 );
+		//InitIntroStage( 1 );
+		//InitIntroStage( 4 );
+		//InitIntroStage( 2 );
 
 		// Logo
-		InitLogoStage();
+		//InitLogoStage();
 
 		// If we have jukebox before play
 		if( dojukebox == 1 )

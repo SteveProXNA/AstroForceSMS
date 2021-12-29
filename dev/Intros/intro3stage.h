@@ -1,17 +1,7 @@
-void InitIntro3Stage()
-{
-	// Warning sprite
-	LoadSprite( ( unsigned char * ) warning_psgcompr, WARNINGBASE, warning_psgcompr_bank );
+#ifndef _INTRO3STAGE_H_
+#define _INTRO3STAGE_H_
 
-	// Load palette
-	LoadBGPalette( ( unsigned char * ) personspalette_bin, personspalette_bin_bank );
+// ADRIANA
+void InitIntro3Stage();
 
-	// Load tiles
-	LoadTiles( ( unsigned char * ) persons_psgcompr, persons_psgcompr_bank );
-
-	// Music
-	PlayMusic( ( unsigned char * ) intro3_psg, intro3_psg_bank, 0 );
-
-	// Scripter
-	InitScript( ( unsigned char * ) intro3script, ( unsigned char ** ) intro3labels );
-}
+#endif//_INTRO3STAGE_H_

@@ -1,0 +1,539 @@
+;!FILE jukeboxstage.asm
+XL2
+H 9 areas 177 global symbols
+M jukeboxstage
+O -mz80
+S _changeBank Ref0000
+S _devkit_PORT_A_KEY_1 Ref0000
+S _jukebox_banks Ref0000
+S _devkit_PORT_A_KEY_DOWN Ref0000
+S _jukebox_names Ref0000
+S _devkit_SMS_displayOn Ref0000
+S _keystatus Ref0000
+S _difficultlabels Ref0000
+S _devkit_PORT_A_KEY_RIGHT Ref0000
+S _WriteText Ref0000
+S __moduchar Ref0000
+S _gamelevel Ref0000
+S _WriteNumber Ref0000
+S _LoadSprite Ref0000
+S _logopalette_bin Ref0000
+S _gamestock Ref0000
+S .__.ABS. Def0000
+S _jukebox_songs Ref0000
+S _InitStage Ref0000
+S _devkit_SMS_displayOff Ref0000
+S _UpdatePSG Ref0000
+S _devkit_PORT_A_KEY_UP Ref0000
+S _PlayMusic Ref0000
+S _UpdateStage Ref0000
+S _jukebox_repeat Ref0000
+S _devkit_SMS_addSprite Ref0000
+S _LoadBGPalette Ref0000
+S _cursors_psgcompr Ref0000
+S _devkit_PORT_A_KEY_LEFT Ref0000
+A _CODE size 254 flags 0 addr 0
+S C$jukeboxstage.c$59$4$77 Def0160
+S A$jukeboxstage$93 Def0008
+S A$jukeboxstage$94 Def000B
+S A$jukeboxstage$85 Def0000
+S C$jukeboxstage.c$99$1$78 Def01E2
+S A$jukeboxstage$95 Def000C
+S A$jukeboxstage$86 Def0002
+S A$jukeboxstage$96 Def000E
+S A$jukeboxstage$87 Def0003
+S Fjukeboxstage$__str_0$0$0 Def0230
+S A$jukeboxstage$97 Def000F
+S A$jukeboxstage$88 Def0004
+S Fjukeboxstage$__str_1$0$0 Def023D
+S A$jukeboxstage$98 Def0010
+S A$jukeboxstage$89 Def0007
+S Fjukeboxstage$__str_2$0$0 Def0243
+S A$jukeboxstage$99 Def0011
+S Fjukeboxstage$__str_3$0$0 Def0249
+S Fjukeboxstage$__str_4$0$0 Def024F
+S XG$InitJukeboxStage$0$0 Def022E
+S G$UpdateJukeboxInfo$0$0 Def0000
+S C$jukeboxstage.c$120$1$78 Def022E
+S C$jukeboxstage.c$102$1$78 Def01E5
+S C$jukeboxstage.c$103$1$78 Def01F1
+S C$jukeboxstage.c$104$1$78 Def01FD
+S A$jukeboxstage$100 Def0013
+S C$jukeboxstage.c$112$2$79 Def0222
+S C$jukeboxstage.c$105$1$78 Def0209
+S _UpdateJukeboxInfo Def0000
+S A$jukeboxstage$110 Def0022
+S A$jukeboxstage$101 Def0014
+S C$jukeboxstage.c$106$1$78 Def0215
+S A$jukeboxstage$210 Def00B9
+S A$jukeboxstage$201 Def00A7
+S A$jukeboxstage$120 Def0031
+S A$jukeboxstage$102 Def0017
+S A$jukeboxstage$310 Def014F
+S A$jukeboxstage$220 Def00C9
+S A$jukeboxstage$211 Def00BB
+S A$jukeboxstage$202 Def00AA
+S A$jukeboxstage$121 Def0032
+S A$jukeboxstage$103 Def0018
+S C$jukeboxstage.c$115$2$79 Def0225
+S A$jukeboxstage$500 Def0221
+S A$jukeboxstage$311 Def0152
+S A$jukeboxstage$230 Def00DD
+S A$jukeboxstage$221 Def00CC
+S A$jukeboxstage$212 Def00BF
+S A$jukeboxstage$203 Def00AB
+S A$jukeboxstage$140 Def004E
+S A$jukeboxstage$122 Def0033
+S A$jukeboxstage$104 Def0019
+S C$jukeboxstage.c$109$1$78 Def0222
+S A$jukeboxstage$411 Def01B3
+S A$jukeboxstage$330 Def0160
+S A$jukeboxstage$312 Def0153
+S A$jukeboxstage$240 Def00EE
+S A$jukeboxstage$231 Def00DF
+S A$jukeboxstage$222 Def00CD
+S A$jukeboxstage$213 Def00C2
+S A$jukeboxstage$204 Def00AC
+S A$jukeboxstage$150 Def0059
+S A$jukeboxstage$141 Def004F
+S A$jukeboxstage$132 Def003E
+S A$jukeboxstage$123 Def0034
+S A$jukeboxstage$114 Def0023
+S A$jukeboxstage$105 Def001A
+S A$jukeboxstage$430 Def01C5
+S A$jukeboxstage$421 Def01BD
+S A$jukeboxstage$412 Def01B6
+S A$jukeboxstage$340 Def0179
+S A$jukeboxstage$331 Def0163
+S A$jukeboxstage$322 Def015E
+S A$jukeboxstage$313 Def0154
+S A$jukeboxstage$250 Def0103
+S A$jukeboxstage$241 Def00EF
+S A$jukeboxstage$232 Def00E3
+S A$jukeboxstage$223 Def00CE
+S A$jukeboxstage$214 Def00C4
+S A$jukeboxstage$205 Def00B0
+S A$jukeboxstage$160 Def006E
+S A$jukeboxstage$151 Def005C
+S A$jukeboxstage$142 Def0052
+S A$jukeboxstage$133 Def0041
+S A$jukeboxstage$124 Def0037
+S A$jukeboxstage$115 Def0026
+S A$jukeboxstage$106 Def001C
+S C$jukeboxstage.c$118$2$79 Def022B
+S A$jukeboxstage$512 Def0225
+S A$jukeboxstage$440 Def01D0
+S A$jukeboxstage$431 Def01C6
+S A$jukeboxstage$350 Def018B
+S A$jukeboxstage$341 Def017D
+S A$jukeboxstage$332 Def0166
+S A$jukeboxstage$314 Def0157
+S A$jukeboxstage$260 Def0111
+S A$jukeboxstage$251 Def0106
+S A$jukeboxstage$242 Def00F0
+S A$jukeboxstage$233 Def00E6
+S A$jukeboxstage$224 Def00D2
+S A$jukeboxstage$215 Def00C6
+S A$jukeboxstage$206 Def00B3
+S A$jukeboxstage$161 Def006F
+S A$jukeboxstage$152 Def005D
+S A$jukeboxstage$143 Def0053
+S A$jukeboxstage$134 Def0045
+S A$jukeboxstage$125 Def0038
+S A$jukeboxstage$116 Def002A
+S A$jukeboxstage$107 Def001D
+S A$jukeboxstage$513 Def0228
+S A$jukeboxstage$450 Def01E1
+S A$jukeboxstage$441 Def01D2
+S A$jukeboxstage$432 Def01C7
+S A$jukeboxstage$351 Def018C
+S A$jukeboxstage$342 Def0180
+S A$jukeboxstage$333 Def0168
+S A$jukeboxstage$315 Def0158
+S A$jukeboxstage$261 Def0112
+S A$jukeboxstage$252 Def0108
+S A$jukeboxstage$243 Def00F4
+S A$jukeboxstage$234 Def00E8
+S A$jukeboxstage$225 Def00D5
+S A$jukeboxstage$207 Def00B4
+S A$jukeboxstage$153 Def005F
+S A$jukeboxstage$144 Def0054
+S A$jukeboxstage$135 Def0048
+S A$jukeboxstage$126 Def0039
+S A$jukeboxstage$117 Def002D
+S A$jukeboxstage$108 Def001E
+S A$jukeboxstage$514 Def0229
+S A$jukeboxstage$460 Def01E9
+S A$jukeboxstage$442 Def01D3
+S A$jukeboxstage$433 Def01CA
+S A$jukeboxstage$406 Def01AE
+S A$jukeboxstage$370 Def0199
+S A$jukeboxstage$361 Def0195
+S A$jukeboxstage$352 Def018D
+S A$jukeboxstage$343 Def0182
+S A$jukeboxstage$334 Def0169
+S A$jukeboxstage$316 Def0159
+S A$jukeboxstage$307 Def014B
+S A$jukeboxstage$280 Def0137
+S A$jukeboxstage$271 Def0121
+S A$jukeboxstage$262 Def0116
+S A$jukeboxstage$253 Def010A
+S A$jukeboxstage$244 Def00F7
+S A$jukeboxstage$226 Def00D6
+S A$jukeboxstage$208 Def00B5
+S A$jukeboxstage$190 Def0097
+S A$jukeboxstage$172 Def007B
+S A$jukeboxstage$154 Def0062
+S A$jukeboxstage$145 Def0057
+S A$jukeboxstage$136 Def004A
+S A$jukeboxstage$127 Def003C
+S A$jukeboxstage$118 Def002F
+S A$jukeboxstage$109 Def0021
+S C$jukeboxstage.c$31$1$73 Def0070
+S C$jukeboxstage.c$22$1$73 Def0023
+S A$jukeboxstage$524 Def022E
+S A$jukeboxstage$515 Def022A
+S A$jukeboxstage$470 Def01F8
+S A$jukeboxstage$461 Def01EC
+S A$jukeboxstage$443 Def01D4
+S A$jukeboxstage$434 Def01CB
+S A$jukeboxstage$425 Def01C0
+S A$jukeboxstage$416 Def01B8
+S A$jukeboxstage$407 Def01B1
+S A$jukeboxstage$380 Def01A1
+S A$jukeboxstage$353 Def018E
+S A$jukeboxstage$344 Def0183
+S A$jukeboxstage$335 Def016A
+S A$jukeboxstage$317 Def015C
+S A$jukeboxstage$308 Def014D
+S A$jukeboxstage$281 Def0139
+S A$jukeboxstage$272 Def0125
+S A$jukeboxstage$263 Def0119
+S A$jukeboxstage$245 Def00F8
+S A$jukeboxstage$227 Def00D7
+S A$jukeboxstage$209 Def00B8
+S A$jukeboxstage$191 Def0098
+S A$jukeboxstage$182 Def0086
+S A$jukeboxstage$155 Def0063
+S A$jukeboxstage$146 Def0058
+S A$jukeboxstage$137 Def004B
+S A$jukeboxstage$128 Def003D
+S A$jukeboxstage$119 Def0030
+S A$jukeboxstage$480 Def0205
+S A$jukeboxstage$471 Def01F9
+S A$jukeboxstage$462 Def01ED
+S A$jukeboxstage$444 Def01D7
+S A$jukeboxstage$435 Def01CE
+S A$jukeboxstage$417 Def01BB
+S A$jukeboxstage$381 Def01A4
+S A$jukeboxstage$354 Def018F
+S A$jukeboxstage$345 Def0186
+S A$jukeboxstage$336 Def016E
+S A$jukeboxstage$318 Def015D
+S A$jukeboxstage$309 Def014E
+S A$jukeboxstage$282 Def013C
+S A$jukeboxstage$273 Def0128
+S A$jukeboxstage$264 Def011A
+S A$jukeboxstage$246 Def00F9
+S A$jukeboxstage$228 Def00DA
+S A$jukeboxstage$192 Def009A
+S A$jukeboxstage$183 Def0089
+S A$jukeboxstage$165 Def0070
+S A$jukeboxstage$156 Def0066
+S A$jukeboxstage$138 Def004C
+S A$jukeboxstage$508 Def0222
+S A$jukeboxstage$490 Def0214
+S A$jukeboxstage$481 Def0208
+S A$jukeboxstage$472 Def01FC
+S A$jukeboxstage$463 Def01F0
+S A$jukeboxstage$454 Def01E2
+S A$jukeboxstage$445 Def01D8
+S A$jukeboxstage$436 Def01CF
+S A$jukeboxstage$382 Def01A6
+S A$jukeboxstage$355 Def0190
+S A$jukeboxstage$346 Def0187
+S A$jukeboxstage$337 Def0172
+S A$jukeboxstage$292 Def0142
+S A$jukeboxstage$283 Def013E
+S A$jukeboxstage$274 Def0129
+S A$jukeboxstage$265 Def011B
+S A$jukeboxstage$247 Def00FC
+S A$jukeboxstage$229 Def00DB
+S A$jukeboxstage$193 Def009E
+S A$jukeboxstage$184 Def008A
+S A$jukeboxstage$166 Def0074
+S A$jukeboxstage$157 Def0067
+S A$jukeboxstage$139 Def004D
+S XG$UpdateJukeboxInfo$0$0 Def01AD
+S C$jukeboxstage.c$25$1$73 Def003E
+S C$jukeboxstage.c$16$1$73 Def0000
+S A$jukeboxstage$446 Def01DB
+S A$jukeboxstage$383 Def01A9
+S A$jukeboxstage$356 Def0193
+S A$jukeboxstage$347 Def0188
+S A$jukeboxstage$338 Def0174
+S A$jukeboxstage$293 Def0145
+S A$jukeboxstage$284 Def0140
+S A$jukeboxstage$275 Def012B
+S A$jukeboxstage$266 Def011E
+S A$jukeboxstage$248 Def00FD
+S A$jukeboxstage$239 Def00EB
+S A$jukeboxstage$194 Def00A1
+S A$jukeboxstage$185 Def008B
+S A$jukeboxstage$176 Def007F
+S A$jukeboxstage$167 Def0077
+S A$jukeboxstage$158 Def0068
+S G$InitJukeboxStage$0$0 Def01AE
+S C$jukeboxstage.c$40$3$75 Def00A7
+S A$jukeboxstage$519 Def022B
+S A$jukeboxstage$447 Def01DC
+S A$jukeboxstage$429 Def01C3
+S A$jukeboxstage$393 Def01AD
+S A$jukeboxstage$357 Def0194
+S A$jukeboxstage$348 Def0189
+S A$jukeboxstage$339 Def0176
+S A$jukeboxstage$294 Def0147
+S A$jukeboxstage$276 Def012E
+S A$jukeboxstage$267 Def011F
+S A$jukeboxstage$258 Def010D
+S A$jukeboxstage$249 Def00FF
+S A$jukeboxstage$195 Def00A2
+S A$jukeboxstage$186 Def008F
+S A$jukeboxstage$177 Def0082
+S A$jukeboxstage$168 Def0078
+S A$jukeboxstage$159 Def006B
+S C$jukeboxstage.c$72$1$73 Def01AB
+S C$jukeboxstage.c$34$2$74 Def007B
+S C$jukeboxstage.c$13$0$0 Def0000
+S A$jukeboxstage$448 Def01DF
+S A$jukeboxstage$349 Def018A
+S A$jukeboxstage$295 Def0148
+S A$jukeboxstage$277 Def0130
+S A$jukeboxstage$259 Def0110
+S A$jukeboxstage$196 Def00A4
+S A$jukeboxstage$187 Def0092
+S A$jukeboxstage$178 Def0084
+S C$jukeboxstage.c$73$1$73 Def01AD
+S C$jukeboxstage.c$64$1$73 Def019A
+S C$jukeboxstage.c$50$3$76 Def0121
+S C$jukeboxstage.c$44$2$74 Def00C9
+S C$jukeboxstage.c$28$1$73 Def0059
+S C$jukeboxstage.c$19$1$73 Def0008
+S A$jukeboxstage$494 Def0215
+S A$jukeboxstage$485 Def0209
+S A$jukeboxstage$476 Def01FD
+S A$jukeboxstage$467 Def01F1
+S A$jukeboxstage$458 Def01E5
+S A$jukeboxstage$449 Def01E0
+S A$jukeboxstage$278 Def0132
+S A$jukeboxstage$188 Def0093
+S C$jukeboxstage.c$56$1$73 Def014B
+S C$jukeboxstage.c$45$2$74 Def00EB
+S A$jukeboxstage$495 Def0218
+S A$jukeboxstage$486 Def020C
+S A$jukeboxstage$477 Def0200
+S A$jukeboxstage$468 Def01F4
+S A$jukeboxstage$459 Def01E8
+S A$jukeboxstage$378 Def019A
+S A$jukeboxstage$369 Def0197
+S A$jukeboxstage$279 Def0135
+S A$jukeboxstage$189 Def0094
+S C$jukeboxstage.c$75$1$73 Def01AE
+S C$jukeboxstage.c$37$2$74 Def007F
+S A$jukeboxstage$496 Def0219
+S A$jukeboxstage$487 Def020D
+S A$jukeboxstage$478 Def0201
+S A$jukeboxstage$469 Def01F5
+S A$jukeboxstage$388 Def01AB
+S A$jukeboxstage$379 Def019E
+S C$jukeboxstage.c$60$4$77 Def0195
+S A$jukeboxstage$497 Def021C
+S A$jukeboxstage$488 Def0210
+S A$jukeboxstage$479 Def0204
+S A$jukeboxstage$299 Def0149
+S C$jukeboxstage.c$90$1$78 Def01C0
+S C$jukeboxstage.c$81$1$78 Def01B3
+S C$jukeboxstage.c$61$4$77 Def0197
+S C$jukeboxstage.c$52$4$77 Def0142
+S C$jukeboxstage.c$48$2$74 Def010D
+S A$jukeboxstage$498 Def021D
+S A$jukeboxstage$489 Def0211
+S C$jukeboxstage.c$69$1$73 Def019A
+S C$jukeboxstage.c$62$4$77 Def0197
+S C$jukeboxstage.c$53$4$77 Def0142
+S A$jukeboxstage$499 Def0220
+S C$jukeboxstage.c$54$4$77 Def0149
+S C$jukeboxstage.c$39$3$75 Def0086
+S C$jukeboxstage.c$93$1$78 Def01C3
+S C$jukeboxstage.c$84$1$78 Def01B8
+S C$jukeboxstage.c$55$4$77 Def014B
+S C$jukeboxstage.c$57$4$77 Def015E
+S C$jukeboxstage.c$96$1$78 Def01D0
+S C$jukeboxstage.c$87$1$78 Def01BD
+S C$jukeboxstage.c$78$1$78 Def01AE
+S C$jukeboxstage.c$58$4$77 Def0160
+S _InitJukeboxStage Def01AE
+A _DATA size 3 flags 0 addr 0
+S _jukeboxselectedline Def0000
+S G$jukeboxselectedsong$0$0 Def0001
+S G$jukeboxcheckkey$0$0 Def0002
+S _jukeboxselectedsong Def0001
+S _jukeboxcheckkey Def0002
+S G$jukeboxselectedline$0$0 Def0000
+A _INITIALIZED size 0 flags 0 addr 0
+A _DABS size 0 flags 8 addr 0
+A _HOME size 0 flags 0 addr 0
+A _GSINIT size 0 flags 0 addr 0
+A _GSFINAL size 0 flags 0 addr 0
+A _INITIALIZER size 0 flags 0 addr 0
+A _CABS size 0 flags 8 addr 0
+T 00 00
+R 00 00 01 00
+T 00 00
+R 00 00 01 00
+T 01 00
+R 00 00 01 00
+T 01 00
+R 00 00 01 00
+T 02 00
+R 00 00 01 00
+T 02 00
+R 00 00 01 00
+T 00 00
+R 00 00 00 00
+T 00 00 3E 0F F5 33 CD 00 00 33 3A 00 00 87 C6 08
+R 00 00 00 00 02 07 00 00 00 0B 01 00
+T 0E 00 07 07 07 E6 F8 47 21 00 01 E5 C5 33 3E 20
+R 00 00 00 00
+T 1C 00 F5 33 CD 00 00 F1 F1 01 00 00 FD 21 01 00
+R 00 00 00 00 02 05 19 00 02 0A 04 00 00 0E 01 00
+T 2A 00 FD 6E 00 26 00 29 09 4E 23 46 21 10 0E E5
+R 00 00 00 00
+T 38 00 C5 CD 00 00 F1 F1 01 00 00 FD 21 00 00 FD
+R 00 00 00 00 02 04 09 00 02 09 07 00 02 0D 0B 00
+T 46 00 6E 00 26 00 29 09 4E 23 46 21 10 0A E5 C5
+R 00 00 00 00
+T 54 00 CD 00 00 F1 F1 21 00 00 4E 06 00 21 0F 0C
+R 00 00 00 00 02 03 09 00 02 08 0F 00
+T 62 00 E5 21 02 00 E5 C5 CD 00 00 21 06 00 39 F9
+R 00 00 00 00 02 09 0C 00
+T 70 00 FD 21 02 00 FD 7E 00 3D C2 9A 01 FD 36 00
+R 00 00 00 00 00 04 01 00 00 0B 00 00
+T 7E 00 00 3A 00 00 D6 03 20 43 CD 00 00 44 7D FD
+R 00 00 00 00 00 04 01 00 02 0B 1C 00
+T 8C 00 21 00 00 FD A6 00 4F 78 FD A6 01 B1 28 0D
+R 00 00 00 00 02 03 06 00
+T 9A 00 FD 21 01 00 FD 7E 00 B7 28 03 FD 35 00
+R 00 00 00 00 00 04 01 00
+T A7 00
+R 00 00 00 00
+T A7 00 CD 00 00 44 7D FD 21 00 00 FD A6 00 4F 78
+R 00 00 00 00 02 03 08 00 02 09 06 00
+T B5 00 FD A6 01 B1 28 0E FD 21 01 00 FD 7E 00 D6
+R 00 00 00 00 00 0A 01 00
+T C3 00 14 30 03 FD 34 00
+R 00 00 00 00
+T C9 00
+R 00 00 00 00
+T C9 00 CD 00 00 44 7D FD 21 00 00 FD A6 00 4F 78
+R 00 00 00 00 02 03 15 00 02 09 06 00
+T D7 00 FD A6 01 B1 28 0E 3E 01 FD 21 00 00 FD 96
+R 00 00 00 00 00 0C 01 00
+T E5 00 00 30 03 FD 35 00
+R 00 00 00 00
+T EB 00
+R 00 00 00 00
+T EB 00 CD 00 00 44 7D FD 21 00 00 FD A6 00 4F 78
+R 00 00 00 00 02 03 03 00 02 09 06 00
+T F9 00 FD A6 01 B1 28 0E FD 21 00 00 FD 7E 00 D6
+R 00 00 00 00 00 0A 01 00
+T 07 01 04 30 03 FD 34 00
+R 00 00 00 00
+T 0D 01
+R 00 00 00 00
+T 0D 01 CD 00 00 44 7D FD 21 00 00 FD A6 00 4F 78
+R 00 00 00 00 02 03 01 00 02 09 06 00
+T 1B 01 FD A6 01 B1 28 79 FD 21 00 00 FD 7E 00 3D
+R 00 00 00 00 00 0A 01 00
+T 29 01 28 17 FD 7E 00 D6 02 28 19 FD 7E 00 D6 03
+R 00 00 00 00
+T 37 01 28 27 FD 7E 00 D6 04 28 57 18 58
+R 00 00 00 00
+T 42 01
+R 00 00 00 00
+T 42 01 21 00 00 3E 01 96 77 18 4F
+R 00 00 00 00 02 03 0B 00
+T 4B 01
+R 00 00 00 00
+T 4B 01 3E 06 F5 33 3A 00 00 F5 33 CD 00 00 F1 7D
+R 00 00 00 00 02 07 0F 00 02 0C 0A 00
+T 59 01 21 00 00 3C 77 18 3A
+R 00 00 00 00 02 03 0F 00
+T 60 01
+R 00 00 00 00
+T 60 01 01 00 00 2A 01 00 26 00 09 4E FD 21 00 00
+R 00 00 00 00 02 03 18 00 00 06 01 00 02 0E 02 00
+T 6E 01 ED 5B 01 00 16 00 FD 19 FD 46 00 FD 21
+R 00 00 00 00 00 04 01 00
+T 7B 01 01 00 FD 6E 00 26 00 29 11 00 00 19 5E 23
+R 00 00 00 00 00 02 01 00 02 0B 11 00
+T 89 01 56 79 F5 33 C5 33 D5 CD 00 00 F1 F1 18 03
+R 00 00 00 00 02 0A 16 00
+T 97 01
+R 00 00 00 00
+T 97 01 2E 00 C9
+R 00 00 00 00
+T 9A 01
+R 00 00 00 00
+T 9A 01 FD 21 00 00 FD 7E 01 FD B6 00 20 05 21
+R 00 00 00 00 02 04 06 00
+T A7 01 02 00 36 01
+R 00 00 00 00 00 02 01 00
+T AB 01
+R 00 00 00 00
+T AB 01 2E 01 C9
+R 00 00 00 00
+T AE 01
+R 00 00 00 00
+T AE 01 21 00 00 36 01 21 01 00 36 00 21 02 00 36
+R 00 00 00 00 00 03 01 00 00 08 01 00 00 0D 01 00
+T BC 01 00 CD 00 00 CD 00 00 3E 03 F5 33 21 00 00
+R 00 00 00 00 02 04 12 00 02 07 13 00 02 0E 0E 00
+T CA 01 E5 CD 00 00 F1 33 3E 07 F5 33 21 00 01 E5
+R 00 00 00 00 02 04 1A 00
+T D8 01 21 00 00 E5 CD 00 00 F1 F1 33 CD 00 00 21
+R 00 00 00 00 02 03 1B 00 02 07 0D 00 02 0D 05 00
+T E6 01 0A 06 E5 21 30 02 E5 CD 00 00 F1 21 06 0A
+R 00 00 00 00 00 06 00 00 02 0A 09 00
+T F4 01 E3 21 3D 02 E5 CD 00 00 F1 21 06 0C E3 21
+R 00 00 00 00 00 04 00 00 02 08 09 00
+T 02 02 43 02 E5 CD 00 00 F1 21 06 0E E3 21 49 02
+R 00 00 00 00 00 02 00 00 02 06 09 00 00 0E 00 00
+T 10 02 E5 CD 00 00 F1 21 06 10 E3 21 4F 02 E5 CD
+R 00 00 00 00 02 04 09 00 00 0C 00 00
+T 1E 02 00 00 F1 F1
+R 00 00 00 00 02 02 09 00
+T 22 02
+R 00 00 00 00
+T 22 02 CD 00 00 CD 00 00 7D B7 C8 CD 00 00 18 F2
+R 00 00 00 00 02 03 17 00 00 06 00 00 02 0C 14 00
+T 30 02
+R 00 00 00 00
+T 30 02 47 41 4D 45 20 4F 50 54 49 4F 4E 53 00
+R 00 00 00 00
+T 3D 02
+R 00 00 00 00
+T 3D 02 4C 45 56 45 4C 00
+R 00 00 00 00
+T 43 02
+R 00 00 00 00
+T 43 02 53 54 4F 43 4B 00
+R 00 00 00 00
+T 49 02
+R 00 00 00 00
+T 49 02 4D 55 53 49 43 00
+R 00 00 00 00
+T 4F 02
+R 00 00 00 00
+T 4F 02 45 58 49 54 00
+R 00 00 00 00

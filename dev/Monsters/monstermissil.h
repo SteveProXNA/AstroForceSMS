@@ -1,21 +1,10 @@
-void InitMonsterMissilLeft( enemy *en )
-{
-	en->enemyparama = 8;
-}
+#ifndef _MONSTERMISSIL_H_
+#define _MONSTERMISSIL_H_
 
-unsigned char UpdateMonsterMissil( enemy *en )
-{
-	en->enemyposy++;
+#include "../defines.h"
 
-	if( en->enemyposy > 192 )
-		return 0;
-	else
-	{
-		// Draw sprite
-		DrawQuadSprite( en->enemyposx, en->enemyposy, MONSTERMISSILBASE + en->enemyparama + ( playery < en->enemyposy ? 4 : 0 ) );
+// ADRIANA
+void InitMonsterMissilLeft( enemy *en );
+unsigned char UpdateMonsterMissil( enemy *en );
 
-		// Enemy shoot?
-		DoSideShoot( en, 15 );
-	}
-	return 1;
-}
+#endif//_MONSTERMISSIL_H_

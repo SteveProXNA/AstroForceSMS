@@ -1,22 +1,10 @@
-void InitFortressPhantom( enemy *en )
-{
-	GetEnemyDirection( en );
-}
+#ifndef _FORTRESSPHANTOM_H_
+#define _FORTRESSPHANTOM_H_
 
-unsigned char UpdateFortressPhantom( enemy *en )
-{
-	if( en->enemyframe >= 16 )
-	{
-		if( TestSkullOut( en ) )
-			return 0;
-		else
-		{
-			en->enemyposx += en->enemyparama;
-			en->enemyposy += en->enemyparamb;
-			DrawQuadSprite( en->enemyposx, en->enemyposy, FORTRESSPHANTOMBASE + 12 );
-		}
-	}
-	else DrawQuadSprite( en->enemyposx, en->enemyposy, FORTRESSPHANTOMBASE + ( ( en->enemyframe >> 2 ) << 2 ) );
-	return 1;
-}
+#include "../defines.h"
 
+// ADRIANA
+void InitFortressPhantom( enemy *en );
+unsigned char UpdateFortressPhantom( enemy *en );
+
+#endif//_FORTRESSPHANTOM_H_

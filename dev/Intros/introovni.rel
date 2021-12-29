@@ -1,0 +1,109 @@
+;!FILE introovni.asm
+XL2
+H 9 areas 49 global symbols
+M introovni
+O -mz80
+S .__.ABS. Def0000
+S _DrawQuadSprite Ref0000
+A _CODE size 59 flags 0 addr 0
+S A$introovni$102 Def003B
+S A$introovni$103 Def003C
+S A$introovni$140 Def0058
+S A$introovni$113 Def0042
+S C$introovni.c$12$2$50 Def0042
+S A$introovni$114 Def0043
+S A$introovni$124 Def004C
+S A$introovni$115 Def0045
+S A$introovni$134 Def0054
+S A$introovni$125 Def004E
+S A$introovni$116 Def0047
+S A$introovni$107 Def003D
+S A$introovni$135 Def0056
+S A$introovni$126 Def004F
+S A$introovni$117 Def0048
+S A$introovni$108 Def003E
+S A$introovni$127 Def0051
+S A$introovni$118 Def0049
+S A$introovni$109 Def0040
+S C$introovni.c$16$2$51 Def004C
+S C$introovni.c$10$1$49 Def003D
+S A$introovni$128 Def0052
+S A$introovni$119 Def004A
+S C$introovni.c$20$1$49 Def0054
+S A$introovni$129 Def0053
+S C$introovni.c$21$1$49 Def0058
+S A$introovni$60 Def000B
+S A$introovni$70 Def0018
+S A$introovni$61 Def000E
+S A$introovni$80 Def0028
+S A$introovni$71 Def001A
+S A$introovni$62 Def000F
+S A$introovni$53 Def0000
+S A$introovni$90 Def0035
+S A$introovni$81 Def0029
+S A$introovni$72 Def001B
+S A$introovni$63 Def0010
+S A$introovni$54 Def0002
+S A$introovni$82 Def002A
+S A$introovni$73 Def001D
+S A$introovni$64 Def0011
+S A$introovni$55 Def0006
+S A$introovni$83 Def002B
+S A$introovni$74 Def001E
+S A$introovni$65 Def0012
+S A$introovni$84 Def002C
+S A$introovni$75 Def001F
+S A$introovni$66 Def0013
+S A$introovni$94 Def0036
+S A$introovni$85 Def002E
+S A$introovni$76 Def0020
+S A$introovni$67 Def0014
+S G$UpdateIntroOvni$0$0 Def0000
+S A$introovni$95 Def0037
+S A$introovni$86 Def002F
+S A$introovni$77 Def0024
+S A$introovni$68 Def0015
+S A$introovni$59 Def0008
+S A$introovni$96 Def0038
+S A$introovni$87 Def0030
+S A$introovni$78 Def0026
+S A$introovni$69 Def0016
+S C$introovni.c$4$0$0 Def0000
+S A$introovni$97 Def0039
+S A$introovni$88 Def0033
+S A$introovni$79 Def0027
+S C$introovni.c$7$1$49 Def003B
+S A$introovni$98 Def003A
+S A$introovni$89 Def0034
+S _UpdateIntroOvni Def0000
+S XG$UpdateIntroOvni$0$0 Def0058
+A _DATA size 0 flags 0 addr 0
+A _INITIALIZED size 0 flags 0 addr 0
+A _DABS size 0 flags 8 addr 0
+A _HOME size 0 flags 0 addr 0
+A _GSINIT size 0 flags 0 addr 0
+A _GSFINAL size 0 flags 0 addr 0
+A _INITIALIZER size 0 flags 0 addr 0
+A _CABS size 0 flags 8 addr 0
+T 00 00
+R 00 00 00 00
+T 00 00 DD E5 DD 21 00 00 DD 39 DD 4E 04 DD 46 05
+R 00 00 00 00
+T 0E 00 69 60 23 23 23 7E 0F 0F E6 3F E6 03 6F 26
+R 00 00 00 00
+T 1C 00 00 29 29 EB FD 21 36 01 FD 19 69 60 23 56
+R 00 00 00 00
+T 2A 00 0A C5 FD E5 5F D5 CD 00 00 F1 F1 C1 69 60
+R 00 00 00 00 02 09 01 00
+T 38 00 23 23 56 0A 5F 7A D6 02 20 0A 7B D6 3C 30
+R 00 00 00 00
+T 46 00 0D 1C 7B 02 18 08
+R 00 00 00 00
+T 4C 00
+R 00 00 00 00
+T 4C 00 3E B4 93 30 03 1D 7B 02
+R 00 00 00 00
+T 54 00
+R 00 00 00 00
+T 54 00 2E 01 DD E1 C9
+R 00 00 00 00

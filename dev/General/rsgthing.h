@@ -1,21 +1,10 @@
-unsigned char UpdateRSGThing( enemy *en )
-{
-	// Exit?
-	if( TestSkullOut( en ) )return 0;
+#ifndef _RSGTHING_H_
+#define _RSGTHING_H_
 
-	// Movement
-	UpdateSkullBoneCMovement( en );
-	UpdateSkullBoneCMovement( en );
+#include "../defines.h"
 
-	// Sprite
-	DrawQuadSprite( en->enemyposx, en->enemyposy, STAGE8BOSSBBASE + 120 + ( sprite82anim << 2 ) );
+// ADRIANA
+unsigned char UpdateRSGThing( enemy *en );
+void InitRSGThing( enemy *en );
 
-	// Exit
-	return 1;
-}
-
-void InitRSGThing( enemy *en )
-{
-	en->enemyparama = ( myRand() % 2 ) * 16;
-	en->enemyparamb = 16;
-}
+#endif//_RSGTHING_H_

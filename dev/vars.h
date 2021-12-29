@@ -1,40 +1,45 @@
+#ifndef _VARS_H_
+#define _VARS_H_
+
+#include "defines.h"
+
 // Keyboard
-unsigned int keystatus;  		// Estado del teclado
+extern unsigned int keystatus;  		// Estado del teclado
 
 								// Frames in stage
-unsigned int stageframe; 		// Guarda las frames en una stage
+extern unsigned int stageframe; 		// Guarda las frames en una stage
 
 								// Speeding thins up
-unsigned char stageframe2mod;
-unsigned char stageframe4mod;
-unsigned char sprite82anim;
-unsigned char sprite164anim;
+extern unsigned char stageframe2mod;
+extern unsigned char stageframe4mod;
+extern unsigned char sprite82anim;
+extern unsigned char sprite164anim;
 
 // Game vars
-unsigned char basestage;					// Base stage para las 4 primeras fases
-unsigned char playstage;					// Stage que se esta jugando en playstage
-unsigned char updateplaystage;				// Si hay que hacer el update de la stage
-unsigned char stagenum; 					// Numero de fase (del orden de la partida)
-unsigned char laststagenum;					// Ultima stage, para el continue
-unsigned char numplayers;					// Numero de players
-unsigned char exitplaystage;				// Flag para salir de la stage
-unsigned char gamelevel;					// Dificultad del juego
-unsigned char gamestock;					// Número de jugadores por defecto
-unsigned char gamepause;					// Si hay pausa
+extern unsigned char basestage;					// Base stage para las 4 primeras fases
+extern unsigned char playstage;					// Stage que se esta jugando en playstage
+extern unsigned char updateplaystage;				// Si hay que hacer el update de la stage
+extern unsigned char stagenum; 					// Numero de fase (del orden de la partida)
+extern unsigned char laststagenum;					// Ultima stage, para el continue
+extern unsigned char numplayers;					// Numero de players
+extern unsigned char exitplaystage;				// Flag para salir de la stage
+extern unsigned char gamelevel;					// Dificultad del juego
+extern unsigned char gamestock;					// Número de jugadores por defecto
+extern unsigned char gamepause;					// Si hay pausa
 
 											// Player
 #define DEFAULTPLAYERSPEED 2
 #define ENEMYSHOOTDENSITY 4
 
-unsigned char playerx;				// Posicion X del jugador
-unsigned char playery;				// Posicion Y del jugador
-unsigned char playertype;			// Estado del player
-unsigned char playercounter;		// Contador util para timers
-unsigned char playershootcounter; 	// Contador para shoots
-unsigned char playerside;			// Side of player sprite
-unsigned char playerspeed;			// Player speed
-unsigned char playershootlevel; 	// Player shoot level
-unsigned char playershootmax;		// Player shoot max
+extern unsigned char playerx;				// Posicion X del jugador
+extern unsigned char playery;				// Posicion Y del jugador
+extern unsigned char playertype;			// Estado del player
+extern unsigned char playercounter;		// Contador util para timers
+extern unsigned char playershootcounter; 	// Contador para shoots
+extern unsigned char playerside;			// Side of player sprite
+extern unsigned char playerspeed;			// Player speed
+extern unsigned char playershootlevel; 	// Player shoot level
+extern unsigned char playershootmax;		// Player shoot max
 
 #define PLAYERSHOOT_SIDE_LEFT 0
 #define PLAYERSHOOT_NORMAL 1
@@ -43,8 +48,8 @@ unsigned char playershootmax;		// Player shoot max
 #define PLAYERSHOOTINTERVAL_NORMAL 3
 #define PLAYERSHOOTINTERVAL_SIDE 6
 
-#define MAXPLAYERSHOOTS 3						// stevepro
-unsigned char numplayershoots;					// Disparos actuales
+#define MAXPLAYERSHOOTS 3				// stevepro		increase this
+extern unsigned char numplayershoots;					// Disparos actuales
 typedef struct playershoot
 {
 	unsigned char playershootx;
@@ -53,15 +58,15 @@ typedef struct playershoot
 	signed char playershootvelx;
 	unsigned char playershootvely;
 }playershoot;
-playershoot playershoots[ MAXPLAYERSHOOTS ];
+extern playershoot playershoots[ MAXPLAYERSHOOTS ];
 
 // Disparos de enemigos
 #define ENEMYSHOOT_NORMAL 2
 #define ENEMYSHOOT_LASER 3
 
 #define MAXENEMYSHOOTS 10
-unsigned char shootcount;						// Lleva la cuenta de disparos... sirve para diferenciar entre hard y easy
-unsigned char numenemyshoots;					// Disparos actuales
+extern unsigned char shootcount;						// Lleva la cuenta de disparos... sirve para diferenciar entre hard y easy
+extern unsigned char numenemyshoots;					// Disparos actuales
 typedef struct enemyshoot
 {
 	unsigned char enemyshootposx;
@@ -70,12 +75,12 @@ typedef struct enemyshoot
 	signed char enemyshootvely;
 	unsigned char enemyshoottype;
 }enemyshoot;
-enemyshoot enemyshoots[ MAXENEMYSHOOTS ];
-unsigned char playstageshootspeed;
+extern enemyshoot enemyshoots[ MAXENEMYSHOOTS ];
+extern unsigned char playstageshootspeed;
 
 // Explosiones
 #define MAXEXPLOSIONS 10
-unsigned char numexplosions;
+extern unsigned char numexplosions;
 typedef struct explosion
 {
 	unsigned char explosionposx;
@@ -83,44 +88,44 @@ typedef struct explosion
 	unsigned char explosionsprite;
 	unsigned char explosiontype;
 }explosion;
-explosion explosions[ MAXEXPLOSIONS ];
+extern explosion explosions[ MAXEXPLOSIONS ];
 
 #define MAXENEMIES 10
-unsigned char numenemies;
-enemy enemies[ MAXENEMIES ];
+extern unsigned char numenemies;
+extern enemy enemies[ MAXENEMIES ];
 
 // The tilemap
-unsigned char *maplines;				// Lineas de un tilemap
-unsigned int maplineslength;			// Numero de lineas de un tilemap
-unsigned char *maptiles;				// Tiles de un tilemap, en lineas
-unsigned int mappositionx;				// Posicion del map
-signed int mappositiony;				// Posicion del map
-signed int oldmappositiony;			// Antigua posicion del map
+extern unsigned char *maplines;				// Lineas de un tilemap
+extern unsigned int maplineslength;			// Numero de lineas de un tilemap
+extern unsigned char *maptiles;				// Tiles de un tilemap, en lineas
+extern unsigned int mappositionx;				// Posicion del map
+extern signed int mappositiony;				// Posicion del map
+extern signed int oldmappositiony;			// Antigua posicion del map
 
 									// Bank changer
-unsigned char lastbank;
+extern unsigned char lastbank;
 
 // Map statics
-const unsigned int *mapstatics;
-unsigned int mapstaticscount;
-unsigned char mapstaticsbank;
+const extern unsigned int *mapstatics;
+extern unsigned int mapstaticscount;
+extern unsigned char mapstaticsbank;
 
 // Music
-unsigned char musicbank;
+extern unsigned char musicbank;
 
 // Map
-unsigned char mapbank;
+extern unsigned char mapbank;
 
 // Playstage
-unsigned char playstagebank;
+extern unsigned char playstagebank;
 
 // Scroller
-unsigned char numscrolls;
-signed char scrollactspeedy;
-signed char scrollactspeedx;
-unsigned char scrollact;
-unsigned int scrolltimes;
-unsigned char disablescroll;
+extern unsigned char numscrolls;
+extern signed char scrollactspeedy;
+extern signed char scrollactspeedx;
+extern unsigned char scrollact;
+extern unsigned int scrolltimes;
+extern unsigned char disablescroll;
 
 typedef struct scroll
 {
@@ -130,13 +135,12 @@ typedef struct scroll
 	signed int scrollspeedx;
 	signed int scrollspeedy;
 }scroll;
-
-scroll *scrolls;
+extern scroll *scrolls;
 
 
 // Scripter
 #define MAXSCRIPTS 4
-unsigned char numscripts;
+extern unsigned char numscripts;
 typedef struct script
 {
 	unsigned int scripterpass;
@@ -145,51 +149,65 @@ typedef struct script
 	unsigned char scripterframe;
 	signed char scripterloop;
 }script;
-script scripts[ MAXSCRIPTS ];
+extern script scripts[ MAXSCRIPTS ];
 
 // Labels
 #define MAXTIMEREDLABELS 3
-unsigned char numtimeredlabels;					// Labels actuales
+extern unsigned char numtimeredlabels;					// Labels actuales
 
 typedef struct timeredlabel
 {
 	unsigned char timeredlabely;	// Posicion Y de una label
 	unsigned char timeredlabelt;	// Tiempo final de una label
 }timeredlabel;
-timeredlabel timeredlabels[ MAXTIMEREDLABELS ];
+extern timeredlabel timeredlabels[ MAXTIMEREDLABELS ];
 
 
 // Usado en intro2 y ending
-signed int introstageposx;
-signed int introstagevelx;
+extern signed int introstageposx;
+extern signed int introstagevelx;
 
 // Enter jukebox?
-unsigned char dojukebox;
+extern unsigned char dojukebox;
 
 // Spawned explosion
-unsigned char spawnedexplosionposx;
-unsigned char spawnedexplosionposy;
-unsigned char spawnedexplosionwidth;
-unsigned char spawnedexplosionheight;
-unsigned char spawnedexplosiontime;
+extern unsigned char spawnedexplosionposx;
+extern unsigned char spawnedexplosionposy;
+extern unsigned char spawnedexplosionwidth;
+extern unsigned char spawnedexplosionheight;
+extern unsigned char spawnedexplosiontime;
 
 // Check if play rays in stage 4
-unsigned char stage4playrays;
+extern unsigned char stage4playrays;
 
 // Black magic
-unsigned char numinterrupts;
+extern unsigned char numinterrupts;
 
 // Powerup
-unsigned char powerupx;
-unsigned char powerupy;
-unsigned char powerupt;
-signed char powerupv;
-unsigned int powerupcounter;
+extern unsigned char powerupx;
+extern unsigned char powerupy;
+extern unsigned char powerupt;
+extern signed char powerupv;
+extern unsigned int powerupcounter;
 
 // Pause music system
-char *lastplayedmusic;
-unsigned char lastplayedmusicbank;
-unsigned char lastplayedmusiclooped;
+extern char *lastplayedmusic;
+extern unsigned char lastplayedmusicbank;
+extern unsigned char lastplayedmusiclooped;
 
 // Needed in stage 8
-unsigned char stage8phase;
+extern unsigned char stage8phase;
+
+// Stage 3 star
+#define MAXSTAGE3STARS 6
+#define MAXSTAGE5CLOUDS 2
+
+typedef struct stage3star
+{
+	unsigned char posx;
+	unsigned char posy;
+	unsigned char speed;
+}stage3star;
+extern stage3star stage3stars[ MAXSTAGE3STARS ];
+
+#endif//_VARS_H_

@@ -1,0 +1,161 @@
+;!FILE stage5missile.asm
+XL2
+H 9 areas 6F global symbols
+M stage5missile
+O -mz80
+S .__.ABS. Def0000
+S _devkit_SMS_addSprite Ref0000
+A _CODE size 8F flags 0 addr 0
+S _UpdateStage5Missile Def0000
+S XG$UpdateStage5Missile$0$0 Def008E
+S A$stage5missile$100 Def0036
+S A$stage5missile$110 Def0044
+S A$stage5missile$101 Def0038
+S A$stage5missile$120 Def004E
+S A$stage5missile$111 Def0047
+S A$stage5missile$102 Def0039
+S C$stage5missile.c$20$1$32 Def0075
+S A$stage5missile$130 Def0058
+S A$stage5missile$121 Def004F
+S A$stage5missile$112 Def0049
+S A$stage5missile$103 Def003B
+S C$stage5missile.c$12$1$32 Def0025
+S A$stage5missile$140 Def0061
+S A$stage5missile$131 Def0059
+S A$stage5missile$122 Def0050
+S A$stage5missile$104 Def003C
+S A$stage5missile$150 Def0069
+S A$stage5missile$141 Def0063
+S A$stage5missile$132 Def005A
+S A$stage5missile$123 Def0051
+S A$stage5missile$105 Def003D
+S A$stage5missile$151 Def006A
+S A$stage5missile$142 Def0064
+S A$stage5missile$124 Def0052
+S A$stage5missile$106 Def003E
+S C$stage5missile.c$24$1$32 Def0088
+S C$stage5missile.c$15$1$32 Def004B
+S A$stage5missile$170 Def0081
+S A$stage5missile$161 Def0075
+S A$stage5missile$152 Def006D
+S A$stage5missile$143 Def0065
+S A$stage5missile$125 Def0053
+S A$stage5missile$107 Def003F
+S C$stage5missile.c$25$1$32 Def008E
+S C$stage5missile.c$16$1$32 Def005B
+S A$stage5missile$180 Def008A
+S A$stage5missile$171 Def0082
+S A$stage5missile$162 Def0076
+S A$stage5missile$153 Def006E
+S A$stage5missile$144 Def0066
+S A$stage5missile$126 Def0054
+S A$stage5missile$117 Def004B
+S A$stage5missile$108 Def0042
+S A$stage5missile$181 Def008C
+S A$stage5missile$172 Def0083
+S A$stage5missile$163 Def0077
+S A$stage5missile$154 Def006F
+S A$stage5missile$145 Def0067
+S A$stage5missile$136 Def005B
+S A$stage5missile$127 Def0055
+S A$stage5missile$118 Def004C
+S A$stage5missile$173 Def0086
+S A$stage5missile$164 Def0078
+S A$stage5missile$155 Def0072
+S A$stage5missile$146 Def0068
+S A$stage5missile$137 Def005C
+S A$stage5missile$128 Def0056
+S A$stage5missile$119 Def004D
+S C$stage5missile.c$19$1$32 Def0069
+S A$stage5missile$174 Def0087
+S A$stage5missile$165 Def007A
+S A$stage5missile$156 Def0073
+S A$stage5missile$138 Def005D
+S A$stage5missile$129 Def0057
+S A$stage5missile$166 Def007B
+S A$stage5missile$157 Def0074
+S A$stage5missile$139 Def005E
+S A$stage5missile$167 Def007C
+S A$stage5missile$186 Def008E
+S A$stage5missile$168 Def007D
+S A$stage5missile$178 Def0088
+S A$stage5missile$169 Def0080
+S A$stage5missile$60 Def0009
+S A$stage5missile$61 Def000C
+S A$stage5missile$80 Def0020
+S A$stage5missile$62 Def000F
+S A$stage5missile$53 Def0000
+S A$stage5missile$90 Def0028
+S A$stage5missile$63 Def0010
+S A$stage5missile$54 Def0002
+S C$stage5missile.c$8$1$32 Def001E
+S A$stage5missile$91 Def0029
+S A$stage5missile$73 Def0018
+S A$stage5missile$64 Def0011
+S A$stage5missile$55 Def0006
+S C$stage5missile.c$9$1$32 Def0022
+S A$stage5missile$92 Def002A
+S A$stage5missile$74 Def001C
+S A$stage5missile$65 Def0012
+S A$stage5missile$56 Def0008
+S A$stage5missile$93 Def002B
+S A$stage5missile$84 Def0022
+S A$stage5missile$66 Def0013
+S A$stage5missile$94 Def002C
+S A$stage5missile$67 Def0014
+S G$UpdateStage5Missile$0$0 Def0000
+S A$stage5missile$95 Def002D
+S A$stage5missile$68 Def0015
+S A$stage5missile$96 Def0030
+S A$stage5missile$78 Def001E
+S A$stage5missile$69 Def0017
+S A$stage5missile$97 Def0032
+S A$stage5missile$79 Def001F
+S C$stage5missile.c$5$0$0 Def0000
+S A$stage5missile$98 Def0034
+S A$stage5missile$89 Def0025
+S A$stage5missile$99 Def0035
+A _DATA size 0 flags 0 addr 0
+A _INITIALIZED size 0 flags 0 addr 0
+A _DABS size 0 flags 8 addr 0
+A _HOME size 0 flags 0 addr 0
+A _GSINIT size 0 flags 0 addr 0
+A _GSFINAL size 0 flags 0 addr 0
+A _INITIALIZER size 0 flags 0 addr 0
+A _CABS size 0 flags 8 addr 0
+T 00 00
+R 00 00 00 00
+T 00 00 DD E5 DD 21 00 00 DD 39 F5 DD 4E 04 DD 46
+R 00 00 00 00
+T 0E 00 05 69 60 23 23 23 7E E6 01 5F FD 21 04 00
+R 00 00 00 00
+T 1C 00 FD 09 7B B7 20 03 FD 34 00
+R 00 00 00 00
+T 25 00
+R 00 00 00 00
+T 25 00 21 01 00 09 E3 E1 E5 5E FD 7E 00 26 00 C6
+R 00 00 00 00
+T 33 00 FC 6F 7C CE FF 57 26 00 7B 95 7C 9A E2
+R 00 00 00 00
+T 40 00 44 00 EE 80
+R 00 00 00 00 00 02 00 00
+T 44 00
+R 00 00 00 00
+T 44 00 F2 4B 00 2E 00 18 3F
+R 00 00 00 00 00 03 00 00
+T 4B 00
+R 00 00 00 00
+T 4B 00 0A 5F 69 60 23 23 23 23 23 56 15 15 7B 82
+R 00 00 00 00
+T 59 00 5F 02 E1 E5 56 FD 6E 00 3E 04 95 82 57 E1
+R 00 00 00 00
+T 67 00 E5 72 C5 21 AE 01 E5 D5 CD 00 00 F1 F1 C1
+R 00 00 00 00 02 0B 01 00
+T 75 00 E1 E5 7E C6 08 57 0A 47 21 AF 01 E5 58 D5
+R 00 00 00 00
+T 83 00 CD 00 00 F1 F1 2E 01
+R 00 00 00 00 02 03 01 00
+T 8A 00
+R 00 00 00 00
+T 8A 00 DD F9 DD E1 C9
+R 00 00 00 00

@@ -1,0 +1,52 @@
+;!FILE stage7object.asm
+XL2
+H 9 areas 1C global symbols
+M stage7object
+O -mz80
+S _disablescroll Ref0000
+S .__.ABS. Def0000
+A _CODE size 18 flags 0 addr 0
+S C$stage7object.c$6$1$6 Def0000
+S _UpdateStage7Object Def0000
+S C$stage7object.c$8$2$7 Def000D
+S C$stage7object.c$9$2$7 Def0012
+S XG$UpdateStage7Object$0$0 Def0017
+S C$stage7object.c$11$1$6 Def0015
+S C$stage7object.c$12$1$6 Def0017
+S A$stage7object$60 Def0005
+S A$stage7object$70 Def0010
+S A$stage7object$61 Def0006
+S A$stage7object$80 Def0015
+S A$stage7object$62 Def0007
+S A$stage7object$63 Def0008
+S A$stage7object$64 Def000A
+S A$stage7object$55 Def0000
+S A$stage7object$74 Def0012
+S A$stage7object$65 Def000B
+S A$stage7object$56 Def0001
+S A$stage7object$75 Def0014
+S A$stage7object$57 Def0002
+S A$stage7object$85 Def0017
+S A$stage7object$58 Def0003
+S G$UpdateStage7Object$0$0 Def0000
+S A$stage7object$59 Def0004
+S A$stage7object$69 Def000D
+S C$stage7object.c$4$0$0 Def0000
+A _DATA size 0 flags 0 addr 0
+A _INITIALIZED size 0 flags 0 addr 0
+A _DABS size 0 flags 8 addr 0
+A _HOME size 0 flags 0 addr 0
+A _GSINIT size 0 flags 0 addr 0
+A _GSFINAL size 0 flags 0 addr 0
+A _INITIALIZER size 0 flags 0 addr 0
+A _CABS size 0 flags 8 addr 0
+T 00 00
+R 00 00 00 00
+T 00 00 C1 E1 E5 C5 23 23 23 4E 3E 50 91 30 08 21
+R 00 00 00 00
+T 0E 00 00 00 36 00 2E 00 C9
+R 00 00 00 00 02 02 00 00
+T 15 00
+R 00 00 00 00
+T 15 00 2E 01 C9
+R 00 00 00 00

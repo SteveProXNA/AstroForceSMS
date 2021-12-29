@@ -1,0 +1,270 @@
+;!FILE powerup.asm
+XL2
+H 9 areas B4 global symbols
+M powerup
+O -mz80
+S _LoadSprite Ref0000
+S _powerup_psg Ref0000
+S .__.ABS. Def0000
+S _playershootmax Ref0000
+S _DrawSpriteArray Ref0000
+S _playerx Ref0000
+S _playery Ref0000
+S _powerupt Ref0000
+S _powerupv Ref0000
+S _powerupx Ref0000
+S _powerupy Ref0000
+S _playertype Ref0000
+S _playershootlevel Ref0000
+S _powerup_psgcompr Ref0000
+S _playerspeed Ref0000
+S _stageframe Ref0000
+S _PlaySound Ref0000
+A _CODE size 103 flags 0 addr 0
+S XG$UpdatePowerup$0$0 Def0102
+S A$powerup$60 Def0000
+S A$powerup$70 Def0011
+S A$powerup$61 Def0002
+S A$powerup$62 Def0003
+S G$InitPowerupSprites$0$0 Def0000
+S A$powerup$63 Def0004
+S A$powerup$64 Def0007
+S A$powerup$92 Def0013
+S A$powerup$65 Def0008
+S A$powerup$75 Def0012
+S A$powerup$66 Def000B
+S A$powerup$67 Def000C
+S A$powerup$68 Def000F
+S A$powerup$69 Def0010
+S C$powerup.c$9$1$47 Def0000
+S G$InitPowerups$0$0 Def0013
+S C$powerup.c$7$0$0 Def0000
+S _InitPowerupSprites Def0000
+S _InitPowerups Def0013
+S XG$InitPowerupSprites$0$0 Def0012
+S XG$InitPowerups$0$0 Def0013
+S G$UpdatePowerup$0$0 Def0016
+S A$powerup$200 Def00A7
+S A$powerup$210 Def00BA
+S A$powerup$201 Def00A8
+S A$powerup$120 Def0026
+S A$powerup$111 Def001B
+S A$powerup$220 Def00C8
+S A$powerup$211 Def00BB
+S A$powerup$202 Def00AA
+S A$powerup$130 Def003B
+S A$powerup$121 Def002A
+S A$powerup$112 Def001E
+S A$powerup$230 Def00D3
+S A$powerup$221 Def00C9
+S A$powerup$212 Def00BC
+S A$powerup$203 Def00AD
+S A$powerup$140 Def004C
+S A$powerup$131 Def003D
+S A$powerup$122 Def002D
+S A$powerup$113 Def0020
+S C$powerup.c$21$2$50 Def001B
+S A$powerup$240 Def00E0
+S A$powerup$231 Def00D4
+S A$powerup$222 Def00CA
+S A$powerup$213 Def00BF
+S A$powerup$204 Def00AE
+S A$powerup$141 Def004D
+S A$powerup$132 Def003E
+S A$powerup$123 Def0030
+S A$powerup$114 Def0022
+S A$powerup$105 Def0016
+S C$powerup.c$22$2$50 Def0026
+S A$powerup$250 Def00EE
+S A$powerup$241 Def00E2
+S A$powerup$232 Def00D6
+S A$powerup$223 Def00CD
+S A$powerup$205 Def00AF
+S A$powerup$142 Def0050
+S A$powerup$133 Def0041
+S A$powerup$124 Def0031
+S A$powerup$115 Def0025
+S A$powerup$106 Def0019
+S C$powerup.c$23$2$50 Def0034
+S A$powerup$260 Def00F5
+S A$powerup$242 Def00E4
+S A$powerup$233 Def00D9
+S A$powerup$215 Def00C1
+S A$powerup$206 Def00B3
+S A$powerup$161 Def0067
+S A$powerup$152 Def005B
+S A$powerup$143 Def0051
+S A$powerup$134 Def0042
+S A$powerup$107 Def001A
+S C$powerup.c$24$2$50 Def005B
+S C$powerup.c$10$1$47 Def0012
+S A$powerup$261 Def00F7
+S A$powerup$243 Def00E7
+S A$powerup$234 Def00DB
+S A$powerup$225 Def00CF
+S A$powerup$216 Def00C2
+S A$powerup$207 Def00B6
+S A$powerup$180 Def008A
+S A$powerup$162 Def006B
+S A$powerup$153 Def005E
+S A$powerup$144 Def0052
+S A$powerup$135 Def0043
+S _UpdatePowerup Def0016
+S A$powerup$262 Def00F8
+S A$powerup$244 Def00E9
+S A$powerup$217 Def00C5
+S A$powerup$208 Def00B8
+S A$powerup$190 Def0099
+S A$powerup$181 Def008C
+S A$powerup$172 Def0078
+S A$powerup$163 Def006E
+S A$powerup$154 Def0060
+S A$powerup$145 Def0053
+S A$powerup$136 Def0044
+S C$powerup.c$40$4$52 Def00F5
+S C$powerup.c$12$1$47 Def0013
+S A$powerup$272 Def0102
+S A$powerup$263 Def00F9
+S A$powerup$218 Def00C6
+S A$powerup$209 Def00B9
+S A$powerup$191 Def009A
+S A$powerup$182 Def008D
+S A$powerup$173 Def007B
+S A$powerup$164 Def0070
+S A$powerup$155 Def0062
+S A$powerup$146 Def0056
+S A$powerup$137 Def0047
+S A$powerup$128 Def0034
+S C$powerup.c$32$4$52 Def00D0
+S C$powerup.c$27$2$50 Def0067
+S A$powerup$264 Def00FC
+S A$powerup$255 Def00F0
+S A$powerup$219 Def00C7
+S A$powerup$192 Def009B
+S A$powerup$183 Def008E
+S A$powerup$174 Def007C
+S A$powerup$165 Def0072
+S A$powerup$156 Def0065
+S A$powerup$147 Def0059
+S A$powerup$138 Def0048
+S A$powerup$129 Def0038
+S C$powerup.c$33$4$52 Def00DD
+S A$powerup$265 Def00FD
+S A$powerup$256 Def00F3
+S A$powerup$229 Def00D0
+S A$powerup$193 Def009C
+S A$powerup$184 Def008F
+S A$powerup$175 Def007E
+S A$powerup$166 Def0075
+S A$powerup$148 Def005A
+S A$powerup$139 Def004B
+S C$powerup.c$34$4$52 Def00EB
+S C$powerup.c$14$1$48 Def0013
+S A$powerup$266 Def0100
+S A$powerup$239 Def00DD
+S A$powerup$194 Def009D
+S A$powerup$185 Def0090
+S A$powerup$176 Def0081
+S A$powerup$167 Def0077
+S C$powerup.c$15$1$48 Def0013
+S A$powerup$267 Def0101
+S A$powerup$249 Def00EB
+S A$powerup$195 Def009E
+S A$powerup$186 Def0093
+S A$powerup$177 Def0082
+S C$powerup.c$29$3$51 Def0078
+S A$powerup$196 Def00A1
+S A$powerup$178 Def0083
+S C$powerup.c$37$4$52 Def00F0
+S C$powerup.c$17$1$48 Def0016
+S A$powerup$188 Def0095
+S A$powerup$179 Def0087
+S C$powerup.c$44$1$49 Def0102
+S A$powerup$198 Def00A3
+S A$powerup$189 Def0096
+S A$powerup$199 Def00A4
+S C$powerup.c$19$1$49 Def0016
+A _DATA size 0 flags 0 addr 0
+A _INITIALIZED size 0 flags 0 addr 0
+A _DABS size 0 flags 8 addr 0
+A _HOME size 0 flags 0 addr 0
+A _GSINIT size 0 flags 0 addr 0
+A _GSFINAL size 0 flags 0 addr 0
+A _INITIALIZER size 0 flags 0 addr 0
+A _CABS size 0 flags 8 addr 0
+T 00 00
+R 00 00 00 00
+T 00 00 3E 0A F5 33 21 14 01 E5 21 00 00 E5 CD
+R 00 00 00 00 02 0B 0D 00
+T 0D 00 00 00 F1 F1 33 C9
+R 00 00 00 00 02 02 00 00
+T 13 00
+R 00 00 00 00
+T 13 00 C3 00 00
+R 00 00 00 00 00 03 00 00
+T 16 00
+R 00 00 00 00
+T 16 00 3A 00 00 B7 C8 3A 00 00 E6 07 20 04 21
+R 00 00 00 00 02 03 07 00 02 08 0F 00
+T 23 00 00 00 34
+R 00 00 00 00 02 02 08 00
+T 26 00
+R 00 00 00 00
+T 26 00 FD 21 00 00 FD 7E 00 21 00 00 86 FD 77 00
+R 00 00 00 00 02 04 0A 00 02 0A 08 00
+T 34 00 FD 21 00 00 FD 6E 00 26 00 29 01 12 01 09
+R 00 00 00 00 02 04 07 00
+T 42 00 4D 44 21 10 08 E5 3A 00 00 F5 33 3A 00 00
+R 00 00 00 00 02 09 0A 00 02 0E 09 00
+T 50 00 F5 33 C5 CD 00 00 21 06 00 39 F9 3A 00 00
+R 00 00 00 00 02 06 04 00 02 0E 0A 00
+T 5E 00 D6 C0 38 05 21 00 00 36 00
+R 00 00 00 00 02 07 07 00
+T 67 00
+R 00 00 00 00
+T 67 00 FD 21 00 00 FD 7E 00 D6 03 28 06 FD 7E 00
+R 00 00 00 00 02 04 0B 00
+T 75 00 D6 05 C0
+R 00 00 00 00
+T 78 00
+R 00 00 00 00
+T 78 00 21 00 00 4E 06 00 21 10 00 09 EB FD 21
+R 00 00 00 00 02 03 05 00
+T 85 00 00 00 FD 6E 00 26 00 7D 93 7C 9A E2 95 00
+R 00 00 00 00 02 02 09 00 00 0E 00 00
+T 93 00 EE 80
+R 00 00 00 00
+T 95 00
+R 00 00 00 00
+T 95 00 F0 11 10 00 19 79 95 78 9C E2 A3 00 EE 80
+R 00 00 00 00 00 0C 00 00
+T A3 00
+R 00 00 00 00
+T A3 00 F0 21 00 00 4E 06 00 21 10 00 09 EB FD 21
+R 00 00 00 00 02 04 06 00
+T B1 00 00 00 FD 6E 00 26 00 7D 93 7C 9A E2 C1 00
+R 00 00 00 00 02 02 0A 00 00 0E 00 00
+T BF 00 EE 80
+R 00 00 00 00
+T C1 00
+R 00 00 00 00
+T C1 00 F0 11 08 00 19 79 95 78 9C E2 CF 00 EE 80
+R 00 00 00 00 00 0C 00 00
+T CF 00
+R 00 00 00 00
+T CF 00 F0 3A 00 00 3D 20 07 21 00 00 36 03 18 13
+R 00 00 00 00 02 04 07 00 02 0A 0E 00
+T DD 00
+R 00 00 00 00
+T DD 00 3A 00 00 D6 02 20 07 21 00 00 36 01 18 05
+R 00 00 00 00 02 03 07 00 02 0A 0C 00
+T EB 00
+R 00 00 00 00
+T EB 00 21 00 00 36 03
+R 00 00 00 00 02 03 03 00
+T F0 00
+R 00 00 00 00
+T F0 00 21 00 00 36 00 3E 01 F5 33 21 00 00 E5 CD
+R 00 00 00 00 02 03 07 00 02 0C 01 00
+T FE 00 00 00 F1 33 C9
+R 00 00 00 00 02 02 10 00

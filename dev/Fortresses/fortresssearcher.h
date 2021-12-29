@@ -1,33 +1,9 @@
-unsigned char UpdateFortressSearcher( enemy *en )
-{
-	unsigned char p = 0;
+#ifndef _FORTRESSSEARCHER_H_
+#define _FORTRESSSEARCHER_H_
 
-	// Move
-	en->enemyposy += 4;
+#include "../defines.h"
 
-	// Exit check
-	if( ( en->enemyposy > 192 ) && ( en->enemyposy < 210 ) )
-		return 0;
+// ADRIANA
+unsigned char UpdateFortressSearcher( enemy *en );
 
-	// Direction
-	if( ( en->enemyposy > 80 ) && ( en->enemyposy < 210 ) )
-	{
-		if( playerx < en->enemyposx - 8 )
-		{
-			en->enemyposx -= 2;
-			p = 16;
-		}
-		else if( playerx > en->enemyposx + 8 )
-		{
-			en->enemyposx += 2;
-			p = 8;
-		}
-	}
-
-	// Draw
-	DrawQuadSprite( en->enemyposx, en->enemyposy, FORTRESSSEARCHERBASE + p + ( sprite82anim << 2 ) );
-
-	// All OK
-	return 1;
-}
-
+#endif//_FORTRESSSEARCHER_H_

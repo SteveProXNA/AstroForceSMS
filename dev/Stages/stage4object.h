@@ -1,20 +1,9 @@
-unsigned char UpdateStage4Object( enemy *en )
-{
-	if( en->enemyframe > 128 )
-	{
-		// Pasamos al siguiente paso de scroll
-		updatescrollact();
+#ifndef _STAGE4OBJECT_H_
+#define _STAGE4OBJECT_H_
 
-		// Ya no hay mas rayos
-		stage4playrays = 0;
+#include "../defines.h"
 
-		// Scripter
-		InitScript( stage4scriptb, 0 );
+// ADRIANA
+unsigned char UpdateStage4Object( enemy *en );
 
-		// Exit
-		return 0;
-	}
-	else return 1;
-}
-
-
+#endif//_STAGE4OBJECT_H_

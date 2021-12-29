@@ -1,0 +1,9 @@
+M:bank13
+S:G$monsterblob_psgcompr$0$0({288}DA288d,SC:U),D,0,0
+S:G$skullb_psgcompr$0$0({776}DA776d,SC:U),D,0,0
+S:G$stage8_psg$0$0({9572}DA9572d,SC:U),D,0,0
+S:G$stage8animtilesamov_bin$0$0({1792}DA1792d,SC:U),D,0,0
+S:G$stage8animtilesbmov_bin$0$0({1792}DA1792d,SC:U),D,0,0
+S:G$stage8animtilescloudsmov_bin$0$0({256}DA256d,SC:U),D,0,0
+S:G$stage8bossb_psgcompr$0$0({1598}DA1598d,SC:U),D,0,0
+S:G$stage8bossc_psgcompr$0$0({288}DA288d,SC:U),D,0,0

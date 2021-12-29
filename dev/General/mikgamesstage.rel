@@ -1,0 +1,138 @@
+;!FILE mikgamesstage.asm
+XL2
+H 9 areas 62 global symbols
+M mikgamesstage
+O -mz80
+S _devkit_PORT_A_KEY_1 Ref0000
+S _devkit_SMS_displayOn Ref0000
+S _keystatus Ref0000
+S _LoadGraphics Ref0000
+S _logopalette_bin Ref0000
+S _mikgamestiles_psgcompr Ref0000
+S .__.ABS. Def0000
+S _InitStage Ref0000
+S _devkit_SMS_displayOff Ref0000
+S _UpdatePSG Ref0000
+S _mikgamestilemap_bin Ref0000
+S _devkit_SMS_setBGScrollY Ref0000
+S _UpdateStage Ref0000
+S _LoadBGPalette Ref0000
+S _stageframe Ref0000
+A _CODE size 7E flags 0 addr 0
+S A$mikgamesstage$131 Def004E
+S A$mikgamesstage$122 Def0042
+S A$mikgamesstage$141 Def0057
+S A$mikgamesstage$132 Def0050
+S A$mikgamesstage$123 Def0045
+S XG$InitMikGamesStage$0$0 Def007C
+S A$mikgamesstage$160 Def0073
+S A$mikgamesstage$142 Def005A
+S A$mikgamesstage$133 Def0051
+S A$mikgamesstage$124 Def0047
+S A$mikgamesstage$115 Def0036
+S A$mikgamesstage$161 Def0075
+S A$mikgamesstage$143 Def005B
+S A$mikgamesstage$134 Def0052
+S A$mikgamesstage$107 Def0033
+S C$mikgamesstage.c$20$1$73 Def0013
+S C$mikgamesstage.c$11$1$73 Def0000
+S A$mikgamesstage$153 Def0069
+S A$mikgamesstage$144 Def005C
+S A$mikgamesstage$135 Def0053
+S A$mikgamesstage$145 Def0060
+S A$mikgamesstage$136 Def0056
+S A$mikgamesstage$146 Def0063
+S A$mikgamesstage$128 Def0049
+S A$mikgamesstage$119 Def0039
+S C$mikgamesstage.c$23$1$73 Def002B
+S C$mikgamesstage.c$14$1$73 Def0003
+S A$mikgamesstage$174 Def007C
+S A$mikgamesstage$165 Def0078
+S A$mikgamesstage$147 Def0064
+S A$mikgamesstage$129 Def004C
+S A$mikgamesstage$157 Def006A
+S A$mikgamesstage$148 Def0065
+S C$mikgamesstage.c$32$2$74 Def0036
+S A$mikgamesstage$158 Def006C
+S A$mikgamesstage$149 Def0068
+S C$mikgamesstage.c$53$1$73 Def007C
+S C$mikgamesstage.c$51$2$74 Def0079
+S C$mikgamesstage.c$26$1$73 Def0033
+S C$mikgamesstage.c$17$1$73 Def0006
+S A$mikgamesstage$159 Def0070
+S C$mikgamesstage.c$41$3$75 Def0069
+S A$mikgamesstage$169 Def0079
+S C$mikgamesstage.c$35$2$74 Def0039
+S C$mikgamesstage.c$45$2$74 Def006A
+S C$mikgamesstage.c$36$2$74 Def0049
+S C$mikgamesstage.c$29$1$73 Def0036
+S C$mikgamesstage.c$39$2$74 Def0057
+S C$mikgamesstage.c$47$3$76 Def0078
+S A$mikgamesstage$90 Def001F
+S A$mikgamesstage$72 Def0006
+S A$mikgamesstage$91 Def0022
+S A$mikgamesstage$73 Def0008
+S A$mikgamesstage$64 Def0000
+S A$mikgamesstage$92 Def0023
+S A$mikgamesstage$83 Def0013
+S A$mikgamesstage$74 Def0009
+S A$mikgamesstage$93 Def0026
+S A$mikgamesstage$84 Def0015
+S A$mikgamesstage$75 Def000A
+S A$mikgamesstage$94 Def0029
+S A$mikgamesstage$85 Def0016
+S A$mikgamesstage$76 Def000D
+S A$mikgamesstage$95 Def002A
+S A$mikgamesstage$86 Def0017
+S A$mikgamesstage$77 Def000E
+S A$mikgamesstage$68 Def0003
+S A$mikgamesstage$87 Def001A
+S A$mikgamesstage$78 Def0011
+S A$mikgamesstage$88 Def001B
+S A$mikgamesstage$79 Def0012
+S A$mikgamesstage$89 Def001E
+S A$mikgamesstage$99 Def002B
+S C$mikgamesstage.c$8$0$0 Def0000
+S G$InitMikGamesStage$0$0 Def0000
+S _InitMikGamesStage Def0000
+S A$mikgamesstage$100 Def002D
+S A$mikgamesstage$101 Def002E
+S A$mikgamesstage$120 Def003D
+S A$mikgamesstage$102 Def002F
+S A$mikgamesstage$130 Def004D
+S A$mikgamesstage$121 Def0040
+S A$mikgamesstage$103 Def0032
+A _DATA size 0 flags 0 addr 0
+A _INITIALIZED size 0 flags 0 addr 0
+A _DABS size 0 flags 8 addr 0
+A _HOME size 0 flags 0 addr 0
+A _GSINIT size 0 flags 0 addr 0
+A _GSFINAL size 0 flags 0 addr 0
+A _INITIALIZER size 0 flags 0 addr 0
+A _CABS size 0 flags 8 addr 0
+T 00 00
+R 00 00 00 00
+T 00 00 CD 00 00 CD 00 00 3E 03 F5 33 21 00 00 E5
+R 00 00 00 00 02 03 07 00 02 06 08 00 02 0D 04 00
+T 0E 00 CD 00 00 F1 33 3E 02 F5 33 21 80 00 E5 21
+R 00 00 00 00 02 03 0D 00
+T 1C 00 00 00 E5 21 00 00 E5 CD 00 00 21 07 00 39
+R 00 00 00 00 02 02 0A 00 02 06 05 00 02 0A 03 00
+T 2A 00 F9 3E 10 F5 33 CD 00 00 33 CD 00 00
+R 00 00 00 00 02 08 0B 00 02 0C 01 00
+T 36 00
+R 00 00 00 00
+T 36 00 CD 00 00 FD 21 00 00 FD 7E 00 D6 1E FD 7E
+R 00 00 00 00 02 03 0C 00 02 07 0E 00
+T 44 00 01 DE 00 30 0E FD 7E 00 87 87 C6 10 47 C5
+R 00 00 00 00
+T 52 00 33 CD 00 00 33
+R 00 00 00 00 02 04 0B 00
+T 57 00
+R 00 00 00 00
+T 57 00 CD 00 00 44 7D FD 21 00 00 FD A6 00 4F 78
+R 00 00 00 00 02 03 00 00 02 09 02 00
+T 65 00 FD A6 01 B1 C0 3E 78 FD 21 00 00 FD BE 00
+R 00 00 00 00 02 0B 0E 00
+T 73 00 3E 00 FD 9E 01 D8 CD 00 00 18 B8
+R 00 00 00 00 02 09 09 00

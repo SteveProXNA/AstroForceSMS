@@ -1,27 +1,10 @@
-void InitStage1MiddleBossC( enemy *en )
-{
-	en->enemyparamb = ( myRand() % 2 ) * 16;
-}
+#ifndef _STAGE1MIDDLEBOSSC_H_
+#define _STAGE1MIDDLEBOSSC_H_
 
+#include "../defines.h"
 
-unsigned char UpdateStage1MiddleBossC( enemy *en )
-{
-	// AccelerationY
-	en->enemyparama++;
+// ADRIANA
+void InitStage1MiddleBossC( enemy *en );
+unsigned char UpdateStage1MiddleBossC( enemy *en );
 
-	// Acceleration X
-	if( en->enemyframe % 2 == 0 )
-		SkullAccelX( en );
-
-	// Movement
-	SkullBoneCMove( en );
-
-	// Kill???
-	if( en->enemyposy > 192 )return 0;
-
-	// Sprite
-	DrawQuadSprite( en->enemyposx, en->enemyposy, STAGE1MIDDLEBOSSBASE + 20 );
-
-	return 1;
-}
-
+#endif//_STAGE1MIDDLEBOSSC_H_

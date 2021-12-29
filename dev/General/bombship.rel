@@ -1,0 +1,208 @@
+;!FILE bombship.asm
+XL2
+H 9 areas 9E global symbols
+M bombship
+O -mz80
+S _TestEnemyShoot Ref0000
+S _myRand Ref0000
+S __moduchar Ref0000
+S _sinustable Ref0000
+S .__.ABS. Def0000
+S _DrawQuadSprite Ref0000
+S _sprite164anim Ref0000
+A _CODE size B8 flags 0 addr 0
+S A$bombship$199 Def0087
+S A$bombship$60 Def0000
+S A$bombship$70 Def000D
+S A$bombship$61 Def0001
+S A$bombship$71 Def000E
+S A$bombship$62 Def0002
+S _InitBombShipRight Def001F
+S A$bombship$81 Def0018
+S A$bombship$72 Def000F
+S A$bombship$63 Def0003
+S C$bombship.c$7$1$51 Def0000
+S G$InitBombShipLeft$0$0 Def0000
+S A$bombship$82 Def001B
+S A$bombship$73 Def0012
+S A$bombship$64 Def0004
+S C$bombship.c$8$1$51 Def0018
+S A$bombship$83 Def001C
+S A$bombship$74 Def0013
+S A$bombship$65 Def0005
+S C$bombship.c$9$1$51 Def001E
+S A$bombship$75 Def0014
+S A$bombship$66 Def0008
+S A$bombship$76 Def0015
+S A$bombship$67 Def0009
+S G$UpdateBombShip$0$0 Def0039
+S A$bombship$77 Def0017
+S A$bombship$68 Def000B
+S A$bombship$69 Def000C
+S A$bombship$88 Def001E
+S C$bombship.c$5$0$0 Def0000
+S XG$InitBombShipRight$0$0 Def0038
+S _InitBombShipLeft Def0000
+S _UpdateBombShip Def0039
+S XG$InitBombShipLeft$0$0 Def001E
+S XG$UpdateBombShip$0$0 Def00B7
+S A$bombship$200 Def0088
+S A$bombship$110 Def002B
+S A$bombship$101 Def001F
+S A$bombship$210 Def0097
+S A$bombship$201 Def0089
+S A$bombship$111 Def002C
+S A$bombship$102 Def0020
+S A$bombship$220 Def00A4
+S A$bombship$211 Def0098
+S A$bombship$202 Def008A
+S A$bombship$112 Def002D
+S A$bombship$103 Def0021
+S C$bombship.c$11$1$51 Def001F
+S A$bombship$230 Def00AD
+S A$bombship$221 Def00A6
+S A$bombship$212 Def0099
+S A$bombship$203 Def008B
+S A$bombship$113 Def002E
+S A$bombship$104 Def0022
+S A$bombship$240 Def00B7
+S A$bombship$231 Def00AF
+S A$bombship$222 Def00A8
+S A$bombship$213 Def009B
+S A$bombship$204 Def008D
+S A$bombship$150 Def0058
+S A$bombship$141 Def0042
+S A$bombship$114 Def0031
+S A$bombship$105 Def0023
+S A$bombship$232 Def00B1
+S A$bombship$223 Def00A9
+S A$bombship$214 Def009C
+S A$bombship$205 Def008E
+S A$bombship$160 Def0063
+S A$bombship$151 Def0059
+S A$bombship$142 Def0045
+S A$bombship$124 Def0038
+S A$bombship$115 Def0032
+S A$bombship$106 Def0024
+S A$bombship$233 Def00B2
+S A$bombship$224 Def00AA
+S A$bombship$215 Def009D
+S A$bombship$206 Def0091
+S A$bombship$170 Def006C
+S A$bombship$161 Def0064
+S A$bombship$152 Def005A
+S A$bombship$143 Def0046
+S A$bombship$134 Def0039
+S A$bombship$116 Def0033
+S A$bombship$107 Def0027
+S C$bombship.c$13$1$53 Def001F
+S A$bombship$234 Def00B3
+S A$bombship$225 Def00AB
+S A$bombship$216 Def009E
+S A$bombship$207 Def0092
+S A$bombship$171 Def006D
+S A$bombship$162 Def0065
+S A$bombship$153 Def005B
+S A$bombship$144 Def0048
+S A$bombship$135 Def003B
+S A$bombship$117 Def0034
+S A$bombship$108 Def0028
+S C$bombship.c$14$1$53 Def0038
+S A$bombship$235 Def00B5
+S A$bombship$217 Def009F
+S A$bombship$208 Def0094
+S A$bombship$172 Def006F
+S A$bombship$163 Def0066
+S A$bombship$154 Def005C
+S A$bombship$145 Def004C
+S A$bombship$136 Def003F
+S A$bombship$118 Def0036
+S A$bombship$109 Def002A
+S C$bombship.c$22$1$55 Def006C
+S A$bombship$218 Def00A0
+S A$bombship$209 Def0095
+S A$bombship$182 Def0078
+S A$bombship$173 Def0070
+S A$bombship$164 Def0069
+S A$bombship$155 Def005D
+S A$bombship$146 Def004E
+S A$bombship$137 Def0041
+S A$bombship$119 Def0037
+S C$bombship.c$32$1$55 Def00AC
+S C$bombship.c$16$1$53 Def0039
+S A$bombship$219 Def00A2
+S A$bombship$183 Def0079
+S A$bombship$174 Def0071
+S A$bombship$165 Def006A
+S A$bombship$156 Def005E
+S A$bombship$147 Def0051
+S C$bombship.c$33$1$55 Def00B7
+S G$InitBombShipRight$0$0 Def001F
+S A$bombship$229 Def00AC
+S A$bombship$193 Def0083
+S A$bombship$184 Def007A
+S A$bombship$175 Def0072
+S A$bombship$166 Def006B
+S A$bombship$157 Def005F
+S A$bombship$148 Def0054
+S C$bombship.c$25$1$55 Def0078
+S A$bombship$194 Def0085
+S A$bombship$185 Def007B
+S A$bombship$176 Def0075
+S A$bombship$158 Def0061
+S A$bombship$149 Def0057
+S C$bombship.c$26$1$55 Def0083
+S A$bombship$186 Def007D
+S A$bombship$177 Def0076
+S A$bombship$159 Def0062
+S A$bombship$187 Def0080
+S A$bombship$178 Def0077
+S C$bombship.c$19$1$55 Def0042
+S A$bombship$188 Def0081
+S C$bombship.c$29$1$55 Def0086
+S A$bombship$198 Def0086
+S A$bombship$189 Def0082
+A _DATA size 0 flags 0 addr 0
+A _INITIALIZED size 0 flags 0 addr 0
+A _DABS size 0 flags 8 addr 0
+A _HOME size 0 flags 0 addr 0
+A _GSINIT size 0 flags 0 addr 0
+A _GSFINAL size 0 flags 0 addr 0
+A _INITIALIZER size 0 flags 0 addr 0
+A _CABS size 0 flags 8 addr 0
+T 00 00
+R 00 00 00 00
+T 00 00 D1 C1 C5 D5 C5 CD 00 00 55 3E 5A F5 33 D5
+R 00 00 00 00 02 08 01 00
+T 0E 00 33 CD 00 00 F1 C1 7D C6 32 02 21 04 00 09
+R 00 00 00 00 02 04 02 00
+T 1C 00 36 02 C9
+R 00 00 00 00
+T 1F 00
+R 00 00 00 00
+T 1F 00 D1 C1 C5 D5 C5 CD 00 00 55 3E 5A F5 33 D5
+R 00 00 00 00 02 08 01 00
+T 2D 00 33 CD 00 00 F1 5D C1 3E CE 93 02 C9
+R 00 00 00 00 02 04 02 00
+T 39 00
+R 00 00 00 00
+T 39 00 DD E5 DD 21 00 00 DD 39 F5 21 00 00 4E 06
+R 00 00 00 00 02 0C 06 00
+T 47 00 00 FD 21 4D 01 FD 09 DD 4E 04 DD 46 05 21
+R 00 00 00 00
+T 55 00 01 00 09 E3 E1 E5 5E 0A 57 C5 FD E5 7B F5
+R 00 00 00 00
+T 63 00 33 D5 33 CD 00 00 F1 F1 C1 C5 3E 0D F5 33
+R 00 00 00 00 02 06 05 00
+T 71 00 C5 CD 00 00 F1 33 C1 0A 5F C5 FD E1 FD 6E
+R 00 00 00 00 02 04 00 00
+T 7F 00 04 7B 85 02 C6 FF 02 03 03 03 0A 6F 26 00
+R 00 00 00 00
+T 8D 00 29 11 00 00 19 16 00 7E C6 80 5F 7A CE FF
+R 00 00 00 00 02 04 03 00
+T 9B 00 57 6B 62 29 19 CB 2C CB 1D CB 2C CB 1D 5D
+R 00 00 00 00
+T A9 00 E1 E5 73 0A D6 40 3E 00 17 6F DD F9 DD E1
+R 00 00 00 00
+T B7 00 C9
+R 00 00 00 00

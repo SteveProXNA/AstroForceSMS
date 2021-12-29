@@ -1,16 +1,9 @@
-unsigned char UpdateVulcanVulcan( enemy *en )
-{
-	en->enemyposy++;
+#ifndef _VULCANVULCAN_H_
+#define _VULCANVULCAN_H_
 
-	if( en->enemyposy > 192 )
-		return 0;
+#include "../defines.h"
 
-	devkit_SMS_addSprite( en->enemyposx, en->enemyposy - 8, VULCANVULCANBASE + ( ( stageframe >> 2 ) % 4 ) );
+// ADRIANA
+unsigned char UpdateVulcanVulcan( enemy *en );
 
-
-	if( en->enemyposy < 144 )
-		if( ( en->enemyframe % 8 ) == 0 )
-			InitEnemy( en->enemyposx, en->enemyposy, VULCANLAVA );
-	return 1;
-}
-
+#endif//_VULCANVULCAN_H_

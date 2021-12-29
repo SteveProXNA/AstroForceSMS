@@ -1,0 +1,16 @@
+M:bank6
+S:G$bombship_psgcompr$0$0({280}DA280d,SC:U),D,0,0
+S:G$fortresscannon_psgcompr$0$0({366}DA366d,SC:U),D,0,0
+S:G$logo_psg$0$0({6348}DA6348d,SC:U),D,0,0
+S:G$spreadship_psgcompr$0$0({147}DA147d,SC:U),D,0,0
+S:G$stage5palette_bin$0$0({16}DA16d,SC:U),D,0,0
+S:G$stage5tilemap_l$0$0({440}DA440d,SC:U),D,0,0
+S:G$stage5tilemap_m$0$0({4544}DA4544d,SC:U),D,0,0
+S:G$stage5tiles_psgcompr$0$0({671}DA671d,SC:U),D,0,0
+S:G$stage6palette_bin$0$0({16}DA16d,SC:U),D,0,0
+S:G$stage6tilemap_l$0$0({48}DA48d,SC:U),D,0,0
+S:G$stage6tilemap_m$0$0({768}DA768d,SC:U),D,0,0
+S:G$stage6tiles_psgcompr$0$0({1994}DA1994d,SC:U),D,0,0
+S:G$turnship_psgcompr$0$0({350}DA350d,SC:U),D,0,0
+S:G$watertiles_bin$0$0({256}DA256d,SC:U),D,0,0
+S:G$ww2cloud_psgcompr$0$0({61}DA61d,SC:U),D,0,0

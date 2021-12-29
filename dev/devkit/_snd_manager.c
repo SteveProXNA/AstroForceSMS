@@ -1,9 +1,9 @@
 #include "_snd_manager.h"
 
 #ifdef _CONSOLE
-#include "..\..\tmp\PSGlib.h"
+#include "../../tmp/PSGlib.h"
 #else
-#include "..\..\lib\PSGlib.h"
+#include "../../lib/PSGlib.h"
 #endif
 
 void devkit_PSGPlay( void *song )

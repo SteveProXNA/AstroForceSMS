@@ -1,5 +1,5 @@
 XL2
-H A areas 9 global symbols
+H A areas 11 global symbols
 M bank8
 O -mz80
 S .__.ABS. Def0000
@@ -11,11 +11,19 @@ A _HOME size 0 flags 0 addr 0
 A _GSINIT size 0 flags 0 addr 0
 A _GSFINAL size 0 flags 0 addr 0
 A _BANK8 size 3FA9 flags 0 addr 0
+S G$stage4_psg$0$0 Def1271
+S G$introstage1tilemap_bin$0$0 Def0240
+S G$introstage2tilemap_bin$0$0 Def0E29
 S _stage4_psg Def1271
+S G$gameover_psg$0$0 Def0000
 S _introstage1tilemap_bin Def0240
 S _introstage2tilemap_bin Def0E29
+S G$playershoot_psgcompr$0$0 Def121B
 S _gameover_psg Def0000
 S _playershoot_psgcompr Def121B
+S G$stage7a_psg$0$0 Def39D0
+S G$introstage1tiles_psgcompr$0$0 Def04C0
+S G$introstage2tiles_psgcompr$0$0 Def10E9
 S _stage7a_psg Def39D0
 S _introstage1tiles_psgcompr Def04C0
 S _introstage2tiles_psgcompr Def10E9

@@ -1,0 +1,462 @@
+;!FILE explosion.asm
+XL2
+H 9 areas 154 global symbols
+M explosion
+O -mz80
+S _numexplosions Ref0000
+S _myRand Ref0000
+S __moduchar Ref0000
+S _spawnedexplosionwidth Ref0000
+S _LoadSprite Ref0000
+S _littleexplosion_psgcompr Ref0000
+S .__.ABS. Def0000
+S _spawnedexplosiontime Ref0000
+S _spawnedexplosionheight Ref0000
+S _DrawQuadSprite Ref0000
+S _explosions Ref0000
+S _InitExplosion Ref0000
+S _DoBarrom Ref0000
+S _devkit_SMS_addSprite Ref0000
+S _bigexplosion_psgcompr Ref0000
+S _spawnedexplosionposx Ref0000
+S _spawnedexplosionposy Ref0000
+A _CODE size 1BB flags 0 addr 0
+S A$explosion$402 Def0175
+S A$explosion$330 Def011E
+S A$explosion$303 Def0109
+S A$explosion$240 Def00BD
+S A$explosion$231 Def00B0
+S A$explosion$222 Def00A6
+S A$explosion$213 Def009C
+S A$explosion$150 Def005E
+S A$explosion$141 Def0055
+S A$explosion$132 Def004F
+S A$explosion$123 Def0048
+S A$explosion$105 Def0038
+S A$explosion$403 Def0177
+S A$explosion$340 Def012A
+S A$explosion$331 Def0121
+S A$explosion$304 Def010C
+S A$explosion$250 Def00C9
+S A$explosion$241 Def00BF
+S A$explosion$232 Def00B4
+S A$explosion$223 Def00A9
+S A$explosion$214 Def009D
+S A$explosion$151 Def005F
+S A$explosion$142 Def0056
+S A$explosion$133 Def0050
+S A$explosion$106 Def0039
+S A$explosion$440 Def018C
+S A$explosion$413 Def0180
+S A$explosion$404 Def0178
+S A$explosion$350 Def0132
+S A$explosion$332 Def0122
+S A$explosion$305 Def010D
+S A$explosion$251 Def00CC
+S A$explosion$242 Def00C0
+S A$explosion$233 Def00B6
+S A$explosion$224 Def00AA
+S A$explosion$215 Def009F
+S A$explosion$170 Def006B
+S A$explosion$143 Def0057
+S A$explosion$134 Def0051
+S A$explosion$116 Def0040
+S A$explosion$107 Def003A
+S XG$UpdateExplosions$0$0 Def0187
+S G$RemoveExplosion$0$0 Def0000
+S A$explosion$441 Def018F
+S A$explosion$405 Def0179
+S A$explosion$351 Def0133
+S A$explosion$306 Def010E
+S A$explosion$270 Def00E1
+S A$explosion$261 Def00D7
+S A$explosion$252 Def00CD
+S A$explosion$243 Def00C1
+S A$explosion$234 Def00B7
+S A$explosion$207 Def0098
+S A$explosion$180 Def0078
+S A$explosion$144 Def005A
+S A$explosion$135 Def0052
+S A$explosion$117 Def0041
+S _UpdateExplosion Def0062
+S A$explosion$460 Def01AA
+S A$explosion$451 Def019A
+S A$explosion$442 Def0190
+S A$explosion$424 Def0187
+S A$explosion$406 Def017A
+S A$explosion$370 Def0144
+S A$explosion$352 Def0136
+S A$explosion$316 Def0119
+S A$explosion$307 Def0111
+S A$explosion$280 Def00EC
+S A$explosion$271 Def00E4
+S A$explosion$262 Def00D8
+S A$explosion$253 Def00CE
+S A$explosion$244 Def00C4
+S A$explosion$235 Def00B8
+S A$explosion$208 Def0099
+S A$explosion$190 Def007F
+S A$explosion$181 Def0079
+S A$explosion$136 Def0053
+S A$explosion$127 Def0049
+S A$explosion$118 Def0042
+S A$explosion$461 Def01AB
+S A$explosion$452 Def019C
+S A$explosion$443 Def0193
+S A$explosion$407 Def017B
+S A$explosion$380 Def0153
+S A$explosion$371 Def0147
+S A$explosion$353 Def0137
+S A$explosion$344 Def012C
+S A$explosion$308 Def0114
+S A$explosion$290 Def00FA
+S A$explosion$281 Def00ED
+S A$explosion$272 Def00E5
+S A$explosion$263 Def00DA
+S A$explosion$254 Def00D1
+S A$explosion$245 Def00C5
+S A$explosion$236 Def00B9
+S A$explosion$209 Def009A
+S A$explosion$191 Def0080
+S A$explosion$182 Def007A
+S A$explosion$128 Def004A
+S A$explosion$119 Def0043
+S A$explosion$453 Def019D
+S A$explosion$444 Def0194
+S A$explosion$408 Def017E
+S A$explosion$390 Def0163
+S A$explosion$381 Def0154
+S A$explosion$372 Def0149
+S A$explosion$363 Def013B
+S A$explosion$345 Def012D
+S A$explosion$336 Def0124
+S A$explosion$291 Def00FB
+S A$explosion$282 Def00EE
+S A$explosion$255 Def00D4
+S A$explosion$237 Def00BA
+S A$explosion$219 Def00A1
+S A$explosion$174 Def006C
+S A$explosion$156 Def0061
+S A$explosion$129 Def004B
+S C$explosion.c$41$3$81 Def00AC
+S A$explosion$454 Def019E
+S A$explosion$445 Def0197
+S A$explosion$418 Def0183
+S A$explosion$409 Def017F
+S A$explosion$391 Def0164
+S A$explosion$382 Def0155
+S A$explosion$364 Def013F
+S A$explosion$346 Def012E
+S A$explosion$337 Def0127
+S A$explosion$292 Def00FC
+S A$explosion$283 Def00EF
+S A$explosion$256 Def00D5
+S A$explosion$238 Def00BB
+S A$explosion$229 Def00AC
+S A$explosion$175 Def006F
+S A$explosion$166 Def0062
+S C$explosion.c$42$3$81 Def00C6
+S C$explosion.c$31$1$76 Def0062
+S C$explosion.c$11$0$0 Def0000
+S A$explosion$455 Def01A1
+S A$explosion$446 Def0198
+S A$explosion$437 Def0188
+S A$explosion$419 Def0186
+S A$explosion$392 Def0167
+S A$explosion$383 Def0156
+S A$explosion$365 Def0142
+S A$explosion$347 Def012F
+S A$explosion$329 Def011A
+S A$explosion$293 Def00FD
+S A$explosion$284 Def00F0
+S A$explosion$239 Def00BC
+S A$explosion$176 Def0072
+S A$explosion$167 Def0064
+S A$explosion$149 Def005B
+S C$explosion.c$21$2$77 Def003C
+S A$explosion$483 Def01B0
+S A$explosion$456 Def01A2
+S A$explosion$447 Def0199
+S A$explosion$438 Def018A
+S A$explosion$393 Def0168
+S A$explosion$384 Def0159
+S A$explosion$366 Def0143
+S A$explosion$357 Def0138
+S A$explosion$348 Def0130
+S A$explosion$339 Def0128
+S A$explosion$294 Def00FF
+S A$explosion$285 Def00F4
+S A$explosion$267 Def00DC
+S A$explosion$249 Def00C6
+S A$explosion$195 Def0081
+S A$explosion$186 Def007B
+S A$explosion$177 Def0075
+S A$explosion$168 Def0068
+S C$explosion.c$70$1$84 Def013B
+S C$explosion.c$51$3$83 Def00E7
+S C$explosion.c$37$2$80 Def009C
+S C$explosion.c$22$2$77 Def0040
+S A$explosion$484 Def01B3
+S A$explosion$466 Def01AC
+S A$explosion$457 Def01A5
+S A$explosion$439 Def018B
+S A$explosion$394 Def0169
+S A$explosion$385 Def015A
+S A$explosion$376 Def014B
+S A$explosion$358 Def0139
+S A$explosion$349 Def0131
+S A$explosion$295 Def0100
+S A$explosion$286 Def00F6
+S A$explosion$277 Def00E7
+S A$explosion$268 Def00DF
+S A$explosion$196 Def0084
+S A$explosion$187 Def007C
+S A$explosion$178 Def0076
+S A$explosion$169 Def006A
+S C$explosion.c$92$1$90 Def01AD
+S C$explosion.c$52$3$83 Def0106
+S C$explosion.c$38$2$80 Def00A1
+S C$explosion.c$23$2$77 Def0049
+S C$explosion.c$16$1$76 Def0008
+S A$explosion$494 Def01BA
+S A$explosion$458 Def01A6
+S A$explosion$395 Def016A
+S A$explosion$386 Def015D
+S A$explosion$377 Def014E
+S A$explosion$296 Def0101
+S A$explosion$287 Def00F7
+S A$explosion$278 Def00E9
+S A$explosion$269 Def00E0
+S A$explosion$197 Def0086
+S A$explosion$188 Def007D
+S A$explosion$179 Def0077
+S C$explosion.c$93$1$90 Def01B0
+S C$explosion.c$63$1$84 Def011A
+S C$explosion.c$24$2$77 Def0054
+S A$explosion$459 Def01A9
+S A$explosion$396 Def016B
+S A$explosion$387 Def015E
+S A$explosion$378 Def014F
+S A$explosion$297 Def0104
+S A$explosion$288 Def00F8
+S A$explosion$279 Def00EA
+S A$explosion$198 Def0089
+S A$explosion$189 Def007E
+S C$explosion.c$94$1$90 Def01B5
+S C$explosion.c$82$1$84 Def0188
+S C$explosion.c$47$2$82 Def00D7
+S C$explosion.c$33$1$79 Def006C
+S C$explosion.c$27$1$76 Def005B
+S A$explosion$397 Def016E
+S A$explosion$388 Def015F
+S A$explosion$379 Def0152
+S A$explosion$298 Def0105
+S A$explosion$289 Def00F9
+S A$explosion$199 Def008C
+S C$explosion.c$95$1$90 Def01BA
+S C$explosion.c$48$2$82 Def00DC
+S C$explosion.c$28$1$76 Def0061
+S A$explosion$488 Def01B5
+S A$explosion$479 Def01AD
+S A$explosion$398 Def016F
+S A$explosion$389 Def0160
+S C$explosion.c$64$2$85 Def0138
+S C$explosion.c$35$1$79 Def0098
+S C$explosion.c$18$2$77 Def0024
+S _RemoveExplosion Def0000
+S A$explosion$489 Def01B8
+S A$explosion$399 Def0170
+S C$explosion.c$72$2$87 Def0144
+S XG$UpdateExplosion$0$0 Def0119
+S C$explosion.c$19$2$77 Def002E
+S C$explosion.c$90$1$89 Def01AD
+S C$explosion.c$55$1$79 Def0119
+S C$explosion.c$37$1$79 Def0081
+S A$explosion$70 Def000C
+S A$explosion$80 Def001B
+S A$explosion$71 Def000E
+S A$explosion$62 Def0000
+S C$explosion.c$79$1$84 Def0187
+S C$explosion.c$66$3$86 Def012C
+S A$explosion$90 Def0028
+S A$explosion$81 Def001C
+S A$explosion$72 Def000F
+S A$explosion$63 Def0002
+S C$explosion.c$74$3$88 Def014B
+S C$explosion.c$58$1$79 Def011A
+S A$explosion$91 Def0029
+S A$explosion$82 Def001F
+S A$explosion$73 Def0012
+S A$explosion$64 Def0006
+S C$explosion.c$85$1$89 Def0188
+S C$explosion.c$77$2$87 Def0183
+S C$explosion.c$75$3$88 Def0180
+S A$explosion$92 Def002A
+S A$explosion$74 Def0015
+S C$explosion.c$86$1$89 Def019A
+S A$explosion$93 Def002B
+S A$explosion$84 Def0021
+S A$explosion$75 Def0016
+S C$explosion.c$87$1$89 Def01AC
+S A$explosion$94 Def002C
+S A$explosion$76 Def0017
+S A$explosion$95 Def002D
+S A$explosion$77 Def0018
+S A$explosion$68 Def0008
+S A$explosion$78 Def0019
+S A$explosion$69 Def000B
+S A$explosion$88 Def0024
+S A$explosion$79 Def001A
+S XG$RemoveExplosion$0$0 Def0061
+S A$explosion$89 Def0027
+S G$InitExplosions$0$0 Def01AD
+S A$explosion$99 Def002E
+S G$InitExplosionSprite$0$0 Def0188
+S _InitExplosions Def01AD
+S G$UpdateExplosions$0$0 Def011A
+S _InitExplosionSprite Def0188
+S XG$InitExplosions$0$0 Def01BA
+S _UpdateExplosions Def011A
+S XG$InitExplosionSprite$0$0 Def01AC
+S G$UpdateExplosion$0$0 Def0062
+S A$explosion$100 Def0031
+S A$explosion$200 Def008E
+S A$explosion$101 Def0033
+S A$explosion$201 Def0091
+S A$explosion$120 Def0045
+S A$explosion$111 Def003C
+S A$explosion$102 Def0034
+S A$explosion$400 Def0173
+S A$explosion$310 Def0115
+S A$explosion$220 Def00A4
+S A$explosion$202 Def0094
+S A$explosion$130 Def004C
+S A$explosion$121 Def0046
+S A$explosion$112 Def003F
+S A$explosion$103 Def0036
+S A$explosion$401 Def0174
+S A$explosion$311 Def0117
+S A$explosion$302 Def0106
+S A$explosion$230 Def00AE
+S A$explosion$221 Def00A5
+S A$explosion$203 Def0097
+S A$explosion$140 Def0054
+S A$explosion$131 Def004D
+S A$explosion$122 Def0047
+S A$explosion$104 Def0037
+A _DATA size 0 flags 0 addr 0
+A _INITIALIZED size 0 flags 0 addr 0
+A _DABS size 0 flags 8 addr 0
+A _HOME size 0 flags 0 addr 0
+A _GSINIT size 0 flags 0 addr 0
+A _GSFINAL size 0 flags 0 addr 0
+A _INITIALIZER size 0 flags 0 addr 0
+A _CABS size 0 flags 8 addr 0
+T 00 00
+R 00 00 00 00
+T 00 00 DD E5 DD 21 00 00 DD 39 21 00 00 5E 16 00
+R 00 00 00 00 02 0B 00 00
+T 0E 00 1B DD 4E 04 DD 7E 04 17 9F 47 79 93 78 9A
+R 00 00 00 00
+T 1C 00 E2 21 00 EE 80
+R 00 00 00 00 00 03 00 00
+T 21 00
+R 00 00 00 00
+T 21 00 F2 5B 00 11 00 00 69 60 29 29 19 4D 44 3A
+R 00 00 00 00 00 03 00 00 02 06 0A 00
+T 2F 00 00 00 C6 FF 6F 26 00 29 29 19 E5 FD E1 FD
+R 00 00 00 00 02 02 00 00
+T 3D 00 7E 00 02 59 50 13 FD E5 E1 23 7E 12 59 50
+R 00 00 00 00
+T 4B 00 13 13 FD E5 E1 23 23 7E 12 03 03 03 FD 7E
+R 00 00 00 00
+T 59 00 03 02
+R 00 00 00 00
+T 5B 00
+R 00 00 00 00
+T 5B 00 21 00 00 35 DD E1 C9
+R 00 00 00 00 02 03 00 00
+T 62 00
+R 00 00 00 00
+T 62 00 DD E5 DD 21 00 00 DD 39 F5 F5 01 00 00 DD
+R 00 00 00 00 02 0D 0A 00
+T 70 00 6E 04 DD 66 05 29 29 09 33 33 E5 E1 E5 23
+R 00 00 00 00
+T 7E 00 23 23 4E DD 7E FC C6 02 DD 77 FE DD 7E FD
+R 00 00 00 00
+T 8C 00 CE 00 DD 77 FF DD 6E FE DD 66 FF 5E 79 B7
+R 00 00 00 00
+T 9A 00 20 3B 7B D6 06 38 0B DD 46 04 C5 33 CD
+R 00 00 00 00
+T A7 00 00 00 33 18 69
+R 00 00 00 00 00 02 00 00
+T AC 00
+R 00 00 00 00
+T AC 00 CB 3B 16 00 FD 21 1A 01 FD 19 E1 E5 23 56
+R 00 00 00 00
+T BA 00 E1 E5 46 FD E5 58 D5 CD 00 00 F1 F1 DD 6E
+R 00 00 00 00 02 0A 0D 00
+T C8 00 FE DD 66 FF 4E 0C DD 6E FE DD 66 FF 71 18
+R 00 00 00 00
+T D6 00 3E
+R 00 00 00 00
+T D7 00
+R 00 00 00 00
+T D7 00 7B D6 0C 38 0B DD 46 04 C5 33 CD 00 00 33
+R 00 00 00 00 00 0D 00 00
+T E5 00 18 2E
+R 00 00 00 00
+T E7 00
+R 00 00 00 00
+T E7 00 CB 3B 6B 26 00 29 29 4D 44 FD 21 1D 01 FD
+R 00 00 00 00
+T F5 00 09 E1 E5 23 56 E1 E5 46 FD E5 58 D5 CD
+R 00 00 00 00
+T 02 01 00 00 F1 F1 DD 6E FE DD 66 FF 4E 0C DD 6E
+R 00 00 00 00 02 02 09 00
+T 10 01 FE DD 66 FF 71
+R 00 00 00 00
+T 15 01
+R 00 00 00 00
+T 15 01 DD F9 DD E1 C9
+R 00 00 00 00
+T 1A 01
+R 00 00 00 00
+T 1A 01 FD 21 00 00 FD 7E 00 B7 28 17 FD 4E 00 0D
+R 00 00 00 00 02 04 00 00
+T 28 01
+R 00 00 00 00
+T 28 01 CB 79 20 0F 79 5F 17 9F 57 C5 D5 CD 62 00
+R 00 00 00 00 00 0E 00 00
+T 36 01 F1 C1 0D 18 ED
+R 00 00 00 00
+T 3B 01
+R 00 00 00 00
+T 3B 01 FD 21 00 00 FD 7E 00 B7 C8 FD 7E 00 E6 03
+R 00 00 00 00 02 04 07 00
+T 49 01 20 38 CD 00 00 45 3A 00 00 F5 33 C5 33 CD
+R 00 00 00 00 02 05 01 00 02 09 08 00
+T 57 01 00 00 F1 3A 00 00 85 57 D5 CD 00 00 45 3A
+R 00 00 00 00 02 02 02 00 02 06 10 00 02 0C 01 00
+T 65 01 00 00 F5 33 C5 33 CD 00 00 F1 D1 3A 00 00
+R 00 00 00 00 02 02 03 00 02 09 02 00 02 0E 0F 00
+T 73 01 85 47 3E 01 F5 33 58 D5 CD 00 00 F1 33 CD
+R 00 00 00 00 02 0B 0B 00
+T 81 01 00 00
+R 00 00 00 00 02 02 0C 00
+T 83 01
+R 00 00 00 00
+T 83 01 21 00 00 35 C9
+R 00 00 00 00 02 03 07 00
+T 88 01
+R 00 00 00 00
+T 88 01 3E 05 F5 33 21 1A 01 E5 21 00 00 E5 CD
+R 00 00 00 00 02 0B 05 00
+T 95 01 00 00 F1 F1 33 3E 02 F5 33 21 1D 01 E5 21
+R 00 00 00 00 02 02 04 00
+T A3 01 00 00 E5 CD 00 00 F1 F1 33 C9
+R 00 00 00 00 02 02 0E 00 02 06 04 00
+T AD 01
+R 00 00 00 00
+T AD 01 CD 88 01 21 00 00 36 00 21 00 00 36 00 C9
+R 00 00 00 00 00 03 00 00 02 06 00 00 02 0B 07 00

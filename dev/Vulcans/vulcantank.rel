@@ -1,0 +1,466 @@
+;!FILE vulcantank.asm
+XL2
+H 9 areas 142 global symbols
+M vulcantank
+O -mz80
+S _disablescroll Ref0000
+S _TestEnemyShoot Ref0000
+S _SpreadEnemyshootDirection Ref0000
+S _vulcantankshootspeedx Ref0000
+S _vulcantankshootspeedy Ref0000
+S __moduchar Ref0000
+S .__.ABS. Def0000
+S _playerx Ref0000
+S _DrawQuadSprite Ref0000
+A _CODE size 1AE flags 0 addr 0
+S XG$UpdateVulcanTankRight$0$0 Def0129
+S _UpdateVulcanTankLeft Def0019
+S XG$UpdateVulcanTankLeft$0$0 Def00A0
+S A$vulcantank$200 Def0096
+S A$vulcantank$110 Def0027
+S A$vulcantank$300 Def00FD
+S A$vulcantank$201 Def0097
+S A$vulcantank$111 Def0028
+S A$vulcantank$102 Def0019
+S G$UpdateVulcanTankStop$0$0 Def012A
+S A$vulcantank$400 Def0163
+S A$vulcantank$301 Def00FE
+S A$vulcantank$202 Def009A
+S A$vulcantank$112 Def002B
+S A$vulcantank$103 Def001B
+S A$vulcantank$410 Def016D
+S A$vulcantank$401 Def0165
+S A$vulcantank$320 Def0118
+S A$vulcantank$311 Def010B
+S A$vulcantank$302 Def00FF
+S A$vulcantank$230 Def00A9
+S A$vulcantank$203 Def009B
+S A$vulcantank$140 Def004D
+S A$vulcantank$122 Def0033
+S A$vulcantank$113 Def002C
+S A$vulcantank$104 Def001F
+S A$vulcantank$420 Def017F
+S A$vulcantank$411 Def0170
+S A$vulcantank$402 Def0166
+S A$vulcantank$321 Def0119
+S A$vulcantank$312 Def010F
+S A$vulcantank$303 Def0101
+S A$vulcantank$231 Def00AC
+S A$vulcantank$150 Def005E
+S A$vulcantank$141 Def0050
+S A$vulcantank$123 Def0036
+S A$vulcantank$114 Def002D
+S C$vulcantank.c$12$1$52 Def0016
+S C$vulcantank.c$10$2$53 Def000E
+S G$UpdateVulcanTankCommon$0$0 Def0000
+S A$vulcantank$430 Def0193
+S A$vulcantank$421 Def0180
+S A$vulcantank$412 Def0171
+S A$vulcantank$403 Def0168
+S A$vulcantank$340 Def0129
+S A$vulcantank$322 Def011B
+S A$vulcantank$313 Def0110
+S A$vulcantank$304 Def0102
+S A$vulcantank$250 Def00C6
+S A$vulcantank$232 Def00AF
+S A$vulcantank$214 Def00A0
+S A$vulcantank$151 Def005F
+S A$vulcantank$142 Def0052
+S A$vulcantank$133 Def0040
+S A$vulcantank$124 Def0039
+S A$vulcantank$115 Def002E
+S C$vulcantank.c$13$1$52 Def0018
+S A$vulcantank$440 Def0199
+S A$vulcantank$431 Def0194
+S A$vulcantank$422 Def0183
+S A$vulcantank$413 Def0173
+S A$vulcantank$350 Def012A
+S A$vulcantank$323 Def011C
+S A$vulcantank$314 Def0111
+S A$vulcantank$305 Def0104
+S A$vulcantank$260 Def00CF
+S A$vulcantank$251 Def00C8
+S A$vulcantank$233 Def00B0
+S A$vulcantank$224 Def00A1
+S A$vulcantank$170 Def0070
+S A$vulcantank$152 Def0061
+S A$vulcantank$143 Def0053
+S A$vulcantank$134 Def0041
+S A$vulcantank$125 Def003A
+S A$vulcantank$116 Def0030
+S A$vulcantank$441 Def019C
+S A$vulcantank$423 Def0184
+S A$vulcantank$414 Def0176
+S A$vulcantank$360 Def013A
+S A$vulcantank$351 Def012C
+S A$vulcantank$333 Def0125
+S A$vulcantank$324 Def011D
+S A$vulcantank$315 Def0112
+S A$vulcantank$306 Def0105
+S A$vulcantank$270 Def00DD
+S A$vulcantank$261 Def00D1
+S A$vulcantank$252 Def00C9
+S A$vulcantank$234 Def00B3
+S A$vulcantank$225 Def00A3
+S A$vulcantank$207 Def009C
+S A$vulcantank$180 Def007C
+S A$vulcantank$171 Def0071
+S A$vulcantank$153 Def0062
+S A$vulcantank$144 Def0054
+S A$vulcantank$135 Def0042
+S A$vulcantank$126 Def003C
+S A$vulcantank$117 Def0031
+S A$vulcantank$108 Def0021
+S C$vulcantank.c$15$1$52 Def0019
+S A$vulcantank$442 Def019D
+S A$vulcantank$424 Def0187
+S A$vulcantank$415 Def0177
+S A$vulcantank$361 Def013D
+S A$vulcantank$352 Def0130
+S A$vulcantank$325 Def011E
+S A$vulcantank$316 Def0114
+S A$vulcantank$307 Def0106
+S A$vulcantank$280 Def00EC
+S A$vulcantank$271 Def00DE
+S A$vulcantank$262 Def00D4
+S A$vulcantank$253 Def00CA
+S A$vulcantank$244 Def00BB
+S A$vulcantank$235 Def00B4
+S A$vulcantank$226 Def00A7
+S A$vulcantank$190 Def008B
+S A$vulcantank$181 Def007D
+S A$vulcantank$172 Def0072
+S A$vulcantank$163 Def006A
+S A$vulcantank$154 Def0063
+S A$vulcantank$145 Def0055
+S A$vulcantank$136 Def0044
+S A$vulcantank$127 Def003E
+S A$vulcantank$109 Def0024
+S C$vulcantank.c$31$1$55 Def00A1
+S C$vulcantank.c$22$1$55 Def0040
+S A$vulcantank$461 Def01AD
+S A$vulcantank$443 Def019E
+S A$vulcantank$425 Def018A
+S A$vulcantank$416 Def0178
+S A$vulcantank$380 Def0152
+S A$vulcantank$371 Def0145
+S A$vulcantank$362 Def013E
+S A$vulcantank$353 Def0132
+S A$vulcantank$335 Def0127
+S A$vulcantank$326 Def011F
+S A$vulcantank$317 Def0115
+S A$vulcantank$281 Def00EF
+S A$vulcantank$272 Def00E1
+S A$vulcantank$263 Def00D5
+S A$vulcantank$245 Def00BE
+S A$vulcantank$236 Def00B5
+S A$vulcantank$209 Def009E
+S A$vulcantank$191 Def008C
+S A$vulcantank$173 Def0073
+S A$vulcantank$155 Def0064
+S A$vulcantank$146 Def0056
+S A$vulcantank$137 Def0047
+S A$vulcantank$128 Def003F
+S A$vulcantank$453 Def01A7
+S A$vulcantank$444 Def019F
+S A$vulcantank$426 Def018B
+S A$vulcantank$417 Def017A
+S A$vulcantank$408 Def016A
+S A$vulcantank$381 Def0154
+S A$vulcantank$372 Def0148
+S A$vulcantank$363 Def013F
+S A$vulcantank$327 Def0120
+S A$vulcantank$318 Def0116
+S A$vulcantank$309 Def0108
+S A$vulcantank$282 Def00F0
+S A$vulcantank$264 Def00D6
+S A$vulcantank$246 Def00C1
+S A$vulcantank$237 Def00B6
+S A$vulcantank$192 Def008D
+S A$vulcantank$183 Def007F
+S A$vulcantank$174 Def0074
+S A$vulcantank$156 Def0067
+S A$vulcantank$147 Def0059
+S A$vulcantank$138 Def0048
+S A$vulcantank$445 Def01A0
+S A$vulcantank$436 Def0195
+S A$vulcantank$427 Def018E
+S A$vulcantank$418 Def017B
+S A$vulcantank$409 Def016B
+S A$vulcantank$382 Def0155
+S A$vulcantank$373 Def014B
+S A$vulcantank$364 Def0140
+S A$vulcantank$328 Def0123
+S A$vulcantank$319 Def0117
+S A$vulcantank$283 Def00F1
+S A$vulcantank$274 Def00E3
+S A$vulcantank$265 Def00D7
+S A$vulcantank$247 Def00C2
+S A$vulcantank$238 Def00B8
+S A$vulcantank$193 Def008E
+S A$vulcantank$175 Def0075
+S A$vulcantank$157 Def0068
+S A$vulcantank$139 Def0049
+S C$vulcantank.c$41$1$57 Def00F4
+S C$vulcantank.c$25$1$55 Def006B
+S A$vulcantank$455 Def01A9
+S A$vulcantank$446 Def01A1
+S A$vulcantank$437 Def0196
+S A$vulcantank$428 Def0191
+S A$vulcantank$419 Def017C
+S A$vulcantank$392 Def015E
+S A$vulcantank$383 Def0156
+S A$vulcantank$374 Def014C
+S A$vulcantank$365 Def0142
+S A$vulcantank$329 Def0124
+S A$vulcantank$293 Def00F4
+S A$vulcantank$275 Def00E6
+S A$vulcantank$266 Def00D8
+S A$vulcantank$248 Def00C3
+S A$vulcantank$239 Def00B9
+S A$vulcantank$194 Def008F
+S A$vulcantank$185 Def0082
+S A$vulcantank$176 Def0076
+S A$vulcantank$167 Def006B
+S A$vulcantank$158 Def0069
+S A$vulcantank$149 Def005B
+S A$vulcantank$456 Def01AB
+S A$vulcantank$447 Def01A2
+S A$vulcantank$438 Def0197
+S A$vulcantank$429 Def0192
+S A$vulcantank$393 Def015F
+S A$vulcantank$384 Def0157
+S A$vulcantank$375 Def014D
+S A$vulcantank$366 Def0143
+S A$vulcantank$357 Def0133
+S A$vulcantank$294 Def00F6
+S A$vulcantank$276 Def00E7
+S A$vulcantank$267 Def00DA
+S A$vulcantank$258 Def00CB
+S A$vulcantank$249 Def00C5
+S A$vulcantank$195 Def0090
+S A$vulcantank$186 Def0086
+S A$vulcantank$177 Def0078
+S A$vulcantank$168 Def006C
+S C$vulcantank.c$34$1$57 Def00A9
+S C$vulcantank.c$18$1$55 Def0021
+S _UpdateVulcanTankStop Def012A
+S A$vulcantank$448 Def01A5
+S A$vulcantank$439 Def0198
+S A$vulcantank$394 Def0160
+S A$vulcantank$385 Def0158
+S A$vulcantank$376 Def014E
+S A$vulcantank$358 Def0136
+S A$vulcantank$295 Def00F7
+S A$vulcantank$277 Def00E9
+S A$vulcantank$268 Def00DB
+S A$vulcantank$259 Def00CE
+S A$vulcantank$196 Def0092
+S A$vulcantank$187 Def0087
+S A$vulcantank$178 Def0079
+S A$vulcantank$169 Def006E
+S C$vulcantank.c$60$1$59 Def0195
+S C$vulcantank.c$44$1$57 Def0125
+S C$vulcantank.c$35$1$57 Def00F2
+S C$vulcantank.c$28$1$55 Def009C
+S C$vulcantank.c$19$1$55 Def006A
+S A$vulcantank$449 Def01A6
+S A$vulcantank$386 Def015B
+S A$vulcantank$377 Def014F
+S A$vulcantank$359 Def0139
+S A$vulcantank$296 Def00F9
+S A$vulcantank$278 Def00EA
+S A$vulcantank$269 Def00DC
+S A$vulcantank$197 Def0093
+S A$vulcantank$188 Def0088
+S A$vulcantank$179 Def007B
+S C$vulcantank.c$52$1$59 Def0133
+S C$vulcantank.c$45$1$57 Def0129
+S C$vulcantank.c$29$1$55 Def00A0
+S A$vulcantank$387 Def015C
+S A$vulcantank$378 Def0150
+S A$vulcantank$297 Def00FA
+S A$vulcantank$288 Def00F2
+S A$vulcantank$279 Def00EB
+S A$vulcantank$198 Def0094
+S A$vulcantank$189 Def0089
+S _UpdateVulcanTankCommon Def0000
+S A$vulcantank$388 Def015D
+S A$vulcantank$379 Def0151
+S A$vulcantank$298 Def00FB
+S A$vulcantank$289 Def00F3
+S A$vulcantank$199 Def0095
+S C$vulcantank.c$63$1$59 Def01A7
+S C$vulcantank.c$47$1$57 Def012A
+S C$vulcantank.c$38$1$57 Def00CB
+S A$vulcantank$398 Def0161
+S A$vulcantank$299 Def00FC
+S C$vulcantank.c$64$1$59 Def01AD
+S C$vulcantank.c$55$1$59 Def0145
+S A$vulcantank$399 Def0162
+S C$vulcantank.c$56$1$59 Def0161
+S C$vulcantank.c$57$1$59 Def016A
+S A$vulcantank$70 Def0009
+S A$vulcantank$61 Def0000
+S A$vulcantank$80 Def0011
+S A$vulcantank$71 Def000A
+S A$vulcantank$62 Def0003
+S A$vulcantank$81 Def0013
+S A$vulcantank$72 Def000B
+S A$vulcantank$63 Def0004
+S A$vulcantank$82 Def0015
+S A$vulcantank$73 Def000C
+S C$vulcantank.c$7$1$52 Def0000
+S A$vulcantank$92 Def0018
+S A$vulcantank$74 Def000D
+S XG$UpdateVulcanTankStop$0$0 Def01AD
+S G$UpdateVulcanTankRight$0$0 Def00A1
+S A$vulcantank$67 Def0006
+S A$vulcantank$68 Def0007
+S XG$UpdateVulcanTankCommon$0$0 Def0018
+S C$vulcantank.c$9$2$53 Def0006
+S A$vulcantank$87 Def0016
+S A$vulcantank$78 Def000E
+S A$vulcantank$69 Def0008
+S A$vulcantank$79 Def0010
+S C$vulcantank.c$5$0$0 Def0000
+S _UpdateVulcanTankRight Def00A1
+S G$UpdateVulcanTankLeft$0$0 Def0019
+A _DATA size 0 flags 0 addr 0
+A _INITIALIZED size 0 flags 0 addr 0
+A _DABS size 0 flags 8 addr 0
+A _HOME size 0 flags 0 addr 0
+A _GSINIT size 0 flags 0 addr 0
+A _GSFINAL size 0 flags 0 addr 0
+A _INITIALIZER size 0 flags 0 addr 0
+A _CABS size 0 flags 8 addr 0
+T 00 00
+R 00 00 00 00
+T 00 00 3A 00 00 B7 20 10 C1 E1 E5 C5 23 4E 0C 71
+R 00 00 00 00 02 03 00 00
+T 0E 00 3E C0 91 30 03 2E 00 C9
+R 00 00 00 00
+T 16 00
+R 00 00 00 00
+T 16 00 2E 01 C9
+R 00 00 00 00
+T 19 00
+R 00 00 00 00
+T 19 00 DD E5 DD 21 00 00 DD 39 DD 6E 04 DD 66 05
+R 00 00 00 00
+T 27 00 E5 CD 00 00 F1 7D B7 20 03 6F 18 6B
+R 00 00 00 00 00 04 00 00
+T 33 00
+R 00 00 00 00
+T 33 00 DD 4E 04 DD 46 05 0A FE 50 30 02 3C 02
+R 00 00 00 00
+T 40 00
+R 00 00 00 00
+T 40 00 0A 5F 16 00 21 10 00 19 EB FD 21 00 00 FD
+R 00 00 00 00 02 0D 07 00
+T 4E 00 6E 00 26 00 7B 95 7A 9C E2 5B 00 EE 80
+R 00 00 00 00 00 0B 00 00
+T 5B 00
+R 00 00 00 00
+T 5B 00 F2 6A 00 C5 3E 13 F5 33 C5 CD 00 00 F1 33
+R 00 00 00 00 00 03 00 00 02 0C 01 00
+T 69 00 C1
+R 00 00 00 00
+T 6A 00
+R 00 00 00 00
+T 6A 00 0A 5F D6 50 30 0F 69 60 23 23 23 7E E6 01
+R 00 00 00 00
+T 78 00 6F 26 00 29 29 18 03
+R 00 00 00 00
+T 7F 00
+R 00 00 00 00
+T 7F 00 21 00 00
+R 00 00 00 00
+T 82 00
+R 00 00 00 00
+T 82 00 FD 21 6F 01 C5 4D 44 FD 09 C1 69 60 23 46
+R 00 00 00 00
+T 90 00 FD E5 C5 33 7B F5 33 CD 00 00 F1 F1 2E 01
+R 00 00 00 00 02 0A 08 00
+T 9E 00
+R 00 00 00 00
+T 9E 00 DD E1 C9
+R 00 00 00 00
+T A1 00
+R 00 00 00 00
+T A1 00 DD E5 DD 21 00 00 DD 39 DD 6E 04 DD 66 05
+R 00 00 00 00
+T AF 00 E5 CD 00 00 F1 7D B7 20 03 6F 18 6C
+R 00 00 00 00 00 04 00 00
+T BB 00
+R 00 00 00 00
+T BB 00 DD 4E 04 DD 46 05 0A 5F 3E A0 93 30 03 1D
+R 00 00 00 00
+T C9 00 7B 02
+R 00 00 00 00
+T CB 00
+R 00 00 00 00
+T CB 00 21 00 00 5E 16 00 21 10 00 19 EB 0A 6F 26
+R 00 00 00 00 02 03 07 00
+T D9 00 00 7B 95 7A 9C E2 E3 00 EE 80
+R 00 00 00 00 00 08 00 00
+T E3 00
+R 00 00 00 00
+T E3 00 F2 F2 00 C5 3E 13 F5 33 C5 CD 00 00 F1 33
+R 00 00 00 00 00 03 00 00 02 0C 01 00
+T F1 00 C1
+R 00 00 00 00
+T F2 00
+R 00 00 00 00
+T F2 00 0A 5F 3E A0 93 30 0F 69 60 23 23 23 7E E6
+R 00 00 00 00
+T 00 01 01 6F 26 00 29 29 18 03
+R 00 00 00 00
+T 08 01
+R 00 00 00 00
+T 08 01 21 00 00
+R 00 00 00 00
+T 0B 01
+R 00 00 00 00
+T 0B 01 FD 21 77 01 C5 4D 44 FD 09 C1 69 60 23 46
+R 00 00 00 00
+T 19 01 FD E5 C5 33 7B F5 33 CD 00 00 F1 F1 2E 01
+R 00 00 00 00 02 0A 08 00
+T 27 01
+R 00 00 00 00
+T 27 01 DD E1 C9
+R 00 00 00 00
+T 2A 01
+R 00 00 00 00
+T 2A 01 DD E5 DD 21 00 00 DD 39 F5 DD 6E 04 DD 66
+R 00 00 00 00
+T 38 01 05 E5 CD 00 00 F1 7D B7 20 03 6F 18 64
+R 00 00 00 00 00 05 00 00
+T 45 01
+R 00 00 00 00
+T 45 01 DD 4E 04 DD 46 05 69 60 23 23 23 56 C5 3E
+R 00 00 00 00
+T 53 01 64 F5 33 D5 33 CD 00 00 F1 C1 65 59 50 13
+R 00 00 00 00 02 08 05 00
+T 61 01 7D B7 28 05 7C D6 1E 20 2B
+R 00 00 00 00
+T 6A 01
+R 00 00 00 00
+T 6A 01 1A C6 08 DD 77 FF 0A C6 04 DD 77 FE C5 D5
+R 00 00 00 00
+T 78 01 3E 03 F5 33 21 00 00 E5 21 00 00 E5 DD 66
+R 00 00 00 00 02 07 04 00 02 0B 03 00
+T 86 01 FF DD 6E FE E5 CD 00 00 21 07 00 39 F9 D1
+R 00 00 00 00 02 08 02 00
+T 94 01 C1
+R 00 00 00 00
+T 95 01
+R 00 00 00 00
+T 95 01 1A 5F 0A 47 21 7F 01 E5 7B F5 33 C5 33 CD
+R 00 00 00 00
+T A3 01 00 00 F1 F1 2E 01
+R 00 00 00 00 02 02 08 00
+T A9 01
+R 00 00 00 00
+T A9 01 DD F9 DD E1 C9
+R 00 00 00 00

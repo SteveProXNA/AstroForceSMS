@@ -1,0 +1,203 @@
+;!FILE stage3laser.asm
+XL2
+H 9 areas 8B global symbols
+M stage3laser
+O -mz80
+S _sprite82anim Ref0000
+S .__.ABS. Def0000
+S _devkit_SMS_addSprite Ref0000
+S _stage3laservelx Ref0000
+S _stage3laservely Ref0000
+A _CODE size BC flags 0 addr 0
+S A$stage3laser$180 Def0093
+S A$stage3laser$171 Def0086
+S A$stage3laser$162 Def007C
+S A$stage3laser$144 Def0065
+S A$stage3laser$135 Def005E
+S A$stage3laser$208 Def00B7
+S A$stage3laser$190 Def00A0
+S A$stage3laser$163 Def007D
+S A$stage3laser$145 Def0066
+S A$stage3laser$136 Def0060
+S C$stage3laser.c$10$1$76 Def0009
+S A$stage3laser$191 Def00A2
+S A$stage3laser$182 Def0095
+S A$stage3laser$164 Def007E
+S A$stage3laser$146 Def0068
+S A$stage3laser$137 Def0061
+S A$stage3laser$128 Def0050
+S C$stage3laser.c$11$1$76 Def002E
+S A$stage3laser$192 Def00A6
+S A$stage3laser$183 Def0097
+S A$stage3laser$165 Def007F
+S A$stage3laser$147 Def006A
+S A$stage3laser$129 Def0053
+S C$stage3laser.c$12$1$76 Def0047
+S A$stage3laser$193 Def00A7
+S A$stage3laser$175 Def0089
+S A$stage3laser$166 Def0080
+S A$stage3laser$157 Def0073
+S A$stage3laser$148 Def006C
+S A$stage3laser$194 Def00A8
+S A$stage3laser$176 Def008C
+S A$stage3laser$167 Def0081
+S A$stage3laser$158 Def0074
+S A$stage3laser$149 Def006D
+S C$stage3laser.c$21$1$78 Def0073
+S C$stage3laser.c$14$1$76 Def0048
+S G$InitStage3Laser$0$0 Def0000
+S A$stage3laser$195 Def00A9
+S A$stage3laser$177 Def008E
+S A$stage3laser$168 Def0082
+S A$stage3laser$159 Def0076
+S C$stage3laser.c$22$1$78 Def0089
+S A$stage3laser$196 Def00AB
+S A$stage3laser$178 Def0090
+S A$stage3laser$169 Def0083
+S A$stage3laser$197 Def00AC
+S A$stage3laser$188 Def0099
+S A$stage3laser$179 Def0092
+S A$stage3laser$198 Def00AD
+S A$stage3laser$189 Def009D
+S C$stage3laser.c$25$1$78 Def0099
+S A$stage3laser$199 Def00AE
+S C$stage3laser.c$17$1$78 Def0050
+S C$stage3laser.c$18$1$78 Def0062
+S C$stage3laser.c$28$1$78 Def00B7
+S C$stage3laser.c$29$1$78 Def00BB
+S A$stage3laser$70 Def0018
+S A$stage3laser$61 Def0009
+S A$stage3laser$80 Def0026
+S A$stage3laser$71 Def0019
+S A$stage3laser$62 Def000C
+S A$stage3laser$90 Def002E
+S A$stage3laser$81 Def0028
+S A$stage3laser$72 Def001B
+S A$stage3laser$63 Def000F
+S A$stage3laser$54 Def0000
+S A$stage3laser$91 Def002F
+S A$stage3laser$82 Def0029
+S A$stage3laser$73 Def001D
+S A$stage3laser$64 Def0012
+S A$stage3laser$55 Def0002
+S _InitStage3Laser Def0000
+S A$stage3laser$92 Def0030
+S A$stage3laser$83 Def002A
+S A$stage3laser$74 Def001E
+S A$stage3laser$65 Def0013
+S A$stage3laser$56 Def0006
+S A$stage3laser$93 Def0031
+S A$stage3laser$84 Def002B
+S A$stage3laser$75 Def001F
+S A$stage3laser$66 Def0014
+S A$stage3laser$57 Def0008
+S A$stage3laser$94 Def0032
+S A$stage3laser$85 Def002C
+S A$stage3laser$76 Def0021
+S A$stage3laser$67 Def0015
+S G$UpdateStage3Laser$0$0 Def0048
+S A$stage3laser$95 Def0033
+S A$stage3laser$86 Def002D
+S A$stage3laser$77 Def0022
+S A$stage3laser$68 Def0016
+S A$stage3laser$96 Def0034
+S A$stage3laser$78 Def0024
+S A$stage3laser$69 Def0017
+S A$stage3laser$97 Def0036
+S A$stage3laser$79 Def0025
+S A$stage3laser$98 Def0038
+S A$stage3laser$99 Def0039
+S C$stage3laser.c$7$0$0 Def0000
+S XG$InitStage3Laser$0$0 Def0047
+S _UpdateStage3Laser Def0048
+S XG$UpdateStage3Laser$0$0 Def00BB
+S A$stage3laser$100 Def003A
+S A$stage3laser$200 Def00B0
+S A$stage3laser$101 Def003C
+S A$stage3laser$210 Def00B9
+S A$stage3laser$201 Def00B1
+S A$stage3laser$102 Def003D
+S A$stage3laser$202 Def00B2
+S A$stage3laser$130 Def0056
+S A$stage3laser$112 Def0047
+S A$stage3laser$103 Def0040
+S A$stage3laser$203 Def00B5
+S A$stage3laser$131 Def0057
+S A$stage3laser$122 Def0048
+S A$stage3laser$104 Def0041
+S A$stage3laser$204 Def00B6
+S A$stage3laser$141 Def0062
+S A$stage3laser$132 Def0058
+S A$stage3laser$123 Def004A
+S A$stage3laser$105 Def0042
+S A$stage3laser$160 Def0078
+S A$stage3laser$151 Def006F
+S A$stage3laser$142 Def0063
+S A$stage3laser$133 Def0059
+S A$stage3laser$124 Def004E
+S A$stage3laser$106 Def0043
+S A$stage3laser$215 Def00BB
+S A$stage3laser$170 Def0085
+S A$stage3laser$161 Def007B
+S A$stage3laser$152 Def0071
+S A$stage3laser$143 Def0064
+S A$stage3laser$134 Def005B
+S A$stage3laser$107 Def0045
+A _DATA size 0 flags 0 addr 0
+A _INITIALIZED size 0 flags 0 addr 0
+A _DABS size 0 flags 8 addr 0
+A _HOME size 0 flags 0 addr 0
+A _GSINIT size 0 flags 0 addr 0
+A _GSFINAL size 0 flags 0 addr 0
+A _INITIALIZER size 0 flags 0 addr 0
+A _CABS size 0 flags 8 addr 0
+T 00 00
+R 00 00 00 00
+T 00 00 DD E5 DD 21 00 00 DD 39 F5 DD 4E 04 DD 46
+R 00 00 00 00
+T 0E 00 05 21 04 00 09 E3 59 50 13 13 1A 26 00 C6
+R 00 00 00 00
+T 1C 00 BD 6F 7C CE FF 67 3E 00 00 85 6F 3E 00 00
+R 00 00 00 00 0B 09 03 00 8B 0E 03 00
+T 28 00 8C 67 7E E1 E5 77 03 03 03 03 03 1A 16 00
+R 00 00 00 00
+T 36 00 C6 BD 5F 7A CE FF 57 21 00 00 19 7E 02 DD
+R 00 00 00 00 02 0A 04 00
+T 44 00 F9 DD E1 C9
+R 00 00 00 00
+T 48 00
+R 00 00 00 00
+T 48 00 DD E5 DD 21 00 00 DD 39 DD 4E 04 DD 46 05
+R 00 00 00 00
+T 56 00 0A 5F C5 FD E1 FD 7E 04 C6 F8 83 02 F5 0A
+R 00 00 00 00
+T 64 00 5F F1 D6 08 38 05 3E F0 93 30 04
+R 00 00 00 00
+T 6F 00
+R 00 00 00 00
+T 6F 00 2E 00 18 46
+R 00 00 00 00
+T 73 00
+R 00 00 00 00
+T 73 00 C5 FD E1 FD 23 FD 5E 00 69 60 23 23 23 23
+R 00 00 00 00
+T 81 00 23 7E C6 F8 83 FD 77 00 FD 56 00 D6 08 38
+R 00 00 00 00
+T 8F 00 05 3E BC 92 30 04
+R 00 00 00 00
+T 95 00
+R 00 00 00 00
+T 95 00 2E 00 18 20
+R 00 00 00 00
+T 99 00
+R 00 00 00 00
+T 99 00 FD 21 00 00 FD 6E 00 26 00 FD 21 B6 01 C5
+R 00 00 00 00 02 04 00 00
+T A7 00 4D 44 FD 09 C1 0A 47 FD E5 58 D5 CD 00 00
+R 00 00 00 00 02 0E 02 00
+T B5 00 F1 F1 2E 01
+R 00 00 00 00
+T B9 00
+R 00 00 00 00
+T B9 00 DD E1 C9
+R 00 00 00 00

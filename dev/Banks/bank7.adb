@@ -1,0 +1,17 @@
+M:bank7
+S:G$bone_psgcompr$0$0({282}DA282d,SC:U),D,0,0
+S:G$cursors_psgcompr$0$0({11}DA11d,SC:U),D,0,0
+S:G$enemyshoot_psgcompr$0$0({89}DA89d,SC:U),D,0,0
+S:G$fortresswave_psgcompr$0$0({108}DA108d,SC:U),D,0,0
+S:G$stage3palette_bin$0$0({16}DA16d,SC:U),D,0,0
+S:G$stage3tilemap_l$0$0({340}DA340d,SC:U),D,0,0
+S:G$stage3tilemap_m$0$0({9856}DA9856d,SC:U),D,0,0
+S:G$stage3tiles_psgcompr$0$0({623}DA623d,SC:U),D,0,0
+S:G$stage5endboss_psgcompr$0$0({743}DA743d,SC:U),D,0,0
+S:G$stage6_psg$0$0({2108}DA2108d,SC:U),D,0,0
+S:G$stage7animtiles_bin$0$0({256}DA256d,SC:U),D,0,0
+S:G$stage7animtilesc_bin$0$0({256}DA256d,SC:U),D,0,0
+S:G$stage7animtilesd_bin$0$0({256}DA256d,SC:U),D,0,0
+S:G$stage7animtilese_bin$0$0({256}DA256d,SC:U),D,0,0
+S:G$ww2plane_psgcompr$0$0({798}DA798d,SC:U),D,0,0
+S:G$ww2tank_psgcompr$0$0({338}DA338d,SC:U),D,0,0

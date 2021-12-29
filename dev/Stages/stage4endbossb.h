@@ -1,20 +1,10 @@
-void InitStage4EndBossB( enemy *en )
-{
-	// Velocity
-	if( en->enemyposx <= 120 )
-		en->enemyparama = 16;
-}
+#ifndef _STAGE4ENDBOSSB_H_
+#define _STAGE4ENDBOSSB_H_
 
-unsigned char UpdateStage4EndBossB( enemy *en )
-{
-	// Move and check
-	en->enemyposx += en->enemyparama - 8;
-	if( ( en->enemyposx < 12 ) || ( en->enemyposx > 230 ) )return 0;
+#include "../defines.h"
 
-	// Draw
-	devkit_SMS_addSprite( en->enemyposx, en->enemyposy, ( int ) ( STAGE4ENDBOSSBASEB ) );
-	devkit_SMS_addSprite( en->enemyposx + 8, en->enemyposy, ( int ) ( STAGE4ENDBOSSBASEB + 1 ) );
+// ADRIANA
+void InitStage4EndBossB( enemy *en );
+unsigned char UpdateStage4EndBossB( enemy *en );
 
-	// Good exit
-	return 1;
-}
+#endif//_STAGE4ENDBOSSB_H_

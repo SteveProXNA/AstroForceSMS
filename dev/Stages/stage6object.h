@@ -1,20 +1,9 @@
-unsigned char UpdateStage6Object( enemy *en )
-{
-	if( en->enemyframe > 128 )
-	{
-		// Pasamos al siguiente paso de scroll
-		updatescrollact();
+#ifndef _STAGE6OBJECT_H_
+#define _STAGE6OBJECT_H_
 
-		// Music
-		PlayMusic( escape_psg, escape_psg_bank, 1 );
+#include "../defines.h"
 
-		// Script
-		InitScript( stage6scriptb, 0 );
+// ADRIANA
+unsigned char UpdateStage6Object( enemy *en );
 
-		// Exit
-		return 0;
-	}
-	else return 1;
-}
-
-
+#endif//_STAGE6OBJECT_H_

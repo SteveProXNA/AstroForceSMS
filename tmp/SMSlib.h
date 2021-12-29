@@ -213,7 +213,7 @@ unsigned int SMS_getMDKeysReleased (void);
 
 #ifndef TARGET_GG
 /* pause handling (SMS only) */
-_Bool SMS_queryPauseRequested (void) { return 0; }
+_Bool SMS_queryPauseRequested (void) { return 1; }
 void SMS_resetPauseRequest (void) {}
 #endif
 

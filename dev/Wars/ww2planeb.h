@@ -1,18 +1,9 @@
-unsigned char UpdateWW2PlaneB( enemy *en )
-{
-	DrawQuadSprite( en->enemyposx, en->enemyposy, WW2PLANEBASE + 12 );
+#ifndef _WW2PLANEB_H_
+#define _WW2PLANEB_H_
 
-	if( ( en->enemyposy > 192 ) && ( en->enemyposy < 210 ) )
-		return 0;
-	else
-	{
-		// Move
-		en->enemyposy += 5;
+#include "../defines.h"
 
-		// Shoot?
-		//TestEnemyShootOne(en,3);
-	}
-	return 1;
-}
+// ADRIANA
+unsigned char UpdateWW2PlaneB( enemy *en );
 
-
+#endif//_WW2PLANEB_H_

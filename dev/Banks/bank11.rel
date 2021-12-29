@@ -1,5 +1,5 @@
 XL2
-H A areas 4 global symbols
+H A areas 7 global symbols
 M bank11
 O -mz80
 S .__.ABS. Def0000
@@ -11,8 +11,11 @@ A _HOME size 0 flags 0 addr 0
 A _GSINIT size 0 flags 0 addr 0
 A _GSFINAL size 0 flags 0 addr 0
 A _BANK11 size 3C2B flags 0 addr 0
+S G$stage5_psg$0$0 Def0144
+S G$stage7_psg$0$0 Def1E0B
 S _stage5_psg Def0144
 S _stage7_psg Def1E0B
+S G$spaceshooter_psgcompr$0$0 Def0000
 S _spaceshooter_psgcompr Def0000
 A _INITIALIZER size 0 flags 0 addr 0
 A _CABS size 0 flags 8 addr 0

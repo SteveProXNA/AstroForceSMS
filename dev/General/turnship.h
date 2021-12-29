@@ -1,27 +1,10 @@
-void InitTurnShip( enemy *en )
-{
-	en->enemyparama = en->enemyposx > 128 ? 0 : 2;
-	en->enemyparamb = 64;
-}
+#ifndef _TURNSHIP_H_
+#define _TURNSHIP_H_
 
-unsigned char UpdateTurnShip( enemy *en )
-{
-	// Vertical movement
-	en->enemyposy += 4;
-	if( en->enemyposy > 192 )
-		return 0;
+#include "../defines.h"
 
-	// Draw
-	DrawQuadSprite( en->enemyposx, en->enemyposy, TURNSHIPBASE + sprite164anim );
+// ADRIANA
+void InitTurnShip( enemy *en );
+unsigned char UpdateTurnShip( enemy *en );
 
-	// Shoot?
-	TestEnemyShootOne( en, 6 );
-
-	// Movement
-	en->enemyposx += en->enemyparamb - 64;
-	if( en->enemyframe % 8 == 0 )
-		en->enemyparamb += en->enemyparama - 1;
-
-	return 1;
-}
-
+#endif//_TURNSHIP_H_

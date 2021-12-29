@@ -1,0 +1,215 @@
+;!FILE spaceshooter.asm
+XL2
+H 9 areas 8D global symbols
+M spaceshooter
+O -mz80
+S _TestEnemyShoot Ref0000
+S .__.ABS. Def0000
+S _playerx Ref0000
+S _playery Ref0000
+S _DrawQuadSprite Ref0000
+A _CODE size EF flags 0 addr 0
+S A$spaceshooter$70 Def001E
+S A$spaceshooter$71 Def001F
+S A$spaceshooter$90 Def003C
+S A$spaceshooter$81 Def0030
+S A$spaceshooter$72 Def0022
+S A$spaceshooter$63 Def000D
+S A$spaceshooter$54 Def0000
+S A$spaceshooter$91 Def003E
+S A$spaceshooter$82 Def0032
+S A$spaceshooter$73 Def0025
+S A$spaceshooter$64 Def0010
+S A$spaceshooter$55 Def0002
+S A$spaceshooter$83 Def0033
+S A$spaceshooter$74 Def0026
+S A$spaceshooter$65 Def0013
+S A$spaceshooter$56 Def0006
+S A$spaceshooter$84 Def0035
+S A$spaceshooter$75 Def0029
+S A$spaceshooter$66 Def0016
+S A$spaceshooter$57 Def0008
+S A$spaceshooter$85 Def0038
+S A$spaceshooter$76 Def002C
+S A$spaceshooter$67 Def0017
+S A$spaceshooter$58 Def000B
+S G$UpdateSpaceShooter$0$0 Def0000
+S A$spaceshooter$86 Def003A
+S A$spaceshooter$77 Def002D
+S A$spaceshooter$68 Def001A
+S A$spaceshooter$59 Def000C
+S A$spaceshooter$96 Def0041
+S A$spaceshooter$69 Def001D
+S A$spaceshooter$97 Def0042
+S C$spaceshooter.c$5$0$0 Def0000
+S A$spaceshooter$98 Def0045
+S C$spaceshooter.c$8$1$49 Def000D
+S A$spaceshooter$99 Def0048
+S C$spaceshooter.c$9$1$49 Def0030
+S _UpdateSpaceShooter Def0000
+S XG$UpdateSpaceShooter$0$0 Def00EE
+S A$spaceshooter$100 Def004C
+S A$spaceshooter$200 Def00D9
+S A$spaceshooter$101 Def004F
+S A$spaceshooter$210 Def00E6
+S A$spaceshooter$201 Def00DC
+S A$spaceshooter$120 Def006C
+S A$spaceshooter$102 Def0051
+S A$spaceshooter$211 Def00E7
+S A$spaceshooter$130 Def0079
+S A$spaceshooter$121 Def006F
+S A$spaceshooter$112 Def0062
+S A$spaceshooter$103 Def0052
+S A$spaceshooter$140 Def0089
+S A$spaceshooter$131 Def007C
+S A$spaceshooter$122 Def0070
+S A$spaceshooter$113 Def0065
+S A$spaceshooter$104 Def0055
+S A$spaceshooter$150 Def0095
+S A$spaceshooter$141 Def008A
+S A$spaceshooter$132 Def007D
+S A$spaceshooter$123 Def0073
+S A$spaceshooter$114 Def0067
+S A$spaceshooter$105 Def0057
+S A$spaceshooter$205 Def00DE
+S A$spaceshooter$151 Def0097
+S A$spaceshooter$133 Def007E
+S A$spaceshooter$106 Def0058
+S A$spaceshooter$224 Def00EE
+S A$spaceshooter$206 Def00E0
+S A$spaceshooter$170 Def00B3
+S A$spaceshooter$152 Def0098
+S A$spaceshooter$134 Def007F
+S A$spaceshooter$125 Def0075
+S A$spaceshooter$107 Def005B
+S A$spaceshooter$216 Def00E8
+S A$spaceshooter$207 Def00E1
+S A$spaceshooter$180 Def00BC
+S A$spaceshooter$171 Def00B4
+S A$spaceshooter$153 Def0099
+S A$spaceshooter$135 Def0082
+S A$spaceshooter$108 Def005E
+S A$spaceshooter$208 Def00E2
+S A$spaceshooter$190 Def00CC
+S A$spaceshooter$181 Def00BD
+S A$spaceshooter$172 Def00B7
+S A$spaceshooter$163 Def00A8
+S A$spaceshooter$154 Def009C
+S A$spaceshooter$136 Def0083
+S A$spaceshooter$118 Def0068
+S C$spaceshooter.c$10$1$49 Def003C
+S A$spaceshooter$218 Def00EA
+S A$spaceshooter$209 Def00E3
+S A$spaceshooter$191 Def00CD
+S A$spaceshooter$182 Def00C0
+S A$spaceshooter$173 Def00B8
+S A$spaceshooter$164 Def00A9
+S A$spaceshooter$155 Def009D
+S A$spaceshooter$146 Def008C
+S A$spaceshooter$137 Def0084
+S A$spaceshooter$119 Def006B
+S A$spaceshooter$219 Def00EC
+S A$spaceshooter$183 Def00C1
+S A$spaceshooter$174 Def00B9
+S A$spaceshooter$165 Def00AC
+S A$spaceshooter$156 Def00A0
+S A$spaceshooter$147 Def008F
+S A$spaceshooter$138 Def0087
+S A$spaceshooter$129 Def0078
+S A$spaceshooter$184 Def00C2
+S A$spaceshooter$175 Def00BA
+S A$spaceshooter$166 Def00AD
+S A$spaceshooter$157 Def00A3
+S A$spaceshooter$148 Def0091
+S A$spaceshooter$139 Def0088
+S C$spaceshooter.c$22$1$49 Def00CE
+S C$spaceshooter.c$13$1$49 Def0068
+S A$spaceshooter$185 Def00C3
+S A$spaceshooter$167 Def00AE
+S A$spaceshooter$149 Def0092
+S C$spaceshooter.c$23$1$49 Def00DE
+S C$spaceshooter.c$14$1$49 Def0078
+S A$spaceshooter$186 Def00C6
+S A$spaceshooter$168 Def00AF
+S A$spaceshooter$159 Def00A5
+S C$spaceshooter.c$15$1$49 Def008C
+S A$spaceshooter$196 Def00CE
+S A$spaceshooter$187 Def00C7
+S A$spaceshooter$169 Def00B2
+S C$spaceshooter.c$16$1$49 Def00A8
+S A$spaceshooter$197 Def00D1
+S A$spaceshooter$188 Def00C8
+S C$spaceshooter.c$26$1$49 Def00E8
+S A$spaceshooter$198 Def00D4
+S A$spaceshooter$189 Def00CB
+S C$spaceshooter.c$27$1$49 Def00EE
+S C$spaceshooter.c$18$1$49 Def00BC
+S A$spaceshooter$199 Def00D5
+A _DATA size 0 flags 0 addr 0
+A _INITIALIZED size 0 flags 0 addr 0
+A _DABS size 0 flags 8 addr 0
+A _HOME size 0 flags 0 addr 0
+A _GSINIT size 0 flags 0 addr 0
+A _GSFINAL size 0 flags 0 addr 0
+A _INITIALIZER size 0 flags 0 addr 0
+A _CABS size 0 flags 8 addr 0
+T 00 00
+R 00 00 00 00
+T 00 00 DD E5 DD 21 00 00 DD 39 21 F8 FF 39 F9 DD
+R 00 00 00 00
+T 0E 00 4E 04 DD 46 05 21 01 00 09 DD 75 FE DD 74
+R 00 00 00 00
+T 1C 00 FF 5E 1C DD 6E FE DD 66 FF 73 DD 6E FE DD
+R 00 00 00 00
+T 2A 00 66 FF 7E DD 77 FA 3E C0 93 30 0C DD 7E FA
+R 00 00 00 00
+T 38 00 D6 C8 30 05 2E 00 C3 EA 00
+R 00 00 00 00 00 09 00 00
+T 41 00
+R 00 00 00 00
+T 41 00 0A DD 77 FD DD 77 FB DD 36 FC 00 DD 7E FB
+R 00 00 00 00
+T 4F 00 C6 F0 5F DD 7E FC CE FF 57 3A 00 00 DD 77
+R 00 00 00 00 02 0C 02 00
+T 5D 00 F8 DD 36 F9 00 DD 7E FA C6 FC 67 DD 7E F8
+R 00 00 00 00
+T 6B 00 93 DD 7E F9 9A E2 75 00 EE 80
+R 00 00 00 00 00 08 00 00
+T 75 00
+R 00 00 00 00
+T 75 00 F2 8C 00 C5 11 9E 01 D5 E5 33 DD 7E FD F5
+R 00 00 00 00 00 03 00 00
+T 83 00 33 CD 00 00 F1 F1 C1 18 42
+R 00 00 00 00 02 04 04 00
+T 8C 00
+R 00 00 00 00
+T 8C 00 DD 7E FB C6 10 5F DD 7E FC CE 00 57 7B DD
+R 00 00 00 00
+T 9A 00 96 F8 7A DD 9E F9 E2 A5 00 EE 80
+R 00 00 00 00 00 09 00 00
+T A5 00
+R 00 00 00 00
+T A5 00 F2 BC 00 C5 11 A2 01 D5 E5 33 DD 7E FD F5
+R 00 00 00 00 00 03 00 00
+T B3 00 33 CD 00 00 F1 F1 C1 18 12
+R 00 00 00 00 02 04 04 00
+T BC 00
+R 00 00 00 00
+T BC 00 C5 11 9A 01 D5 E5 33 DD 7E FD F5 33 CD
+R 00 00 00 00
+T C9 00 00 00 F1 F1 C1
+R 00 00 00 00 02 02 04 00
+T CE 00
+R 00 00 00 00
+T CE 00 DD 6E FE DD 66 FF 7E FD 21 00 00 FD 96 00
+R 00 00 00 00 02 0B 03 00
+T DC 00 30 0A 3E 0B F5 33 C5 CD 00 00 F1 33
+R 00 00 00 00 02 0A 00 00
+T E8 00
+R 00 00 00 00
+T E8 00 2E 01
+R 00 00 00 00
+T EA 00
+R 00 00 00 00
+T EA 00 DD F9 DD E1 C9
+R 00 00 00 00

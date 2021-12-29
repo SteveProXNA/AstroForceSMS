@@ -1,12 +1,10 @@
-void InitIntroStar( enemy *en )
-{
-	en->enemyparama = ( myRand() % 3 ) + 3;
-}
+#ifndef _INTROSTAR_H_
+#define _INTROSTAR_H_
 
-unsigned char UpdateIntroStar( enemy *en )
-{
-	devkit_SMS_addSprite( en->enemyposx, en->enemyposy, INTROSTARBASE );
-	en->enemyposx -= en->enemyparama;
-	return 1;
-}
+#include "../defines.h"
 
+// ADRIANA
+void InitIntroStar( enemy *en );
+unsigned char UpdateIntroStar( enemy *en );
+
+#endif//_INTROSTAR_H_

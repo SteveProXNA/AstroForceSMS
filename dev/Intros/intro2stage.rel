@@ -1,0 +1,177 @@
+;!FILE intro2stage.asm
+XL2
+H 9 areas 7D global symbols
+M intro2stage
+O -mz80
+S _introsideplayer_psgcompr Ref0000
+S _LoadGraphics Ref0000
+S _intro2script Ref0000
+S _introstage2tilemap_bin Ref0000
+S _LoadSprite Ref0000
+S _introstagevelx Ref0000
+S .__.ABS. Def0000
+S _intro2_psg Ref0000
+S _InitScript Ref0000
+S _introstageposx Ref0000
+S _stageframe2mod Ref0000
+S _UpdateScroll Ref0000
+S _PlayMusic Ref0000
+S _introstage2tiles_psgcompr Ref0000
+S _stageframe Ref0000
+A _CODE size BA flags 0 addr 0
+S XG$DoIntro2Scroll$0$0 Def0076
+S A$intro2stage$100 Def0050
+S A$intro2stage$101 Def0051
+S A$intro2stage$120 Def0068
+S A$intro2stage$102 Def0052
+S A$intro2stage$121 Def006A
+S A$intro2stage$112 Def0059
+S A$intro2stage$103 Def0053
+S A$intro2stage$122 Def006C
+S A$intro2stage$113 Def005A
+S A$intro2stage$104 Def0054
+S A$intro2stage$150 Def007F
+S A$intro2stage$132 Def0076
+S A$intro2stage$123 Def006F
+S A$intro2stage$114 Def005D
+S A$intro2stage$105 Def0055
+S C$intro2stage.c$31$1$51 Def009F
+S A$intro2stage$151 Def0082
+S A$intro2stage$124 Def0070
+S A$intro2stage$115 Def005E
+S A$intro2stage$106 Def0056
+S A$intro2stage$161 Def008F
+S A$intro2stage$152 Def0083
+S A$intro2stage$125 Def0071
+S A$intro2stage$116 Def0060
+S A$intro2stage$107 Def0057
+S C$intro2stage.c$15$2$50 Def0005
+S A$intro2stage$162 Def0091
+S A$intro2stage$153 Def0086
+S A$intro2stage$126 Def0074
+S A$intro2stage$117 Def0063
+S A$intro2stage$108 Def0058
+S C$intro2stage.c$34$1$51 Def00AC
+S C$intro2stage.c$25$1$51 Def0077
+S C$intro2stage.c$16$2$50 Def002D
+S A$intro2stage$163 Def0092
+S A$intro2stage$154 Def0087
+S A$intro2stage$145 Def0077
+S A$intro2stage$127 Def0075
+S A$intro2stage$118 Def0064
+S C$intro2stage.c$35$1$51 Def00B9
+S C$intro2stage.c$17$2$50 Def0045
+S A$intro2stage$173 Def009F
+S A$intro2stage$164 Def0093
+S A$intro2stage$155 Def008A
+S A$intro2stage$146 Def0079
+S A$intro2stage$119 Def0066
+S C$intro2stage.c$20$1$49 Def0076
+S C$intro2stage.c$18$2$50 Def0059
+S A$intro2stage$183 Def00AC
+S A$intro2stage$174 Def00A0
+S A$intro2stage$165 Def0096
+S A$intro2stage$156 Def008D
+S A$intro2stage$147 Def007A
+S C$intro2stage.c$28$1$51 Def008F
+S C$intro2stage.c$10$0$0 Def0000
+S A$intro2stage$184 Def00AF
+S A$intro2stage$175 Def00A3
+S A$intro2stage$166 Def0097
+S A$intro2stage$157 Def008E
+S A$intro2stage$148 Def007B
+S C$intro2stage.c$22$1$49 Def0077
+S C$intro2stage.c$13$1$49 Def0000
+S A$intro2stage$194 Def00B9
+S A$intro2stage$185 Def00B0
+S A$intro2stage$176 Def00A4
+S A$intro2stage$167 Def009A
+S A$intro2stage$149 Def007E
+S G$InitIntro2Stage$0$0 Def0077
+S A$intro2stage$186 Def00B3
+S A$intro2stage$177 Def00A7
+S A$intro2stage$168 Def009B
+S A$intro2stage$187 Def00B4
+S A$intro2stage$178 Def00A8
+S A$intro2stage$169 Def009E
+S A$intro2stage$188 Def00B7
+S A$intro2stage$179 Def00AB
+S A$intro2stage$189 Def00B8
+S A$intro2stage$70 Def000E
+S A$intro2stage$61 Def0000
+S A$intro2stage$71 Def0012
+S A$intro2stage$62 Def0003
+S A$intro2stage$90 Def0042
+S A$intro2stage$81 Def002D
+S A$intro2stage$72 Def0015
+S A$intro2stage$63 Def0004
+S A$intro2stage$82 Def002F
+S A$intro2stage$73 Def0019
+S _InitIntro2Stage Def0077
+S A$intro2stage$83 Def0032
+S A$intro2stage$74 Def001D
+S A$intro2stage$84 Def0034
+S A$intro2stage$75 Def0021
+S A$intro2stage$85 Def0037
+S A$intro2stage$76 Def0025
+S A$intro2stage$67 Def0005
+S A$intro2stage$95 Def0045
+S A$intro2stage$86 Def003A
+S A$intro2stage$77 Def0029
+S A$intro2stage$68 Def0008
+S A$intro2stage$96 Def0048
+S A$intro2stage$69 Def000B
+S A$intro2stage$97 Def0049
+S A$intro2stage$88 Def003C
+S A$intro2stage$98 Def004D
+S A$intro2stage$89 Def003F
+S A$intro2stage$99 Def004F
+S XG$InitIntro2Stage$0$0 Def00B9
+S G$DoIntro2Scroll$0$0 Def0000
+S _DoIntro2Scroll Def0000
+A _DATA size 0 flags 0 addr 0
+A _INITIALIZED size 0 flags 0 addr 0
+A _DABS size 0 flags 8 addr 0
+A _HOME size 0 flags 0 addr 0
+A _GSINIT size 0 flags 0 addr 0
+A _GSFINAL size 0 flags 0 addr 0
+A _INITIALIZER size 0 flags 0 addr 0
+A _CABS size 0 flags 8 addr 0
+T 00 00
+R 00 00 00 00
+T 00 00 3A 00 00 B7 C0 3A 00 00 32 00 00 3A
+R 00 00 00 00 02 03 0A 00 02 08 0E 00 02 0B 05 00
+T 0C 00 01 00 FD 21 00 00 FD 77 01 FD CB 01 2E FD
+R 00 00 00 00 02 02 0E 00 02 06 05 00
+T 1A 00 CB 00 1E FD CB 01 2E FD CB 00 1E FD CB 01
+R 00 00 00 00
+T 28 00 2E FD CB 00 1E 3E 20 FD BE 00 3E 00 FD 9E
+R 00 00 00 00
+T 36 00 01 E2 3C 00 EE 80
+R 00 00 00 00 00 04 00 00
+T 3C 00
+R 00 00 00 00
+T 3C 00 F2 45 00 21 20 00 22 00 00
+R 00 00 00 00 00 03 00 00 02 09 05 00
+T 45 00
+R 00 00 00 00
+T 45 00 21 00 00 D5 FD 21 00 00 FD E5 D1 1A 86 12
+R 00 00 00 00 02 03 05 00 02 08 09 00
+T 53 00 13 1A 23 8E 12 D1 AF FD 96 00 4F 3E 00 FD
+R 00 00 00 00
+T 61 00 9E 01 47 CB 28 CB 19 CB 28 CB 19 21 C0 FF
+R 00 00 00 00
+T 6F 00 E5 C5 CD 00 00 F1 F1 C9
+R 00 00 00 00 02 05 0B 00
+T 77 00
+R 00 00 00 00
+T 77 00 3E 08 F5 33 21 C0 02 E5 21 00 00 E5 21
+R 00 00 00 00 02 0B 03 00
+T 84 00 00 00 E5 CD 00 00 21 07 00 39 F9 3E 04 F5
+R 00 00 00 00 02 02 0D 00 02 06 01 00
+T 92 00 33 21 36 01 E5 21 00 00 E5 CD 00 00 F1 33
+R 00 00 00 00 02 08 00 00 02 0C 04 00
+T A0 00 21 04 00 E3 21 00 00 E5 CD 00 00 F1 21
+R 00 00 00 00 02 07 07 00 02 0B 0C 00
+T AD 00 00 00 E3 21 00 00 E5 CD 00 00 F1 F1 C9
+R 00 00 00 00 02 06 02 00 02 0A 08 00

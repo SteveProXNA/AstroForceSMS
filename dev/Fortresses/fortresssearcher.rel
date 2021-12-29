@@ -1,0 +1,196 @@
+;!FILE fortresssearcher.asm
+XL2
+H 9 areas 82 global symbols
+M fortresssearcher
+O -mz80
+S _sprite82anim Ref0000
+S .__.ABS. Def0000
+S _playerx Ref0000
+S _DrawQuadSprite Ref0000
+A _CODE size D5 flags 0 addr 0
+S C$fortresssearcher.c$8$1$0 Def000D
+S _UpdateFortressSearcher Def0000
+S XG$UpdateFortressSearcher$0$0 Def00D4
+S A$fortresssearcher$110 Def004D
+S A$fortresssearcher$101 Def0043
+S A$fortresssearcher$201 Def00CE
+S A$fortresssearcher$120 Def0060
+S A$fortresssearcher$111 Def004E
+S A$fortresssearcher$102 Def0045
+S A$fortresssearcher$130 Def0076
+S A$fortresssearcher$121 Def0064
+S A$fortresssearcher$112 Def0051
+S A$fortresssearcher$103 Def0046
+S C$fortresssearcher.c$20$2$50 Def004D
+S A$fortresssearcher$203 Def00D0
+S A$fortresssearcher$140 Def007F
+S A$fortresssearcher$122 Def0067
+S A$fortresssearcher$113 Def0052
+S A$fortresssearcher$104 Def0048
+S A$fortresssearcher$204 Def00D2
+S A$fortresssearcher$150 Def008A
+S A$fortresssearcher$141 Def0083
+S A$fortresssearcher$123 Def0069
+S A$fortresssearcher$114 Def0054
+S A$fortresssearcher$105 Def0049
+S A$fortresssearcher$151 Def008C
+S A$fortresssearcher$124 Def006A
+S A$fortresssearcher$115 Def0055
+S A$fortresssearcher$106 Def004B
+S A$fortresssearcher$152 Def008D
+S A$fortresssearcher$134 Def0079
+S A$fortresssearcher$125 Def006D
+S A$fortresssearcher$116 Def0057
+S C$fortresssearcher.c$22$3$51 Def0079
+S A$fortresssearcher$180 Def00B1
+S A$fortresssearcher$153 Def008E
+S A$fortresssearcher$135 Def007C
+S A$fortresssearcher$126 Def006E
+S A$fortresssearcher$117 Def005A
+S C$fortresssearcher.c$25$2$50 Def0085
+S C$fortresssearcher.c$23$3$51 Def007F
+S A$fortresssearcher$190 Def00C3
+S A$fortresssearcher$181 Def00B4
+S A$fortresssearcher$163 Def0099
+S A$fortresssearcher$154 Def008F
+S A$fortresssearcher$136 Def007E
+S A$fortresssearcher$127 Def0071
+S A$fortresssearcher$118 Def005B
+S A$fortresssearcher$209 Def00D4
+S A$fortresssearcher$191 Def00C4
+S A$fortresssearcher$182 Def00B6
+S A$fortresssearcher$164 Def009C
+S A$fortresssearcher$155 Def0090
+S A$fortresssearcher$146 Def0085
+S A$fortresssearcher$128 Def0074
+S A$fortresssearcher$119 Def005D
+S C$fortresssearcher.c$11$1$49 Def0011
+S A$fortresssearcher$192 Def00C5
+S A$fortresssearcher$183 Def00B7
+S A$fortresssearcher$174 Def00A3
+S A$fortresssearcher$165 Def009E
+S A$fortresssearcher$156 Def0091
+S A$fortresssearcher$147 Def0086
+S A$fortresssearcher$193 Def00C7
+S A$fortresssearcher$184 Def00B8
+S A$fortresssearcher$175 Def00A6
+S A$fortresssearcher$157 Def0094
+S A$fortresssearcher$148 Def0088
+S A$fortresssearcher$194 Def00C8
+S A$fortresssearcher$185 Def00B9
+S A$fortresssearcher$176 Def00A8
+S A$fortresssearcher$149 Def0089
+S C$fortresssearcher.c$27$3$52 Def0099
+S C$fortresssearcher.c$14$1$49 Def0034
+S A$fortresssearcher$195 Def00C9
+S A$fortresssearcher$186 Def00BA
+S A$fortresssearcher$177 Def00AB
+S A$fortresssearcher$159 Def0096
+S C$fortresssearcher.c$33$1$49 Def00A3
+S C$fortresssearcher.c$28$3$52 Def009F
+S C$fortresssearcher.c$15$1$49 Def003E
+S A$fortresssearcher$196 Def00CC
+S A$fortresssearcher$187 Def00BC
+S A$fortresssearcher$178 Def00AC
+S A$fortresssearcher$169 Def009F
+S A$fortresssearcher$197 Def00CD
+S A$fortresssearcher$188 Def00BF
+S A$fortresssearcher$179 Def00AD
+S A$fortresssearcher$189 Def00C2
+S C$fortresssearcher.c$36$1$49 Def00CE
+S C$fortresssearcher.c$18$1$49 Def0043
+S C$fortresssearcher.c$37$1$49 Def00D4
+S A$fortresssearcher$70 Def001B
+S A$fortresssearcher$80 Def002D
+S A$fortresssearcher$71 Def001E
+S A$fortresssearcher$62 Def000D
+S A$fortresssearcher$53 Def0000
+S A$fortresssearcher$90 Def003A
+S A$fortresssearcher$81 Def0030
+S A$fortresssearcher$72 Def0021
+S A$fortresssearcher$54 Def0002
+S A$fortresssearcher$91 Def003C
+S A$fortresssearcher$82 Def0033
+S A$fortresssearcher$73 Def0022
+S A$fortresssearcher$55 Def0006
+S A$fortresssearcher$74 Def0023
+S A$fortresssearcher$56 Def0008
+S A$fortresssearcher$75 Def0024
+S A$fortresssearcher$66 Def0011
+S A$fortresssearcher$57 Def000B
+S A$fortresssearcher$76 Def0025
+S A$fortresssearcher$67 Def0014
+S A$fortresssearcher$58 Def000C
+S G$UpdateFortressSearcher$0$0 Def0000
+S A$fortresssearcher$95 Def003E
+S A$fortresssearcher$86 Def0034
+S A$fortresssearcher$77 Def0026
+S A$fortresssearcher$68 Def0017
+S A$fortresssearcher$96 Def0040
+S A$fortresssearcher$87 Def0036
+S A$fortresssearcher$78 Def0029
+S A$fortresssearcher$69 Def001A
+S A$fortresssearcher$88 Def0037
+S A$fortresssearcher$79 Def002C
+S A$fortresssearcher$89 Def0039
+S C$fortresssearcher.c$6$0$0 Def0000
+A _DATA size 0 flags 0 addr 0
+A _INITIALIZED size 0 flags 0 addr 0
+A _DABS size 0 flags 8 addr 0
+A _HOME size 0 flags 0 addr 0
+A _GSINIT size 0 flags 0 addr 0
+A _GSFINAL size 0 flags 0 addr 0
+A _INITIALIZER size 0 flags 0 addr 0
+A _CABS size 0 flags 8 addr 0
+T 00 00
+R 00 00 00 00
+T 00 00 DD E5 DD 21 00 00 DD 39 21 FA FF 39 F9 DD
+R 00 00 00 00
+T 0E 00 36 FA 00 DD 4E 04 DD 46 05 21 01 00 09 DD
+R 00 00 00 00
+T 1C 00 75 FE DD 74 FF 56 14 14 14 14 DD 6E FE DD
+R 00 00 00 00
+T 2A 00 66 FF 72 DD 6E FE DD 66 FF 5E 3E C0 92 30
+R 00 00 00 00
+T 38 00 0A 7B D6 D2 30 05 2E 00 C3 D0 00
+R 00 00 00 00 00 0B 00 00
+T 43 00
+R 00 00 00 00
+T 43 00 3E 50 93 30 5B 7B D6 D2 30 56 0A DD 77 FB
+R 00 00 00 00
+T 51 00 5F 16 00 7B C6 F8 DD 77 FC 7A CE FF DD 77
+R 00 00 00 00
+T 5F 00 FD FD 21 00 00 FD 6E 00 26 00 7D DD 96 FC
+R 00 00 00 00 02 05 02 00
+T 6D 00 7C DD 9E FD E2 76 00 EE 80
+R 00 00 00 00 00 07 00 00
+T 76 00
+R 00 00 00 00
+T 76 00 F2 85 00 DD 7E FB C6 FE 02 DD 36 FA 10 18
+R 00 00 00 00 00 03 00 00
+T 84 00 1E
+R 00 00 00 00
+T 85 00
+R 00 00 00 00
+T 85 00 7B C6 08 5F 7A CE 00 57 7B 95 7A 9C E2
+R 00 00 00 00
+T 92 00 96 00 EE 80
+R 00 00 00 00 00 02 00 00
+T 96 00
+R 00 00 00 00
+T 96 00 F2 A3 00 DD 7E FB C6 02 02 DD 36 FA 08
+R 00 00 00 00 00 03 00 00
+T A3 00
+R 00 00 00 00
+T A3 00 DD 5E FA 16 00 21 47 01 19 EB FD 21 00 00
+R 00 00 00 00 02 0E 00 00
+T B1 00 FD 6E 00 26 00 29 29 19 E5 FD E1 DD 6E FE
+R 00 00 00 00
+T BF 00 DD 66 FF 56 0A 47 FD E5 58 D5 CD 00 00 F1
+R 00 00 00 00 02 0D 03 00
+T CD 00 F1 2E 01
+R 00 00 00 00
+T D0 00
+R 00 00 00 00
+T D0 00 DD F9 DD E1 C9
+R 00 00 00 00

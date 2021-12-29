@@ -1,0 +1,715 @@
+;!FILE scripter.asm
+XL2
+H 9 areas 211 global symbols
+M scripter
+O -mz80
+S _changeBank Ref0000
+S _fillBackground Ref0000
+S _spawners Ref0000
+S _InitTimeredLabel Ref0000
+S .__.ABS. Def0000
+S _scripts Ref0000
+S _InitScript Ref0000
+S _updatescrollact Ref0000
+S _InitEnemy Ref0000
+S _InitExplosion Ref0000
+S _numscripts Ref0000
+S _InitEnemies Ref0000
+S _devkit_SMS_setBGPaletteColor Ref0000
+A _CODE size 2E3 flags 0 addr 0
+S C$scripter.c$110$3$93 Def028E
+S C$scripter.c$111$3$93 Def028E
+S _RemoveScript Def0006
+S XG$UpdateScript$0$0 Def02BF
+S C$scripter.c$114$2$92 Def0299
+S C$scripter.c$112$3$93 Def0297
+S C$scripter.c$115$2$92 Def0299
+S C$scripter.c$118$1$91 Def02BF
+S C$scripter.c$116$2$92 Def02A9
+S A$scripter$100 Def0020
+S C$scripter.c$101$5$96 Def0252
+S A$scripter$200 Def009A
+S A$scripter$110 Def002B
+S A$scripter$101 Def0021
+S C$scripter.c$130$2$98 Def02E0
+S C$scripter.c$107$3$93 Def027B
+S C$scripter.c$102$5$96 Def026E
+S A$scripter$300 Def0112
+S A$scripter$210 Def00A6
+S A$scripter$201 Def009C
+S A$scripter$111 Def002E
+S A$scripter$102 Def0022
+S C$scripter.c$108$3$93 Def027B
+S C$scripter.c$103$5$96 Def0279
+S A$scripter$400 Def01A2
+S A$scripter$310 Def011F
+S A$scripter$301 Def0113
+S A$scripter$202 Def009F
+S A$scripter$130 Def0042
+S A$scripter$112 Def002F
+S A$scripter$103 Def0023
+S C$scripter.c$134$1$97 Def02E1
+S C$scripter.c$109$3$93 Def028C
+S A$scripter$410 Def01AD
+S A$scripter$401 Def01A5
+S A$scripter$311 Def0122
+S A$scripter$302 Def0114
+S A$scripter$230 Def00B5
+S A$scripter$140 Def004D
+S A$scripter$122 Def0036
+S A$scripter$113 Def0030
+S A$scripter$104 Def0026
+S C$scripter.c$126$1$97 Def02C0
+S A$scripter$600 Def0260
+S A$scripter$420 Def01B7
+S A$scripter$402 Def01A6
+S A$scripter$330 Def0142
+S A$scripter$312 Def0125
+S A$scripter$303 Def0117
+S A$scripter$240 Def00C1
+S A$scripter$150 Def0058
+S A$scripter$141 Def004E
+S A$scripter$123 Def0039
+S A$scripter$114 Def0031
+S C$scripter.c$132$3$99 Def02D8
+S A$scripter$610 Def026A
+S A$scripter$601 Def0261
+S A$scripter$511 Def0211
+S A$scripter$430 Def01CA
+S A$scripter$421 Def01BA
+S A$scripter$403 Def01A7
+S A$scripter$340 Def014F
+S A$scripter$331 Def0145
+S A$scripter$313 Def0126
+S A$scripter$304 Def011A
+S A$scripter$250 Def00CE
+S A$scripter$241 Def00C2
+S A$scripter$160 Def0065
+S A$scripter$151 Def0059
+S A$scripter$142 Def004F
+S A$scripter$124 Def003B
+S A$scripter$115 Def0032
+S A$scripter$106 Def0028
+S A$scripter$620 Def0275
+S A$scripter$611 Def026B
+S A$scripter$602 Def0262
+S A$scripter$530 Def0220
+S A$scripter$512 Def0212
+S A$scripter$503 Def020E
+S A$scripter$440 Def01DA
+S A$scripter$431 Def01CB
+S A$scripter$422 Def01BD
+S A$scripter$404 Def01AA
+S A$scripter$350 Def0160
+S A$scripter$341 Def0152
+S A$scripter$332 Def0146
+S A$scripter$323 Def0133
+S A$scripter$314 Def0127
+S A$scripter$305 Def011B
+S A$scripter$251 Def00CF
+S A$scripter$242 Def00C3
+S A$scripter$215 Def00A8
+S A$scripter$170 Def0074
+S A$scripter$161 Def0066
+S A$scripter$152 Def005B
+S A$scripter$143 Def0052
+S A$scripter$134 Def0043
+S A$scripter$125 Def003C
+S A$scripter$116 Def0033
+S C$scripter.c$129$1$97 Def02C8
+S A$scripter$720 Def02C7
+S A$scripter$621 Def0278
+S A$scripter$612 Def026C
+S A$scripter$603 Def0263
+S A$scripter$540 Def0225
+S A$scripter$513 Def0215
+S A$scripter$450 Def01E3
+S A$scripter$441 Def01DB
+S A$scripter$432 Def01CC
+S A$scripter$423 Def01C0
+S A$scripter$405 Def01AB
+S A$scripter$360 Def016E
+S A$scripter$351 Def0161
+S A$scripter$342 Def0153
+S A$scripter$324 Def0136
+S A$scripter$315 Def0128
+S A$scripter$306 Def011C
+S A$scripter$252 Def00D0
+S A$scripter$234 Def00B6
+S A$scripter$225 Def00A9
+S A$scripter$207 Def00A0
+S A$scripter$171 Def0075
+S A$scripter$162 Def0069
+S A$scripter$153 Def005D
+S A$scripter$144 Def0053
+S A$scripter$135 Def0044
+S A$scripter$126 Def003E
+S A$scripter$117 Def0034
+S XG$RemoveScript$0$0 Def00A8
+S A$scripter$703 Def02BF
+S A$scripter$640 Def0286
+S A$scripter$613 Def026D
+S A$scripter$604 Def0264
+S A$scripter$550 Def0232
+S A$scripter$541 Def0226
+S A$scripter$460 Def01EA
+S A$scripter$442 Def01DC
+S A$scripter$433 Def01CD
+S A$scripter$424 Def01C1
+S A$scripter$406 Def01AC
+S A$scripter$361 Def0171
+S A$scripter$352 Def0163
+S A$scripter$343 Def0154
+S A$scripter$325 Def0138
+S A$scripter$316 Def012B
+S A$scripter$271 Def00E4
+S A$scripter$262 Def00DA
+S A$scripter$253 Def00D3
+S A$scripter$235 Def00B9
+S A$scripter$226 Def00AB
+S A$scripter$208 Def00A3
+S A$scripter$190 Def008F
+S A$scripter$172 Def0076
+S A$scripter$154 Def005F
+S A$scripter$145 Def0054
+S A$scripter$136 Def0047
+S A$scripter$127 Def003F
+S A$scripter$118 Def0035
+S G$InitScripts$0$0 Def0000
+S A$scripter$740 Def02D9
+S A$scripter$731 Def02D1
+S A$scripter$641 Def0289
+S A$scripter$605 Def0265
+S A$scripter$560 Def023C
+S A$scripter$551 Def0233
+S A$scripter$542 Def0227
+S A$scripter$461 Def01EB
+S A$scripter$443 Def01DF
+S A$scripter$434 Def01CE
+S A$scripter$425 Def01C2
+S A$scripter$362 Def0174
+S A$scripter$353 Def0166
+S A$scripter$344 Def0157
+S A$scripter$326 Def0139
+S A$scripter$317 Def012E
+S A$scripter$290 Def0101
+S A$scripter$272 Def00E5
+S A$scripter$263 Def00DB
+S A$scripter$254 Def00D6
+S A$scripter$236 Def00BC
+S A$scripter$227 Def00AF
+S A$scripter$209 Def00A4
+S A$scripter$191 Def0090
+S A$scripter$182 Def0081
+S A$scripter$173 Def0077
+S A$scripter$155 Def0060
+S A$scripter$146 Def0057
+S A$scripter$137 Def0048
+S A$scripter$128 Def0040
+S C$scripter.c$50$1$91 Def00C4
+S A$scripter$741 Def02DA
+S A$scripter$732 Def02D4
+S A$scripter$642 Def028A
+S A$scripter$633 Def027B
+S A$scripter$606 Def0266
+S A$scripter$570 Def0249
+S A$scripter$561 Def023D
+S A$scripter$552 Def0234
+S A$scripter$543 Def0228
+S A$scripter$534 Def0222
+S A$scripter$525 Def0219
+S A$scripter$480 Def01FA
+S A$scripter$471 Def01F6
+S A$scripter$462 Def01EE
+S A$scripter$444 Def01E0
+S A$scripter$435 Def01CF
+S A$scripter$426 Def01C3
+S A$scripter$363 Def0177
+S A$scripter$354 Def0167
+S A$scripter$345 Def0158
+S A$scripter$336 Def0147
+S A$scripter$327 Def013C
+S A$scripter$318 Def012F
+S A$scripter$291 Def0104
+S A$scripter$273 Def00E6
+S A$scripter$264 Def00DE
+S A$scripter$246 Def00C4
+S A$scripter$237 Def00BE
+S A$scripter$228 Def00B1
+S A$scripter$183 Def0085
+S A$scripter$174 Def0078
+S A$scripter$156 Def0061
+S A$scripter$138 Def0049
+S A$scripter$129 Def0041
+S A$scripter$742 Def02DB
+S A$scripter$724 Def02C8
+S A$scripter$643 Def028B
+S A$scripter$634 Def027C
+S A$scripter$625 Def0279
+S A$scripter$607 Def0267
+S A$scripter$580 Def024D
+S A$scripter$562 Def023E
+S A$scripter$553 Def0235
+S A$scripter$544 Def0229
+S A$scripter$526 Def021C
+S A$scripter$517 Def0216
+S A$scripter$481 Def01FD
+S A$scripter$463 Def01EF
+S A$scripter$445 Def01E1
+S A$scripter$436 Def01D2
+S A$scripter$427 Def01C4
+S A$scripter$418 Def01B0
+S A$scripter$391 Def0194
+S A$scripter$364 Def017A
+S A$scripter$355 Def0168
+S A$scripter$346 Def0159
+S A$scripter$337 Def014A
+S A$scripter$328 Def013E
+S A$scripter$319 Def0130
+S A$scripter$292 Def0105
+S A$scripter$283 Def00F1
+S A$scripter$274 Def00E7
+S A$scripter$265 Def00DF
+S A$scripter$247 Def00C7
+S A$scripter$238 Def00BF
+S A$scripter$229 Def00B4
+S A$scripter$184 Def0087
+S A$scripter$175 Def0079
+S A$scripter$166 Def006C
+S A$scripter$157 Def0062
+S A$scripter$139 Def004C
+S C$scripter.c$11$0$0 Def0000
+S A$scripter$743 Def02DE
+S A$scripter$734 Def02D5
+S A$scripter$725 Def02CC
+S A$scripter$716 Def02C0
+S A$scripter$680 Def02A9
+S A$scripter$671 Def0299
+S A$scripter$635 Def027D
+S A$scripter$617 Def026E
+S A$scripter$608 Def0268
+S A$scripter$590 Def0253
+S A$scripter$554 Def0236
+S A$scripter$545 Def022C
+S A$scripter$527 Def021D
+S A$scripter$482 Def0200
+S A$scripter$464 Def01F0
+S A$scripter$446 Def01E2
+S A$scripter$437 Def01D5
+S A$scripter$428 Def01C7
+S A$scripter$419 Def01B3
+S A$scripter$392 Def0197
+S A$scripter$383 Def0191
+S A$scripter$365 Def017D
+S A$scripter$356 Def0169
+S A$scripter$347 Def015B
+S A$scripter$338 Def014D
+S A$scripter$329 Def013F
+S A$scripter$293 Def0108
+S A$scripter$284 Def00F4
+S A$scripter$275 Def00E8
+S A$scripter$266 Def00E0
+S A$scripter$248 Def00C8
+S A$scripter$239 Def00C0
+S A$scripter$185 Def0088
+S A$scripter$176 Def007A
+S A$scripter$167 Def0070
+S A$scripter$158 Def0063
+S C$scripter.c$60$2$92 Def010C
+S C$scripter.c$53$1$91 Def00D7
+S C$scripter.c$13$1$86 Def0000
+S A$scripter$753 Def02E1
+S A$scripter$744 Def02DF
+S A$scripter$735 Def02D7
+S A$scripter$726 Def02CF
+S A$scripter$717 Def02C2
+S A$scripter$690 Def02B3
+S A$scripter$681 Def02AA
+S A$scripter$672 Def029C
+S A$scripter$663 Def0297
+S A$scripter$636 Def0280
+S A$scripter$618 Def0271
+S A$scripter$609 Def0269
+S A$scripter$591 Def0254
+S A$scripter$555 Def0237
+S A$scripter$546 Def022E
+S A$scripter$528 Def021E
+S A$scripter$483 Def0201
+S A$scripter$465 Def01F3
+S A$scripter$438 Def01D6
+S A$scripter$429 Def01C9
+S A$scripter$393 Def0199
+S A$scripter$366 Def0180
+S A$scripter$357 Def016A
+S A$scripter$348 Def015C
+S A$scripter$339 Def014E
+S A$scripter$294 Def0109
+S A$scripter$276 Def00E9
+S A$scripter$267 Def00E3
+S A$scripter$258 Def00D7
+S A$scripter$249 Def00CB
+S A$scripter$195 Def0093
+S A$scripter$186 Def0089
+S A$scripter$177 Def007B
+S A$scripter$168 Def0072
+S A$scripter$159 Def0064
+S C$scripter.c$61$2$92 Def011F
+S C$scripter.c$54$1$91 Def00DA
+S C$scripter.c$14$1$86 Def0005
+S A$scripter$727 Def02D0
+S A$scripter$718 Def02C3
+S A$scripter$691 Def02B4
+S A$scripter$682 Def02AB
+S A$scripter$673 Def029E
+S A$scripter$655 Def028E
+S A$scripter$637 Def0281
+S A$scripter$619 Def0272
+S A$scripter$592 Def0255
+S A$scripter$574 Def024A
+S A$scripter$556 Def0238
+S A$scripter$547 Def022F
+S A$scripter$538 Def0223
+S A$scripter$529 Def021F
+S A$scripter$484 Def0204
+S A$scripter$466 Def01F4
+S A$scripter$439 Def01D9
+S A$scripter$394 Def019A
+S A$scripter$367 Def0183
+S A$scripter$349 Def015F
+S A$scripter$286 Def00F7
+S A$scripter$277 Def00EC
+S A$scripter$196 Def0096
+S A$scripter$187 Def008A
+S A$scripter$178 Def007E
+S A$scripter$169 Def0073
+S C$scripter.c$62$2$92 Def0133
+S C$scripter.c$55$1$91 Def00E4
+S A$scripter$719 Def02C4
+S A$scripter$692 Def02B5
+S A$scripter$683 Def02AC
+S A$scripter$674 Def02A1
+S A$scripter$656 Def0291
+S A$scripter$647 Def028C
+S A$scripter$638 Def0284
+S A$scripter$593 Def0256
+S A$scripter$584 Def024E
+S A$scripter$566 Def023F
+S A$scripter$557 Def0239
+S A$scripter$548 Def0230
+S A$scripter$539 Def0224
+S A$scripter$485 Def0205
+S A$scripter$467 Def01F5
+S A$scripter$458 Def01E6
+S A$scripter$395 Def019D
+S A$scripter$377 Def018C
+S A$scripter$368 Def0186
+S A$scripter$359 Def016B
+S A$scripter$287 Def00FA
+S A$scripter$278 Def00ED
+S A$scripter$197 Def0097
+S A$scripter$188 Def008D
+S C$scripter.c$70$3$93 Def0194
+S C$scripter.c$47$1$91 Def00B6
+S C$scripter.c$30$2$89 Def006C
+S C$scripter.c$23$1$88 Def000F
+S A$scripter$693 Def02B6
+S A$scripter$684 Def02AD
+S A$scripter$675 Def02A4
+S A$scripter$657 Def0292
+S A$scripter$639 Def0285
+S A$scripter$594 Def0257
+S A$scripter$585 Def0250
+S A$scripter$567 Def0242
+S A$scripter$558 Def023A
+S A$scripter$549 Def0231
+S A$scripter$459 Def01E7
+S A$scripter$396 Def019E
+S A$scripter$378 Def018D
+S A$scripter$369 Def0189
+S A$scripter$288 Def00FD
+S A$scripter$279 Def00EE
+S A$scripter$198 Def0098
+S A$scripter$189 Def008E
+S C$scripter.c$80$3$93 Def0206
+S C$scripter.c$71$3$93 Def01AD
+S C$scripter.c$64$2$92 Def0147
+S C$scripter.c$31$2$89 Def0081
+S A$scripter$748 Def02E0
+S A$scripter$739 Def02D8
+S A$scripter$694 Def02B7
+S A$scripter$685 Def02AE
+S A$scripter$676 Def02A6
+S A$scripter$658 Def0293
+S A$scripter$595 Def0258
+S A$scripter$568 Def0243
+S A$scripter$559 Def023B
+S A$scripter$397 Def019F
+S A$scripter$379 Def0190
+S A$scripter$298 Def010C
+S A$scripter$289 Def00FE
+S A$scripter$199 Def0099
+S C$scripter.c$81$3$93 Def0209
+S C$scripter.c$72$3$93 Def01B0
+S C$scripter.c$32$2$89 Def0093
+S C$scripter.c$18$1$86 Def0006
+S A$scripter$695 Def02B8
+S A$scripter$686 Def02AF
+S A$scripter$659 Def0296
+S A$scripter$596 Def025B
+S A$scripter$569 Def0246
+S A$scripter$497 Def0209
+S A$scripter$479 Def01F9
+S A$scripter$398 Def01A0
+S A$scripter$299 Def010F
+S C$scripter.c$82$3$93 Def0209
+S C$scripter.c$73$3$93 Def01B0
+S C$scripter.c$35$1$88 Def00A0
+S A$scripter$687 Def02B0
+S A$scripter$597 Def025D
+S A$scripter$579 Def024C
+S A$scripter$498 Def020A
+S A$scripter$489 Def0206
+S A$scripter$399 Def01A1
+S C$scripter.c$83$3$93 Def020E
+S C$scripter.c$74$3$93 Def01E3
+S C$scripter.c$36$1$88 Def00A8
+S C$scripter.c$25$2$89 Def002B
+S A$scripter$697 Def02BB
+S A$scripter$688 Def02B1
+S A$scripter$598 Def025E
+S A$scripter$589 Def0252
+S A$scripter$499 Def020D
+S C$scripter.c$91$4$94 Def0222
+S C$scripter.c$84$3$93 Def0211
+S C$scripter.c$75$3$93 Def01E6
+S C$scripter.c$66$3$93 Def018C
+S C$scripter.c$26$2$89 Def0036
+S _InitScripts Def0000
+S A$scripter$698 Def02BD
+S A$scripter$689 Def02B2
+S A$scripter$599 Def025F
+S C$scripter.c$92$4$94 Def0223
+S C$scripter.c$85$3$93 Def0211
+S C$scripter.c$76$3$93 Def01E6
+S C$scripter.c$67$3$93 Def018C
+S C$scripter.c$58$3$93 Def00F1
+S C$scripter.c$38$1$88 Def00A9
+S C$scripter.c$93$4$94 Def023F
+S C$scripter.c$86$3$93 Def0216
+S C$scripter.c$77$3$93 Def01F6
+S C$scripter.c$68$3$93 Def0191
+S C$scripter.c$28$2$89 Def0043
+S A$scripter$90 Def000F
+S G$UpdateScripts$0$0 Def02C0
+S C$scripter.c$94$4$94 Def024A
+S C$scripter.c$87$3$93 Def0219
+S C$scripter.c$78$3$93 Def01F9
+S C$scripter.c$69$3$93 Def0194
+S C$scripter.c$29$2$89 Def0058
+S A$scripter$91 Def0012
+S A$scripter$73 Def0005
+S C$scripter.c$79$3$93 Def01F9
+S A$scripter$92 Def0013
+S A$scripter$83 Def0006
+S C$scripter.c$89$3$93 Def0219
+S A$scripter$93 Def0015
+S A$scripter$84 Def0008
+S A$scripter$94 Def0016
+S A$scripter$85 Def000C
+S A$scripter$67 Def0000
+S A$scripter$95 Def0019
+S A$scripter$86 Def000E
+S A$scripter$68 Def0003
+S C$scripter.c$98$4$95 Def024C
+S A$scripter$96 Def001C
+S C$scripter.c$99$4$95 Def024E
+S A$scripter$97 Def001D
+S A$scripter$98 Def001E
+S A$scripter$99 Def001F
+S XG$InitScripts$0$0 Def0005
+S _UpdateScripts Def02C0
+S G$UpdateScript$0$0 Def00A9
+S XG$UpdateScripts$0$0 Def02E1
+S G$RemoveScript$0$0 Def0006
+S _UpdateScript Def00A9
+S C$scripter.c$121$1$91 Def02C0
+A _DATA size 0 flags 0 addr 0
+A _INITIALIZED size 0 flags 0 addr 0
+A _DABS size 0 flags 8 addr 0
+A _HOME size 0 flags 0 addr 0
+A _GSINIT size 0 flags 0 addr 0
+A _GSFINAL size 0 flags 0 addr 0
+A _INITIALIZER size 0 flags 0 addr 0
+A _CABS size 0 flags 8 addr 0
+T 00 00
+R 00 00 00 00
+T 00 00 21 00 00 36 00 C9
+R 00 00 00 00 02 03 0A 00
+T 06 00
+R 00 00 00 00
+T 06 00 DD E5 DD 21 00 00 DD 39 F5 21 00 00 5E 16
+R 00 00 00 00 02 0C 0A 00
+T 14 00 00 1B DD 4E 04 DD 7E 04 17 9F 47 79 93 78
+R 00 00 00 00
+T 22 00 9A E2 28 00 EE 80
+R 00 00 00 00 00 04 00 00
+T 28 00
+R 00 00 00 00
+T 28 00 F2 A0 00 11 00 00 69 60 29 29 29 19 4D 44
+R 00 00 00 00 00 03 00 00 02 06 05 00
+T 36 00 3A 00 00 C6 FF 6F 26 00 29 29 29 19 EB 1A
+R 00 00 00 00 02 03 0A 00
+T 44 00 DD 77 FE 13 1A DD 77 FF 1B 69 60 DD 7E FE
+R 00 00 00 00
+T 52 00 77 23 DD 7E FF 77 C5 FD E1 FD 23 FD 23 6B
+R 00 00 00 00
+T 60 00 62 23 23 7E 23 66 FD 77 00 FD 74 01 FD 21
+R 00 00 00 00
+T 6E 00 04 00 FD 09 6B 62 23 23 23 23 7E 23 66 FD
+R 00 00 00 00
+T 7C 00 77 00 FD 74 01 FD 21 06 00 FD 09 6B 62 C5
+R 00 00 00 00
+T 8A 00 01 06 00 09 C1 6E FD 75 00 21 07 00 09 4D
+R 00 00 00 00
+T 98 00 44 D5 FD E1 FD 7E 07 02
+R 00 00 00 00
+T A0 00
+R 00 00 00 00
+T A0 00 21 00 00 35 DD F9 DD E1 C9
+R 00 00 00 00 02 03 0A 00
+T A9 00
+R 00 00 00 00
+T A9 00 DD E5 DD 21 00 00 DD 39 21 F3 FF 39 F9 01
+R 00 00 00 00
+T B7 00 00 00 DD 6E 04 26 00 29 29 29 09 4D 44 21
+R 00 00 00 00 02 02 05 00
+T C5 00 06 00 09 DD 75 F8 DD 74 F9 5E 1C DD 6E F8
+R 00 00 00 00
+T D3 00 DD 66 F9 73 DD 73 F3 0A DD 77 FE 03 0A DD
+R 00 00 00 00
+T E1 00 77 FF 0B 69 60 23 23 7E DD 77 F6 23 7E DD
+R 00 00 00 00
+T EF 00 77 F7 DD 71 FA DD 70 FB
+R 00 00 00 00
+T F7 00
+R 00 00 00 00
+T F7 00 DD 7E FE DD 86 F6 6F DD 7E FF DD 8E F7 67
+R 00 00 00 00
+T 05 01 DD 7E F3 96 C2 BB 02 DD 5E FE DD 56 FF 13
+R 00 00 00 00 00 07 00 00
+T 13 01 13 DD 6E F6 DD 66 F7 19 7E DD 77 F4 DD 5E
+R 00 00 00 00
+T 21 01 FE DD 56 FF 13 13 13 DD 6E F6 DD 66 F7 19
+R 00 00 00 00
+T 2F 01 7E DD 77 F5 DD 7E FE C6 04 5F DD 7E FF CE
+R 00 00 00 00
+T 3D 01 00 57 DD 6E F6 DD 66 F7 19 5E DD 6E FE DD
+R 00 00 00 00
+T 4B 01 66 FF 23 7D DD 86 F6 6F 7C DD 8E F7 67 56
+R 00 00 00 00
+T 59 01 3E 0A 92 DA 99 02 D5 5A 16 00 21 6B 01 19
+R 00 00 00 00 00 06 00 00 00 0D 00 00
+T 67 01 19 19 D1 E9
+R 00 00 00 00
+T 6B 01
+R 00 00 00 00
+T 6B 01 C3 99 02 C3 8C 01 C3 E6 01 C3
+R 00 00 00 00 00 03 00 00 00 06 00 00 00 09 00 00
+T 75 01 F9 01 C3 09 02 C3 11 02 C3
+R 00 00 00 00 00 02 00 00 00 05 00 00 00 08 00 00
+T 7E 01 19 02 C3 7B 02 C3 8E 02 C3
+R 00 00 00 00 00 02 00 00 00 05 00 00 00 08 00 00
+T 87 01 94 01 C3 B0 01
+R 00 00 00 00 00 02 00 00 00 05 00 00
+T 8C 01
+R 00 00 00 00
+T 8C 01 C5 CD 00 00 C1 C3 99 02
+R 00 00 00 00 02 04 07 00 00 08 00 00
+T 94 01
+R 00 00 00 00
+T 94 01 DD 6E F4 26 00 29 11 00 00 19 5E 23 56 C5
+R 00 00 00 00 02 09 02 00
+T A2 01 21 00 00 E5 D5 CD 00 00 F1 F1 C1 C3 99 02
+R 00 00 00 00 02 08 06 00 00 0E 00 00
+T B0 01
+R 00 00 00 00
+T B0 01 DD 73 FC DD 36 FD 00 DD 6E FA DD 66 FB 11
+R 00 00 00 00
+T BE 01 04 00 19 5E 23 56 DD 6E F4 26 00 29 19 5E
+R 00 00 00 00
+T CC 01 23 56 C5 DD 6E FC DD 66 FD E5 DD 7E F5 F5
+R 00 00 00 00
+T DA 01 33 D5 CD 00 00 F1 F1 33 C1 C3 99 02
+R 00 00 00 00 02 05 03 00 00 0C 00 00
+T E6 01
+R 00 00 00 00
+T E6 01 C5 DD 56 F4 D5 DD 7E F5 F5 33 CD 00 00 F1
+R 00 00 00 00 02 0D 08 00
+T F4 01 33 C1 C3 99 02
+R 00 00 00 00 00 05 00 00
+T F9 01
+R 00 00 00 00
+T F9 01 C5 DD 66 F5 DD 6E F4 E5 CD 00 00 F1 C1 C3
+R 00 00 00 00 02 0B 0C 00
+T 07 02 99 02
+R 00 00 00 00 00 02 00 00
+T 09 02
+R 00 00 00 00
+T 09 02 C5 CD 00 00 C1 C3 99 02
+R 00 00 00 00 02 04 01 00 00 08 00 00
+T 11 02
+R 00 00 00 00
+T 11 02 C5 CD 00 00 C1 C3 99 02
+R 00 00 00 00 02 04 0B 00 00 08 00 00
+T 19 02
+R 00 00 00 00
+T 19 02 21 07 00 09 56 7A 3C 20 2A 73 69 60 5E 23
+R 00 00 00 00
+T 27 02 56 D5 DD 5E F5 16 00 6B 62 29 29 19 D1 7B
+R 00 00 00 00
+T 35 02 95 5F 7A 9C 57 7B 02 03 7A 02 DD 4E F4 0D
+R 00 00 00 00
+T 43 02 DD 6E F8 DD 66 F9 71 18 6F
+R 00 00 00 00
+T 4C 02
+R 00 00 00 00
+T 4C 02 15 72 CB 7A 20 47 69 60 5E 23 56 D5 DD 5E
+R 00 00 00 00
+T 5A 02 F5 16 00 6B 62 29 29 19 D1 7B 95 5F 7A 9C
+R 00 00 00 00
+T 68 02 57 7B 02 03 7A 02 DD 4E F4 0D DD 6E F8 DD
+R 00 00 00 00
+T 76 02 66 F9 71 18 40
+R 00 00 00 00
+T 7B 02
+R 00 00 00 00
+T 7B 02 C5 53 DD 5E F5 D5 DD 7E F4 F5 33 CD 00 00
+R 00 00 00 00 02 0E 09 00
+T 89 02 F1 33 C1 18 0B
+R 00 00 00 00
+T 8E 02
+R 00 00 00 00
+T 8E 02 DD 7E 04 F5 33 CD 06 00 33 18 22
+R 00 00 00 00 00 08 00 00
+T 99 02
+R 00 00 00 00
+T 99 02 DD 7E FE C6 05 DD 77 FE DD 7E FF CE 00 DD
+R 00 00 00 00
+T A7 02 77 FF 69 60 5E 23 56 13 13 13 13 13 69 60
+R 00 00 00 00
+T B5 02 73 23 72 C3 F7 00
+R 00 00 00 00 00 06 00 00
+T BB 02
+R 00 00 00 00
+T BB 02 DD F9 DD E1 C9
+R 00 00 00 00
+T C0 02
+R 00 00 00 00
+T C0 02 3E 0F F5 33 CD 00 00 33 FD 21 00 00 FD 7E
+R 00 00 00 00 02 07 00 00 02 0C 0A 00
+T CE 02 00 B7 C8 FD 46 00 05
+R 00 00 00 00
+T D5 02
+R 00 00 00 00
+T D5 02 CB 78 C0 C5 C5 33 CD A9 00 33 C1 05 18 F2
+R 00 00 00 00 00 09 00 00

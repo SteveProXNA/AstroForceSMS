@@ -1,0 +1,187 @@
+;!FILE stage1middleboss.asm
+XL2
+H 9 areas 85 global symbols
+M stage1middleboss
+O -mz80
+S __moduchar Ref0000
+S .__.ABS. Def0000
+S _DrawSpriteArray Ref0000
+S _updatescrollact Ref0000
+S _DoCommonBossAppearingFunction Ref0000
+S _DoStage1BossDirectionShoots Ref0000
+S _InitEnemy Ref0000
+S _DoSkullSinusMovement Ref0000
+A _CODE size 84 flags 0 addr 0
+S G$UpdateStage1MiddleBoss$0$0 Def004F
+S A$stage1middleboss$100 Def0017
+S A$stage1middleboss$200 Def006A
+S A$stage1middleboss$110 Def0020
+S A$stage1middleboss$101 Def001A
+S A$stage1middleboss$201 Def006B
+S A$stage1middleboss$120 Def002B
+S A$stage1middleboss$111 Def0021
+S A$stage1middleboss$130 Def0035
+S A$stage1middleboss$121 Def002C
+S A$stage1middleboss$112 Def0022
+S A$stage1middleboss$221 Def007C
+S A$stage1middleboss$140 Def0042
+S A$stage1middleboss$131 Def0036
+S A$stage1middleboss$122 Def002F
+S A$stage1middleboss$113 Def0023
+S A$stage1middleboss$222 Def007D
+S A$stage1middleboss$213 Def0075
+S A$stage1middleboss$141 Def0043
+S A$stage1middleboss$132 Def0037
+S A$stage1middleboss$123 Def0030
+S A$stage1middleboss$114 Def0024
+S A$stage1middleboss$105 Def001B
+S XG$UpdateStage1MiddleBoss1$0$0 Def004B
+S A$stage1middleboss$223 Def0080
+S A$stage1middleboss$214 Def0076
+S A$stage1middleboss$205 Def006C
+S A$stage1middleboss$151 Def004B
+S A$stage1middleboss$142 Def0044
+S A$stage1middleboss$133 Def0038
+S A$stage1middleboss$124 Def0031
+S A$stage1middleboss$115 Def0025
+S A$stage1middleboss$106 Def001C
+S _FinishStage1MiddleBoss Def004C
+S A$stage1middleboss$233 Def0083
+S A$stage1middleboss$215 Def0079
+S A$stage1middleboss$206 Def006D
+S A$stage1middleboss$143 Def0045
+S A$stage1middleboss$134 Def0039
+S A$stage1middleboss$125 Def0032
+S A$stage1middleboss$116 Def0026
+S A$stage1middleboss$107 Def001D
+S A$stage1middleboss$216 Def007A
+S A$stage1middleboss$207 Def006F
+S A$stage1middleboss$144 Def0046
+S A$stage1middleboss$135 Def003B
+S A$stage1middleboss$126 Def0034
+S A$stage1middleboss$117 Def0028
+S A$stage1middleboss$108 Def001E
+S C$stage1middleboss.c$20$1$56 Def0035
+S _UpdateStage1MiddleBoss Def004F
+S A$stage1middleboss$208 Def0072
+S A$stage1middleboss$190 Def0058
+S A$stage1middleboss$181 Def004F
+S A$stage1middleboss$145 Def0049
+S A$stage1middleboss$136 Def003C
+S A$stage1middleboss$118 Def0029
+S A$stage1middleboss$109 Def001F
+S C$stage1middleboss.c$21$1$56 Def004B
+S A$stage1middleboss$209 Def0073
+S A$stage1middleboss$191 Def0059
+S A$stage1middleboss$182 Def0050
+S A$stage1middleboss$146 Def004A
+S A$stage1middleboss$137 Def003D
+S A$stage1middleboss$119 Def002A
+S C$stage1middleboss.c$13$1$56 Def0001
+S A$stage1middleboss$228 Def0081
+S A$stage1middleboss$192 Def005A
+S A$stage1middleboss$183 Def0051
+S A$stage1middleboss$138 Def003F
+S C$stage1middleboss.c$23$1$56 Def004C
+S C$stage1middleboss.c$10$0$0 Def0001
+S A$stage1middleboss$193 Def005D
+S A$stage1middleboss$184 Def0052
+S A$stage1middleboss$139 Def0040
+S A$stage1middleboss$194 Def005E
+S A$stage1middleboss$185 Def0053
+S C$stage1middleboss.c$16$1$56 Def0012
+S A$stage1middleboss$195 Def005F
+S A$stage1middleboss$186 Def0054
+S A$stage1middleboss$168 Def004C
+S C$stage1middleboss.c$41$1$59 Def0081
+S C$stage1middleboss.c$32$1$59 Def004F
+S A$stage1middleboss$196 Def0062
+S A$stage1middleboss$187 Def0055
+S C$stage1middleboss.c$42$1$59 Def0083
+S C$stage1middleboss.c$26$1$57 Def004C
+S A$stage1middleboss$197 Def0063
+S A$stage1middleboss$188 Def0056
+S C$stage1middleboss.c$27$1$57 Def004C
+S C$stage1middleboss.c$19$1$56 Def001B
+S A$stage1middleboss$198 Def0066
+S A$stage1middleboss$189 Def0057
+S C$stage1middleboss.c$35$1$59 Def006C
+S A$stage1middleboss$199 Def0069
+S C$stage1middleboss.c$36$1$59 Def0075
+S C$stage1middleboss.c$29$1$57 Def004F
+S XG$FinishStage1MiddleBoss$0$0 Def004C
+S XG$UpdateStage1MiddleBoss$0$0 Def0083
+S C$stage1middleboss.c$38$1$59 Def007C
+S A$stage1middleboss$90 Def0010
+S A$stage1middleboss$81 Def0001
+S A$stage1middleboss$91 Def0011
+S A$stage1middleboss$82 Def0004
+S A$stage1middleboss$83 Def0005
+S A$stage1middleboss$84 Def0008
+S A$stage1middleboss$85 Def0009
+S G$stage1middleboss_foo$0$0 Def0000
+S A$stage1middleboss$95 Def0012
+S A$stage1middleboss$86 Def000A
+S A$stage1middleboss$68 Def0000
+S A$stage1middleboss$96 Def0013
+S A$stage1middleboss$87 Def000B
+S A$stage1middleboss$97 Def0014
+S A$stage1middleboss$88 Def000C
+S A$stage1middleboss$98 Def0015
+S A$stage1middleboss$89 Def000D
+S C$stage1middleboss.c$6$0$0 Def0000
+S A$stage1middleboss$99 Def0016
+S C$stage1middleboss.c$8$0$0 Def0000
+S _stage1middleboss_foo Def0000
+S G$UpdateStage1MiddleBoss1$0$0 Def0001
+S XG$stage1middleboss_foo$0$0 Def0000
+S _UpdateStage1MiddleBoss1 Def0001
+S G$FinishStage1MiddleBoss$0$0 Def004C
+A _DATA size 0 flags 0 addr 0
+A _INITIALIZED size 0 flags 0 addr 0
+A _DABS size 0 flags 8 addr 0
+A _HOME size 0 flags 0 addr 0
+A _GSINIT size 0 flags 0 addr 0
+A _GSFINAL size 0 flags 0 addr 0
+A _INITIALIZER size 0 flags 0 addr 0
+A _CABS size 0 flags 8 addr 0
+T 00 00
+R 00 00 00 00
+T 00 00 C9
+R 00 00 00 00
+T 01 00
+R 00 00 00 00
+T 01 00 21 02 00 E5 21 04 00 39 4E 23 46 C5 CD
+R 00 00 00 00
+T 0E 00 00 00 F1 F1 C1 E1 E5 C5 E5 CD 00 00 F1 D1
+R 00 00 00 00 02 02 07 00 02 0C 05 00
+T 1C 00 C1 C5 D5 69 60 23 23 23 56 C5 3E 14 F5 33
+R 00 00 00 00
+T 2A 00 D5 33 CD 00 00 F1 C1 7D D6 10 C0 69 60 23
+R 00 00 00 00 02 05 00 00
+T 38 00 7E C6 18 57 0A C6 0C 47 3E 4B F5 33 58 D5
+R 00 00 00 00
+T 46 00 CD 00 00 F1 33 C9
+R 00 00 00 00 02 03 06 00
+T 4C 00
+R 00 00 00 00
+T 4C 00 C3 00 00
+R 00 00 00 00 02 03 03 00
+T 4F 00
+R 00 00 00 00
+T 4F 00 D1 C1 C5 D5 69 60 23 56 0A 5F C5 21 28 20
+R 00 00 00 00
+T 5D 00 E5 D5 21 87 01 E5 CD 00 00 21 06 00 39 F9
+R 00 00 00 00 02 09 02 00
+T 6B 00 C1 C5 FD E1 FD 7E 04 B7 20 07 C5 CD 00 00
+R 00 00 00 00 02 0E 04 00
+T 79 00 F1 18 05
+R 00 00 00 00
+T 7C 00
+R 00 00 00 00
+T 7C 00 C5 CD 01 00 F1
+R 00 00 00 00 00 04 00 00
+T 81 00
+R 00 00 00 00
+T 81 00 2E 01 C9
+R 00 00 00 00

@@ -1,41 +1,12 @@
-void UpdateStage2EndBoss2( enemy *en )
-{
-	// Do shooting
-	if( en->enemyframe % 32 == 8 )
-		SpreadEnemyshootDirection( en->enemyposx + 20, en->enemyposy + 32, stage2endbossshootpatternx, stage2endbossshootpatterny, 6 );
+#ifndef _STAGE2ENDBOSS_H_
+#define _STAGE2ENDBOSS_H_
 
-	// Move and fire laser
-	if( playerx + 16 < en->enemyposx + 23 )en->enemyposx -= 3;
-	else if( playerx > en->enemyposx + 25 )en->enemyposx += 3;
-	else
-	{
-		InitEnemy( en->enemyposx + 20, en->enemyposy + 32, VULCANLASER );
-		en->enemyparama = 3;
-		en->enemyframe = 0;
-	}
-}
+#include "../defines.h"
 
-void UpdateStage2EndBoss1( enemy *en )
-{
-	DoEnemyWait( en, 2 );
-}
+// ADRIANA
+void UpdateStage2EndBoss2( enemy *en );
+void UpdateStage2EndBoss1( enemy *en );
+void UpdateStage2EndBoss3( enemy *en );
+unsigned char UpdateStage2EndBoss( enemy *en );
 
-void UpdateStage2EndBoss3( enemy *en )
-{
-	DoEnemyWait( en, 1 );
-}
-
-unsigned char UpdateStage2EndBoss( enemy *en )
-{
-	// Draw
-	DrawSpriteArray( STAGE2ENDBOSSBASE, en->enemyposx, en->enemyposy, 48, 48 );
-
-	// Call custom function
-	//changeBank(FIXEDBANKSLOT);
-	if( 0 != updatestage2endbossfunctions[ en->enemyparama ] )
-		( *( updatestage2endbossfunctions[ en->enemyparama ] ) )( en );
-
-	// Return
-	return 1;
-}
-
+#endif//_STAGE2ENDBOSS_H_
